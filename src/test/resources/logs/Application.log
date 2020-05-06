@@ -1,0 +1,8 @@
+05-06-2020 16:47:16 TestBase.java DEBUG [main] devpinoyLogger 44 - Config file loaded !!!
+05-06-2020 16:47:16 TestBase.java DEBUG [main] devpinoyLogger 60 - OR file loaded !!!
+05-06-2020 16:47:17 TestBase.java DEBUG [main] devpinoyLogger 76 - Chrome Launched !!!
+05-06-2020 16:47:25 TestBase.java DEBUG [main] devpinoyLogger 86 - Navigated to ==>https://www.goibibo.com/
+05-06-2020 16:47:25 Login.java DEBUG [main] devpinoyLogger 17 - Inside Login Test !!!
+05-06-2020 16:47:26 Login.java DEBUG [main] devpinoyLogger 20 - Hotel clicked
+05-06-2020 16:47:26 Login.java DEBUG [main] devpinoyLogger 23 - Succesfully Navigate On Hotel Page
+05-06-2020 16:47:26 TestBase.java DEBUG [main] devpinoyLogger 110 - Test Execution completed  !!!
