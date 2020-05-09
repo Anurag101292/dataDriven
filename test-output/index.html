@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-dataDrivenBasics">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-dataDrivenBasics">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Login" hash-for-method="userLogin">userLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Bus" hash-for-method="testBus(Delhi)">testBus(Delhi)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Hotel" hash-for-method="userLogin">userLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-dataDrivenBasics -->
@@ -120,7 +125,23 @@
           <div class="suite-dataDrivenBasics-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.CN.testcases.Login</span>
+              <span class="class-name">com.CN.testcases.Bus</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBus(Delhi)">
+                  </a> <!-- testBus(Delhi) -->
+                  <span class="method-name">testBus</span>
+                  <span class="parameters">(Delhi)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-dataDrivenBasics-class-passed -->
+          <div class="suite-dataDrivenBasics-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.CN.testcases.Hotel</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -142,11 +163,20 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;dataDrivenBasics&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.uncommons.reportng.HTMLReporter&quot;/&gt;
+    &lt;listener class-name=&quot;org.uncommons.reportng.JUnitXMLReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Hotel&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.CN.testcases.Login&quot;/&gt;
+      &lt;class name=&quot;com.CN.testcases.Hotel&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Hotel --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Bus&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.CN.testcases.Bus&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Bus --&gt;
 &lt;/suite&gt; &lt;!-- dataDrivenBasics --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +188,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Hotel (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Bus (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +217,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'userLogin')
-data.setCell(0, 2, 'com.CN.testcases.Login')
-data.setCell(0, 3, 917);
+data.setCell(0, 1, 'testBus')
+data.setCell(0, 2, 'com.CN.testcases.Bus')
+data.setCell(0, 3, 2073);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'userLogin')
+data.setCell(1, 2, 'com.CN.testcases.Hotel')
+data.setCell(1, 3, 646);
 window.suiteTableData['dataDrivenBasics']= { tableData: data, tableDiv: 'times-div-dataDrivenBasics'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 917 ms</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-dataDrivenBasics">
               </div> <!-- times-div-dataDrivenBasics -->
             </div> <!-- times-div -->
@@ -219,18 +256,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.CN.testcases.Login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.CN.testcases.Bus</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.CN.testcases.Hotel</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">userLogin</span>
-                <span class="method-start">9325 ms</span>
+                <span class="method-start">6833 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.CN.testcases.Bus</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testBus(Delhi)</span>
+                <span class="method-start">7536 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearup</span>
-                <span class="method-start">10262 ms</span>
+                <span class="method-start">9616 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

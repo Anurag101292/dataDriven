@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="dataDrivenBasics" duration-ms="947" started-at="2020-05-06T16:47:25 IST" finished-at="2020-05-06T16:47:26 IST">
+  <suite name="dataDrivenBasics" duration-ms="2835" started-at="2020-05-10T01:40:27 IST" finished-at="2020-05-10T01:40:30 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="947" started-at="2020-05-06T16:47:25 IST" finished-at="2020-05-06T16:47:26 IST">
-      <class name="com.CN.testcases.Login">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Login@8646db9]" name="setup" is-config="true" duration-ms="9300" started-at="2020-05-06T16:47:16 IST" finished-at="2020-05-06T16:47:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.CN.testcases.Login@8646db9]" name="userLogin" duration-ms="917" started-at="2020-05-06T16:47:25 IST" finished-at="2020-05-06T16:47:26 IST">
+    <test name="Hotel" duration-ms="713" started-at="2020-05-10T01:40:27 IST" finished-at="2020-05-10T01:40:28 IST">
+      <class name="com.CN.testcases.Hotel">
+        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.CN.testcases.Hotel@bd4dc25]" name="userLogin" duration-ms="646" started-at="2020-05-10T01:40:27 IST" finished-at="2020-05-10T01:40:28 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Login@8646db9]" name="tearup" is-config="true" duration-ms="77" started-at="2020-05-06T16:47:26 IST" finished-at="2020-05-06T16:47:26 IST">
+      </class> <!-- com.CN.testcases.Hotel -->
+    </test> <!-- Hotel -->
+    <test name="Bus" duration-ms="2092" started-at="2020-05-10T01:40:28 IST" finished-at="2020-05-10T01:40:30 IST">
+      <class name="com.CN.testcases.Bus">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Bus@f5acb9d]" name="setup" is-config="true" duration-ms="6774" started-at="2020-05-10T01:40:20 IST" finished-at="2020-05-10T01:40:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testBus(java.lang.String)[pri:0, instance:com.CN.testcases.Bus@f5acb9d]" name="testBus" duration-ms="2073" started-at="2020-05-10T01:40:28 IST" data-provider="getData" finished-at="2020-05-10T01:40:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Delhi]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBus -->
+        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Bus@f5acb9d]" name="tearup" is-config="true" duration-ms="82" started-at="2020-05-10T01:40:30 IST" finished-at="2020-05-10T01:40:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearup -->
-      </class> <!-- com.CN.testcases.Login -->
-    </test> <!-- Test -->
+      </class> <!-- com.CN.testcases.Bus -->
+    </test> <!-- Bus -->
   </suite> <!-- dataDrivenBasics -->
 </testng-results>

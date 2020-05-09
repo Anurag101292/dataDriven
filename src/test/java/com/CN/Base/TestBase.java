@@ -15,7 +15,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.apache.log4j.Logger;;
+
+import com.CN.utilities.ExcelReader;
+
+import org.apache.log4j.Logger;
 
 public class TestBase {
 
@@ -24,6 +27,8 @@ public class TestBase {
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
+	public static ExcelReader excelreader = new ExcelReader(
+			System.getProperty("user.dir") + "/src/test/resources/excel/TestData.xlsx");
 
 	@BeforeSuite
 	public void setup() {
@@ -96,11 +101,10 @@ public class TestBase {
 		try {
 			driver.findElement(by);
 			return true;
-		} catch (NoSuchElementException  t) {
+		} catch (NoSuchElementException t) {
 			return false;
 		}
 
-		
 	}
 
 	@AfterSuite

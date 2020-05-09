@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.CN.Base.TestBase;
 
-public class Login extends TestBase {
+public class Hotel extends TestBase {
 
 	@Test
 	public void userLogin()
@@ -16,7 +16,7 @@ public class Login extends TestBase {
 	{
 		log.debug("Inside Login Test !!!");
 		driver.findElement(By.xpath(OR.getProperty("hotel"))).click();
-		
+
 		log.debug("Hotel clicked");
 		Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("searchotel"))),
 				"Succesfully Not Navigate On Hotel Page");

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [dataDrivenBasics]">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="5" name="Bus(failed)">
     <classes>
-      <class name="com.CN.testcases.Login">
+      <class name="com.CN.testcases.Bus">
         <methods>
-          <include name="userLogin"/>
           <include name="setup"/>
           <include name="tearup"/>
+          <include name="testBus" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.CN.testcases.Login -->
+      </class> <!-- com.CN.testcases.Bus -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Bus(failed) -->
 </suite> <!-- Failed suite [dataDrivenBasics] -->
