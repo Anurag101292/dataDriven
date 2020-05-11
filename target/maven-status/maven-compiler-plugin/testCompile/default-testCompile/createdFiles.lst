@@ -1,6 +1,10 @@
 com/CN/rough/Screenshot.class
 com/CN/testcases/Hotel.class
+com/CN/utilities/DataProvide.class
+com/CN/utilities/Screenshot.class
+com/CN/utilities/ExtentManager.class
 com/CN/utilities/ExcelReader.class
+com/CN/testcases/Cab.class
 com/CN/rough/DATTEST.class
 com/CN/listeners/CustomListeners.class
 com/CN/rough/SUPERTEST.class

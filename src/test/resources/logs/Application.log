@@ -1,14 +1,18 @@
-05-10-2020 01:40:20 TestBase.java DEBUG [main] devpinoyLogger 49 - Config file loaded !!!
-05-10-2020 01:40:20 TestBase.java DEBUG [main] devpinoyLogger 65 - OR file loaded !!!
-05-10-2020 01:40:21 TestBase.java DEBUG [main] devpinoyLogger 81 - Chrome Launched !!!
-05-10-2020 01:40:27 TestBase.java DEBUG [main] devpinoyLogger 91 - Navigated to ==>https://www.goibibo.com/
-05-10-2020 01:40:27 Hotel.java DEBUG [main] devpinoyLogger 17 - Inside Login Test !!!
-05-10-2020 01:40:27 Hotel.java DEBUG [main] devpinoyLogger 20 - Hotel clicked
-05-10-2020 01:40:28 Hotel.java DEBUG [main] devpinoyLogger 23 - Succesfully Navigate On Hotel Page
-05-10-2020 01:40:28 Bus.java DEBUG [main] devpinoyLogger 33 - 2
-05-10-2020 01:40:28 Bus.java DEBUG [main] devpinoyLogger 34 - 1
-05-10-2020 01:40:28 Bus.java DEBUG [main] devpinoyLogger 14 - Inside Bus Test !!!
-05-10-2020 01:40:29 Bus.java DEBUG [main] devpinoyLogger 17 - Bus clicked
-05-10-2020 01:40:29 Bus.java DEBUG [main] devpinoyLogger 20 - Succesfully Navigate On Bus Page
-05-10-2020 01:40:30 Bus.java DEBUG [main] devpinoyLogger 23 - source location filled
-05-10-2020 01:40:30 TestBase.java DEBUG [main] devpinoyLogger 114 - Test Execution completed  !!!
+05-12-2020 03:31:40 TestBase.java DEBUG [main] devpinoyLogger 56 - Config file loaded !!!
+05-12-2020 03:31:40 TestBase.java DEBUG [main] devpinoyLogger 72 - OR file loaded !!!
+05-12-2020 03:31:47 TestBase.java DEBUG [main] devpinoyLogger 88 - Chrome Launched !!!
+05-12-2020 03:31:52 TestBase.java DEBUG [main] devpinoyLogger 102 - Navigated to ==>https://www.easemytrip.com/
+05-12-2020 03:31:52 Hotel.java DEBUG [main] devpinoyLogger 15 - Inside Login Test !!!
+05-12-2020 03:31:53 Hotel.java DEBUG [main] devpinoyLogger 18 - Hotel clicked
+05-12-2020 03:31:54 Hotel.java DEBUG [main] devpinoyLogger 21 - Succesfully Navigate On Hotel Page
+05-12-2020 03:31:55 DataProvide.java DEBUG [main] devpinoyLogger 19 - 2
+05-12-2020 03:31:55 DataProvide.java DEBUG [main] devpinoyLogger 20 - 1
+05-12-2020 03:31:55 Bus.java DEBUG [main] devpinoyLogger 15 - Inside Bus Test !!!
+05-12-2020 03:31:58 Bus.java DEBUG [main] devpinoyLogger 18 - Bus clicked
+05-12-2020 03:31:58 Bus.java DEBUG [main] devpinoyLogger 21 - Succesfully Navigate On Bus Page
+05-12-2020 03:31:58 Bus.java DEBUG [main] devpinoyLogger 24 - source location filled
+05-12-2020 03:31:58 DataProvide.java DEBUG [main] devpinoyLogger 19 - 2
+05-12-2020 03:31:58 DataProvide.java DEBUG [main] devpinoyLogger 20 - 1
+05-12-2020 03:31:58 Cab.java DEBUG [main] devpinoyLogger 14 - Inside cab  !!!
+05-12-2020 03:32:01 Cab.java DEBUG [main] devpinoyLogger 19 - source location  entering
+05-12-2020 03:32:02 TestBase.java DEBUG [main] devpinoyLogger 156 - Test Execution completed  !!!

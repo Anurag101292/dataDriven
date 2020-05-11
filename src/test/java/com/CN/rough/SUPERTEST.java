@@ -11,6 +11,6 @@ public static void main(String[] args) {
 		
 		
 SUPERTEST S=new SUPERTEST(25);
-DATTEST D= new SUPERTEST(3);
+
 	}
 }

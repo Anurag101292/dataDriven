@@ -3,20 +3,22 @@ package com.CN.Base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
+import com.CN.listeners.CustomListeners;
 import com.CN.utilities.ExcelReader;
+import com.CN.utilities.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import org.apache.log4j.Logger;
 
@@ -29,6 +31,11 @@ public class TestBase {
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excelreader = new ExcelReader(
 			System.getProperty("user.dir") + "/src/test/resources/excel/TestData.xlsx");
+	public ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest test;
+	public static EventFiringWebDriver e_driver;
+	public static CustomListeners eventListener;
+	public static String locatorvalue="";
 
 	@BeforeSuite
 	public void setup() {
@@ -87,6 +94,10 @@ public class TestBase {
 				log.debug("Firefox Launched !!!");
 
 			}
+			e_driver = new EventFiringWebDriver(driver);
+			eventListener = new CustomListeners();
+			e_driver.register(eventListener);
+			driver = e_driver;
 			driver.get(config.getProperty("URL"));
 			log.debug("Navigated to ==>" + config.getProperty("URL"));
 			driver.manage().window().maximize();
@@ -96,17 +107,48 @@ public class TestBase {
 
 	}
 
-	public boolean isElementPresent(By by) {
-
-		try {
-			driver.findElement(by);
-			return true;
-		} catch (NoSuchElementException t) {
+	public boolean isElementPresent(String key) {
+             
+			try {
+				getWebElement(key);
+				return true;
+			} 
+			
+		catch (Exception e) {
 			return false;
 		}
 
+		}
+	public static WebElement getLocator(String key) throws Exception {
+		
+
+		String locatorType = key.split(":")[0];
+		String value = key.split(":")[1];
+		locatorvalue=value;
+
+		if (locatorType.toLowerCase().equals("xpath"))
+			return driver.findElement(By.xpath(value));
+		else if (locatorType.toLowerCase().equals("id"))
+			return driver.findElement(By.id(value));
+		else if (locatorType.toLowerCase().equals("class"))
+			return driver.findElement(By.className(value));
+		else if (locatorType.toLowerCase().equals("tag"))
+			return driver.findElement(By.tagName(value));
+		else if (locatorType.toLowerCase().equals("link"))
+			return driver.findElement(By.linkText(value));
+		else if (locatorType.toLowerCase().equals("css"))
+			return driver.findElement(By.cssSelector(value));
+		else if (locatorType.toLowerCase().equals("name"))
+			return driver.findElement(By.name(value));
+		else
+			throw new Exception("Unknown Locator Type" + locatorType);
+
 	}
 
+	// *** This Function returns the locators from the Web Application *****
+	public static WebElement getWebElement(String key) throws Exception {
+		return getLocator(OR.getProperty(key));
+	}
 	@AfterSuite
 	public void tearup() {
 		if (driver != null) {

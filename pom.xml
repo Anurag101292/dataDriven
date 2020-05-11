@@ -88,10 +88,10 @@
 			<version>4.1.1</version>
 		</dependency>
 		<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.6</version>
-</dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
 
 
 
@@ -111,5 +111,14 @@
 			</plugin>
 
 		</plugins>
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources/properties/</directory>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
 	</build>
 </project>

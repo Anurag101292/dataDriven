@@ -12,9 +12,20 @@
         <methods>
           <include name="setup"/>
           <include name="tearup"/>
-          <include name="testBus" invocation-numbers="0"/>
+          <include name="testBus"/>
         </methods>
       </class> <!-- com.CN.testcases.Bus -->
     </classes>
   </test> <!-- Bus(failed) -->
+  <test thread-count="5" name="CABS(failed)">
+    <classes>
+      <class name="com.CN.testcases.CABS">
+        <methods>
+          <include name="testCabs"/>
+          <include name="setup"/>
+          <include name="tearup"/>
+        </methods>
+      </class> <!-- com.CN.testcases.CABS -->
+    </classes>
+  </test> <!-- CABS(failed) -->
 </suite> <!-- Failed suite [dataDrivenBasics] -->

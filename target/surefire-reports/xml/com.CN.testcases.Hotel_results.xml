@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.712">
+           time="1.261">
   <properties />
   
   
-            <testcase name="userLogin" time="0.712" classname="com.CN.testcases.Hotel" />
+            <testcase name="userLogin" time="1.261" classname="com.CN.testcases.Hotel" />
       
 </testsuite>

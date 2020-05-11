@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
+    <line>
+      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/userLogin/12_05_20_03_31_54_AM.png>Screenshot</a>]]>
+    </line>
+    <line>
+      <![CDATA[Test script passed ]]>
+    </line>
+    <line>
+      <![CDATA[capturing screenshot]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/12_05_20_03_31_58_AM.png>Screenshot</a>]]>
+    </line>
+    <line>
+      <![CDATA[Test script passed ]]>
+    </line>
+    <line>
+      <![CDATA[capturing screenshot]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/12_05_20_03_32_01_AM.png>Screenshot</a>]]>
+    </line>
+    <line>
+      <![CDATA[Test script passed ]]>
+    </line>
+    <line>
+      <![CDATA[capturing screenshot]]>
+    </line>
   </reporter-output>
-  <suite name="dataDrivenBasics" duration-ms="3434" started-at="2020-05-10T02:18:07 IST" finished-at="2020-05-10T02:18:11 IST">
+  <suite name="dataDrivenBasics" duration-ms="9218" started-at="2020-05-12T03:31:52 IST" finished-at="2020-05-12T03:32:02 IST">
     <groups>
     </groups>
-    <test name="Hotel" duration-ms="749" started-at="2020-05-10T02:18:07 IST" finished-at="2020-05-10T02:18:08 IST">
+    <test name="Hotel" duration-ms="2571" started-at="2020-05-12T03:31:52 IST" finished-at="2020-05-12T03:31:55 IST">
       <class name="com.CN.testcases.Hotel">
-        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.CN.testcases.Hotel@dd0c991]" name="userLogin" duration-ms="712" started-at="2020-05-10T02:18:07 IST" finished-at="2020-05-10T02:18:08 IST">
+        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.CN.testcases.Hotel@659499f1]" name="userLogin" duration-ms="1261" started-at="2020-05-12T03:31:52 IST" finished-at="2020-05-12T03:31:54 IST">
           <reporter-output>
+            <line>
+              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/userLogin/12_05_20_03_31_54_AM.png>Screenshot</a>]]>
+            </line>
+            <line>
+              <![CDATA[Test script passed ]]>
+            </line>
+            <line>
+              <![CDATA[capturing screenshot]]>
+            </line>
           </reporter-output>
         </test-method> <!-- userLogin -->
       </class> <!-- com.CN.testcases.Hotel -->
     </test> <!-- Hotel -->
-    <test name="Bus" duration-ms="2650" started-at="2020-05-10T02:18:08 IST" finished-at="2020-05-10T02:18:11 IST">
+    <test name="Bus" duration-ms="3218" started-at="2020-05-12T03:31:55 IST" finished-at="2020-05-12T03:31:58 IST">
       <class name="com.CN.testcases.Bus">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Bus@52102734]" name="setup" is-config="true" duration-ms="9405" started-at="2020-05-10T02:17:58 IST" finished-at="2020-05-10T02:18:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="testBus(java.lang.String)[pri:0, instance:com.CN.testcases.Bus@52102734]" name="testBus" duration-ms="2633" started-at="2020-05-10T02:18:08 IST" data-provider="getData" finished-at="2020-05-10T02:18:11 IST">
+        <test-method status="PASS" signature="bus(java.lang.String)[pri:0, instance:com.CN.testcases.Bus@771a660]" name="bus" duration-ms="2680" started-at="2020-05-12T03:31:55 IST" data-provider="dp" finished-at="2020-05-12T03:31:58 IST">
           <params>
             <param index="0">
               <value>
@@ -28,13 +60,50 @@
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/12_05_20_03_31_58_AM.png>Screenshot</a>]]>
+            </line>
+            <line>
+              <![CDATA[Test script passed ]]>
+            </line>
+            <line>
+              <![CDATA[capturing screenshot]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- testBus -->
-        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Bus@52102734]" name="tearup" is-config="true" duration-ms="82" started-at="2020-05-10T02:18:11 IST" finished-at="2020-05-10T02:18:11 IST">
+        </test-method> <!-- bus -->
+      </class> <!-- com.CN.testcases.Bus -->
+    </test> <!-- Bus -->
+    <test name="Cab" duration-ms="3410" started-at="2020-05-12T03:31:58 IST" finished-at="2020-05-12T03:32:02 IST">
+      <class name="com.CN.testcases.Cab">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Cab@5a45133e]" name="setup" is-config="true" duration-ms="12648" started-at="2020-05-12T03:31:40 IST" finished-at="2020-05-12T03:31:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="cab(java.lang.String)[pri:0, instance:com.CN.testcases.Cab@5a45133e]" name="cab" duration-ms="3126" started-at="2020-05-12T03:31:58 IST" data-provider="dp" finished-at="2020-05-12T03:32:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Goa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/12_05_20_03_32_01_AM.png>Screenshot</a>]]>
+            </line>
+            <line>
+              <![CDATA[Test script passed ]]>
+            </line>
+            <line>
+              <![CDATA[capturing screenshot]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- cab -->
+        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Cab@5a45133e]" name="tearup" is-config="true" duration-ms="708" started-at="2020-05-12T03:32:02 IST" finished-at="2020-05-12T03:32:02 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearup -->
-      </class> <!-- com.CN.testcases.Bus -->
-    </test> <!-- Bus -->
+      </class> <!-- com.CN.testcases.Cab -->
+    </test> <!-- Cab -->
   </suite> <!-- dataDrivenBasics -->
 </testng-results>

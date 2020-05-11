@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-dataDrivenBasics">
-              <span class="suite-name border-failed">dataDrivenBasics</span>
+              <span class="suite-name border-passed">dataDrivenBasics</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-dataDrivenBasics">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-dataDrivenBasics" class="hide-methods failed suite-dataDrivenBasics"> (hide)</a> <!-- hide-methods failed suite-dataDrivenBasics -->
-                      <a href="#" panel-name="suite-dataDrivenBasics" class="show-methods failed suite-dataDrivenBasics"> (show)</a> <!-- show-methods failed suite-dataDrivenBasics -->
-                    </span>
-                    <div class="method-list-content failed suite-dataDrivenBasics">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Bus" hash-for-method="testBus(Delhi)">testBus(Delhi)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-dataDrivenBasics -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,6 +100,16 @@
                       <a href="#" panel-name="suite-dataDrivenBasics" class="show-methods passed suite-dataDrivenBasics"> (show)</a> <!-- show-methods passed suite-dataDrivenBasics -->
                     </span>
                     <div class="method-list-content passed suite-dataDrivenBasics">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Bus" hash-for-method="bus(Delhi)">bus(Delhi)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Cab" hash-for-method="cab(Goa)">cab(Goa)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Hotel" hash-for-method="userLogin">userLogin</a> <!-- method navigator-link -->
@@ -131,45 +127,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-dataDrivenBasics" class="panel dataDrivenBasics">
-          <div class="suite-dataDrivenBasics-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.CN.testcases.Bus</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testBus(Delhi)">
-                  </a> <!-- testBus(Delhi) -->
-                  <span class="method-name">testBus</span>
-                  <span class="parameters">(Delhi)</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#gi_sourc&quot;}
-  (Session info: chrome=81.0.4044.129)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
-System info: host: &apos;kmaster&apos;, ip: &apos;192.168.225.206&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.15.0-99-generic&apos;, java.version: &apos;1.8.0_252&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: /tmp/.com.google.Chrome.3EfPDD}, goog:chromeOptions: {debuggerAddress: localhost:41937}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 3516df2a8d83025aafec1ad47229ddfb
-*** Element info: {Using=id, value=gi_sourc}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at com.CN.testcases.Bus.testBus(Bus.java:22)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-dataDrivenBasics-class-failed -->
           <div class="suite-dataDrivenBasics-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -181,6 +138,38 @@ Session ID: 3516df2a8d83025aafec1ad47229ddfb
                   <a name="userLogin">
                   </a> <!-- userLogin -->
                   <span class="method-name">userLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-dataDrivenBasics-class-passed -->
+          <div class="suite-dataDrivenBasics-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.CN.testcases.Cab</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="cab(Goa)">
+                  </a> <!-- cab(Goa) -->
+                  <span class="method-name">cab</span>
+                  <span class="parameters">(Goa)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-dataDrivenBasics-class-passed -->
+          <div class="suite-dataDrivenBasics-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.CN.testcases.Bus</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="bus(Delhi)">
+                  </a> <!-- bus(Delhi) -->
+                  <span class="method-name">bus</span>
+                  <span class="parameters">(Delhi)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -210,6 +199,11 @@ Session ID: 3516df2a8d83025aafec1ad47229ddfb
       &lt;class name=&quot;com.CN.testcases.Bus&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Bus --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;CABS&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.CN.testcases.Cab&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- CABS --&gt;
 &lt;/suite&gt; &lt;!-- dataDrivenBasics --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -225,6 +219,9 @@ Session ID: 3516df2a8d83025aafec1ad47229ddfb
               </li>
               <li>
                 <span class="test-name">Bus (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">CABS (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -250,20 +247,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testBus')
-data.setCell(0, 2, 'com.CN.testcases.Bus')
-data.setCell(0, 3, 23893);
+data.setCell(0, 1, 'cab')
+data.setCell(0, 2, 'com.CN.testcases.Cab')
+data.setCell(0, 3, 3022);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'userLogin')
-data.setCell(1, 2, 'com.CN.testcases.Hotel')
-data.setCell(1, 3, 2122);
+data.setCell(1, 1, 'bus')
+data.setCell(1, 2, 'com.CN.testcases.Bus')
+data.setCell(1, 3, 1401);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'userLogin')
+data.setCell(2, 2, 'com.CN.testcases.Hotel')
+data.setCell(2, 3, 1168);
 window.suiteTableData['dataDrivenBasics']= { tableData: data, tableDiv: 'times-div-dataDrivenBasics'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-dataDrivenBasics">
               </div> <!-- times-div-dataDrivenBasics -->
             </div> <!-- times-div -->
@@ -277,16 +278,24 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">userLogin</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/userLogin/10_05_20_14_02_32_PM.png>Screenshot</a></span>
+                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/userLogin/12_05_20_02_15_38_AM.png>Screenshot</a></span>
                 <span class="reporter-method-output">Test script passed </span>
                 <span class="reporter-method-output">capturing screenshot</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
-              <span class="reporter-method-name">testBus(Delhi)</span>
+              <span class="reporter-method-name">bus(Delhi)</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/testBus/10_05_20_14_02_57_PM.png>Screenshot</a></span>
-                <span class="reporter-method-output">Test script failed </span>
+                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/12_05_20_02_15_40_AM.png>Screenshot</a></span>
+                <span class="reporter-method-output">Test script passed </span>
+                <span class="reporter-method-output">capturing screenshot</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">cab(Goa)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/12_05_20_02_15_43_AM.png>Screenshot</a></span>
+                <span class="reporter-method-output">Test script passed </span>
                 <span class="reporter-method-output">capturing screenshot</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
@@ -305,7 +314,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.CN.testcases.Bus</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.CN.testcases.Cab</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
@@ -315,20 +324,25 @@ return data;
               <div class="chronological-class-name">com.CN.testcases.Hotel</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">userLogin</span>
-                <span class="method-start">16453 ms</span>
+                <span class="method-start">7482 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.CN.testcases.Bus</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testBus(Delhi)</span>
-                <span class="method-start">18925 ms</span>
+                <span class="method-name">bus(Delhi)</span>
+                <span class="method-start">9402 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.CN.testcases.Cab</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">cab(Goa)</span>
+                <span class="method-start">11047 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearup</span>
-                <span class="method-start">43076 ms</span>
+                <span class="method-start">14302 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -8,7 +8,7 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+
 import org.testng.Reporter;
 
 import com.CN.Base.TestBase;
@@ -34,7 +34,7 @@ public class Screenshot extends TestBase {
 		TakesScreenshot t = (TakesScreenshot) driver;
 		File srcfile = t.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(srcfile, dest);
-		Reporter.log("<a target=\"_blank\" href="+destpath+">Screenshot</a>",true);
+		Reporter.log("<a target=\"_blank\" href=" + destpath + ">Screenshot</a>", true);
 
 	}
 }
