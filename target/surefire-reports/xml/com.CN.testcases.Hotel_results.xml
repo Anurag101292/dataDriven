@@ -3,11 +3,13 @@
            tests="1"
            failures="0"
            errors="0"
-           skipped="0"
-           time="1.261">
+           skipped="1"
+           time="0.061">
   <properties />
   
+            <testcase name="hotel" time="0.0" classname="com.CN.testcases.Hotel">
+          <skipped />
+    </testcase>
   
-            <testcase name="userLogin" time="1.261" classname="com.CN.testcases.Hotel" />
-      
+  
 </testsuite>
