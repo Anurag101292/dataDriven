@@ -2,6 +2,9 @@ package com.CN.listeners;
 
 import java.io.IOException;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +15,10 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import com.CN.Base.TestBase;
+import com.CN.utilities.MailConfig;
+import com.CN.utilities.MonitoringMail;
 import com.CN.utilities.Screenshot;
+import com.CN.utilities.TestUtil;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CustomListeners extends TestBase implements ITestListener, WebDriverEventListener {
@@ -85,6 +91,17 @@ public class CustomListeners extends TestBase implements ITestListener, WebDrive
 
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+		TestUtil.zip(Screenshot.destpath);
+		MonitoringMail mail = new MonitoringMail();
+		try {
+			mail.sendMail(MailConfig.server, MailConfig.from, MailConfig.to, MailConfig.subject, MailConfig.messageBody, MailConfig.attachmentPath, MailConfig.attachmentName);
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
