@@ -65,6 +65,7 @@ public class Brokenlinks {
 		driver.quit();
 
 	}
+
 	public static void main(String[] args) {
 		Brokenlinks.isbrokenlink("https://www.healthkart.com/");
 	}

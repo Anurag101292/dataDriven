@@ -1,9 +1,9 @@
 package com.CN.rough;
 
-public class DATTEST {
+public class Thisfunction {
 int  a;
 	
-	DATTEST(int x ,int y)
+Thisfunction(int x ,int y)
 	
 	{
 		int z=x*y;
@@ -13,7 +13,7 @@ int  a;
 	}
 	
 	
-	DATTEST(int l){
+Thisfunction(int l){
 		
 		this(15,5);
 		System.out.println(a+l);

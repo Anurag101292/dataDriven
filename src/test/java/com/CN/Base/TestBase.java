@@ -36,7 +36,7 @@ public class TestBase {
 	public static ExtentTest test;
 	public static EventFiringWebDriver e_driver;
 	public static CustomListeners eventListener;
-	public static String locatorvalue="";
+	public static String locatorvalue = "";
 
 	@BeforeSuite
 	public void setup() {
@@ -109,25 +109,23 @@ public class TestBase {
 	}
 
 	public boolean isElementPresent(String key) {
-             
-			try {
-				getWebElement(key);
-				return true;
-			} 
-			
+
+		try {
+			getWebElement(key);
+			return true;
+		}
+
 		catch (Exception e) {
 			return false;
 		}
 
-		}
-	
-	
+	}
+
 	public static WebElement getLocator(String key) throws Exception {
-		
 
 		String locatorType = key.split(":")[0];
 		String value = key.split(":")[1];
-		locatorvalue=value;
+		locatorvalue = value;
 
 		if (locatorType.toLowerCase().equals("xpath"))
 			return driver.findElement(By.xpath(value));
@@ -152,6 +150,7 @@ public class TestBase {
 	public static WebElement getWebElement(String key) throws Exception {
 		return getLocator(OR.getProperty(key));
 	}
+
 	@AfterSuite
 	public void tearup() {
 		if (driver != null) {

@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CN.testcases.Bus">
+      <class name="com.CN.rough.TESTNG">
         <methods>
-          <include name="setup"/>
-          <include name="tearup"/>
-          <include name="testBus" invocation-numbers="0"/>
+          <include name="goCorona"/>
         </methods>
-      </class> <!-- com.CN.testcases.Bus -->
+      </class> <!-- com.CN.rough.TESTNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

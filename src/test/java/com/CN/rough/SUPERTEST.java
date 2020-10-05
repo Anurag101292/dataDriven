@@ -1,6 +1,6 @@
 package com.CN.rough;
 
-public class SUPERTEST extends DATTEST {
+public class SUPERTEST extends Thisfunction {
 
 	
 	SUPERTEST(int l){

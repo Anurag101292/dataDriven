@@ -2,7 +2,7 @@
 <testng-results skipped="1" failed="0" ignored="0" total="3" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/25_05_20_02_40_17_AM.png>Screenshot</a>]]>
+      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/25_06_20_17_15_01_PM.png>Screenshot</a>]]>
     </line>
     <line>
       <![CDATA[Test script passed ]]>
@@ -11,7 +11,7 @@
       <![CDATA[capturing screenshot]]>
     </line>
     <line>
-      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/25_05_20_02_40_27_AM.png>Screenshot</a>]]>
+      <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/25_06_20_17_15_09_PM.png>Screenshot</a>]]>
     </line>
     <line>
       <![CDATA[Test script passed ]]>
@@ -20,12 +20,12 @@
       <![CDATA[capturing screenshot]]>
     </line>
   </reporter-output>
-  <suite name="dataDrivenBasics" duration-ms="20878" started-at="2020-05-25T02:40:06 IST" finished-at="2020-05-25T02:40:27 IST">
+  <suite name="dataDrivenBasics" duration-ms="15470" started-at="2020-06-25T17:14:54 IST" finished-at="2020-06-25T17:15:09 IST">
     <groups>
     </groups>
-    <test name="Hotel" duration-ms="127" started-at="2020-05-25T02:40:06 IST" finished-at="2020-05-25T02:40:06 IST">
+    <test name="Hotel" duration-ms="271" started-at="2020-06-25T17:14:54 IST" finished-at="2020-06-25T17:14:54 IST">
       <class name="com.CN.testcases.Hotel">
-        <test-method status="SKIP" signature="hotel()[pri:0, instance:com.CN.testcases.Hotel@1151e434]" name="hotel" duration-ms="96" started-at="2020-05-25T02:40:06 IST" finished-at="2020-05-25T02:40:06 IST">
+        <test-method status="SKIP" signature="hotel()[pri:0, instance:com.CN.testcases.Hotel@54e1c68b]" name="hotel" duration-ms="58" started-at="2020-06-25T17:14:54 IST" finished-at="2020-06-25T17:14:54 IST">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skippinng the test]]>
@@ -73,9 +73,9 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
         </test-method> <!-- hotel -->
       </class> <!-- com.CN.testcases.Hotel -->
     </test> <!-- Hotel -->
-    <test name="Bus" duration-ms="2670" started-at="2020-05-25T02:40:15 IST" finished-at="2020-05-25T02:40:17 IST">
+    <test name="Bus" duration-ms="5421" started-at="2020-06-25T17:14:58 IST" finished-at="2020-06-25T17:15:03 IST">
       <class name="com.CN.testcases.Bus">
-        <test-method status="PASS" signature="bus(java.lang.String)[pri:0, instance:com.CN.testcases.Bus@130c12b7]" name="bus" duration-ms="1916" started-at="2020-05-25T02:40:15 IST" data-provider="dp" finished-at="2020-05-25T02:40:17 IST">
+        <test-method status="PASS" signature="bus(java.lang.String)[pri:0, instance:com.CN.testcases.Bus@5677323c]" name="bus" duration-ms="3479" started-at="2020-06-25T17:14:58 IST" data-provider="dp" finished-at="2020-06-25T17:15:01 IST">
           <params>
             <param index="0">
               <value>
@@ -85,7 +85,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/25_05_20_02_40_17_AM.png>Screenshot</a>]]>
+              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/25_06_20_17_15_01_PM.png>Screenshot</a>]]>
             </line>
             <line>
               <![CDATA[Test script passed ]]>
@@ -97,13 +97,13 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
         </test-method> <!-- bus -->
       </class> <!-- com.CN.testcases.Bus -->
     </test> <!-- Bus -->
-    <test name="Cab" duration-ms="3278" started-at="2020-05-25T02:40:24 IST" finished-at="2020-05-25T02:40:27 IST">
+    <test name="Cab" duration-ms="3841" started-at="2020-06-25T17:15:05 IST" finished-at="2020-06-25T17:15:09 IST">
       <class name="com.CN.testcases.Cab">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Cab@a38c7fe]" name="setup" is-config="true" duration-ms="9941" started-at="2020-05-25T02:39:56 IST" finished-at="2020-05-25T02:40:06 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.CN.testcases.Cab@791f145a]" name="setup" is-config="true" duration-ms="25000" started-at="2020-06-25T17:14:29 IST" finished-at="2020-06-25T17:14:54 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="cab(java.lang.String)[pri:0, instance:com.CN.testcases.Cab@a38c7fe]" name="cab" duration-ms="3018" started-at="2020-05-25T02:40:24 IST" data-provider="dp" finished-at="2020-05-25T02:40:27 IST">
+        <test-method status="PASS" signature="cab(java.lang.String)[pri:0, instance:com.CN.testcases.Cab@791f145a]" name="cab" duration-ms="3578" started-at="2020-06-25T17:15:05 IST" data-provider="dp" finished-at="2020-06-25T17:15:09 IST">
           <params>
             <param index="0">
               <value>
@@ -113,7 +113,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/25_05_20_02_40_27_AM.png>Screenshot</a>]]>
+              <![CDATA[<a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/25_06_20_17_15_09_PM.png>Screenshot</a>]]>
             </line>
             <line>
               <![CDATA[Test script passed ]]>
@@ -123,7 +123,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
             </line>
           </reporter-output>
         </test-method> <!-- cab -->
-        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Cab@a38c7fe]" name="tearup" is-config="true" duration-ms="96" started-at="2020-05-25T02:40:34 IST" finished-at="2020-05-25T02:40:34 IST">
+        <test-method status="PASS" signature="tearup()[pri:0, instance:com.CN.testcases.Cab@791f145a]" name="tearup" is-config="true" duration-ms="345" started-at="2020-06-25T17:15:11 IST" finished-at="2020-06-25T17:15:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearup -->

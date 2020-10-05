@@ -7,6 +7,7 @@ import java.util.Set;
 public class DuplicateCharFinder {
 	public void findIt(String str) {
 		Map<Character, Integer> baseMap = new HashMap<Character, Integer>();
+		
 
 		char[] charArray = str.toCharArray();
 		for (Character ch : charArray) {
@@ -21,7 +22,13 @@ public class DuplicateCharFinder {
 			if (baseMap.get(ch) > 1) {
 				System.out.println(ch + "  is " + baseMap.get(ch) + " times");
 			}
+			
+			
 		}
+		if (baseMap.get('i')> 1) {System.out.println("i comes "+baseMap.get('i') + " times");}
+	Set<Map.Entry<Character,Integer>> sc=	baseMap.entrySet();
+	for(Map.Entry<Character,Integer> me:sc) {
+		System.out.println("This is key "+me.getKey()+" this id value "+me.getValue());}
 	}
 
 	public static void main(String a[]) {
