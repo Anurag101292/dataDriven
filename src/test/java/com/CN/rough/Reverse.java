@@ -2,19 +2,7 @@ package com.CN.rough;
 
 public class Reverse {
 
-/**	public static StringBuilder isReverse(String str)
-	{
-		StringBuilder sb = new StringBuilder(str);
-		
-		
-		return sb.reverse();
-	}**/
-	
-	// Java program to reverse a string 
-	// preserving spaces. 
 
-		// Function to reverse the string 
-		// and preserve the space position 
 		static void reverses(String str) 
 		{ 
 
@@ -48,8 +36,25 @@ public class Reverse {
 		} 
 	
 
-		
+		public static String reverse_at_place(String str){
+      if(str == null || str.isEmpty()){ return str; }
 
+      char[] ch = str.toCharArray();
+      int i =0;
+      int j = ch.length-1;
+      while(i<j){
+        swap(ch,i,j);
+        i++;
+        j--;
+      }
+      return new String(ch);
+    }
+public static void swap(char[] str, int i, int j ){
+
+  char temp = str[i];
+  str[i]=str[j];
+  str[j]=temp;
+}
 	public static void isReverse(String str) {
 		
 		char[] ch = str.toCharArray();
@@ -63,6 +68,7 @@ public class Reverse {
 		isReverse("Anurag");
 		System.out.println();
 		reverses("internship at geeks for geeks"); 
+    System.out.println(reverse_at_place("internship at geeks for geeks"));
 
 		
 		
