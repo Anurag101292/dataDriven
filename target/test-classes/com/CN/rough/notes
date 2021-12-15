@@ -1,8 +1,0 @@
-we can skip test forcefulluy by putting 
-throw new skipExceptions("resaon");
-
-
-Webdriver manger dependency for ffirefoxdriver or chrome driver setup
-
-WebDriverManager.chromedriver().setup();
-WebDriverManager.firefoxdriver().setup();

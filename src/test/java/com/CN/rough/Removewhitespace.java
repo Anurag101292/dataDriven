@@ -11,9 +11,6 @@ public class Removewhitespace {
 	
 	public static void stringReverse(String str) 
 	{
-		
-		
-		
 		String[] arr = str.split("\\s");
 		String rev= "";
 		

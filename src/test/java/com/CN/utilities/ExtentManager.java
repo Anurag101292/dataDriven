@@ -6,7 +6,7 @@ import com.relevantcodes.extentreports.DisplayOrder;
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentManager {
-
+    //singleton pattern
 	private static ExtentReports extent;
 
 	public static ExtentReports getInstance() {

@@ -10,11 +10,33 @@
     <classes>
       <class name="com.CN.testcases.Hotel">
         <methods>
+          <include name="tearup"/>
           <include name="hotel"/>
           <include name="setup"/>
-          <include name="tearup"/>
         </methods>
       </class> <!-- com.CN.testcases.Hotel -->
     </classes>
   </test> <!-- Hotel(failed) -->
+  <test thread-count="5" verbose="0" name="Bus(failed)">
+    <classes>
+      <class name="com.CN.testcases.Bus">
+        <methods>
+          <include name="bus"/>
+          <include name="tearup"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.CN.testcases.Bus -->
+    </classes>
+  </test> <!-- Bus(failed) -->
+  <test thread-count="5" verbose="0" name="Cab(failed)">
+    <classes>
+      <class name="com.CN.testcases.Cab">
+        <methods>
+          <include name="tearup"/>
+          <include name="cab"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.CN.testcases.Cab -->
+    </classes>
+  </test> <!-- Cab(failed) -->
 </suite> <!-- Failed suite [dataDrivenBasics] -->

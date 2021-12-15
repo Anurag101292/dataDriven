@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,6 +24,7 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
@@ -49,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-dataDrivenBasics">
-                    <span>testng.xml</span>
+                    <span>C:\Users\Anurag\IdeaProjects\dataDriven\src\test\resources\runner\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,  1 skipped,  2 passed</span>
+                    <span class="method-stats">3 methods,  3 skipped,  </span>
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
@@ -102,29 +104,20 @@
                     <div class="method-list-content skipped suite-dataDrivenBasics">
                       <span>
                         <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Hotel" hash-for-method="hotel">hotel</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-dataDrivenBasics -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-dataDrivenBasics" class="hide-methods passed suite-dataDrivenBasics"> (hide)</a> <!-- hide-methods passed suite-dataDrivenBasics -->
-                      <a href="#" panel-name="suite-dataDrivenBasics" class="show-methods passed suite-dataDrivenBasics"> (show)</a> <!-- show-methods passed suite-dataDrivenBasics -->
-                    </span>
-                    <div class="method-list-content passed suite-dataDrivenBasics">
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Bus" hash-for-method="bus(Delhi)">bus(Delhi)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Cab" hash-for-method="cab(Goa)">cab(Goa)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-dataDrivenBasics -->
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-dataDrivenBasics" title="com.CN.testcases.Hotel" hash-for-method="hotel">hotel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-dataDrivenBasics -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -139,26 +132,6 @@
           <div class="suite-dataDrivenBasics-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">com.CN.testcases.Hotel</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="hotel">
-                  </a> <!-- hotel -->
-                  <span class="method-name">hotel</span>
-                  <div class="stack-trace">org.testng.SkipException: Skippinng the test
-	at com.CN.testcases.Hotel.hotel(Hotel.java:17)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-dataDrivenBasics-class-skipped -->
-          <div class="suite-dataDrivenBasics-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.CN.testcases.Bus</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -168,13 +141,38 @@
                   </a> <!-- bus(Delhi) -->
                   <span class="method-name">bus</span>
                   <span class="parameters">(Delhi)</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;DESKTOP-4IBV3FS&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
+Driver info: driver.version: ChromeDriver
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:192)
+	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:178)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:219)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:142)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.CN.Base.TestBase.setup(TestBase.java:88)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:27804/status] to be available after 20002 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:187)
+	... 32 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:155)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
+	... 33 more
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-dataDrivenBasics-class-passed -->
-          <div class="suite-dataDrivenBasics-class-passed">
+          </div> <!-- suite-dataDrivenBasics-class-skipped -->
+          <div class="suite-dataDrivenBasics-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.CN.testcases.Cab</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -184,14 +182,79 @@
                   </a> <!-- cab(Goa) -->
                   <span class="method-name">cab</span>
                   <span class="parameters">(Goa)</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;DESKTOP-4IBV3FS&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
+Driver info: driver.version: ChromeDriver
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:192)
+	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:178)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:219)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:142)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.CN.Base.TestBase.setup(TestBase.java:88)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:27804/status] to be available after 20002 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:187)
+	... 32 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:155)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
+	... 33 more
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-dataDrivenBasics-class-passed -->
+          </div> <!-- suite-dataDrivenBasics-class-skipped -->
+          <div class="suite-dataDrivenBasics-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.CN.testcases.Hotel</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="hotel">
+                  </a> <!-- hotel -->
+                  <span class="method-name">hotel</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Timed out waiting for driver server to start.
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
+System info: host: &apos;DESKTOP-4IBV3FS&apos;, ip: &apos;192.168.1.11&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_152&apos;
+Driver info: driver.version: ChromeDriver
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:192)
+	at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:178)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:79)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:219)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:142)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.CN.Base.TestBase.setup(TestBase.java:88)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://localhost:27804/status] to be available after 20002 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
+	at org.openqa.selenium.remote.service.DriverService.waitUntilAvailable(DriverService.java:187)
+	... 32 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:155)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
+	... 33 more
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-dataDrivenBasics-class-skipped -->
         </div> <!-- panel dataDrivenBasics -->
         <div panel-name="test-xml-dataDrivenBasics" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/anurag/eclipse-workspace/dataDriven/src/test/resources/runner/testng.xml</span>
+            <span class="header-content">C:\Users\Anurag\IdeaProjects\dataDriven\src\test\resources\runner\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -263,22 +326,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'cab')
-data.setCell(0, 2, 'com.CN.testcases.Cab')
-data.setCell(0, 3, 3578);
+data.setCell(0, 1, 'hotel')
+data.setCell(0, 2, 'com.CN.testcases.Hotel')
+data.setCell(0, 3, 0);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'bus')
 data.setCell(1, 2, 'com.CN.testcases.Bus')
-data.setCell(1, 3, 3479);
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'hotel')
-data.setCell(2, 2, 'com.CN.testcases.Hotel')
-data.setCell(2, 3, 58);
+data.setCell(2, 1, 'cab')
+data.setCell(2, 2, 'com.CN.testcases.Cab')
+data.setCell(2, 3, 0);
 window.suiteTableData['dataDrivenBasics']= { tableData: data, tableDiv: 'times-div-dataDrivenBasics'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-dataDrivenBasics">
               </div> <!-- times-div-dataDrivenBasics -->
             </div> <!-- times-div -->
@@ -289,22 +352,6 @@ return data;
             <span class="header-content">Reporter output for dataDrivenBasics</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">bus(Delhi)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/bus/25_06_20_17_15_01_PM.png>Screenshot</a></span>
-                <span class="reporter-method-output">Test script passed </span>
-                <span class="reporter-method-output">capturing screenshot</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">cab(Goa)</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output"><a target="_blank" href=/home/anurag/eclipse-workspace/dataDriven/screenshot/cab/25_06_20_17_15_09_PM.png>Screenshot</a></span>
-                <span class="reporter-method-output">Test script passed </span>
-                <span class="reporter-method-output">capturing screenshot</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-dataDrivenBasics" class="panel">
@@ -322,6 +369,8 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.CN.testcases.Cab</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
@@ -330,29 +379,30 @@ return data;
               <div class="chronological-class-name">com.CN.testcases.Hotel</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">hotel</span>
-                <span class="method-start">25206 ms</span>
+                <span class="method-start">21585 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.CN.testcases.Bus</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">bus(Delhi)</span>
-                <span class="method-start">29133 ms</span>
+                <span class="method-start">23857 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.CN.testcases.Cab</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">cab(Goa)</span>
-                <span class="method-start">36634 ms</span>
+                <span class="method-start">25437 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearup</span>
-                <span class="method-start">42461 ms</span>
+                <span class="method-start">27139 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

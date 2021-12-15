@@ -21,9 +21,27 @@ public class Palindrome {
 		return false;
 		
 	}
+
+	public static void isPalindromeInt(int a){
+	    int temp;
+	    int reminder;
+	    int sum=0;
+	    temp=a;
+	    while(a>0){
+	        reminder=a%10;
+	        sum=(sum*10)+reminder;
+	        a=a/10;
+        }
+	    if (temp==sum){
+	        System.out.print("is palindrome");
+        }else
+            {System.out.print("is not palindrome");
+            }
+    }
 	public static void main(String[] args) 
     { 
-        String str = "abba"; 
+        String str = "abba";
+        isPalindromeInt(4554);
   
         if (ispalindrome(str)) 
             System.out.print("Yes"); 

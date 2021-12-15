@@ -35,6 +35,6 @@ public class Primeno {
 		} 
 	} 
 		
-	// This code is contributed by Ronak Bhensdadia 
+
 
 

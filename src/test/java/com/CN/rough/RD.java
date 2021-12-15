@@ -1,5 +1,8 @@
 package com.CN.rough;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class RD {
 
 	public static void removedupli(int arr[]) {
@@ -23,10 +26,25 @@ public class RD {
 		}
 		
 	}
-	
+
+	public static void removeduplicates(int[] arr){
+		LinkedHashSet<Integer> ar = new LinkedHashSet<Integer>();
+		for(int a:arr){
+			ar.add(a);
+		}
+		Iterator<Integer> i =ar.iterator();
+		while(i.hasNext()){
+
+			System.out.print(i.next()+ " ");
+		}
+	}
+	public static void rDupli(int[] arr){
+		Arrays.stream(arr).boxed().collect(Collectors.toSet()).forEach(s -> System.out.print(s+" "));
+	}
 	public static void main(String[] args) {
 		int[] arr= {1,1,2,3,3,4,5};
-		
+		removeduplicates(arr);
+		rDupli(arr);
 		removedupli(arr);
 	}
 }

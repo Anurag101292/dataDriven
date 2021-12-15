@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +18,7 @@ public class Brokenlinks {
 	{
 		int respCode = 200;
 		HttpURLConnection huc = null;
-		System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "/src/test/resources/executables/chromedriver");
+		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get(URI);
 		List<WebElement> links = driver.findElements(By.tagName("a"));

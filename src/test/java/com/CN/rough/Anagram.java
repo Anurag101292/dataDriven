@@ -32,3 +32,8 @@ public class Anagram {
 		Anagram.checkAnagram("Anurag", "Gar  una");
 	}
 }
+
+
+
+
+
