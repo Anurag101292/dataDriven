@@ -49,11 +49,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
             WebElement webElement = driver.findElement(By.id("browseFile"));
             //click  Browse button
             webElement.sendKeys(Keys.ENTER);
-
             //Create object of Robot class
             Robot robot = new Robot();
-            //Code to Enter D1.txt
-            //Press Shift key
+            //Code to Enter D1.txt//Press Shift key
             robot.keyPress(KeyEvent.VK_SHIFT);
             //Press d , it gets typed as upper case D as Shift key is pressed
             robot.keyPress(KeyEvent.VK_D);

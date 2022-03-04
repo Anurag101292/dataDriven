@@ -1,0 +1,12 @@
+ Property	                 yield()	          join()	                  sleep()
+Purpose	             If a thread wants    If a thread wants to wait          If a thread does not want ,
+                 to pass its execution    until completing of some other      to perform any operation for
+                 to give chance to        thread then we should go for join   a particular amount of time
+                 remaining threads of the                                     then it goes for sleep()
+                 same priority then
+                 we should go for yield()
+Is it overloaded?	         NO     	          YES	                   YES
+Is it final?	             NO	                  YES                      NO
+Is it throws?	             NO     	          YES 	                   YES
+Is it native?	             YES	              NO	                  sleep(long ms)->native & sleep (long ms, int ns)-> non native
+Is it static?	             YES	              NO	                   YES

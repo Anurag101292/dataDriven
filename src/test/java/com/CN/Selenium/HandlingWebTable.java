@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.util.List;
 
 public class HandlingWebTable {
-    
+
     @Test
     public void getNoRowsandColumns() throws ParseException {
         String max;

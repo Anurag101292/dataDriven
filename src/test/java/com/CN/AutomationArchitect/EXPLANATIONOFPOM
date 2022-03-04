@@ -1,0 +1,133 @@
+In the current framework we are using POM model approach
+for the unit testing framewoktool we are using TESTNG
+
+We have separate test page with their webelements and function in Page
+
+1.like add to cart
+2.searchpage
+3.login test
+4.navigation test
+
+We have repository to store Configuration files in resources
+1.  for reporting purposes we are using allure reporting , Extent report
+2.  config.properties for staging testing and Uat
+3.  for test data we have testdata.json
+request_details_in_reports=yes
+#Override_ExtentReports --> yes or no
+#If no -> Report name will be like - Windows_10_Tue_Oct_05_02_30_46_IST_2021_AutomationReport.html
+#If yes -> Report name will be AutomationReport.html
+override_reports=yes
+#send_email_to_users --> yes or no
+#If yes -> then, provide your mail credentials -> src/main/java -> package org.selenium.java_Mail_API.EmailConfig;
+#This Email will be sent using Java mail API
+send_email_to_users=no
+#PassedStepsScreenshot --> yes or no
+passed_steps_screenshot=yes
+#FailedStepsScreenshot --> yes or no
+failed_steps_screenshot=yes
+#SkippedStepsScreenshot --> yes or no
+skipped_steps_screenshot=yes
+#retry failed test cases -> yes or no
+#It will try for 1 time if any Test case gets failed
+retry_failed_tests=yes
+
+We have configLoader class to manage config files to load data from config ,, we are trying to change or you can say to replace with owner dependencies
+
+
+In main package we have seperate utils for generic functions which are commonly used in tests
+
+1,,,,,seperate utility for browserinfo
+public static String getBrowserInfo() {
+		Capabilities cap = ((RemoteWebDriver) DriverManager.getDriver()).getCapabilities();
+		return cap.getBrowserName().toUpperCase();
+
+2....Email Utils we are using dependency for sending mail javax.mail
+3.... Faker Utils to get random data    JAVA FAKER library
+4.... we have Jacksonutils to deserialise Json
+      public static <T> T deSerializationJSON(String fileName, Class<T> T) throws IOException {
+      		/* myBillingAddress.json --> has to be present under src/test/resources */
+      		InputStream is = JacksonUtils.class.getClassLoader().getResourceAsStream(fileName);
+      		ObjectMapper objectMapper = new ObjectMapper();
+      		return objectMapper.readValue(is, T);}
+5....We Have Screenshotutils
+     public static String getBase64Image() {
+     		return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
+     	}
+6. We have customize function to validate the response
+7. we have ziputils to create zip of all the reports and send this zip to mail
+8. We have reports using Extent Report
+     	ExtentManager.getExtentTest().fail(
+     					MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+     			ExtentManager.getExtentTest().fail(message);
+
+                ExtentReport
+     			ExtentTest----->ExtentSparkReporter
+
+9. We have driver manager factory which works on factory design pattern where
+   we can create the object of any browser instance you just need to call the functions
+        public static DriverManager_OC getManager(DriverType driverType) {
+		switch (driverType) {
+		case CHROME : {return new DriverManagerChrome();}
+		case FIREFOX : {return new DriverManagerFirefox();}
+10. WaitStrategy  factory
+    public static WebElement performExplicitWait(WaitStrategy waitStrategy, By by) {
+    WebElement element = null;
+    if (waitStrategy == WaitStrategy.CLICKABLE) {
+     element = new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getExplicitWait())
+    	.until(ExpectedConditions.elementToBeClickable(by));}
+    else if (waitStrategy == WaitStrategy.PRESENCE) {
+   	 element = new WebDriverWait(DriverManager.getDriver(), FrameworkConstants.getExplicitWait())
+    	.until(ExpectedConditions.presenceOfElementLocated(by));}
+11. Exceptions package
+BrowserInvocationFailedException public BrowserInvocationFailedException(String message, Throwable cause) {
+                                       		super(message, cause);}
+FrameworkException public FrameworkException(String message, Throwable cause) {super(message, cause);
+InvalidPathForExcelException public InvalidPathForExcelException(String message, Throwable cause) {
+                             		super(message, cause);}
+InvalidPathForFilesException
+InvalidPathForJSONFileException
+InvalidPathForPropertyFileException
+JSONFileUsageException
+PropertyFileUsageException
+
+12. Driver manager works on factory design pattern
+13. dataProvider jacksondataprovider   JACKSONUTILS.Desrialise json
+14. FrameWork Comstant
+
+
+
+15
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite" parallel="tests" thread-count="12" data-provider-thread-count="2">
+    <listeners>
+        <listener class-name="org.selenium.listeners.AnnotationTransformer"></listener>
+        <listener class-name="org.selenium.listeners.ListenerClass"></listener>
+        <listener class-name="org.selenium.listeners.MethodInterceptor"></listener>
+    </listeners>
+    <test thread-count="2" name="Regression Tests execution over Chrome Browser" parallel="methods">
+        <parameter name="browser" value="CHROME"></parameter>
+        <packages>
+            <package name="org.selenium.tests"></package>
+        </packages>
+    </test>
+    <test thread-count="2" name="Regression Tests execution over Firefox Browser" parallel="methods">
+        <parameter name="browser" value="FIREFOX"></parameter>
+        <packages>
+            <package name="org.selenium.tests"></package>
+        </packages>
+    </test>
+    <test thread-count="2" name="Regression Tests execution over Edge Browser" parallel="methods">
+        <parameter name="browser" value="EDGE"></parameter>
+        <packages>
+            <package name="org.selenium.tests"></package>
+        </packages>
+    </test>
+    <test thread-count="2" name="Regression Tests execution over Opera Browser" parallel="methods">
+        <parameter name="browser" value="OPERA"></parameter>
+        <packages>
+            <package name="org.selenium.tests"></package>
+        </packages>
+    </test>
+</suite> <!-- Suite -->

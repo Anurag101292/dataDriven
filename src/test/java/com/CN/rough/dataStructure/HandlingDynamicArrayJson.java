@@ -1,6 +1,5 @@
 package com.CN.rough.dataStructure;
 
-
 import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;

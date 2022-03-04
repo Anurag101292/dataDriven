@@ -26,7 +26,7 @@ public class Primeno {
 		// Driver Program 
 		public static void main(String[] args) 
 		{ 
-			if(isPrime(19)) 
+			if(isPrime(4))
 			System.out.println(" true") ; 
 			
 			else

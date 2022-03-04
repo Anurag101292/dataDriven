@@ -1,6 +1,7 @@
 package com.CN.rough;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,7 +18,23 @@ public class Countcharacter {
 				hm.put(c1[i],hm.get(c1[i])+1);
 			}
 		}
+
+		Set<Map.Entry<Character,Integer>> s= hm.entrySet();
+		Iterator<Map.Entry<Character, Integer>> il =s.iterator();
+
 		Set<Character> keydata=hm.keySet();
+
+	Map.Entry<Character,Integer> ci = (Map.Entry<Character, Integer>) hm.entrySet();
+
+
+
+		Iterator<Character> i=keydata.iterator();
+		while(i.hasNext()){
+			Character l = (Character)i.next();
+
+		}
+	     hm.keySet().forEach(a->System.out.println(a));
+
 		for(Character a:keydata){
 			System.out.println(a +" Comes "+ hm.get(a)+" times ");
 		}

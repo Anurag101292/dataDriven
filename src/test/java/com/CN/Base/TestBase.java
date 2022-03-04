@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +13,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import com.CN.listeners.CustomListeners;
 import com.CN.utilities.ExcelReader;
-import com.CN.utilities.ExtentManager;
-import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import org.apache.log4j.Logger;
@@ -32,10 +29,10 @@ public class TestBase {
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExcelReader excelreader = new ExcelReader(
 			System.getProperty("user.dir") + "/src/test/resources/excel/TestData.xlsx");
-	public ExtentReports rep = ExtentManager.getInstance();
+	//public ExtentReports rep = ExtentManager.getInstance();
 	public static ExtentTest test;
 	public static EventFiringWebDriver e_driver;
-	public static CustomListeners eventListener;
+	//public static CustomListeners eventListener;
 	public static String locatorvalue = "";
 
 	@BeforeSuite
@@ -96,8 +93,8 @@ public class TestBase {
 
 			}
 			e_driver = new EventFiringWebDriver(driver);
-			eventListener = new CustomListeners();
-			e_driver.register(eventListener);
+		//	eventListener = new CustomListeners();
+		//	e_driver.register(eventListener);
 			driver = e_driver;
 			driver.get(config.getProperty("URL"));
 			log.debug("Navigated to ==>" + config.getProperty("URL"));

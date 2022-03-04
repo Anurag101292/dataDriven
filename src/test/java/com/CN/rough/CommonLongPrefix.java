@@ -5,7 +5,7 @@ public class CommonLongPrefix {
 	
 	public static String isprefix(String[] str) 
 	{
-		String prefix  =str[0];
+		String prefix =str[0];
 	
 		
 		for(int i=1;i<str.length;i++) 
@@ -32,9 +32,6 @@ public class CommonLongPrefix {
 			}
 		}
 		return prefi;
-		
-		
-		
 	}
 	public static void main(String[] args) {
 		String[] str = {"Anurag","Anuj","Anuradha","Anupama"};

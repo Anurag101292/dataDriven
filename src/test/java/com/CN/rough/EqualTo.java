@@ -16,4 +16,8 @@ public class EqualTo{
 		System.out.println(a1.equals(a3));
 	}
 
+	public void run(){
+		System.out.println("Anurag");
+	}
+
 }

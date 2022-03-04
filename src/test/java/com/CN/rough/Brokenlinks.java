@@ -39,7 +39,7 @@ public class Brokenlinks {
 
 			}
 			try {
-				huc = (HttpURLConnection) (new URL(uri).openConnection());
+				huc = (HttpURLConnection)(new URL(uri).openConnection());
 
 				huc.setRequestMethod("HEAD");
 
