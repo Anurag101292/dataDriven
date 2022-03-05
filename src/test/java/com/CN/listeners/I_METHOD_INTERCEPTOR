@@ -1,0 +1,78 @@
+IInvokedMethodListener: This listener gets invoked before and after a method in TestNG. These methods constitute both test and other configuration methods. These listeners are useful for setting up configuration or other cleanup activities. It contains two methods:
+beforeInvocation(): this method gets invoked before every method
+afterInvocation(): this method gets invoked after every method
+Let’s look at an example. The TestNG class contains different configuration methods. The other class implements the InvokedMethodInterceptor which implements the beforeInvocation and afterInvocation methods. These defined methods execute before and after every config method of the TestNG class.
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class IInvokedMethodListenerWithExample {
+
+@BeforeSuite
+public void method1() {
+System.out.println("before suite");
+}
+
+@BeforeMethod
+public void method2() {
+System.out.println("before method");
+}
+
+@Test
+public void method3() {
+System.out.println("test method 1 ");
+}
+
+@Test
+public void method4() {
+System.out.println("test method 2 ");
+}
+
+@AfterMethod
+public void method5() {
+System.out.println("after method");
+}
+
+@AfterSuite
+public void afterSuite() {
+System.out.println("after suite");
+}
+}
+The class implementing the InvokedMethodListener interface:
+
+import org.testng.IInvokedMethod;
+import org.testng.IInvokedMethodListener;
+import org.testng.ITestResult;
+public class MyListener implements IInvokedMethodListener {
+
+@Override
+public void afterInvocation(IInvokedMethod method, ITestResult result) {
+System.out.println("This method is invoked after every config method - " + method.getTestMethod().getMethodName());
+
+}
+
+@Override
+public void beforeInvocation(IInvokedMethod method, ITestResult result) {
+System.out.println("This method is invoked before every config method - " + method.getTestMethod().getMethodName());
+
+}
+
+}
+TestNG.xml file:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parent_Suite">
+<listeners>
+<listener class-name="MyListener"/>
+</listeners>
+<test name="ItestReporter">
+<classes>
+<class name="IInvokedMethodListenerWithExample" />
+</classes>
+</test>
+</suite>
+<!-- Suite -->

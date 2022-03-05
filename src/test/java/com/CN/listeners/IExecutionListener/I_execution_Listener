@@ -1,0 +1,8 @@
+This listener interface have 2 methods to override
+
+IExecutionListener: As the name suggests, it monitors the beginning and end of TestNG execution.
+This listener is mostly used to start/stop the server while starting or ending code execution.
+It may also be used to inform respective stakeholders via email that execution shall start or when it ends.
+ It has two methods:
+onExecutionStart() – invoked before TestNG starts executing the suites
+onExecutionFinish() – invoked after all TestNG suites have finished execution

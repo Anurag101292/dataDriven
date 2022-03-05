@@ -5,104 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aventstack_extentreports_5_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava3_rxjava_3_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AdapterDesignPattern/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AdapterDesignPattern/Pen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AdapterDesignPattern/PenAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AdapterDesignPattern/PilotPen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AdapterDesignPattern/School.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/Builderdesignpattern/Homepage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/Builderdesignpattern/Loginpage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/Builderdesignpattern/Reunnertest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/DIFFERENTMethod/Print.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Thirdrule/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Thirdrule/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Thirdrule/C.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Thirdrule/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/Mainrunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/MyRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/MyThread1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/ThreadDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/ThreadDemo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/yieldjoinsleep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/HamcrestAssure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/HandlingHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/LoggingRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/OAuth2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/PerfectGetRestFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/PerfectPostRestFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/PerfectPutRestFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Route.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/RstApiTknTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssured/Methods in RstAsrd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/AnnotationTransformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IAnnotationTransWithExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/testng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/FndDupArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lambdaexpres/Lexpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lambdaexpres/SortList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/Anurag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/ChkcrculrLst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/RevaffectingSPLchar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MyHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MyLinkedlist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RemoveVowel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentReport/ETReportTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataDriven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataDriven.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_4_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/IExecutionListenerWithExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/I_execution_Listener" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/MyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/IHookableListenerWithExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/I_Hookable" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/MyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_METHOD_INTERCEPTOR" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_REPORTER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_TEST_LISTENER" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Base/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssured/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssured/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/RobotKeywordDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/RobotKeywordDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/listeners/CustomListeners.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Brokenlinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Brokenlinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/CommonLongPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/CommonLongPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/LinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Primeno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Primeno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/AnagramOnlogn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/BIGONOTATION" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/HandlingDynamicArrayJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/HandlingDynamicArrayJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/Swap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/dataStructure/Swap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/jsontojava.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/properties/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/properties/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/failed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/AnagramOnlogn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Swap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Base/TestBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/Base/TestBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssured/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssured/TestClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/HandlingWebTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/RobotKeywordDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/RobotKeywordDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/CustomListeners.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/CommonLongPrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/CommonLongPrefix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/LinkedList$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/LinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/AnnotationTransformer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/AnnotationTransformer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Primeno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Primeno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/dataStructure/HandlingDynamicArrayJson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/dataStructure/HandlingDynamicArrayJson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExtentManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTOOBJECTOBJECTTOPOJO/jsontojava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,23 +69,12 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IHookable" />
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\utilities\PropertyrelatedFramework" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod">
-    <configuration name="FndDupArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.FndDupArray" />
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.rough.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml">
     <configuration default="true" type="JarApplication">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_152\jre" />
@@ -195,6 +103,16 @@
         </option>
       </MavenSettings>
       <method v="2" />
+    </configuration>
+    <configuration name="C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="dataDriven" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="dataDriven" />
@@ -260,19 +178,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FndDupArray" />
       <item itemvalue="TestNG.IAnnotationTransWithExample" />
       <item itemvalue="TestNG.IAnnotationTransWithExample.changeCounter" />
       <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
       <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
+      <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
         <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
         <item itemvalue="TestNG.IAnnotationTransWithExample" />
         <item itemvalue="TestNG.IAnnotationTransWithExample.changeCounter" />
-        <item itemvalue="Application.FndDupArray" />
       </list>
     </recent_temporary>
   </component>

@@ -1,0 +1,96 @@
+IReporter: This listener helps to generate custom reports in TestNG, based on desired conditions. It contains a method called generateReport() which is invoked when all suites of TestNG are executed. The method uses three arguments:
+xmlSuite: It contains a list of suites for execution in the xml file
+suites: It contains all information about test execution and suites like class name, package name, method name and test execution results
+outputDirectory: It contains the path where the report shall be saved.
+Let’s look at an example of how to customize reports through IReporter listeners. In this example, through the IReporter listener, the code shall run only methods belonging to a particular group. In this class, the group has been defined as ‘Sanity’, which shall be executed. The methods which are not part of the group shall not be executed. In the other class that implements IReporter, the generateReport() method has been used to customize the results accordingly. The customized results shall be visible in console with a corresponding report generated under the suite folder name specified in the testNG.xml file
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class IReporterWithExample {
+
+@Test(groups="smoke")
+public void testcase1() {
+System.out.println("This test case will pass");
+}
+
+@Test(groups="smoke")
+public void testcase2() {
+System.out.println("This test case will fail");
+Assert.assertTrue(false);
+}
+
+@Test
+public void testcase3() {
+System.out.println("this tet case does not belong to the group smoke");
+}
+
+}
+The class implementing the IReporter listener interface:
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import org.testng.IReporter;
+import org.testng.IResultMap;
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
+import org.testng.xml.XmlSuite;
+
+public class MyListener implements IReporter {
+
+@Override
+public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+// TODO Auto-generated method stub
+ISuite suite = suites.get(0);
+Map<String, Collection<ITestNGMethod>> methodsByGroup = suite.getMethodsByGroups();
+Map<String, ISuiteResult> tests = suite.getResults();
+for (String key : tests.keySet()) {
+System.out.println("Key: " + key + ", Value: " + tests.get(key));
+}
+Collection<ISuiteResult> suiteResults = tests.values();
+ISuiteResult suiteResult = suiteResults.iterator().next();
+ITestContext testContext = suiteResult.getTestContext();
+Collection<ITestNGMethod> perfMethods = methodsByGroup.get("smoke");
+IResultMap failedTests = testContext.getFailedTests();
+for (ITestNGMethod perfMethod : perfMethods) {
+Set<ITestResult> testResultSet = failedTests.getResults(perfMethod);
+for (ITestResult testResult : testResultSet) {
+System.out.println("Test " + testResult.getName() + " failed, error " + testResult.getThrowable());
+}
+}
+IResultMap passedTests = testContext.getPassedTests();
+for (ITestNGMethod perfMethod : perfMethods) {
+Set<ITestResult> testResultSet = passedTests.getResults(perfMethod);
+for (ITestResult testResult : testResultSet) {
+System.out.println("Test " + testResult.getName() + " passed, time took " +
+(testResult.getEndMillis() - testResult.getStartMillis()));
+}
+}
+
+}
+
+}
+Below is the tesNG.xml for the classes to be run:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Report_Suite">
+<listeners>
+<listener class-name="MyListener"/>
+</listeners>
+<test name="ItestReporter">
+<classes>
+<class name="IReporterWithExample" />
+</classes>
+</test>
+</suite>
+<!-- Suite -->
+Console Output:
+

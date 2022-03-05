@@ -2,12 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <listener class-name="com.CN.listeners.AnnotationTransformer"/>
+        <listener class-name="com.CN.listeners.IHookable.MyListener"/>
     </listeners>
     <test verbose="2" preserve-order="true"
           name="C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IAnnotationTransWithExample.java">
-        <classes><class name="com.CN.listeners.IAnnotationTransWithExample">
-            <methods><include name="changeInvocationCountOfMethod"/></methods>
+        <classes><class name="com.CN.listeners.IHookable.IHookableListenerWithExample">
+            <methods><include name="t"/></methods>
         </class></classes>
     </test>
 </suite>

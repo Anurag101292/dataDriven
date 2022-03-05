@@ -1,0 +1,9 @@
+IHookable: If a class implements this interface,
+ its run method will be invoked instead of each test method.
+  Using the callback method of the IHookCallBack parameter,
+   the invocation of the test method can be performed.
+   It has a single method name run, which accepts two parameters.
+   run(IHookCallBack callBack, ITestResult testResult)Now let’s look into its real-time example.
+    In this example, based on a certain parameter value,
+     the test shall be skipped using the IHookable listener interface.
+ These values will be provided by a data provider in a separate TestNG class.
