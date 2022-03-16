@@ -1,0 +1,25 @@
+
+FOLLOWING_SIBLING
+//div[@class='canvas- graph']//a[@href='/accounting.html'][i[@class='icon-usd']]/following-sibling::h4"
+ANCESTOR SIBLING
+//div[.//a[text()='SELENIUM']]/ancestor::div[@class='rt-grid-2 rt-omega']/following-sibling::div
+FOLLOWING
+Xpath=//*[@type='text']//following::input
+PRECEDING
+Preceding: This function will return the preceding element of the particular element.
+Xpath= //*[@type='submit']//preceding::input
+
+EXPLICIT WAIT
+WebDriverWait wait=new WebDriverWait(driver, 20);
+The following are the Expected Conditions that can be used in Selenium Explicit Wait
+alertIsPresent() elementSelectionStateToBe() elementToBeClickable() elementToBeSelected()
+frameToBeAvaliableAndSwitchToIt() invisibilityOfTheElementLocated() invisibilityOfElementWithText()
+presenceOfAllElementsLocatedBy() presenceOfElementLocated() textToBePresentInElement()
+textToBePresentInElementLocated() textToBePresentInElementValue()
+titleIs() titleContains() visibilityOf() visibilityOfAllElements() visibilityOfAllElementsLocatedBy() visibilityOfElementLocated()
+
+FLUENT WAIT
+Wait wait = new FluentWait(WebDriver reference)
+.withTimeout(Duration.ofSeconds(SECONDS))
+.pollingEvery(Duration.ofSeconds(SECONDS))
+.ignoring(Exception.class);

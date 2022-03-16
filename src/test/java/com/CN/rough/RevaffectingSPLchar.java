@@ -1,4 +1,4 @@
-package com.CN.rough.Lnklst;
+package com.CN.rough;
 
 public class RevaffectingSPLchar {
 

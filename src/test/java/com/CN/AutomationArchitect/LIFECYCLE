@@ -1,0 +1,21 @@
+1. so first check the release version of particular application that from which release
+      this issue occurs
+2. to check all the related application by log application either splunk or dynatrace and create an
+      action item for RCA  in jira and check whether
+    we have alerts for that particular issue.
+3. Now to check that it is network or environment  related issue or application related issue
+4. so if application related issue then try to reproduce this in lower environments
+5. so after reproducing the bugs  we have to check that how this goes into upper environment ,
+   so check the test coverage on unit level or functional level or system level
+WHY SHOULD WE HIRE YOU ???
+I am 3 in 1 pck together with the testing I also work as a moderator in my team ,
+     I have contributed in devops related task, from the development point of view I have completed
+     the Project from development end where we dont need manual intervention to check post deployment
+      activities
+
+      Thumbrule to design Automation Framework
+      "NEVER HARD CODE
+      KEEP THE RIGHT THINGS IN RIGHT PLACE
+      FOLLOW THE REUSE CULTURE
+      MAKE THE FRAMEWORK EASY FOR MANUAL TESTERS OR OTHERS TO CONTRIBUTE
+      MAKE THE FRAMEWORK ROBUST"

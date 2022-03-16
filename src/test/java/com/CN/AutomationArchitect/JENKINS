@@ -1,0 +1,313 @@
+JENKINS
+22. How is continuous integration achieved using Jenkins?
+Continuous integration is a process where a developer’s code changes are constantly integrated into the main
+ code and the same will be tested automatically and the results of the tests will decide whether the change
+ is ready for deployment. In this process -
+
+Developer Makes a change - commit/pull_request - in feature/dev branch
+Source Control Management system generates appropriate events
+SCM Specific Jenkins Plugins like Git/SVN will detect those events from the configured repositories
+and these events will be used to Trigger - build/dependent/test - jobs on Jenkins
+After the Test/Dependent jobs are completed, the change/patch will be labeled according to the status of
+ the test job
+Based on the Status (i.e. readiness of a change to be merged with the main branch), the Continuous Delivery or
+Continuous Deployment strategy/tool will take it forward
+
+What is Jenkins?
+Jenkins is a self-contained, open-source automation server that can be used to automate all sorts of tasks
+ related to building, testing, and delivering or deploying software.
+ Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with
+ a Java Runtime Environment (JRE) installed.
+
+ 2. Tell me something about Continuous Integration, Continuous Delivery, and Continuous Deployment?
+ Continuous Integration: A software development process where the changes made to software are integrated
+ into the main code as and when a patch is ready so that the software will be always ready to be -
+ built, tested, deployed, monitored - continuously.
+
+ Continuous Delivery: This is a Software Development Process where the continuously integrated (CI)
+ changes will be tested & deployed continuously into a specific environment, generally through a manual
+ release process, after all the quality checks are successful
+
+ Continuous Deployment: A Software Development practice where the continuously integrated (CI) changes
+ are deployed automatically into the target environment after all the quality checks are successful
+
+3. What are the common use cases Jenkins is used for?
+Jenkins being open-source automation can be used for any kind of software-based automation.
+Some of the common use-cases include but not limited to -
+Software build jobs
+Sanity/Smoke/CI/Regression test jobs
+Web/Data Scraping related jobs
+Code coverage measurement jobs
+General-purpose automation
+Reverse Engineering jobs
+Key Decoding jobs & many other jobs where software automation will be applicable.
+
+5. What is a Jenkins job?
+A Job/Project is the fundamental unit of a logical work (like a software build,
+ an automation task, test execution, etc) using the Jenkins automation server and other required plugins,
+ configurations & infrastructures.
+
+Jobs can be of different types like - a freestyle project, a multi-configuration project,
+ a pipeline project, a multi-branch project, etc.
+
+6.Create your own jenkins pipeleine
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            }
+        }
+        stage('Test') {
+            steps {
+                 sh 'make check || true'
+                              junit '**/target/*.xml'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                         when {
+                           expression {
+                             currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                           }
+                         }
+                         steps {
+                             sh 'make publish'
+                         }
+
+            }
+        }
+    }
+}
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            }
+        }
+    }
+}
+
+
+    stages {
+        stage('Test') {
+            steps {
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                sh 'make check || true'
+                junit '**/target/*.xml'
+            }
+        }
+    }
+}
+
+
+7. What are the types of Jenkins pipelines?
+Jenkins Pipelines can be either - a Declarative pipeline or a Scripted Pipeline.
+ Declarative pipeline makes use of numerous, generic, predefined build steps/stages (i.e. code snippets)
+ to build our job according to our build/automation needs whereas, with Scripted pipelines,
+ the steps/stages can be custom-defined & used using a groovy syntax
+which provides better control & fine-tuned execution levels.
+
+9. How do you store credentials in Jenkins securely?
+Credentials can be stored securely in Jenkins using the Credentials plugin, which stores different types of credentials like - Username with a password, SSH username with the private key, AWS Credentials, Jenkins Build Token, Secret File/Text, X509 & other certificates, Vault related credentials securely with proper encryption & decryption as and when required.
+
+10. How can we stop a scheduled job from being executed temporarily?
+Intermediate Questions
+11. What are the ways to trigger a Jenkins Job/Pipeline?
+There are many ways we can trigger a job in Jenkins. Some of the common ways are as below -
+
+Trigger an API (POST) request to the target job URL with the required data.
+Trigger it manually from the Jenkins web application.
+Trigger it using Jenkins CLI from the master/slave nodes.
+Time-based Scheduled Triggers like a cron job.
+Event-based Triggers like SCM Actions (Git Commit, Pull Requests), WebHooks, etc.
+Upstream/Downstream triggers by other Jenkins jobs.
+12. What is Jenkins Build Cause?
+Build Cause is a text attribute that represents what made a job's build to be triggered, say it could be a Jenkins User (from UI), Timer for Scheduled jobs, Upstream jobs for a job which was triggered by upstream job, etc. This is mainly used to identify the nature of the builds - be it nightly, manual, automated, etc.
+
+13. How Jenkins knows when to execute a Scheduled job/pipeline and how it is triggered?
+Jenkins master will have the cron entries set up for the jobs as per the scheduled Job's configurations. As and when the time for a particular job comes, it commands agents (based on the configuration of the job) to execute the job with required configurations.
+
+14. What are the credential types supported by Jenkins?
+In Jenkins, credentials are a set of information used for authentication with internal/external services to accomplish an action. Jenkins credentials are provisioned & managed by a built-in plugin called - Credentials Binding - plugin. Jenkins can handle different credentials as follows -
+
+Secret text - A token such as an API token, JSON token, etc.
+Username and password - Basic Authentication can be stored as a credential as well.
+Secret file - A secret file used to authenticate some secure data services & security handshakes.
+SSH Username with a private key - An SSH public/private key pair for Machine to Machine authentication.
+Certificate - a PKCS#12 certificate file and an optional password.
+Docker Host Certificate Authentication credentials.
+Jenkins is a open source automation server which is used to automate continuous
+integration and continuous automation.
+
+Req::if working on windows Oracle virtual manager
+                                             Centos
+
+Step 1.Create a VIRTUAL Machine in oracle virtual manager
+
+Step 2 download docker on linux machine
+Step 3 pull the jenkins image from docker hub
+Step 4 create docker-compose.yml in jenkins this file shows which service we start to work
+         Step a. First we define version
+                                      Let’s take version:3
+         Step b. Second we define service
+      services:
+        jenkins:
+        container_name: jenkins                     (container name
+        Image: jenkins/jenkins                               (image name)
+        ports:”8080:8080”     [first 8080 ports shows which port we are exposing:the second port shows on which port we map the port on docker
+        volumes:”$pwd/jenkins_home:var/jenkins_home     [we create a volume because all the work which we are working on container if we close all data get deleted , so to store that data we create volumes and after giving the path we need to map it with docker container path
+        networks:net  here we share network as net and below i create network on service level.
+      networks:
+            -net
+
+Step 5  provide the permission to jenkins_home , so that they can save data properly.
+                  sudo chown 1000:1000 jenkins_home R
+Step 6  now start the docker server docker-compose up -d   will start the service by reading docker-compose.yml file
+
+user/jenkins_data/docker-compose.yml
+user/jenkins_data/jenkins-home
+Step 7 docker compose stop to stop service
+Step 8 docker compose down to down the service and delete all the service related data from jenkins.
+
+       START JENKINS FIRST SERVICE
+To copy any data from outside to docker service
+docker cp script.sh jenkins:/tmp/script.sh
+
+We can parameterize dynamically script.sh
+You can parameterize the value with choice parameter also
+In choice parameter we can provide choices to jenkins for single parameter
+Suppose we are sending First name and Last name . so if we share last parameter as choice  we can gave multiple choice in lastname
+
+So Here we talk about within container but what about if we have to connect with any other server
+So for that we have create new folder where we have to script to order the docker to connect via a ssh
+Here I create a docker file name DOCKERFILE
+
+FROM  centos
+
+RUN yum -y install openssh-server
+RUN useradd remote_user && \
+        echo “1234”  | passwd remote_user –stdin
+        mkdir /home/remote_user/,ssh
+chmod 700 /home/remote_user/.ssh
+
+To get the logs of particular service in docker
+  docker log -f <container name >
+
+Jenkins file to run docker container
+
+version: 3
+    services:
+         jenkins:
+           container_namel Jenkins
+           image: jenkins/jenkins
+          ports: -78080:8888
+          volumes;
+               -"$PWD/jenkins_home: /var/jenkins_home"
+         networks:
+-net
+    remote host:
+   container_name: remote_host
+   image: remote host
+build:
+              context: (context file is a command which we need to run which is under your app
+
+Networks:
+      -net
+version: 3.6"
+   git:
+   image: 'gitlab/gitlab-ee:latest
+   restart: always
+   hostname: 'gitlab.example.com"
+environment:
+     GITLAB OMNIBUS CONFIG:
+           external_url https://gitlab.example.com'
+          # Add any other gitlab.rb configuration here, each on its own line
+ports:
+  -80:80
+  -443:443"
+  -22:22
+volumes:
+    -SGITLAB_HOME/config: /etc/gitlab SGITLAB_HOME/logs:/var/log/gitlab
+    -$GITLAB_HOME/data:/var/opt/gitlab
+     shm_size: 256m
+networks:net:
+
+JENKINS USING MAVEN CLONE-BUILDTEST DEPLOY in loCAL (Making jar)
+
+1...build trigger to push and deploy in jenkins.
+
+Step 1-goto manage jenkins-->manage plugins-->maven integration in plugin manager STEP 2----Install git plugins
+
+how to clone a repository from github using jenkins????
+
+1. Enter github repository which you want to clone
+2. Share the credentials
+3. Share the branch which you want to pull
+4. so this data get clone in a workspace by default /var/jenkins/workspace/maven-job
+Now we need to build the clone project Got to global tool configuration
+-->Go to Maven
+---> Give the name
+> Add the version which I want,... Save Now goto project configuration
+--> Go to build section
+  —--> Invoke top level Maven targets
+
+—--->Give the maven version which we set in global configuration
+GOALS (dont use in because u are in maven env) --Dskiplests clean package
+to test your build project
+
+       Invoke top level saves targets Select the maven version GOALS-test
+      Deploy jar in local
+       you can write in exceute shell command after deploying you will get jar in target
+    in shell write
+java -jar and the path where jar added:
+Display test in graphs you will get the test result in
+var/Jenkins_home/workspace/naven job/target/surefire-reports
+in post build action set the path of an
+Archive the last sucessful artifact
+
+in postbuildaction
+
+Archive the targets
+Set the generic path target/ jar
+to run docker and user can acess docker
+
+ docker execute-ti Jenkins bash
+
+
+Set the generic path
+target/*. jar
+
+To run docker and user car acess docker
+docker execute -ti jenkins bash
+
+select archive artifacts only if build is successful
+
+goto source code masagement (SCH)
+
+select git or subversion to clone github repository.
+
+To create the hook that on every push build start first create crumb
+if[$branch master"), then
+crumb=$(curl-u Spekins:1234” -s http://jenkins:8080/crumbissuer/api/anixpath-concat(//crumbrequestField,"
+
+curl unkina:2234"-"Scrums x POST http://jenkins: 0/job/mave-job/build/delay-sec
+
+if[$? -eq 0); then
+echo ******OK
+
+to change the owner of file and group
+chown git: git <file name> - R [Rmeans recursively]
+
+
+
+DSL Is a domain specific language.
+

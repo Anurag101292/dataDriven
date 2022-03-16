@@ -5,23 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/IExecutionListenerWithExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/I_execution_Listener" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/MyListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/IHookableListenerWithExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/I_Hookable" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/MyListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/IHookable/testng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_METHOD_INTERCEPTOR" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_REPORTER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/listeners/I_TEST_LISTENER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ClientServerArchitecture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/DOCKER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/GIT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/JENKINS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/MAVENLIFECYCLE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumGrid" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/ParseDynamicJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingCertificates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/PageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/PageFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/OAuth2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/OAuth2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssured/Methods in RstAsrd" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Methods in RstAsrd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/RevaffectingSPLchar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/AnnotationTransformer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/AnnotationTransformer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/CN/listeners" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -69,12 +77,39 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\RestAssure" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IHookable" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\utilities\PropertyrelatedFramework" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml">
+  <component name="RunManager" selected="Application.Anurag">
+    <configuration name="Anurag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Lnklst.Anurag" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.rough.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EqualTo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.EqualTo" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.rough.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JarApplication">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_152\jre" />
@@ -124,41 +159,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IAnnotationTransWithExample" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.listeners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CN.listeners" />
-      <option name="MAIN_CLASS_NAME" value="com.CN.listeners.IAnnotationTransWithExample" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IAnnotationTransWithExample.changeCounter" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.listeners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CN.listeners" />
-      <option name="MAIN_CLASS_NAME" value="com.CN.listeners.IAnnotationTransWithExample" />
-      <option name="METHOD_NAME" value="changeCounter" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="IAnnotationTransWithExample.changeInvocationCountOfMethod" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="dataDriven" />
       <extension name="coverage">
@@ -178,19 +178,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.IAnnotationTransWithExample" />
-      <item itemvalue="TestNG.IAnnotationTransWithExample.changeCounter" />
+      <item itemvalue="Application.EqualTo" />
+      <item itemvalue="Application.Anurag" />
       <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
       <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
       <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Anurag" />
+        <item itemvalue="Application.EqualTo" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
         <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
-        <item itemvalue="TestNG.IAnnotationTransWithExample" />
-        <item itemvalue="TestNG.IAnnotationTransWithExample.changeCounter" />
       </list>
     </recent_temporary>
   </component>
@@ -926,7 +926,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java</url>
-          <line>24</line>
+          <line>21</line>
           <properties class="com.CN.rough.Palindrome" method="isPalindromeInt">
             <option name="EMULATED" value="true" />
           </properties>

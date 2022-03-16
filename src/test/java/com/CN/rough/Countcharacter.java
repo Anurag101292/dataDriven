@@ -36,6 +36,7 @@ public class Countcharacter {
 	     hm.keySet().forEach(a->System.out.println(a));
 
 		for(Character a:keydata){
+
 			System.out.println(a +" Comes "+ hm.get(a)+" times ");
 		}
 	}

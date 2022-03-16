@@ -1,0 +1,49 @@
+- To go or checkout to 1 commit before the latest commit, we use git checkout HEAD~1
+
+- To uncommit the last 3 commits without losing the changes, we first run
+git reset HEAD~3.
+Then we can see the changes made in the last 3 commits and then update it manually and commit it finally.
+
+- In order to uncommit the last 3 commits and also remove the changes, we can run the
+command: git reset --hard HEAD~3.
+This command will completely remove all the changes.
+
+- To look into the changes made in the last 3 commits, we can run
+ git diff HEAD~3
+
+- To make a new commit by reverting the last 3 commits, we can run the command:
+ git revert --no-commit HEAD~3...HEAD
+
+-You can add all changes at once using
+git add . command.
+
+-You can add files one by one specifically using
+git add <file_name> command.
+
+-You can add contents of a particular folder by using
+git add /<folder_name>/ command.
+
+-Squashing multiple commits to a single one overwrites the history which is why it is recommended to be
+ done using full caution. This step can be done by running the command:
+ git rebase -i HEAD~{{N}}
+ where {{N}} represents the number of commits needed to be squashed.
+
+ . Differentiate between git pull and git fetch.
+ git pull                                                                       	git fetch
+ This command pulls new changes from the
+  currently working branch located
+   in the remote central repository.                  This command is also used for a similar purpose but
+                                                       it follows a two step process:
+                                                      1. Pulls all commits and changes from desired branch
+                                                      and stores them in a new branch of the
+                                                       local repository.
+
+                                                      2. For changes to be reflected in the current /
+                                                      target branch, git fetch should be followed by
+                                                      git merge command.
+ git pull = git fetch + git merge
+
+
+git stash pop command throws away the specified stash (topmost stash by default) after applying it.
+git stash apply command leaves the stash in the stash list for future reuse.
+ In case we wanted to remove it from the list, we can use the git stash drop command.

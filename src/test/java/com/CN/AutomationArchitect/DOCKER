@@ -1,0 +1,83 @@
+Introduction to Docker:
+
+172.17.0.0/16
+ Docker is a very popular and powerful open-source containerization platform that is used for building,
+ deploying, and running applications.
+ Docker allows you to decouple the application/software from the underlying infrastructure
+
+ What is a Container?
+ A container is a standard unit of software bundled with dependencies so that applications can be deployed fast
+ and reliably b/w different computing platforms.
+
+ Docker can be visualized as a big ship (docker) carrying huge boxes of products (containers).
+ Docker container doesn’t require the installation of a separate operating system. Docker just relies
+ or makes use of the kernel’s resources and its functionality to allocate them for the CPU and memory it
+  relies on the kernel’s functionality and uses resource isolation for CPU and memory,
+  and separate namespaces to isolate the application’s view of the OS (operating system).
+
+2. What are docker images?
+They are executable packages(bundled with application code & dependencies, software packages, etc.)
+for the purpose of creating containers. Docker images can be deployed to any docker environment and the
+containers can be spun up there to run the application.
+
+3. What is a DockerFile?
+
+It is a text file that has all commands which need to be run for building a given image.
+           services:
+                    jenkins:
+                     container_name: jenkins                     (container name)
+                     Image: jenkins/jenkins                               (image name)
+                     ports:”8080:8080”     [first 8080 ports shows which port we are exposing:the second port shows on which port we map the port on docker]
+                     volumes:”$pwd/jenkins_home:var/jenkins_home     [we create a volume because all the
+                                 work which we are working on container if we close all data get deleted ,
+                                 so to store that data we create volumes and after giving the path we need to map
+                                 it with docker container path
+                     networks:net  here we share network as net and below i create network on service level.
+             networks:
+                     -net
+
+ 4. Can you tell what is the functionality of a hypervisor?
+ A hypervisor is a software that makes virtualization happen because of which is sometimes referred to
+  as the Virtual Machine Monitor.
+ This divides the resources of the host system and allocates them to each guest environment installed.
+
+ 10. How many Docker components are there?
+ There are three docker components, they are - Docker Client, Docker Host, and Docker Registry.
+
+ Docker Client: This component performs “build” and “run” operations for the purpose of opening communication
+    with the docker host.
+ Docker Host: This component has the main docker daemon and hosts containers and their associated images.
+    The daemon establishes a connection with the docker registry.
+ Docker Registry: This component stores the docker images. There can be a public registry or a private one.
+    The most famous public registries are Docker Hub and Docker Cloud.
+
+33. Describe the lifecycle of Docker Container?
+The different stages of the docker container from the start of creating it to its end are called the docker
+ container life cycle.
+The most important stages are:
+
+Created: This is the state where the container has just been created new but not started yet.
+Running: In this state, the container would be running with all its associated processes.
+Paused: This state happens when the running container has been paused.
+Stopped: This state happens when the running container has been stopped.
+Deleted: In this, the container is in a dead state.
+
+docker --version 	                    to check docker version
+docker pull <Image name>             	to download docker image from docker hub
+docker ps 	                            to check how many containers up and running
+docker run -it -d <image name >	        to create docker container from docker image
+docker start <container-id>	            to start docker container
+docker restart <container -id >	        to restart container
+docker stop <container -id >	        to stop
+docker rm <container id >	            to delete docker container
+docker rmi 	                            docker image delete
+docker images	                        to check for available docker images
+docker exec -it <container id> bash 	to get into container and take control on it
+exit                                	to come out from container
+docker kill <container id >	            to stop container forcefully
+docker inspect <container id >      	it will give complete information from container
+docker image prune -a               	it will delete images which does not have even a single container
+docker run --rm <image name>	        create a docker container and auto remove on exit
+docker system prune -a 	                it will delete all the images containers and network which
+                                        are not being used to active anymore.
+docker compose up -d	                docker start the service by reading docker-compose.yml file
