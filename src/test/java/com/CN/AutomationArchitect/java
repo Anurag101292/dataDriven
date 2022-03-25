@@ -1,11 +1,26 @@
-
+Abstract class	Interface
+1) Abstract class can have abstract and non-abstract methods.	Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2) Abstract class doesn't support multiple inheritance.	        Interface supports multiple inheritance.
+3) Abstract class can have final, non-final, static
+    and non-static variables.	                                Interface has only static and final variables.
+4) Abstract class can provide the implementation of interface.	Interface can't provide the implementation
+                                                                of abstract class.
+5) The abstract keyword is used to declare abstract class.	    The interface keyword is used to declare
+                                                                interface.
+6) An abstract class can extend another Java class and
+   implement multiple Java interfaces.                      	An interface can extend another Java
+                                                                interface only.
+7) An abstract class can be extended using keyword "extends".	An interface can be implemented using keyword
+                                                               "implements".
+8) A Java abstract class can have class members
+ like private, protected, etc.                              	Members of a Java interface are public by default.
+9)Example:
 public abstract class Shape{
 public abstract void draw();
 }	Example:
 public interface Drawable{
 void draw();
 }
-
 
 134) What is the difference between Checked Exception and Unchecked Exception?
 1) Checked Exception
@@ -15,3 +30,14 @@ The classes that extend Throwable class except RuntimeException and Error are kn
 2) Unchecked Exception
 The classes that extend RuntimeException are known as unchecked exceptions,
  e.g., ArithmeticException, NullPointerException, etc. Unchecked exceptions are not checked at compile-time.
+
+ Method overloading is the polymorphism technique which allows us to create multiple methods with the same
+  name but different signature. We can achieve method overloading in two ways.
+
+ -- By Changing the number of arguments
+ -- By Changing the data type of arguments
+ Method overloading increases the readability of the program. Method overloading is performed to figure out
+ the program quickly.
+
+ Yes, we can have any number of main methods in a Java program by using method overloading.
+

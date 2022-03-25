@@ -1,0 +1,91 @@
+TELL ME ABOUT YOURSELF?
+
+Currently I am working in TOTAL SYSTEM SERVICE this the part of Global Payments corporation ,
+i have around 6.5years of experience in IT which is  in QA and testing  majorly.
+
+Before this I had worked in Healthkart this is product based organisation which provide
+food suppliments to their customers , may be you have not heard about healthkart but you must heard about muscleblaze
+so there i worked in backend team involved majorly to automate their supply chain managemant of company
+
+ For the technology side
+  I have used selenium with java for UI automation ,
+ and in backend api testing  I have used Rest assured with java and postman and wrt to other activities like devops
+ I am also having some exposure in Jenkins for build and deployment activities and maven ,
+ github repositories and git command, docker for monitoring tool I have used SPLUNK AND DYNATRACE
+ other then that we are using JIRA ,Confluence for project management
+ along with that i have a exposure to setup infrastructure end to end either test case on staging environment.
+
+What are your roles and responsibility ?
+Here I worked as a sdet
+ Test estimations--Hardware and software resources ,,preparing the test confluence docs according to user requirements ,
+   what are the checkmarx which we need to check on PROD post deployemnt validations  together with the code
+  what are the application properties which we need to send on production together with code deployment
+
+ writing the testcases , reviewing test cases ,preparing test plan,executing test cases,reporting defects
+ and developing automation scripts ,designing and implementing automation frameworks
+ does we need to automate the testcases are we able to
+                                     automate those scenarios within sprint
+  to check monitoring tools alerts need to check what we send in past sprint in prod does those
+   functionalities working fine or not also connect with my juniors if they are facing any issues in testing
+
+
+What are your current project on which you are working ?
+  //In recent Project currently we are migrating our old services into new in DB side we are migrating my sql
+  // in cassandra and for queuing system we are using kafka now ,
+  // SO we are closely working in agile based system using SCRUM approach ,
+    I also involved working  with different stakeholders ,QA team dev team and product owner as well
+    we have 2 week sprint in which I majorly involved in testing activities like
+     understanding requirements,
+
+   What are entry and exit criteria of testing in your current project ?
+
+   Entry criteria you can say that before starting the testing our requirement should be clear as per BRS
+                  we have proper setup of environment before starting testing
+                  we have proper confluence document of application architecture and changes
+                  Analyzing the test approaches in which we are able to
+                           validate the functionality as soon as possible
+                           to define how much fault we can tolerate
+                           what is the accptance bandwith of request and response in production
+                           what are the service level agrrements for the project
+   Exit Criteria identify all the transactions in modules
+                 Ensuring all critical testcases are passed
+                 Achiving complete functional coverage
+                 identifying and fixing all high priority defects, fixing all show stoppers defects
+                 preparing requirement tracibilty matrix
+           preparing the test summary report to check every stage of test pyramid that we have complete
+           testcoverage of unit testing,integration testing ,System testing and acceptance testing
+                 regression reports
+                 feed backs in every stage of testing from product owner
+
+Analytical
+    Focusing testing on the most critical functionality (risk based)
+Model-based
+    Stochastic or Monkey testing using random or statistical information (tool).Operational profiles
+Methodical Testing approaches
+    Failure based (error guessing and fault attack) ,Experience-based
+    check-list based and quality characteristic-based
+
+how you can segregate that which testcase need to be automated<TEST AUTOMATION PLANNING > ?
+
+A test case should be automated if:
+The task is going to be repeated.
+It’s going to save time.
+The requirements, the test, or the task are low risk, stable, and unlikely to change often.
+The test is subject to human error.
+The test is time consuming.
+The test has significant downtime between steps.
+
+
+sprint lifecycle ?
+TEST COVERAGE FOR UNIT TEST COVERAGE ?
+
+TEST PLANNING ?
+
+ Thumbrule to design Automation Framework
+         "NEVER HARD CODE
+         KEEP THE RIGHT THINGS IN RIGHT PLACE
+         FOLLOW THE REUSE CULTURE
+         MAKE THE FRAMEWORK EASY FOR MANUAL TESTERS OR OTHERS TO CONTRIBUTE
+         MAKE THE FRAMEWORK ROBUST
+
+         Scalability , flowcontrol rate of producing and rate of consuming ,cost

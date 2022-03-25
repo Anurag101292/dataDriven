@@ -4,31 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ClientServerArchitecture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/DOCKER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/GIT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/JENKINS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/MAVENLIFECYCLE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumGrid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/ParseDynamicJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingCertificates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/PageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/PageFactoryTest.java" afterDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="PageFactory and SeleniumGrid">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/GetPropertyvalue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/QueryReponsedata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/SQLConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataDriven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataDriven.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/OAuth2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/OAuth2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssured/Methods in RstAsrd" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Methods in RstAsrd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingWebTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/RevaffectingSPLchar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +191,14 @@
       <option name="presentableId" value="Default" />
       <updated>1630091284105</updated>
     </task>
+    <task id="LOCAL-00001" summary="PageFactory and SeleniumGrid">
+      <created>1647460666568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647460666568</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +215,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="PageFactory and SeleniumGrid" />
+    <option name="LAST_COMMIT_MESSAGE" value="PageFactory and SeleniumGrid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
