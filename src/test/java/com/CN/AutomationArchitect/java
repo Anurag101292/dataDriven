@@ -14,12 +14,11 @@ Abstract class	Interface
                                                                "implements".
 8) A Java abstract class can have class members
  like private, protected, etc.                              	Members of a Java interface are public by default.
-9)Example:
+9)Example:                                                       	Example:
+                                                                 public interface Drawable{
+                                                                void draw();                                                                }
 public abstract class Shape{
 public abstract void draw();
-}	Example:
-public interface Drawable{
-void draw();
 }
 
 134) What is the difference between Checked Exception and Unchecked Exception?
@@ -41,3 +40,43 @@ The classes that extend RuntimeException are known as unchecked exceptions,
 
  Yes, we can have any number of main methods in a Java program by using method overloading.
 
+ If sorting of objects needs to be based on natural order then use Comparable whereas if
+ your sorting needs to be done on attributes of different objects, then use Comparator in Java.
+
+ +------------------------------------------------------------------------------------+
+ ¦               Comparable                ¦                Comparator                ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ java.lang.Comparable                    ¦ java.util.Comparator                     ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ int objOne.compareTo(objTwo)            ¦ int compare(objOne, objTwo)              ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ Negative, if objOne < objTwo            ¦ Same as Comparable                       ¦
+ ¦ Zero,  if objOne == objTwo              ¦                                          ¦
+ ¦ Positive,  if objOne > objTwo           ¦                                          ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ You must modify the class whose         ¦ You build a class separate from to sort. ¦
+ ¦ instances you want to sort.             ¦ the class whose instances you want       ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ Only one sort sequence can be created   ¦ Many sort sequences can be created       ¦
+ ¦-----------------------------------------+------------------------------------------¦
+ ¦ Implemented frequently in the API by:   ¦ Meant to be implemented to sort          ¦
+ ¦ String, Wrapper classes, Date, Calendar ¦ instances of third-party classes.        ¦
+ +------------------------------------------------------------------------------------+
+
+ Explain run time and compile time polymorphism.
+
+Answer: – Overloading is compile time polymorphism where more than one methods share the same name
+ with different parameters or signature and different return type.
+
+Overriding is run time polymorphism having same method with same parameters or signature,
+but associated in a class & its subclass.
+
+Compile time PolymorphismRun time PolymorphismIn Compile time Polymorphism,
+call is resolved by the compiler.In Run time Polymorphism, call is not resolved by the compiler.
+It is also known as Static binding, Early binding and overloading as well.It is also known as Dynamic binding,
+ Late binding and overriding as well.Overloading is compile time polymorphism where more than one
+ methods share the same name with different parameters or signature and different return type.
+ Overriding is run time polymorphism having same method with same parameters or signature,
+ but associated in a class & its subclass.It is achieved by function overloading and operator overloading.
+ It is achieved by virtual functions and pointers.It provides fast execution because known early at compile time.
+ It provides slow execution as compare to early binding because it is known at runtime

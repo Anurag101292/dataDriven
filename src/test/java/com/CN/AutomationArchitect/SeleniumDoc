@@ -23,3 +23,16 @@ Wait wait = new FluentWait(WebDriver reference)
 .withTimeout(Duration.ofSeconds(SECONDS))
 .pollingEvery(Duration.ofSeconds(SECONDS))
 .ignoring(Exception.class);
+
+Question: – How to check webpage is fully loaded or not using Selenium?
+Answer: – This situation can be solved by using JavaScript executors.
+IWait wait = new OpenQA.Selenium.Support.UI.WebDriverWait(driver, TimeSpan.FromSeconds(30.00));
+wait.Until(driver1 => ((IJavaScriptExecutor)driver).ExecuteScript(“return document.readyState”).
+Equals(“complete”));
+
+All Interfaces used in selenum
+
+HasCapabilities, HasInputDevices, Interactive, JavascriptExecutor, PrintsPage,
+ SearchContext, TakesScreenshot, HasVirtualAuthenticator, WebDriver
+
+ https://naveenautomationlabs.com/realtimeinterviewquestions/

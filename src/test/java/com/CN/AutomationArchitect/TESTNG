@@ -1,0 +1,63 @@
+
+Question: – What all annotations used in TestNG ?
+
+Answer: – Total 15 annotations are used in TestNG
+
+@BeforeSuite: – The annotated method will be run only once before all tests in this suite have run.
+@AfterSuite: – The annotated method will be run only once after all tests in this suite have run.
+@BeforeClass: – The annotated method will be run only once before the first test method in the current class
+         is invoked.
+@AfterClass: – The annotated method will be run only once after all the test methods in the current class
+          have run.
+@BeforeTest: – The annotated method will be run before any test method belonging to the classes inside the
+          tag is run.
+@AfterTest: – The annotated method will be run after all the test methods belonging to the classes
+            inside the tag have run.
+@BeforeGroups: – The list of groups that this configuration method will run before.
+           This method is guaranteed to run shortly before the first test method that belongs
+           to any of these groups is invoked.
+@AfterGroups: – The list of groups that this configuration method will run after.
+          This method is guaranteed to run shortly after the last test method that belongs to any of
+           these groups is invoked.
+@BeforeMethod: – The annotated method will be run before each test method.
+@AfterMethod: – The annotated method will be run after each test method.
+@DataProvider: – Marks a method as supplying data for a test method.
+                   The annotated method must return an Object [ ][ ],
+                   where each Object[ ] can be assigned the parameter list of the test method.
+The @Test method that wants to receive data from this DataProvider needs to use a dataProvider
+ name equals to the name of this annotation.
+ @Factory: – Marks a method as a factory that returns objects that will be used by TestNG as Test classes.
+ The method must return Object[ ].
+ @Listeners: – Defines listeners on a test class
+ .@Parameters: – Describes how to pass parameters to a @Test method.@Test: – Marks a class or a
+  method as a part of the test.
+
+  TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionality
+  that make it more powerful and easier to use, such as:
+
+  Run your tests in arbitrarily big thread pools with various policies available
+  (all methods in their own thread, one thread per test class, etc…).
+
+ 1. Test that your code is multithread safe.
+2  Flexible test configuration.
+3  Support for data-driven testing (with @DataProvider).
+4  Support for parameters.
+5  Powerful execution model (no more TestSuite).
+6  Supported by a variety of tools and plug-ins (Eclipse, IDEA, Maven, etc…).
+7  Embeds BeanShell for further flexibility.
+8  Default JDK functions for runtime and logging (no dependencies).
+9  Dependent methods for application server testing.
+10  TestNG is designed to cover all categories of tests:  unit, functional, end-to-end, integration, etc…
+  Advantages of TestNG
+11  TestNG allows us to execute of test cases based on group.
+12  TestNG annotations are easy to understand.
+13  Parallel execution of selenium test cases is possible in TestNG.
+14  Three kinds of report generated.
+15  Order of execution can be change using TestNG
+16  Failed test cases can be executed.
+17  Without having main function we can execute the test method.
+18  An xml file can be execution order and we can skip the execution of particular test case.
+19  Can we execute test cases in order without using TestNG
+20   Yes, we execute test cases in order without using TestNG with the help of Junit
+
+

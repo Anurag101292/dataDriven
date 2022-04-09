@@ -1,19 +1,11 @@
 package com.CN.rough;
 
 public class RevaffectingSPLchar {
-
-
-
-
-
-
     // Java code to illustrate how to reverse
 // an array without affecting special characters.
-
         public static void reverse(char str[]) {
             // Initialize left and right pointers
             int r = str.length - 1, l = 0;
-
             // Traverse string from both ends until
             // 'l' and 'r'
             while (l < r) {

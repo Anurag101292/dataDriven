@@ -4,19 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="PageFactory and SeleniumGrid">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/GetPropertyvalue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/QueryReponsedata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dBTOOBJECTOBJECTTOPOJO/SqlConnection/SQLConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataDriven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataDriven.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Iq">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SQL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/TESTNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/MyHashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Serialisation" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DserusingGson/Deserialisation" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DserusingGson/Serialisation" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingDynamicDropdown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ParallelExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Sorting/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/yieldjoinsleep" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/yieldjoinsleep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Anagram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Anagram.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/RevaffectingSPLchar.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Reverse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/Kaas/HandlingWebTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/Kaas/HandlingWebTable.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +85,14 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\AutomationArchitect" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\RestAssure" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IHookable" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\utilities\PropertyrelatedFramework" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Anurag">
+  <component name="RunManager" selected="Application.HandlingDynamicDropdown">
     <configuration name="Anurag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.CN.rough.Lnklst.Anurag" />
       <module name="dataDriven" />
@@ -85,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EqualTo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.EqualTo" />
+    <configuration name="HandlingDynamicDropdown" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.Selenium.HandlingDynamicDropdown" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.CN.rough.*" />
+          <option name="PATTERN" value="com.CN.Selenium.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,19 +187,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.EqualTo" />
       <item itemvalue="Application.Anurag" />
       <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
       <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
       <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
+      <item itemvalue="Application.HandlingDynamicDropdown" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Anurag" />
-        <item itemvalue="Application.EqualTo" />
+        <item itemvalue="Application.HandlingDynamicDropdown" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
         <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
+        <item itemvalue="Application.Anurag" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647460666568</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Iq">
+      <created>1648242347920</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648242347920</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +244,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="PageFactory and SeleniumGrid" />
-    <option name="LAST_COMMIT_MESSAGE" value="PageFactory and SeleniumGrid" />
+    <MESSAGE value="Iq" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iq" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -925,7 +954,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java</url>
           <line>21</line>
-          <properties class="com.CN.rough.Palindrome" method="isPalindromeInt">
+          <properties class="com.CN.rough.Palindrome">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="174" />

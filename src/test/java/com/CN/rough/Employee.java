@@ -77,7 +77,8 @@ public class Employee implements Comparable<Employee> {
         }else if(this.id < e.id){
             return -1;
         }else {
-            return Character.toString(this.name.charAt(0)).compareToIgnoreCase(Character.toString(e.name.charAt(0)));
+            return Character.toString(this.name.charAt(0)).
+                    compareToIgnoreCase(Character.toString(e.name.charAt(0)));
         }
 
     }
@@ -95,4 +96,6 @@ public class Employee implements Comparable<Employee> {
         Collections.sort(list, Employee.idComparator); // call @compare (o1,o2)
     }
 }
-   // For customized sorting we go for comparator @compare(o1, o2) for other scenarios we go for comparable @compareTo(o1), with out changing code if we want to sort more than one field then we use comparator.
+   // For customized sorting we go for comparator @compare(o1, o2) for other scenarios we go for
+// comparable @compareTo(o1), with out changing code if we want to sort more than one field then
+// we use comparator.

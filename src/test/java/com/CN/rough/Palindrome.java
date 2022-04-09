@@ -2,22 +2,27 @@ package com.CN.rough;
 import java.util.Scanner;
 
 public class Palindrome {
+		// Method
+		// Returning true if string is palindrome
+		static boolean ispalindrome(String str)
+		{// Pointers pointing to the beginning
+			// and the end of the string
+			int i = 0, j = str.length() - 1;
+			// While there are characters to compare
+			while (i < j) {
+				// If there is a mismatch
+				if (str.charAt(i) != str.charAt(j))
+					return false;
+				// Increment first pointer and
+				// decrement the other
+				i++;
+				j--;
+			}
 
-	public static boolean ispalindrome(String str)
+			// Given string is a palindrome
+			return true;
+		}
 
-	{
-		char[] ch = str.toCharArray();
-		int i = 0; int j=ch.length-1;
-		while(i<j)
-             
-             if(ch[i]==ch[j]) 
-             {
-            	 return true;
-             }
-             i++;
-             j--;
-		return false;
-	}
 
 	public static void isPalindromeInt(int a){
 	    int temp;
@@ -102,18 +107,20 @@ public class Palindrome {
 
 		}
 
+		public static boolean isPalindrome(String s){
 
-		public static boolean isPalindrome(String str){
+			int i =0;
+			int j =s.length()-1;
+			while(i<j){
 
-			char[] ch =str.toCharArray();
-			int i =0;int j =ch.length-1;
-			while(i<j)
-				if(ch[i]==ch[j]){
-					return true;
-				}
-			i++;
-			j--;
-			return false;
+				if(s.charAt(i)!=s.charAt(j))
+					return false;
+
+				i++;
+				j--;
+			}
+
+			return true;
 		}
 
 
