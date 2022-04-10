@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="SerialisationAnd desrialisation">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTesting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/SumofStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/FAKEAPISTUB" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ReadConfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MergeTwoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MyHashSet.java" afterDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Manual Testing ND FUNCTIONAL PROGRAMMING">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/STUB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/WiremockTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/WiremockwithRestAssured" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/DuplicateArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/DuplicateArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/RemoveDuplicatesJavaExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RemoveDuplicatesJavaExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExcelReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveDuplicatesJavaExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveDuplicatesJavaExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExcelReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExcelReader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649510018489</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Manual Testing ND FUNCTIONAL PROGRAMMING">
+      <created>1649605299919</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649605299919</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,7 +233,8 @@
     <MESSAGE value="PageFactory and SeleniumGrid" />
     <MESSAGE value="Iq" />
     <MESSAGE value="SerialisationAnd desrialisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="SerialisationAnd desrialisation" />
+    <MESSAGE value="Manual Testing ND FUNCTIONAL PROGRAMMING" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manual Testing ND FUNCTIONAL PROGRAMMING" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

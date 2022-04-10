@@ -1,0 +1,100 @@
+ Create STUB http://<host>:<port>/__admin/mappings
+ or place a file with a .json extension under the mappings directory
+
+ {
+ "request":{
+      "method":"GET",
+      "url":"/some/thing"
+      },
+ "response":{
+       "status":200,
+       "body":"Hello world",
+       "headers":{
+       "content-type":"text/plain"
+       }
+     }
+ }
+
+ Stubs remove from mapping once you stop the wiremock.
+
+ to save
+ http://<host>:<port>/__admin/mappings/save
+ hit post request and now you get your all data in mapping folder
+
+ Make a generic stub for all the mappings
+
+ suppose I have /student/1
+ /student/2
+ /student/3
+
+ so i dont need to bother from 1,2,3
+
+ So here i will make stub regex
+ {
+ "request":{
+ "method":"ANY"
+ "URLPAttern":"/student/.*"},
+ resonse:{
+ "status":"200",
+ "message":"OK"}}
+
+ we can send the priority: for any request which we want tosend
+
+  {
+  priority:1,
+  "request":{
+       "method":"GET",
+       "url":"/some/thing"
+       },
+  "response":{
+        "status":200,
+        "body":"Hello world",
+        "headers":{
+        "content-type":"text/plain"
+        }
+      }
+  }
+
+  PROXYING intercepts your call and its mask to end user and sends request to client
+  so this used for security server.
+
+
+  requirement is everytime i hit any api whic i create above that will navigate me to
+  google.com.
+  {
+    priority:1,
+    "request":{
+         "method":"GET",
+         "url":"/some/thing"
+         },
+    "response":{
+          "status":200,
+          "body":"Hello world",
+          "headers":{
+          "content-type":"text/plain"
+          "proxyBaseUrl":"google.co.in"
+          }
+        }
+    }
+
+    .*   for any
+
+    we have recording.wiremock.com where we put target url hit it and recorde the response in mapping so that in future we can use that stub in our STUB .
+
+    read your response from any other service or any request.
+
+    {
+        priority:1,
+        "request":{
+             "method":"GET",
+             "url":"/some/thing"
+             },
+        "response":{
+              "status":200,
+              "body":"Hello world",
+              "headers":{
+              "content-type":"text/plain"
+             "bodyFileName":<filepathname>
+              }
+            }
+        }

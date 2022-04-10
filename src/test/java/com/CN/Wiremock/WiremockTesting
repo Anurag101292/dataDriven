@@ -1,0 +1,51 @@
+Project made like there are configs ,services ,controller,client ,Interface
+
+so in down strem we just need to provide our client and Interface
+
+Services ---> where implementation,logic are written
+controller where base url are written where the deployment goes
+client --> where the besepath are written whic third party needed to hit
+
+
+IN TDD approach we write the testcase just before the development starts , so how do we validate our testcase if
+develoment not available so here we use mock services
+
+Why we need mock services?
+when the development services are not completed
+when we dont have external services api in test environment.
+
+TESTDOUBLE-->Also called as Stubs ,or dummy or mock
+
+Fake as same as legacy system
+Stubs  there is no logic in stub they are just clowns.
+Mocks  Wiremock is a jvm based tools which acts as a httpbased API Simulator
+It helps us create stubs and map bindings
+it can also run as standalone server
+we can also add maven dependencies to the project so that the stubs
+are created through scripts
+it helps us proxying and decoding
+
+For manual testing download the wiremock jar
+and to open java -jar wiremock.jar bydefault this start 8080
+you can change also port
+
+Mappings is a folder where we create Stubs
+
+ Create STUB http://<host>:<port>/__admin/mappings
+ or place a file with a .json extension under the mappings directory
+
+ {
+ "request":{
+      "method":"GET",
+      "url":"/some/thing"
+      },
+ "response":{
+       "status":200,
+       "body":"Hello world",
+       "headers":{
+       "content-type":"text/plain"
+       }
+     }
+ }
+
+
