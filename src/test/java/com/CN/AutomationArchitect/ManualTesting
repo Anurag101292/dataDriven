@@ -1,0 +1,109 @@
+What is Functional Testing?
+FUNCTIONAL TESTING is a type of software testing that validates the software system against the functional
+ requirements/specifications. The purpose of Functional tests is to test each function of the software application,
+ by providing appropriate input, verifying the output against the Functional requirements.
+
+Functional testing mainly involves black box testing and it is not concerned about the source code of the
+application. This testing checks User Interface, APIs, Database, Security, Client/Server communication
+and other functionality of the Application Under Test. The testing can be done either manually or using automation.
+
+What do you test in Functional Testing?
+The prime objective of Functional testing is checking the functionalities of the software system.
+ It mainly concentrates on –
+
+Mainline functions:  Testing the main functions of an application
+Basic Usability: It involves basic usability testing of the system. It checks whether a user can freely navigate
+                 through the screens without any difficulties.
+Accessibility:  Checks the accessibility of the system for the user
+Error Conditions: Usage of testing techniques to check for error conditions.
+                  It checks whether suitable error messages are display
+
+
+#1) High Severity and High Priority
+Any Critical/major business case failure automatically gets promoted to this category.
+Any defects due to which the testing cannot continue at any cost or causes a severe system failure to fall into
+this category. For Example, clicking on a particular button doesn’t load the feature itself. Or performing a
+ particular function brings down the server consistently and causes data loss. The red lines in the above figure
+ indicate these kinds of defects.
+
+For Example,
+The system crashes after you made the payment or when you are not able to add the items to the Cart,
+ this defect is marked as High Severity and High Priority defect.
+
+Another example would be ATM vending currency feature wherein after entering the correct username and the password,
+ the machine does not dispense money but deducts the transferred from your account.
+
+ #2) High Priority and Low Severity
+
+ The logo of the company in the front-page is wrong, it is considered to be High Priority and Low Severity defect.
+
+ Example 1) In the Online shopping website when the FrontPage logo is spelled wrong,
+  for example instead of Flipkart it is spelled as Flipkart.
+
+ Example 2) In the bank logo, instead of ICICI, it is written as ICCCI.
+
+ #3) High Severity and Low Priority
+
+ For Example, a particular functionality can be used only on a later version of the firmware,
+  so in order to verify this – the tester actually downgrades his system and performs the test and observes
+   a serious functionality issue that is valid. In such a case the defects will be classified in this category
+   denoted by pink lines, as normally end users will be expected to have a higher version of the firmware.
+
+ For Example,
+
+ In a social networking site, if a beta version of a new feature is released with not many active users using
+ that facility as of today. Any defect found on this feature can be classified as a low priority as the feature
+  takes back seat due to business classification as not important.
+
+  #4) Low Severity and Low Priority
+  Any spelling mistakes /font casing/ misalignment in the paragraph of the 3rd or 4th page of the application
+  and not in the main or front page/ title.
+
+  These defects are classified in the green lines as shown in the figure and occur when there is no functionality
+  impact, but still not meeting the standards to a small degree.
+  Generally cosmetic errors or say dimensions of a cell in a table on UI are classified here.
+  Seven Principles of Software Testing
+  #1) Testing Shows the Presence of Defects
+  #2) Early Testing
+  #3) Exhaustive Testing is Not Possible
+  #4) Testing is Context-Dependent
+  #5) Defect Clustering
+  #6) Pesticide Paradox
+  #7) Absence of Error
+
+  #5.) Defect Clustering
+  During testing, it may happen that most of the defects found are related to a small number of modules.
+   There might be multiple reasons for this like the modules may be complex, coding related to such modules
+    may be complicated etc.
+  This is the Pareto Principle of software testing where 80% of the problems are found in 20% of the modules.
+   We will learn more about Defect clustering and Pareto Principle later in this article.
+
+  #6) Pesticide Paradox
+  Pesticide Paradox principle says that if the same set of test cases are executed again and again over
+   the period of time then these set of tests are not capable enough to identify new defects in the system.
+
+  In order to overcome this “Pesticide Paradox”, the set of test cases needs to be regularly reviewed and revised.
+   If required a new set of test cases can be added and the existing test cases can be deleted if they are not
+   able to find any more defects from the system.
+
+  #7) Absence of Error
+  If the software is tested fully and if no defects are found before release, then we can say that the software
+   is 99% defect free. But what if this software is tested against wrong requirements?
+   In such cases, even finding defects and fixing them on time would not help as testing is performed on wrong
+   requirements which are not as per needs of the end user.
+
+  For Example, suppose the application is related to an e-commerce site and the requirements against
+  “Shopping Cart or Shopping Basket” functionality which is wrongly interpreted and tested.
+   Here, even finding more defects does not help to move the application into the next phase or in the
+   production environment.
+
+
+Stubs                                                                 	Drivers
+1. Used in Top-Down Integration Testing.                 1.Used in Bottom-Up Integration Testing.
+2. A piece of code that emulates the called function.    2.A piece of code that emulates a calling function.
+3. Stubs stimulates the activity of
+    missing and not developed modules.	                 3.Drivers pass test cases to another code and
+                                                                 invoke modules under testing.
+4. These are created when high level modules are
+   tested and lower level modules are not developed.	 4.These are created when lower level modules are
+                                                          tested and higher level modules are not yet developed.

@@ -4,39 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Iq">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SQL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/TESTNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/MyHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Serialisation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DserusingGson/Deserialisation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DserusingGson/Serialisation" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/HandlingDynamicDropdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ParallelExecution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/testng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Sorting/QuickSort.java" afterDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="SerialisationAnd desrialisation">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/SumofStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/FAKEAPISTUB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ReadConfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MergeTwoList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MyHashSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/LIFECYCLE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Multithreading/yieldjoinsleep" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/yieldjoinsleep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Anagram.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/EqualTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/RestAssure/Ser-DeserObjectMapper/Deserialisation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/DuplicateArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/DuplicateArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Palindrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RevaffectingSPLchar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Anagram.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/RevaffectingSPLchar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/RemoveDuplicatesJavaExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/RemoveDuplicatesJavaExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExcelReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Reverse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/Kaas/HandlingWebTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/Kaas/HandlingWebTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveDuplicatesJavaExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveDuplicatesJavaExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExcelReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExcelReader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,9 +78,22 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\utilities\PropertyrelatedFramework" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HandlingDynamicDropdown">
-    <configuration name="Anurag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Lnklst.Anurag" />
+  <component name="RunManager" selected="Application.AVGOFSTREAM">
+    <configuration name="AVGOFSTREAM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.FunctionalProgramming.Streams.AVGOFSTREAM" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.FunctionalProgramming.Streams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DuplicateArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.DuplicateArray" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
@@ -112,6 +111,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.CN.Selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SumofStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.FunctionalProgramming.Streams.SumofStream" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.FunctionalProgramming.Streams.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,48 +170,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="dataDriven" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IAnnotationTransWithExample.changeInvocationCountOfMethod" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.listeners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.CN.listeners" />
-      <option name="MAIN_CLASS_NAME" value="com.CN.listeners.IAnnotationTransWithExample" />
-      <option name="METHOD_NAME" value="changeInvocationCountOfMethod" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.Anurag" />
-      <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
-      <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
-      <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
       <item itemvalue="Application.HandlingDynamicDropdown" />
+      <item itemvalue="Application.DuplicateArray" />
+      <item itemvalue="Application.SumofStream" />
+      <item itemvalue="Application.AVGOFSTREAM" />
+      <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AVGOFSTREAM" />
+        <item itemvalue="Application.SumofStream" />
+        <item itemvalue="Application.DuplicateArray" />
         <item itemvalue="Application.HandlingDynamicDropdown" />
         <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/src/test/java/com/CN/listeners/IExecutionListener/testng.xml" />
-        <item itemvalue="TestNG.IAnnotationTransWithExample.changeInvocationCountOfMethod" />
-        <item itemvalue="TestNG.C:/Users/Anurag/IdeaProjects/dataDriven/testng.xml" />
-        <item itemvalue="Application.Anurag" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648242347920</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SerialisationAnd desrialisation">
+      <created>1649510018489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649510018489</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,7 +236,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="PageFactory and SeleniumGrid" />
     <MESSAGE value="Iq" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iq" />
+    <MESSAGE value="SerialisationAnd desrialisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="SerialisationAnd desrialisation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

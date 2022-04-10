@@ -30,7 +30,7 @@ IWait wait = new OpenQA.Selenium.Support.UI.WebDriverWait(driver, TimeSpan.FromS
 wait.Until(driver1 => ((IJavaScriptExecutor)driver).ExecuteScript(“return document.readyState”).
 Equals(“complete”));
 
-All Interfaces used in selenum
+All Interfaces used in selenium
 
 HasCapabilities, HasInputDevices, Interactive, JavascriptExecutor, PrintsPage,
  SearchContext, TakesScreenshot, HasVirtualAuthenticator, WebDriver

@@ -39,10 +39,8 @@ public class ExcelReader {
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
-
 	}
 
 	// returns the row count in a sheet

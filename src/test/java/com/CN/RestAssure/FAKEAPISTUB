@@ -1,0 +1,7 @@
+1.First download node js
+2.install globally json server
+         npm install -g json server
+
+3. to start json server
+         json-server --watch db.json
+

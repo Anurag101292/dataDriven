@@ -1,0 +1,42 @@
+package org.Kaas.config;
+
+import org.Kaas.ConstantMembers;
+import org.Kaas.enums.ConfigEnums;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Objects;
+import java.util.Properties;
+
+public final class ReadConfig {
+    public static Properties prop = new Properties();
+    public static HashMap<String, String> CONFIGMAP = new HashMap<>();
+
+    private ReadConfig() {
+    }
+
+    static {
+        try {
+            FileInputStream fis = new FileInputStream(ConstantMembers.getCONFIGPATH());
+            prop.load(fis);
+            for (Object key : prop.keySet()) {
+                CONFIGMAP.put(String.valueOf(key), String.valueOf(prop.get(key)).trim());
+            }
+       //Alternate way of using above line prop.keySet().forEach(key -> CONFIGMAP.put(String.valueOf(key),String.valueOf(prop.get(key))));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getValue(ConfigEnums key) throws Exception {
+
+        if (Objects.isNull(key) && Objects.isNull(CONFIGMAP.get(key).toLowerCase().toString())) {
+            throw new Exception("Value not found for " + key + "Please check config.properties");
+        }
+        return CONFIGMAP.get(key.name().toLowerCase());
+    }
+
+
+}

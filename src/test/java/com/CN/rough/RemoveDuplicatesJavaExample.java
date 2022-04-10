@@ -7,7 +7,22 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 			 
 public class RemoveDuplicatesJavaExample 
-		{   
+		{
+			public int removeduplicates(int[] nums) {
+
+				int i = 1; //iterator thru array
+				int j = 0; //current index
+				for (; i<nums.length; i++) {
+					if (nums[i] != nums[j]) { //new number
+						j++; //move current index
+						nums[j] = nums[i]; //fill current index with new number
+					}
+				}
+				return j+1;
+			}
+
+
+
 		    static void removeDuplicates(int[] arrayWithDuplicates)
 		    
 		    
@@ -23,10 +38,7 @@ public class RemoveDuplicatesJavaExample
 		    	
 		    	LinkedHashSet<Integer> baseset = new LinkedHashSet<Integer>(lst); 
 		        
-		         
-		     
-		         
-		       for(Integer x:baseset) {
+		    	for(Integer x:baseset) {
 		    	   System.out.print(x+" ");
 		       }
 		         
@@ -34,6 +46,8 @@ public class RemoveDuplicatesJavaExample
 		         
 		        System.out.println("==============================");
 		    }
+
+
 		     
 		    public static void main(String[] args) 
 		    {       
