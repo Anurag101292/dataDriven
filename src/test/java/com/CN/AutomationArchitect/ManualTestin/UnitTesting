@@ -1,0 +1,13 @@
+
+ Unit tests are basically written and executed by software developers to make sure that code meets its
+  design and requirements and behaves as expected.
+
+ The goal of unit testing is to segregate each part of the program and test that the individual parts
+ are working correctly.
+
+ This means that for any function or procedure when a set of inputs are given then it should return the
+  proper values. It should handle the failures gracefully during the course of execution when any invalid
+  input is given.
+
+ A unit test provides a written contract that the piece of code must assure. Hence it has several benefits.
+ Unit testing is basically done before

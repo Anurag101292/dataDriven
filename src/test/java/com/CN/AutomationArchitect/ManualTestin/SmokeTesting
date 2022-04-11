@@ -1,0 +1,18 @@
+Smoke testing is a type of software testing which ensures that the major functionalities of
+the application are working fine. This testing is also known as ‘Build Verification testing’.
+ It is a non-exhaustive testing with very limited test cases to ensure that the important
+features are working fine and we are good to proceed with the detailed testing.
+
+It is also known as Build verification testing where the build is verified by testing the important
+ features of the application and then declaring it as good to go for further detailed testing.
+Smoke testing can be done by developers before releasing the build to the testers and post this it is
+ also tested by the testing team to ensure that the build is stable enough to perform the detailed testing.
+Usually smoke testing is performed with positive scenarios and with valid data.
+It is a type of shallow and wide testing because it covers all the basic and important functionalities
+ of an application.
+Usually the smoke testing is documented.
+Smoke testing is like a normal health check up of the build of an application.
+
+Sanity testing is usually performed when any minor bug is fixed or when there is a small change in
+ the functionality. It is a kind of software testing which is done by the testers to ensure that the
+functionality is working as expected.

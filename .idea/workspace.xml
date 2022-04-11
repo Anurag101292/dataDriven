@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Manual Testing ND FUNCTIONAL PROGRAMMING">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/STUB" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/WiremockTesting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Wiremock/WiremockwithRestAssured" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ExplainCucumberArchitecture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/ComponentTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/IntegrationTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/SmokeTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/UnitTesting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SPLUNK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/SelectExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Wait.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/READDataFROMTEXTFILE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ReadJSONExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/WriteJSONExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/FunctionalProgramming/Streams/AVGOFSTREAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ClientServerArchitecture" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ClientServerArchitecture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTesting" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/ManualTesting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ParallelExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/ParallelExecution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
     </list>
@@ -60,11 +70,11 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\AutomationArchitect\ManualTestin" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\AutomationArchitect" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\RestAssure" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IHookable" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
-      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\utilities\PropertyrelatedFramework" />
     </key>
   </component>
   <component name="RunManager" selected="Application.AVGOFSTREAM">
@@ -923,6 +933,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/RestAssure/RstApiTknTest.java</url>
           <line>43</line>
           <option name="timeStamp" value="236" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/Selenium/Wait.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/Primeno.java</url>

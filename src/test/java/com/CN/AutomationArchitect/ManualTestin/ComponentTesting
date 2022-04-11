@@ -1,0 +1,31 @@
+What is Component testing?: Component testing is a method where testing of each component in an
+ application is done separately.  Suppose, in an application there are 5 components. Testing of each 5
+  components separately and efficiently is called as component testing.
+
+
+
+Component testing is also known as module and program testing.
+ It finds the defects in the module and verifies the functioning of software.
+Component testing is done by the tester.
+What is Component Testing
+Component testing may be done in isolation from rest of the system depending on the development life cycle
+model chosen for that particular application. In such case the missing software is replaced by
+ Stubs and Drivers and simulate the interface between the software components in a simple manner.
+Let’s take an example to understand it in a better way. Suppose there is an application consisting of
+three modules say, module A, module B and module C. The developer has developed the module B and now wanted
+to test it. But in order to test the module B completely few of it’s functionalities are dependent on module
+ A and few on module C. But the module A and module C has not been developed yet. In that case to test the
+ module B completely we can replace the module A and module C by stub and drivers as required.
+Stub: A stub is called from the software component to be tested. As shown in the diagram below ‘Stub’ is
+ called by ‘component A’.
+Driver: A driver calls the component to be tested. As shown in the diagram below ‘component B’ is
+called by the
+ ‘Driver’.
+
+ What is Unit testing?
+ FacebookLinkedInTwitterEmail
+ A unit test is the smallest testable part of an application like functions, classes, procedures, interfaces. Unit testing is a method by which individual units of source code are tested to determine if they are fit for use.
+
+
+
+

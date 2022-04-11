@@ -107,3 +107,34 @@ Stubs                                                                 	Drivers
 4. These are created when high level modules are
    tested and lower level modules are not developed.	 4.These are created when lower level modules are
                                                           tested and higher level modules are not yet developed.
+
+ What is INtegration testing?
+
+ Integration testing tests integration or interfaces between components, interactions to different
+ parts of the system such as an operating system, file system and hardware or interfaces between systems.
+  Integration testing is a key aspect of software testing.
+
+ Test Objects for Integration Testing
+ Test Object describes what should be tested in a test level. This refers to the component,
+  integrated components or the full system.
+ As each test level has a different object to test so let's have a look at some of the key test objects:-
+
+ Subsystems: When two or more components of a system are integrated, they form a sub-system.
+ This subsystem is tested as part of integration testing. E.g. for a Flipkart website,
+ as soon as the login and profile page is ready, they form a subsystem, and component integration testing
+ can start without waiting for address or payment features in my account.
+ Databases: It's often tested as part of component integration testing and any UI action that results in
+  DB updates is tested here.E.g. When you register on a Flipkart website, the account details are created
+  and stored in a DB. These account details are validated when a user tries to register another account with
+   the same user id. Also, the profile page fetches some of this information. As such validating whether
+   correct entries are stored in DB becomes important as part of component integration testing.
+ Interfaces: An interface defines how a component interacts with another component. It also defines the
+  interaction between the Systems. Integration testing verifies whether these interfaces are working as
+   per specifications. E.g. The stock information on a site could come real-time from a DB, or it could come
+    as part of nightly batch jobs. It's important to consider how the interface is defined so the integration
+     testing can be done accordingly.
+ APIs: An Application Programming Interface defines methods of communication among various components.
+ These API's are tested as part of integration testing.
+ Micro-services: It is an approach where a single application is developed as a suite of smaller services,
+  each running its own processes. These services are individually deployable and maintainable. Integration
+   testing focuses on testing the interaction between these services.

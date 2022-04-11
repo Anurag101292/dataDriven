@@ -1,0 +1,51 @@
+STATS LS & SPI. command falls under category of transforming commands
+
+chart
+timechart
+Top
+|stats sum (kb)
+
+You can use the like function to check it a string matches a certain pattern.
+ The like function returns true if the pattern matches and falseif it doent match.
+
+See the following example:
+
+|eval errorType = if (like (error, "javasException"), "Java Exception", "Unknown Error")
+
+ You can use case function if you have multiple values to match. For example:
+ index= main sourcetype=access_combined_wcookie
+|eval httpStatusCategory= case (status== 200, "OK", status >=400 AND status < 500, "client Error", status 500,
+ "Server Error", 1=1 "N/A")
+
+|stats count by httpStatusCategory
+
+index=main host="aus-mw-app0"|stats count (totalRequests)
+
+count particular loop
+source="/usr/local/netspend/logs/moneygramapi/** host-aus-mw-microserviceu" NOT INFO NOT
+ "Exception calling Moneyrandillpay" "Erros sending y
+
+Microservice."stats count, action
+
+to count ERROR whone status code> 200
+
+host "aus-pub-nogo" source=/usr/local/netspend/logs/nog-nb/access.log" moneygram
+ stata count leval (StatusCode>2001) a= ERROR
+
+distinct count of particular field index-main sourcetypesnog_accensava celog" stats distinct count (STATUSCODE atatcode
+
+TO CALCULATE ESTIMATED UNIQUE VALUE stats est de (statusCode)
+
+to count by method
+
+stats count By Bethod
+
+method
+
+count
+
+2400 300
+
+y clause is known as row split field as it aplits the rows by the given tield
+
+Mement that the

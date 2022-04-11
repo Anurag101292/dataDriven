@@ -1,0 +1,152 @@
+UI AUTOMATION
+
+Components of UI Application Automation
+1. Application Context
+2. Locator File
+3. Constant File
+4. Application Specific Steps
+5. Ut Common Steps
+6. Feature Files
+
+Application Context
+Application Context is a groovy class which we create corresponding to each UI Application.
+For example: For tip application automation we will create class like TipApplicationContext
+
+Each application automation groovy class extends a super class UIApplicationContext which provide supporting object to automate UI application
+
+UI Application Automation Context Objects
+1.WebDriver: This object maintains driver class object which help to control browser/mobile app
+Each application automation groovy class extends a super class UIApplicationContext which provide supporting object to automate UI application
+
+UI Application Automation Context Objects
+
+1.WebDriver: This object maintains driver class object which help to control browser/mobile app
+
+2.Locator File Data: This is a string object which maintain all data of locator file which is a yami file in which we maintain all the locators
+
+3. Constant File Data: This is a string object in which we maintain all data of constant file which is a json file in which we maintain all constants values which needs to be verify.
+
+4.Stored Data:This object is a hash map in which we maintain data which we enter and that need to be verify further
+
+5.UI Action Helper: This is a helper class which provide various methods to perform action like drag and drop action
+
+We can add new object in the Application Context groovy class which are specific to that application.
+
+Location: We create this file inside he src/main/groovy/application Package [If package does not exist create new one]
+
+Locator File
+This file is a yaml file in which we maintain locator information corresponding to web- element of application.
+Web Element record in yami file:
+IssuerStatement:
+   locator Type :xpath
+locatorValue: //pl@cms_html='name'
+
+Here locator type is the type of locator you want to use. Possible values are id, name, linkText, partial LinkText,essSelector.xpath
+
+Locator value is the value of locator
+Constant File-----
+This file is a json file in which we maintain all the constant values like validation text for verification.
+The advantage of this approach in case if some validation change we don't need to update test case, we just need to update constant file.
+Again you can maintain validation message based on the page Example
+
+preauth": {
+"issuer statement": "The PayPal Prepaid Mastercard is issued by The Bancorp Bank,
+"contact_phone": "(866) 753-6440",
+"mailing address 1": "PO Box 2136",
+"mailing address2": "Austin, TX 78768-2136",
+"fax":"(866) 358-0526",
+"email": "prepaid@paypal.com"
+
+Location: We create this file inside here src/main/resources/FileNamejson
+We generally use file name matching with AUT like for Tip we will maintain TipConistats.yaml
+
+Application Specific Steps
+
+They are application specific step.
+
+* They should be specific to that application requirement
+We maintain these steps under src/main/test/groovy/steps/papplication NamePackage/StepFileName
+Note: if package does not exist, then only you should create new package
+
+UI Generic Specific
+• This file contains steps which are commonly performed by the user.
+• Don't create similar step in your application specific steps if exists.
+• We can add new UI Generic Steps if required.
+• We maintain these steps under src/main/test/groovy/steps/UI/UICommonSteps
+
+Feature Files
+• These files contain scenarios of application AUT.
+• It is recommended to create one feature file corresponding to one functionality.
+• Name of the feature file should be as per the name of functionality.
+• We maintain these files under src/main/test/resources/@application Package/@FeatureFile
+Note: If anyone does not exist, you can create new one.
+
+Access application context in Application Specific Step
+To access context first we need to define method in the client context
+
+TipAppContext getTipApplicationContext(){
+if (tipAppContext) {
+tipAppContext = new TipAppContext()
+File tipYamlFile = new
+File(Thread.currentThread().getContextClassLoader().getResource("./TipPageObject
+s.yaml").toURI())
+tipAppContext.locatorFileData = new
+JsonHelper().getFileDataAsString(tipYamlFile)
+File tipConstantValueFile = new
+File(Thread.currentThread().getContextClassLoader().getResource("./TipConstantV
+alues.json").toURI())
+tipAppContext.constantFileData = new
+JsonHelper().getFileDataAsString(tipConstantValueFile)
+BrowserInstanceHandler.addBrowserInstance(tipAppContext)
+tipAppContext.webDriver BrowserInstanceHandler.getBrowserInstance()
+tipAppContext.uiActionHelper = new
+SeleniumUIActionHelper(tipAppContext.webDriver)ccess WebElement in application specific steps defined in PageObject File
+
+To get a webElement whose details you have provided in the yaml first you need to know the path of that webElement in the yaml file
+Like uacloginPage loginButton
+
+After this you first need to create object of web element helper and after that you can use methods like getByLocator ByPath and getWebElementByPath to get By object and webelement respectively.
+
+Below is the code for the same
+WebElementHelper webElementHelper = new
+WebElementHelper(tipAppContext.locatorFileData)
+By elementLocator = webElementHelper.getByLocatorByPath("oac.loginPage.loginButton")
+WebElement webElement =
+webElementHelper.getWebElementByPath("oac.loginPage.loginButton")
+
+Configuration Changes before using Generic Ul Step
+
+1. Adding new enum entry in UIApp enum which exist in src/main/Ul
+public enum UIApp {
+DAC, TIP, NewAPP}
+
+2. Add a new switch case in the getulContextMethod defined in Clientcontext class
+UIApplicationContext getUIApplicationContext(){
+UIApplicationContext uiApplicationContext
+switch (currentApp){
+case UIApp. OAC :
+uiApplicationContext = getOACApplicationContext()
+break
+case UIApp. TIP:
+uiApplicationContext = getTipApplicationContext()
+break
+uiApplicationContext = @getNewAppContextMethod()break
+
+3 Updating current context enum value which is defined in client context class to your application enum value in the your application specific step whete load the page or successfully login to the application
+
+When(?:the (primary) secondary))?(?: account user 1) successfully (.) in the OAC application(on production)?$') {String account Modifier, String loginModifier, String isProduction URL →
+ce currentApp = UIApp.OAC
+Generic Step List
+To enter and store data
+▸ When I enter "random" value of @fieldName in the "@PageObjectPath" page object
+▶ This will generate random value based on field name like zip,email other
+▶ When I enter "specific random" value of @fieldName in the "@PageObjectPath" page object
+
+Thumbrule to design Automation Framework
+
+1. NEVER HARD CODE
+2. KEEP THE RIGHT THINGS IN RIGHT PLACE
+3. FOLLOW THE REUSE CULTURE
+4. MAKE THE FRAMEWORK EASY FOR
+MANUAL TESTERS OR OTHERS TO CONTRIBUTE
+5. MAKE THE FRAMEWORK ROBUST
