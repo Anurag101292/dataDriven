@@ -80,3 +80,27 @@ It is also known as Static binding, Early binding and overloading as well.It is 
  but associated in a class & its subclass.It is achieved by function overloading and operator overloading.
  It is achieved by virtual functions and pointers.It provides fast execution because known early at compile time.
  It provides slow execution as compare to early binding because it is known at runtime
+
+ 52) What are the main uses of this keyword?
+ There are the following uses of this keyword.
+
+ this can be used to refer to the current class instance variable.
+ this can be used to invoke current class method (implicitly)
+ this() can be used to invoke the current class constructor.
+ this can be passed as an argument in the method call.
+ this can be passed as an argument in the constructor call.
+ this can be used to return the current class instance from the method.
+
+ 68) What are the differences between this and super keyword?
+ There are the following differences between this and super keyword.
+
+ The super keyword always points to the parent class contexts whereas this keyword always points
+  to the current class context.
+ The super keyword is primarily used for initializing the base class variables within the derived
+ class constructor whereas this keyword primarily used to differentiate between local and instance
+ variables when passed in the class constructor.
+ The super and this must be the first statement inside constructor otherwise the compiler will
+ throw an error.
+
+
+

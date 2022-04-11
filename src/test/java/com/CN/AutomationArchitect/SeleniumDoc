@@ -36,3 +36,10 @@ HasCapabilities, HasInputDevices, Interactive, JavascriptExecutor, PrintsPage,
  SearchContext, TakesScreenshot, HasVirtualAuthenticator, WebDriver
 
  https://naveenautomationlabs.com/realtimeinterviewquestions/
+
+ "1. WebDriver is developed completely by w3c standardization
+ 2. Selenium IDE support foer chrome is available now
+ 3. Selenium grid - the hubs and nodes are smooth to setup and handle now
+ , Once selenium server is started the grid will act both as a hub and a node
+ 4. Taking sceenshot at the element level ,section level and page level is possible now
+ 5. support of relative locators"

@@ -1,0 +1,19 @@
+It has two parameters: glue and feature:
+
+Feature: The path to the feature file is specified by the feature option.
+Glue: The glue argument is used to provide the step definition file's location.
+Example:
+
+import org.junit.runner.RunWith;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+@RunWith (Cucumber.class)
+@CucumberOptions (
+features = "src/test/Sample/features ",
+glue = {"StepDefinitionFile"}
+)
+public class SampleTestRunner {
+}
+29. How does the execution start in Cucumber?
+Cucumber execution will begin at the support level. In support,
+ it will first load the env.rb file, then hooks.rb, and last start executing feature file scenario steps.
