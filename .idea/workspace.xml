@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Cucumber">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TestStrategy" afterDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Test Strategy">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Lnklst/MultiplyTwoNo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MyStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/SubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/SubarraySum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SubarraySum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SubarraySum.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +229,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649708436536</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Test Strategy">
+      <created>1650261745813</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650261745813</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test Strategy">
+      <created>1650261853469</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650261853469</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +266,8 @@
     <MESSAGE value="Manual Testing ND FUNCTIONAL PROGRAMMING" />
     <MESSAGE value="Manual Testing FUNCTIONAL PROGRAMMING" />
     <MESSAGE value="Cucumber" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cucumber" />
+    <MESSAGE value="Test Strategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Strategy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

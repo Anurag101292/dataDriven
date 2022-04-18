@@ -1,13 +1,26 @@
 
 FOLLOWING_SIBLING
-//div[@class='canvas- graph']//a[@href='/accounting.html'][i[@class='icon-usd']]/following-sibling::h4"
+//div[@class='canvas- graph']//a[@href='/accounting.html'][i[@class='icon-usd']]/
+following-sibling::h4"
 ANCESTOR SIBLING
 //div[.//a[text()='SELENIUM']]/ancestor::div[@class='rt-grid-2 rt-omega']/following-sibling::div
+Xpath=//*[text()='Enterprise Testing']//ancestor::div
 FOLLOWING
 Xpath=//*[@type='text']//following::input
 PRECEDING
 Preceding: This function will return the preceding element of the particular element.
 Xpath= //*[@type='submit']//preceding::input
+Contains
+//h4/a[contains(text(),'SAP M')]";
+Xpath=//input[@type='submit' and @name='btnLogin']
+Xpath=//label[starts-with(@id,'message')]
+Xpath=//*[@type='text']//following::input
+Xpath=//*[@type='text']//following::input[1]
+Xpath=//*[@id='java_technologies']//child::li
+Xpath=//*[@type='submit']//preceding::input
+xpath=//*[@type='submit']//following-sibling::input
+Xpath =//*[@type='password']//self::input
+Xpath=//*[@id='rt-feature']//descendant::a
 
 EXPLICIT WAIT
 WebDriverWait wait=new WebDriverWait(driver, 20);
@@ -32,7 +45,7 @@ Equals(“complete”));
 
 All Interfaces used in selenium
 
-HasCapabilities, HasInputDevices, Interactive, JavascriptExecutor, PrintsPage,
+HasCapabilities,HasInputDevices,Interactive,JavascriptExecutor,PrintsPage,
  SearchContext, TakesScreenshot, HasVirtualAuthenticator, WebDriver
 
  https://naveenautomationlabs.com/realtimeinterviewquestions/
