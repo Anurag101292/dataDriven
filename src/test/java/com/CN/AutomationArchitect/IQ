@@ -46,7 +46,7 @@ What are your current project on which you are working ?
                            validate the functionality as soon as possible
                            to define how much fault we can tolerate
                            what is the accptance bandwith of request and response in production
-                           what are the service level agrrements for the project
+                           what are the service level agreements for the project
    Exit Criteria identify all the transactions in modules
                  Ensuring all critical testcases are passed
                  Achiving complete functional coverage
@@ -130,3 +130,6 @@ TEST PLANNING ?
  They can also be fragile since they have to test a large variety of user scenarios.
   Like integration tests, these tests may also require the app to communicate with external dependencies,
   thus adding to possible bottlenecks in completion.
+
+
+

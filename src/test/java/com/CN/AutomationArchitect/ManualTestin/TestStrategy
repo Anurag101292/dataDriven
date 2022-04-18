@@ -2,6 +2,22 @@ What is Test Plan?
 A Test Plan is defined as a document which outlines the scope, objective, method and weight on a software
 testing task
 
+TEST STRATEGY
+ 1. Scope	3
+  2. Test Approach	4
+         •	Process of testing
+         •	Testing levels
+         •	Roles and responsibilities of each team member
+         •	Types of Testing ( Load testing, Security testing, Performance testing etc.)
+         •	Testing approach & automation tool if applicable
+         •	Adding new defects, re-testing, Defect triage, Regression Testing and test sign off
+
+  3. Test Environment	5
+  4. Testing Tools	6
+  5. Release Control	7
+  6. Risk Analysis	8
+  7. Review and Approvals	9
+
 Test Strategy
 Test Strategy in software testing is defined as a set of guiding principles that determines the test design
  & regulates how the software testing process will be done. The objective of the Test Strategy is to provide
@@ -47,9 +63,11 @@ It is defined at project level
 
 KEY DIFFERENCE
 Test Plan is a document that describes the scope, objective and weight on software testing task
- whereas Test Strategy describes how testing needs to be done.
-Test Plan is used at the project level whereas Test Strategy is used at the organization level.
+                                                    whereas Test Strategy describes how testing needs to be done.
+Test Plan is used at the project level whereas              Test Strategy is used at the organization level.
 Test Plan has the primary goal of how to test, when to test and who will verify whereas Test
- Strategy has the primary goal of what technique to follow and which module to check.
+                                                    Strategy has the primary goal of what technique to
+                                                    follow and which module to check.
 Test Plan can be changed whereas Test Strategy can’t change.
-Test Plan is carried out by the test manager whereas the Test Strategy is carried out by the project manager.
+Test Plan is carried out by the test manager whereas the   Test Strategy is carried out by the project manager.
+
