@@ -1,9 +1,6 @@
 package com.CN.rough;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -30,13 +27,19 @@ class SubarraySum
           hm.put(current_sum, i);
       }
       if(end==-1){System.out.println("not found "); }
-      else{System.out.print("data found "+start+" "+end);}
+      else{System.out.print("data found "+arr[start]+" "+arr[end]);}
   }
+
+
+
     public static void main (String[] args)
     {
         int[] nums = { 3, 4, -7, 1, 3, 3, 1, -4 };
         int target = 7;
 
         printAllSubarrays(nums, target);
+
+
+
     }
 }

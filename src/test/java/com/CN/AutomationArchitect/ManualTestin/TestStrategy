@@ -1,0 +1,55 @@
+What is Test Plan?
+A Test Plan is defined as a document which outlines the scope, objective, method and weight on a software
+testing task
+
+Test Strategy
+Test Strategy in software testing is defined as a set of guiding principles that determines the test design
+ & regulates how the software testing process will be done. The objective of the Test Strategy is to provide
+ a systematic approach to the software testing process in order to ensure the quality, traceability, reliability
+ and better planning.
+
+Test Plan V/s Test Strategy is a prominent confusion among multiple levels of QA Aspirants
+
+Below is the detailed guide to it
+
+Difference Between Test Strategy and Test Plan
+Test Plan	                                                                                   Test Strategy
+A test plan for software project can be defined as a
+document that defines the scope, objective, approach and
+ emphasis on a software testing effort
+                                            Test strategy is a set of guidelines that explains test design
+                                            and determines how testing needs to be done
+Components of Test plan include- Test plan id, features to
+ be tested, test techniques, testing tasks, features pass
+ or fail criteria, test deliverables, responsibilities, and schedule, etc.
+                                           Components of Test strategy includes- objectives and scope,
+                                            documentation formats, test processes, team reporting structure,
+                                             client communication strategy, etc.
+Test plan is carried out by a testing manager or lead that
+describes how to test, when to test, who will test and what to test
+                                            A test strategy is carried out by the project manager.
+                                            It says what type of technique to follow and which module to test
+Test plan narrates about the specification
+                                           Test strategy narrates about the general approaches
+Test plan can change
+                                            Test strategy cannot be changed
+Test planning is done to determine possible
+ issues and dependencies in order to identify the risks.
+                                            It is a long-term plan of action.You can abstract information
+                                            that is not project specific and put it into test approach
+A test plan exists individually
+                                           In smaller project, test strategy is often found as a section
+                                            of a test plan
+It is defined at project level
+                                           It is set at organization level and can be used by multiple projects
+
+
+
+KEY DIFFERENCE
+Test Plan is a document that describes the scope, objective and weight on software testing task
+ whereas Test Strategy describes how testing needs to be done.
+Test Plan is used at the project level whereas Test Strategy is used at the organization level.
+Test Plan has the primary goal of how to test, when to test and who will verify whereas Test
+ Strategy has the primary goal of what technique to follow and which module to check.
+Test Plan can be changed whereas Test Strategy can’t change.
+Test Plan is carried out by the test manager whereas the Test Strategy is carried out by the project manager.

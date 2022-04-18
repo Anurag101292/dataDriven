@@ -103,4 +103,27 @@ It is also known as Static binding, Early binding and overloading as well.It is 
  throw an error.
 
 
+72) What is method overloading?
+Method overloading is the polymorphism technique which allows us to create multiple methods with
+ the same name but different signature. We can achieve method overloading in two ways.
 
+By Changing the number of arguments
+By Changing the data type of arguments
+Method overloading increases the readability of the program. Method overloading is performed to
+figure out the program quickly.
+
+78) What is method overriding:
+If a subclass provides a specific implementation of a method that is already provided by its parent class, it is known as Method Overriding. It is used for runtime polymorphism and to implement the interface methods.
+
+Rules for Method overriding
+
+The method must have the same name as in the parent class.
+The method must have the same signature as in the parent class.
+Two classes must have an IS-A relationship between them.
+
+151) Why are the objects immutable in java?
+Because Java uses the concept of the string literal.
+Suppose there are five reference variables, all refer to one object "sachin".
+ If one reference variable changes the value of the object, it will be affected by all the
+  reference variables.
+ That is why string objects are immutable in java.

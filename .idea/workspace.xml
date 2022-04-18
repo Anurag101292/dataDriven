@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Manual Testing FUNCTIONAL PROGRAMMING">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/CucumberFIle" afterDir="false" />
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Cucumber">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TestStrategy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/SeleniumDoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/SubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/SubarraySum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SubarraySum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SubarraySum.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Anurag">
+  <component name="RunManager" selected="Application.SubarraySum">
     <configuration name="AVGOFSTREAM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.CN.FunctionalProgramming.Streams.AVGOFSTREAM" />
       <module name="dataDriven" />
@@ -106,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandlingDynamicDropdown" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.Selenium.HandlingDynamicDropdown" />
+    <configuration name="SubarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.SubarraySum" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.CN.Selenium.*" />
+          <option name="PATTERN" value="com.CN.rough.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,19 +164,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.HandlingDynamicDropdown" />
       <item itemvalue="Application.DuplicateArray" />
       <item itemvalue="Application.SumofStream" />
       <item itemvalue="Application.AVGOFSTREAM" />
       <item itemvalue="Application.Anurag" />
+      <item itemvalue="Application.SubarraySum" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SubarraySum" />
         <item itemvalue="Application.Anurag" />
         <item itemvalue="Application.AVGOFSTREAM" />
         <item itemvalue="Application.SumofStream" />
         <item itemvalue="Application.DuplicateArray" />
-        <item itemvalue="Application.HandlingDynamicDropdown" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649705304966</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Cucumber">
+      <created>1649708436536</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649708436536</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +253,8 @@
     <MESSAGE value="SerialisationAnd desrialisation" />
     <MESSAGE value="Manual Testing ND FUNCTIONAL PROGRAMMING" />
     <MESSAGE value="Manual Testing FUNCTIONAL PROGRAMMING" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manual Testing FUNCTIONAL PROGRAMMING" />
+    <MESSAGE value="Cucumber" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cucumber" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -949,7 +959,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/SubarraySum.java</url>
-          <line>11</line>
+          <line>8</line>
           <properties class="com.CN.rough.SubarraySum" method="printAllSubarrays">
             <option name="EMULATED" value="true" />
           </properties>
