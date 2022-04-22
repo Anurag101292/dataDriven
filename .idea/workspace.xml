@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="Printevenodd">
+    <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="TestStrategy">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TESTPLANNING" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/TESTPYRAMID" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/GetCarInIndia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/GetCarinINdonesia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/Olx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TestStrategy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TestStrategy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/ReverseInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/ReverseInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/AnagramOnlogn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/AnagramOnlogn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/thirdLartgestno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/thirdLartgestno.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/CN/listeners" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/web-automation-framework-master" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -65,35 +77,9 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SubarraySum">
-    <configuration name="AVGOFSTREAM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.FunctionalProgramming.Streams.AVGOFSTREAM" />
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.FunctionalProgramming.Streams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Anurag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.Selenium.Anurag" />
-      <module name="dataDriven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.CN.Selenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DuplicateArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.DuplicateArray" />
+  <component name="RunManager" selected="Application.Primeno">
+    <configuration name="Primeno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Primeno" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
@@ -105,8 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubarraySum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.SubarraySum" />
+    <configuration name="RD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.RD" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
@@ -118,12 +104,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumofStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.FunctionalProgramming.Streams.SumofStream" />
+    <configuration name="Removewhitespace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Removewhitespace" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.CN.FunctionalProgramming.Streams.*" />
+          <option name="PATTERN" value="com.CN.rough.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RevaffectingSPLchar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.RevaffectingSPLchar" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.rough.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Reverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Reverse" />
+      <module name="dataDriven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.CN.rough.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,19 +173,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.DuplicateArray" />
-      <item itemvalue="Application.SumofStream" />
-      <item itemvalue="Application.AVGOFSTREAM" />
-      <item itemvalue="Application.Anurag" />
-      <item itemvalue="Application.SubarraySum" />
+      <item itemvalue="Application.RD" />
+      <item itemvalue="Application.RevaffectingSPLchar" />
+      <item itemvalue="Application.Reverse" />
+      <item itemvalue="Application.Removewhitespace" />
+      <item itemvalue="Application.Primeno" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SubarraySum" />
-        <item itemvalue="Application.Anurag" />
-        <item itemvalue="Application.AVGOFSTREAM" />
-        <item itemvalue="Application.SumofStream" />
-        <item itemvalue="Application.DuplicateArray" />
+        <item itemvalue="Application.Primeno" />
+        <item itemvalue="Application.Removewhitespace" />
+        <item itemvalue="Application.Reverse" />
+        <item itemvalue="Application.RevaffectingSPLchar" />
+        <item itemvalue="Application.RD" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650264230532</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="TestStrategy">
+      <created>1650265607936</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1650265607936</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,74 +301,70 @@
     <MESSAGE value="Test Strategy" />
     <MESSAGE value="Multiply2 no" />
     <MESSAGE value="Printevenodd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Printevenodd" />
+    <MESSAGE value="TestStrategy" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestStrategy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>14</line>
+          <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>15</line>
+          <line>14</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>20</line>
+          <line>19</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>21</line>
+          <line>20</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>22</line>
+          <line>21</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>24</line>
+          <line>22</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>30</line>
+          <line>28</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>31</line>
+          <line>29</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>35</line>
+          <line>33</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>36</line>
+          <line>34</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>38</line>
+          <line>36</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java</url>
-          <line>40</line>
+          <line>37</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -659,107 +674,107 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>14</line>
+          <line>12</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>15</line>
+          <line>13</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>16</line>
+          <line>14</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>18</line>
+          <line>16</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>20</line>
+          <line>18</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>23</line>
+          <line>21</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>24</line>
+          <line>22</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>25</line>
+          <line>23</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>26</line>
+          <line>24</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>28</line>
+          <line>26</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>29</line>
+          <line>27</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>30</line>
+          <line>28</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>31</line>
+          <line>29</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>32</line>
+          <line>30</line>
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>33</line>
+          <line>31</line>
           <option name="timeStamp" value="167" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>35</line>
+          <line>33</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>36</line>
+          <line>34</line>
           <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>37</line>
+          <line>35</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>39</line>
+          <line>37</line>
           <option name="timeStamp" value="171" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>43</line>
+          <line>41</line>
           <option name="timeStamp" value="172" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java</url>
-          <line>41</line>
+          <line>39</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

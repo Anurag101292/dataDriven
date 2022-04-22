@@ -1,0 +1,161 @@
+What is a Test Plan?
+A Test Plan refers to a detailed document that catalogs the test strategy, objectives, schedule, estimations,
+deadlines, and the resources required for completing that particular project. Think of it as a blueprint for
+running the tests needed to ensure the software is working properly – controlled by test managers.
+
+A well-crafted test plan is a dynamic document that changes according to progressions in the project and stays
+ current at all times. It is the point of reference, based on which testing activities are executed and
+ coordinated among a QA team.
+
+The test plan is also shared with Business Analysts, Project Managers, Dev teams, and anyone else associated
+with the project, This mainly offers transparency into QA activities so that all stakeholders know how the
+software will be tested.
+
+The plan is built by QA managers or leads based on input from QA (and sometimes, non-QA) team members.
+Creating it should not take more than 1/3rd of the time allocated for the entire project.
+
+Why are Test Plans important?
+They help individuals outside the QA teams (developers, business managers, customer-facing teams) understand
+ exactly how the website or app will be tested.
+They offer a clear guide for QA engineers to conduct their testing activities.
+They detail aspects such as test scope, test estimation, strategy, and so on. Collating all this information
+into a single document makes it easier to review by management personnel or to re-use for other projects.
+Components of a Test Plan
+Scope: Details the objectives of the particular project. Also, it details user scenarios to be used in tests.
+ If necessary, the scope can specify what scenarios or issues the project will not cover.
+Schedule: Details start dates and deadlines for testers to deliver results.
+Resource Allocation: Details which tester will work on which test.
+Environment: Details the nature, configuration, and availability of the test environment.
+Tools: Details what tools are to be used for testing, bug reporting, and other relevant activities.
+Defect Management: Details how bugs will be reported, to whom and what each bug report needs to be accompanied
+ by. For example, should bugs be reported with screenshots, text logs, or videos of their occurrence in the code?
+Risk Management: Details what risks may occur during software testing, and what risks the software itself
+may suffer if released without sufficient testing.
+Exit Parameters: Details when testing activities must stop. This part describes the results that are expected
+ from the QA operations, giving testers a benchmark to compare actual results to.
+How to create a Test Plan?
+Creating a Test Plan involves the following steps:
+
+Product Analysis
+Designing Test Strategy
+Defining Objectives
+Establish Test Criteria
+Planning Resource Allocation
+Planning Setup of Test Environment
+Determine test schedule and estimation
+Establish Test Deliverables
+1. Product Analysis
+
+Start with learning more about the product being tested, the client, and the end-users of similar products.
+ Ideally, this phase should focus on answering the following questions:
+
+Who will use the product?
+What is the main purpose of this product?
+How does the product work?
+What are the software and hardware specifications?
+In this stage, do the following:
+
+Interview clients, designers, and developers
+Review product and project documentation
+Perform a product walkthrough
+2. Designing Test Strategy
+
+The Test Strategy document is developed by the test manager and defines the following:
+
+Project objectives and how to achieve them.
+The amount of effort and cost required for testing.
+More specifically, the document must detail out:
+
+Scope of Testing: Contains the software components (hardware, software, middleware) to be tested and also those
+that will not be tested.
+Type of Testing: Describes the types of tests to be used in the project. This is necessary since each test
+ identifies specific types of bugs.
+Risks and Issues: Describes all possible risks that may occur during testing – tight deadlines, insufficient
+ management, inadequate or erroneous budget estimate – as well as the effect of these risks on the product or
+  business.
+Test Logistics: Mentions the names of testers (or their skills) as well as the tests to be run by them.
+This section also includes the tools and the schedule laid out for testing.
+3. Defining Objectives
+
+This phase defines the goals and expected results of test execution. Since all testing intends to identify as
+many defects as possible, the objects must include:
+
+A list of all software features – functionality, GUI, performance standards- that must be tested.
+The ideal result or benchmark for every aspect of the software that needs testing. This is the benchmark
+to which all actual results will be compared.
+4. Establish Test Criteria
+
+Test Criteria refers to standards or rules governing all activities in a testing project. The two main test
+criteria are:
+
+Suspension Criteria: Defines the benchmarks for suspending all tests. For example, if QA team members find that
+50% of all test cases have failed, then all testing is suspended until the developers resolve all of the bugs
+that have been identified so far.
+Exit Criteria: Defines the benchmarks that signify the successful completion of a test phase or project.
+ The exit criteria are the expected results of tests and must be met before moving on to the next stage of
+  development. For example, 80% of all test cases must be marked successful before a particular feature or
+   portion of the software can be considered suitable for public use.
+5. Planning Resource Allocation
+
+This phase creates a detailed breakdown of all resources required for project completion.
+ Resources include human effort, equipment, and all infrastructure required for accurate and
+  comprehensive testing.
+
+This part of the test plan decides the measure of resources (number of testers and equipment) the project
+requires. This also helps test managers formulate a correctly calculated schedule and estimation for the
+project.
+
+6. Planning Setup of Test Environment
+
+The test environment refers to software and hardware setup on which QAs run their tests.
+ Ideally, test environments should be real devices so that testers can monitor software behavior in real
+  user conditions. Whether it is manual testing or automation testing, nothing beats real devices, installed
+   with real browsers and operating systems are non-negotiable as test environments. Do not compromise your
+   test results with emulators or simulators.
+
+Try Testing on Real Device Cloud for Free
+
+7. Determining Test Schedule and Estimation
+
+For test estimation, break down the project into smaller tasks and allocate time and effort required for each.
+
+Then, create a schedule to complete these tasks in the designated time with the specific amount of effort.
+Creating the schedule, however, does require input from multiple perspectives:
+
+Employee availability, number of working days, project deadlines, daily resource availability.
+Risks associated with the project which has been evaluated in an earlier stage.
+8. Establish Test Deliverables
+
+Test Deliverables refer to a list of documents, tools, and other equipment that must be created, provided,
+ and maintained to support testing activities in a project.
+
+A different set of deliverables is required before, during, and after testing.
+
+Deliverables required before testing
+
+Documentation on
+
+Test Plan
+Test Design
+Deliverables required during testing
+
+Documentation on
+
+Test Scripts
+Simulators or Emulators (in early stages)
+Test Data
+Error and execution logs
+Deliverables required after testing
+
+Documentation on
+
+Test Results
+Defect Reports
+Release Notes
+A test plan in software testing is the backbone on which the entire project is built. Without a
+sufficiently extensive and well-crafted plan, QAs are bound to get confused with vague, undefined goals
+and deadlines. This hinders fast and accurate testing unnecessarily, slowing down results, and delaying
+release cycles.
+
+The guidelines in this article are meant to help test managers and senior QA professionals with constructing
+ a test plan that helps with executing cleaner, faster, and more result-oriented tests.

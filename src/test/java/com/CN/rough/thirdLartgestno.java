@@ -6,8 +6,6 @@ public class thirdLartgestno {
 
 	public static void main(String[] args)
 	{
-		
-	
 	int[] arr = {2,4,3,44,5,6,7};
 		secondmaxvalue(arr);
 //	Arrays.sort(arr);

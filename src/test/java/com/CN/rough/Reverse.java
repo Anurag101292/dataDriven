@@ -2,7 +2,7 @@ package com.CN.rough;
 
 public class Reverse {
 
-
+//skeegrofsk ee gtapi hsn retni
     static void reverses(String str) {
 
         char[] inputArray = str.toCharArray();
@@ -33,7 +33,7 @@ public class Reverse {
         System.out.println(String.valueOf(result));
     }
 
-
+    //skeeg rof skeeg ta pihsnretni
     public static String reverse_at_place(String str) {
         if (str == null || str.isEmpty()) {
             return str;
@@ -53,7 +53,7 @@ public class Reverse {
         str[i] = str[j];
         str[j] = temp;
     }
-
+    //skeeg rof skeeg ta pihsnretni
     public static void isReverse(String str) {
         char[] ch = str.toCharArray();
         int l = ch.length - 1;
@@ -61,6 +61,7 @@ public class Reverse {
             System.out.print(ch[i]);
         } }
     // Java program to ReverseString using StringBuil
+  //  skeeg rof skeeg ta pihsnretni
     public static void newreverse(String input) {
 
         StringBuilder input1 = new StringBuilder();
