@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:maven" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="TestStrategy">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/ManualTestin/TESTPLANNING" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/TESTPYRAMID" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/GetCarInIndia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/GetCarinINdonesia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/DesignPattern/AbstractFactoryPattern/Olx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Mouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/AnagramOnlogn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Countcharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/Reverse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/ReverseInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/ReverseInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/thirdLartgestno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/AnagramOnlogn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/AnagramOnlogn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/thirdLartgestno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/thirdLartgestno.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +77,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/web-automation-framework-master" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners" />
-      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\AutomationArchitect\ManualTestin" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\AutomationArchitect" />
@@ -76,9 +91,15 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IHookable" />
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners\IExecutionListener" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\listeners" />
+      <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Primeno">
     <configuration name="Primeno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.CN.rough.Primeno" />
       <module name="dataDriven" />
       <extension name="coverage">
@@ -189,7 +210,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="" />
@@ -303,6 +327,16 @@
     <MESSAGE value="Printevenodd" />
     <MESSAGE value="TestStrategy" />
     <option name="LAST_COMMIT_MESSAGE" value="TestStrategy" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1651830047289">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1651830047289" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1651830217690">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1651830217690" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
