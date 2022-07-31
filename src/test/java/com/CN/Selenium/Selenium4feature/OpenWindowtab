@@ -1,0 +1,10 @@
+ //openwindowtab
+
+ @Test
+  public void openNewTab(){
+    WebDriverManager.chromedriver().setup();
+    WebDriver driver = new ChromeDriver();
+    driver.navigate().to("https://www.google.com");
+    driver.switchTo().newWindow(WindowType.TAB);
+    driver.navigate().to("https://www.swtestacademy.com");
+  }

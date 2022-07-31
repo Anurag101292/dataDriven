@@ -31,7 +31,8 @@ skipped_steps_screenshot=yes
 #It will try for 1 time if any Test case gets failed
 retry_failed_tests=yes
 
-We have configLoader class to manage config files to load data from config ,, we are trying to change or you can say to replace with owner dependencies
+We have configLoader class to manage config files to load data from config ,,
+we are trying to change or you can say to replace with owner dependencies
 
 
 In main package we have seperate utils for generic functions which are commonly used in tests
@@ -42,8 +43,8 @@ public static String getBrowserInfo() {
 		return cap.getBrowserName().toUpperCase();
 
 2....Email Utils we are using dependency for sending mail javax.mail
-3.... Faker Utils to get random data    JAVA FAKER library
-4.... we have Jacksonutils to deserialise Json
+3....Faker Utils to get random data    JAVA FAKER library
+4....we have Jacksonutils to deserialise Json
       public static <T> T deSerializationJSON(String fileName, Class<T> T) throws IOException {
       		/* myBillingAddress.json --> has to be present under src/test/resources */
       		InputStream is = JacksonUtils.class.getClassLoader().getResourceAsStream(fileName);

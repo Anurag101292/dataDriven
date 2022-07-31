@@ -20,15 +20,20 @@ Abstract class	Interface
 public abstract class Shape{
 public abstract void draw();
 }
-
-134) What is the difference between Checked Exception and Unchecked Exception?
+Difference between Checked and Unchecked Exceptions
 1) Checked Exception
-The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions,
- e.g., IOException, SQLException, etc. Checked exceptions are checked at compile-time.
+The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked
+exceptions. For example, IOException, SQLException, etc. Checked exceptions are checked at compile-time.
 
 2) Unchecked Exception
-The classes that extend RuntimeException are known as unchecked exceptions,
- e.g., ArithmeticException, NullPointerException, etc. Unchecked exceptions are not checked at compile-time.
+The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException,
+ NullPointerException, ArrayIndexOutOfBoundsException, etc. Unchecked exceptions are not checked at compile-time,
+ but they are checked at runtime.
+
+3) Error
+Error is irrecoverable. Some example of errors are OutOfMemoryError, VirtualMachineError, AssertionError etc.
+
+polymorphism
 
  Method overloading is the polymorphism technique which allows us to create multiple methods with the same
   name but different signature. We can achieve method overloading in two ways.
@@ -102,15 +107,6 @@ It is also known as Static binding, Early binding and overloading as well.It is 
  The super and this must be the first statement inside constructor otherwise the compiler will
  throw an error.
 
-
-72) What is method overloading?
-Method overloading is the polymorphism technique which allows us to create multiple methods with
- the same name but different signature. We can achieve method overloading in two ways.
-
-By Changing the number of arguments
-By Changing the data type of arguments
-Method overloading increases the readability of the program. Method overloading is performed to
-figure out the program quickly.
 
 78) What is method overriding:
 If a subclass provides a specific implementation of a method that is already provided by its parent class, it is known as Method Overriding. It is used for runtime polymorphism and to implement the interface methods.

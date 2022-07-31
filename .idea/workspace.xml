@@ -33,11 +33,142 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424ba222-ecb9-4dfa-8590-f3c6b5942e07" name="Default Changelist" comment="TestStrategy">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Mouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/Automation testing  Strategy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/DynamicScroll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Scrollatlast" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Selenium4feature/DevToolsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Selenium4feature/GettingObjectLocationandsize" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Selenium4feature/OpenWindowtab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/Selenium/Selenium4feature/UseOfrelativelocator" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentReport/ExtentManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentReport/ExtentTestManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/EXPLANATIONOFPOM" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/IQ" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/AutomationArchitect/java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/rough/MissingNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentReport/ETReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CN/utilities/ExtentReport/ETReportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Base/TestBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/AdapterDesignPattern/Assignment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/AdapterDesignPattern/Pen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/AdapterDesignPattern/PenAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/AdapterDesignPattern/PilotPen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/AdapterDesignPattern/School.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/Builderdesignpattern/Homepage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/Builderdesignpattern/Loginpage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/Builderdesignpattern/Reunnertest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/FactoryDesignPattern/BrowserFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/FactoryDesignPattern/Chromeclass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/FactoryDesignPattern/FactoryClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/FactoryDesignPattern/Firefoxclass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/FactoryDesignPattern/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/LoadURL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/DesignPattern/SingletonDesignPattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/FunctionalProgramming/DIFFERENTMethod/Print.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/FunctionalProgramming/Thirdrule/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/FunctionalProgramming/Thirdrule/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/FunctionalProgramming/Thirdrule/C.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/FunctionalProgramming/Thirdrule/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/Mainrunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/MyRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/MyThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/MyThread1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/ThreadDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Multithreading/ThreadDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/HamcrestAssure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/HandlingHeader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/LoggingRes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/PerfectGetRestFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/PerfectPostRestFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/PerfectPutRestFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/Route.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssure/RstApiTknTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/RestAssured/TestClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Search/BinarySearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Search/SearchInfiniteArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Search/TernarySearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/FindColor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/RobotKeywordDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/WebAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Selenium/WindowHandle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Sorting/Bubblesort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Sorting/Mergesort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/Sorting/SelectionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/AnnotationTransformer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/IAnnotationTransWithExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/IExecutionListener/IExecutionListenerWithExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/listeners/IExecutionListener/MyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/AnagramOnlogn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Brokenlinks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/CommonLongPrefix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Countcharacter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DiamondStructure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DockerImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/DuplicateCharFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/EqualTo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/FndDupArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/HMapSortingByvalues$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/HMapSortingByvalues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/HelperTHIS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/HighlightElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/LEFTROTATION.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/Lexpression$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/Lexpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/SortList$Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lambdaexpres/SortList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/LeapYear.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lexicograph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/Anurag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/ChkcrculrLst.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/LinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Lnklst/Runner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/LongestSubString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MissingNo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MyHashMap$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MyHashMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MyLinkedlist$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/MyLinkedlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Palindrome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Primeno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveDuplicatesJavaExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/RemoveVowel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Removewhitespace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/ReverseInteger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/ReverseLinkedlist$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/ReverseLinkedlist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SUPERTEST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/SubarraySum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/TESTNG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/TestNGParameterizationExcel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/Thisfunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/dataStructure/HandlingDynamicArrayJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/dataStructure/HandlingJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/dataStructure/Swap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/rough/thirdLartgestno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/DataProvide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExcelReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/ExtentReport/ETReportTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/LOG4J/SampleEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/MailConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/MonitoringMail$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/MonitoringMail$SMTPAuthenticator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/MonitoringMail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/PropertyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/Screenshot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/CN/utilities/TestUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTOOBJECTOBJECTTOPOJO/CustomerDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTOOBJECTOBJECTTOPOJO/CustomerDetailsAppium.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTOOBJECTOBJECTTOPOJO/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTOOBJECTOBJECTTOPOJO/extractJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/Kaas/HandlingWebTable.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +227,9 @@
       <recent name="C:\Users\Anurag\IdeaProjects\dataDriven\src\test\java\com\CN\rough\dataStructure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Primeno">
-    <configuration name="Primeno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="14" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Primeno" />
+  <component name="RunManager" selected="Application.LongestSubSeqCount">
+    <configuration name="LongestSubSeqCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.LongestSubSeqCount" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
@@ -112,8 +241,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.CN.rough.RD" />
+    <configuration name="Primeno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.CN.rough.Primeno" />
       <module name="dataDriven" />
       <extension name="coverage">
         <pattern>
@@ -194,19 +325,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.RD" />
       <item itemvalue="Application.RevaffectingSPLchar" />
       <item itemvalue="Application.Reverse" />
       <item itemvalue="Application.Removewhitespace" />
       <item itemvalue="Application.Primeno" />
+      <item itemvalue="Application.LongestSubSeqCount" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LongestSubSeqCount" />
         <item itemvalue="Application.Primeno" />
         <item itemvalue="Application.Removewhitespace" />
         <item itemvalue="Application.Reverse" />
         <item itemvalue="Application.RevaffectingSPLchar" />
-        <item itemvalue="Application.RD" />
       </list>
     </recent_temporary>
   </component>
@@ -333,6 +464,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1651830047289" />
+    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1659295290117">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="504" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1659295290117" />
+    <state x="587" y="115" key="RollbackChangesDialog" timestamp="1659182811448">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="587" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1659182811448" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1651830217690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1025,6 +1164,41 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/Selenium/Wait.java</url>
           <line>13</line>
           <option name="timeStamp" value="237" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="240" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="241" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="242" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="243" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/LongestSubSeqCount.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/CN/rough/Primeno.java</url>
