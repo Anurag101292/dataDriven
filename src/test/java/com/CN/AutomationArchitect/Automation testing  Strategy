@@ -1,7 +1,5 @@
 What kinds of test automation strategies should we use in Agile?
 
-Onur:
-
 When we start to define our automation strategy, we need to know what kind of automation requirements do we have first
 . If your product is a word-press template, then you should focus UI and visual test automation more, if your product
  is a payment gateway, then it is more logical to do API test automation more. When we look at Agile Testing Quadrant
