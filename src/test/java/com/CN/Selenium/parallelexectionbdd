@@ -1,1 +1,37 @@
 
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <parallel>methods</parallel>
+                <threadCount>4</threadCount>
+                <includes>
+                    <include>**/Parallel*.java</include>
+                </includes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
+
+@CucumberOptions(
+    features = "src/test/resources/features", // Path to your feature files
+    glue = "stepdefinitions", // Package containing step definitions
+    plugin = {"pretty", "html:target/cucumber-reports.html"}
+)
+public class ParallelRunner extends AbstractTestNGCucumberTests {
+
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        // Enables parallel execution of scenarios
+        return super.scenarios();
+    }
+}
