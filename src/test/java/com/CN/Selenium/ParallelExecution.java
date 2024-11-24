@@ -37,3 +37,34 @@ public class ParallelTest {
         }
     }
 }
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Parallel Execution Suite" parallel="tests" thread-count="3">
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome" />
+        <parameter name="url" value="https://www.google.com" />
+        <classes>
+            <class name="ParallelTest" />
+        </classes>
+    </test>
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox" />
+        <parameter name="url" value="https://www.selenium.dev" />
+        <classes>
+            <class name="ParallelTest" />
+        </classes>
+    </test>
+    <test name="Edge Test">
+        <parameter name="browser" value="edge" />
+        <parameter name="url" value="https://www.wikipedia.org" />
+        <classes>
+            <class name="ParallelTest" />
+        </classes>
+    </test>
+</suite>
