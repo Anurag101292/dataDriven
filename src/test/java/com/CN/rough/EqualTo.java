@@ -15,6 +15,12 @@ public class EqualTo{
 		System.out.println(a.equals(a2));
 		System.out.println(a1.equals(a3));
 	}
+false
+false
+false
+Anurag4true
+Anurag5true
+Anurag6true
 
 //	The main difference between the .equals() method and == operator is that one is a method,
 //	and the other is the operator.
