@@ -1,30 +1,39 @@
-package com.CN.Selenium;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ParallelExecution {
-    public WebDriver driver;
-    @Test
-    public void FirefoxTest() {
-        //Initializing the firefox driver (Gecko)
-        driver = new FirefoxDriver();
-        driver.get("https://www.demoqa.com");
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[1]")).click();
-        driver.quit();
+public class ParallelTest {
+
+    private WebDriver driver;
+
+    @BeforeMethod
+    @Parameters("browser")
+    public void setup(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            driver = new EdgeDriver();
+        }
     }
 
     @Test
-    public void ChromeTest()
-    {
-        //Initialize the chrome driver
-        driver = new ChromeDriver();
-        driver.get("https://www.demoqa.com");
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]/div/div[1]")).click();
-        driver.quit();
+    @Parameters("url")
+    public void openWebsite(String url) {
+        driver.get(url);
+        System.out.println("Page Title: " + driver.getTitle());
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
