@@ -1,0 +1,199 @@
+Basic Shell Scripting Questions
+What is a shell script, and why is it useful?
+
+Explain how shell scripts automate repetitive tasks, such as file operations, test execution, or log analysis.
+How do you declare and use variables in a shell script?
+
+Example:
+bash
+Copy code
+name="QA Tester"
+echo "Hello, $name"
+What is the difference between = and == in shell scripting?
+
+How do you make a script executable?
+Answer: chmod +x script_name.sh
+
+File and Directory Operations
+How do you find all .log files in a directory and its subdirectories?
+
+Command: find . -name "*.log"
+
+How do you check if a file exists in a shell script?
+Example:
+bash
+Copy code
+if [ -f "file.txt" ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi
+
+Write a command to count the number of lines in a file.
+
+Command: wc -l filename
+Test Execution and Automation
+How would you use a shell script to execute a set of test cases?
+
+Example:
+bash
+Copy code
+for test in test1.sh test2.sh test3.sh; do
+    bash $test
+done
+How can you validate the success or failure of a command in a script?
+
+Example:
+bash
+Copy code
+if [ $? -eq 0 ]; then
+    echo "Command succeeded"
+else
+    echo "Command failed"
+fi
+How do you pass arguments to a shell script?
+
+Example:
+bash
+Copy code
+./script.sh arg1 arg2
+Access with $1, $2.
+System and Process Monitoring
+How do you check if a specific process is running?
+
+Command: ps aux | grep process_name
+How do you find the disk usage of a directory?
+
+Command: du -sh directory_name
+How do you schedule a shell script to run periodically?
+
+Use cron jobs (e.g., crontab -e):
+bash
+Copy code
+0 5 * * * /path/to/script.sh
+Logs and Debugging
+How do you extract specific lines from a log file?
+
+Example:
+bash
+Copy code
+grep "ERROR" logfile.log
+How do you monitor a log file in real time?
+
+Command: tail -f logfile.log
+How can you debug a shell script?
+
+Run with bash -x script.sh to trace execution.
+Advanced Shell Scripting Questions
+How do you handle user input in a shell script?
+
+Example:
+bash
+Copy code
+read -p "Enter your name: " name
+echo "Hello, $name"
+What is the difference between > and >> in shell scripting?
+
+> overwrites a file, while >> appends to it.
+How do you use a case statement in shell scripting?
+
+Example:
+bash
+Copy code
+case $var in
+    1) echo "Option 1";;
+    2) echo "Option 2";;
+    *) echo "Invalid option";;
+esac
+How can you use a shell script to extract the HTTP status code of a URL?
+
+Command:
+bash
+Copy code
+curl -o /dev/null -s -w "%{http_code}\n" http://example.com
+Scenario-Based Questions
+Write a script to check if a server is reachable.
+
+Example:
+bash
+Copy code
+if ping -c 1 192.168.1.1 &> /dev/null; then
+    echo "Server is reachable"
+else
+    echo "Server is not reachable"
+fi
+How would you write a script to archive old log files?
+
+Example:
+bash
+Copy code
+find /path/to/logs -name "*.log" -mtime +7 -exec tar -rvf old_logs.tar {} \; -exec rm {} \;
+Write a script to compare two files and output the differences.
+
+Command: diff file1.txt file2.txt
+How would you dynamically create test result files for each test?
+
+Example:
+bash
+Copy code
+for test in test1 test2 test3; do
+    bash $test > ${test}_results.txt
+done
+
+
+
+
+
+
+
+
+
+Difference between = and == in Shell Scripting:
+Purpose:
+=: Used for assignment in shell scripting.
+==: Used for comparison in conditional expressions.
+Assignment with =:
+Assigns a value to a variable.
+Example:
+bash
+Copy code
+name="QA Tester"   # Assigns "QA Tester" to the variable 'name'
+echo $name         # Output: QA Tester
+Comparison with ==:
+Checks if two strings are equal.
+Typically used in test or [ ] conditions, and in [[ ]] for advanced string comparison.
+Example:
+bash
+Copy code
+str1="Hello"
+str2="Hello"
+
+if [ "$str1" == "$str2" ]; then
+    echo "Strings are equal"
+else
+    echo "Strings are not equal"
+fi
+Posix Compliance:
+In some shells, such as sh or dash, = is used for string comparison instead of ==.
+Example:
+bash
+Copy code
+if [ "$str1" = "$str2" ]; then
+    echo "Strings are equal"
+fi
+== is typically supported in bash and zsh within [[ ]].
+Use in Numerical Comparison:
+= is not used for numerical comparison. For numbers, use -eq (equal) or similar operators.
+Example:
+bash
+Copy code
+if [ 5 -eq 5 ]; then
+    echo "Numbers are equal"
+fi
+Summary Table:
+Symbol	Purpose	Usage Example
+=	Assignment	name="Value"
+=	String comparison	[ "$a" = "$b" ]
+==	String comparison	[[ "$a" == "$b" ]] (in bash)
+In summary, = is for assignment or string comparison (in some shells), while == is primarily
+used for string comparison in advanced shells like bash.
