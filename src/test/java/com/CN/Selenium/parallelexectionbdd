@@ -35,3 +35,47 @@ public class ParallelRunner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 }
+
+
+
+
+src
+└── test
+    ├── java
+    │   ├── stepdefinitions
+    │   │   └── StepDefinitions.java
+    │   └── runner
+    │       └── ParallelRunner.java
+    └── resources
+        └── features
+            ├── feature1.feature
+            └── feature2.feature
+
+
+
+Alternative: Using Cucumber JVM Parallel Plugin
+If you prefer more control over parallelization, use the Cucumber JVM Parallel Plugin to split feature files and execute them in parallel.
+
+Add the plugin to your pom.xml:
+xml
+Copy code
+<plugin>
+    <groupId>com.github.temyers</groupId>
+    <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+    <version>6.0.0</version>
+    <executions>
+        <execution>
+            <id>generateRunners</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+                <goal>generateRunners</goal>
+            </goals>
+            <configuration>
+                <glue>stepdefinitions</glue>
+                <featuresDirectory>src/test/resources/features</featuresDirectory>
+                <parallelScheme>SCENARIO</parallelScheme>
+                <outputDirectory>target/generated-test-sources/cucumber</outputDirectory>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
