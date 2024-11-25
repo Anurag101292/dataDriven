@@ -1,0 +1,169 @@
+Basic Kafka Questions
+What is Kafka, and why is it used?
+
+Kafka is a distributed, high-throughput, fault-tolerant publish-subscribe messaging system. It is used for:
+Real-time data streaming.
+Log aggregation.
+Event sourcing.
+Decoupling of systems via messaging.
+-------------------------------------------------------------------------------------------------------------
+What are the main components of Kafka?
+
+Producer: Sends messages to topics.
+Consumer: Reads messages from topics.
+Broker: Kafka server managing storage and delivery.
+Topic: Categories where messages are sent.
+Partition: Subdivision of topics for parallelism.
+ZooKeeper: (Deprecated in newer versions) Used for cluster coordination.
+--------------------------------------------------------------------------------------------------------------
+How is Kafka different from traditional messaging systems?
+
+Kafka provides durability, scalability, partitioning, and high throughput, unlike traditional message brokers (e.g., RabbitMQ, 
+ActiveMQ).
+Explain the concept of a Kafka Topic.
+
+A topic is a logical channel where producers write messages, and consumers read them. Topics are divided into partitions for 
+scalability.
+What is a partition in Kafka, and why is it important?
+
+Partitions divide a topic into smaller segments.
+Advantages:
+Parallelism: Multiple consumers can read partitions independently.
+Scalability: Data is distributed across brokers.
+Intermediate Kafka Questions
+---------------------------------------------------------------------------------------------------------------
+What is the role of ZooKeeper in Kafka?
+
+Manages:
+Cluster metadata (e.g., brokers, topics, partitions).
+Leader election for partitions.
+Configuration management.
+Note: ZooKeeper is being replaced by Kafka's native KRaft (Kafka Raft).
+Explain Kafka's replication mechanism.
+
+Each partition is replicated across multiple brokers.
+Leader handles all reads/writes; replicas are synchronized with the leader.
+Provides fault tolerance.
+---------------------------------------------------------------------------------------------------------------
+What is Kafka offset, and how is it managed?
+
+Offset is a unique identifier for each message in a partition.
+Managed by Kafka internally or by consumers using commit strategies.
+---------------------------------------------------------------------------------------------------------------
+How does Kafka achieve fault tolerance?
+
+Replication: Partitions are replicated across brokers.
+Acks: Producers receive acknowledgments to ensure message durability.
+---------------------------------------------------------------------------------------------------------------
+What is the difference between acks=0, acks=1, and acks=all?
+
+acks=0: Producer doesn’t wait for acknowledgment (low durability).
+acks=1: Producer waits for leader acknowledgment.
+acks=all: Producer waits for all replicas to acknowledge (highest durability).
+---------------------------------------------------------------------------------------------------------------
+What is Kafka Streams, and how does it differ from Kafka Connect?
+
+Kafka Streams: A library for stream processing.
+Kafka Connect: A tool for integrating external data sources and sinks with Kafka.
+---------------------------------------------------------------------------------------------------------------
+What are consumer groups in Kafka?
+
+A group of consumers sharing the same group ID.
+Kafka ensures each partition is read by only one consumer in a group.
+---------------------------------------------------------------------------------------------------------------
+How does Kafka handle backpressure?
+
+Kafka does not apply backpressure directly but relies on batching, flow control, and consumer lag monitoring to handle high loads.
+---------------------------------------------------------------------------------------------------------------
+Advanced Kafka Questions
+What is the role of Kafka Producer and Consumer APIs?
+
+Producer API: For sending messages to topics.
+Consumer API: For reading messages from topics and managing offsets.
+---------------------------------------------------------------------------------------------------------------
+How is Kafka scalable?
+
+Producers: Partition data for parallelism.
+Consumers: Use consumer groups to distribute workload.
+Brokers: Add more brokers to handle higher loads.
+---------------------------------------------------------------------------------------------------------------
+What is Kafka exactly-once semantics? How is it implemented?
+
+Ensures messages are neither lost nor duplicated.
+Implemented using idempotent producers and transactional consumers.
+---------------------------------------------------------------------------------------------------------------
+What is ISR (In-Sync Replica)?
+
+ISR is a list of replicas fully synchronized with the leader.
+Only replicas in ISR are eligible for leader election.
+---------------------------------------------------------------------------------------------------------------
+How does Kafka handle message retention?
+
+Configurable retention policies:
+Time-based: Retain messages for a specified duration.
+Size-based: Retain messages up to a specific size.
+---------------------------------------------------------------------------------------------------------------
+Explain Kafka compaction.
+
+Retains only the latest value for each key.
+Used for compacting logs or state retention.
+How does Kafka manage schema evolution?
+---------------------------------------------------------------------------------------------------------------
+Using Schema Registry for versioned schemas:
+Ensures compatibility (backward, forward, or full).
+---------------------------------------------------------------------------------------------------------------
+What are Kafka Connectors?
+
+Pre-built integrations for data sources (e.g., databases) and sinks (e.g., HDFS).
+Example: JDBC connector for relational databases.
+---------------------------------------------------------------------------------------------------------------
+Scenario-Based Questions
+How would you optimize Kafka for high throughput?
+
+Increase batch size (batch.size).
+Use compression (compression.type).
+Tune acknowledgments (acks=1 or acks=all).
+---------------------------------------------------------------------------------------------------------------
+How would you monitor Kafka performance?
+
+Monitor:
+Lag using Kafka Consumer Group Lag.
+Metrics like Records Per Second, Throughput, and ISR.
+Tools: JMX, Prometheus, Kafka Manager.
+---------------------------------------------------------------------------------------------------------------
+How would you troubleshoot consumer lag?
+
+Check consumer group lag using the Kafka CLI:
+bash
+Copy code
+kafka-consumer-groups.sh --describe --group <group-id>
+Ensure consumers are running efficiently:
+Optimize consumer processing time.
+Scale consumer instances.
+---------------------------------------------------------------------------------------------------------------
+How do you ensure message ordering in Kafka?
+
+Order is maintained within a partition.
+Use the same partitioning key to ensure ordered messages.
+Theoretical and Conceptual Questions
+---------------------------------------------------------------------------------------------------------------
+What are Kafka log segments?
+
+Kafka splits partitions into smaller files called log segments for better management and retention.
+---------------------------------------------------------------------------------------------------------------
+What is Kafka’s write-ahead log?
+
+Kafka persists messages to disk before acknowledgment to ensure durability.
+Explain idempotent producers in Kafka.
+
+Prevents duplicate message writes using producer IDs and sequence numbers.
+---------------------------------------------------------------------------------------------------------------
+What is the difference between Kafka and RabbitMQ?
+
+Kafka: Distributed, designed for high throughput and real-time data streaming.
+RabbitMQ: Traditional message broker, focuses on reliability and routing.
+---------------------------------------------------------------------------------------------------------------
+What are the key differences between Kafka Streams and Apache Flink?
+
+Kafka Streams: Built into Kafka, lightweight stream processing.
+Apache Flink: More feature-rich, supports event-time processing and stateful streaming.
