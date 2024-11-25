@@ -1,0 +1,232 @@
+1. var for Local Variable Type Inference
+Java 11 allows you to use var for local variables, reducing boilerplate code.
+
+Example: Simplified WebDriver Initialization
+
+java
+Copy code
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class VarExample {
+    public static void main(String[] args) {
+        var driver = new ChromeDriver(); // Type inferred as WebDriver
+        driver.get("https://example.com");
+        System.out.println("Title: " + driver.getTitle());
+        driver.quit();
+    }
+}
+Benefits:
+
+Reduces verbosity in declaring variables.
+Increases code readability.
+--------------------------------------------------------------------------------------------------
+2. New String Methods
+Java 11 introduced several new methods in the String class that simplify text handling in UI automation.
+
+isBlank
+Checks if a string is empty or contains only whitespace.
+Example: Validate Text Fields
+
+java
+Copy code
+var input = "   ";
+if (input.isBlank()) {
+    System.out.println("Input field is blank");
+}
+lines
+Splits a string into lines.
+Example: Process Multi-Line Text
+
+java
+Copy code
+var pageText = "Line 1\nLine 2\nLine 3";
+pageText.lines().forEach(System.out::println);
+repeat
+Repeats a string multiple times.
+Example: Mocking Test Data
+
+java
+Copy code
+var mockData = "A".repeat(5);
+System.out.println("Mock Data: " + mockData); // Output: AAAAA
+-------------------------------------------------------------------------------------
+3. Files API Enhancements
+Java 11 introduced new methods in the Files class, making file operations simpler.
+
+readString and writeString
+Simplifies reading and writing text files.
+Example: Save Test Results
+
+java
+Copy code
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class FileExample {
+    public static void main(String[] args) throws Exception {
+        var path = Path.of("test-results.txt");
+
+        // Write results to a file
+        Files.writeString(path, "Test Passed!");
+
+        // Read results from the file
+        var content = Files.readString(path);
+        System.out.println("Content: " + content);
+    }
+}
+---------------------------------------------------------------------------------------------
+4. Optional Enhancements
+Java 11 introduced orElseThrow as a method for Optional.
+
+Example: Handle Missing Elements Gracefully
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Optional;
+
+public class OptionalExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        // Wrap element in Optional
+        Optional<WebElement> optionalElement = Optional.ofNullable(driver.findElement(By.id("optionalElement")));
+
+        // Handle element
+        var element = optionalElement.orElseThrow(() -> new RuntimeException("Element not found"));
+        element.click();
+
+        driver.quit();
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+5. New HTTP Client API
+Java 11 introduced a new HttpClient for making HTTP requests, which is useful for backend testing or API validation in conjunction with UI tests.
+
+Example: Validate API Responses
+
+java
+Copy code
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class HttpClientExample {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://jsonplaceholder.typicode.com/posts/1"))
+                .GET()
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println("Response: " + response.body());
+    }
+}
+-----------------------------------------------------------------------------------------
+6. Local-Variable Syntax for Lambda Parameters
+Java 11 allows using var in lambda parameters for better readability and explicit typing.
+
+Example: Stream Processing in UI Tests
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<WebElement> elements = driver.findElements(By.tagName("a"));
+
+        // Using var in Lambda
+        elements.stream()
+                .filter((var element) -> element.isDisplayed())
+                .forEach((var element) -> System.out.println(element.getText()));
+
+        driver.quit();
+    }
+}
+-------------------------------------------------------------------------------------
+7. Collection.toArray(IntFunction)
+Java 11 simplifies the conversion of collections to arrays.
+
+Example: Collect Element Texts into an Array
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+public class CollectionExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<WebElement> elements = driver.findElements(By.tagName("a"));
+
+        // Collect all link texts into an array
+        var linkTexts = elements.stream()
+                                .map(WebElement::getText)
+                                .toArray(String[]::new);
+
+        for (var text : linkTexts) {
+            System.out.println(text);
+        }
+
+        driver.quit();
+    }
+}
+--------------------------------------------------------------------------------------------------------
+8. Unicode 10 Support
+Java 11 supports Unicode 10, making it easier to handle emojis and non-English text in tests.
+
+Example: Validate Non-English Text
+
+java
+Copy code
+public class UnicodeExample {
+    public static void main(String[] args) {
+        var message = "😊 Test Passed!";
+        System.out.println(message);
+    }
+}
+--------------------------------------------------------------------------------------------------------
+9. Improved Garbage Collection
+Java 11 offers performance improvements with Z Garbage Collector (ZGC) and other optimizations, improving test execution time, especially for large-scale tests.
+
+How to Enable ZGC:
+
+bash
+Copy code
+java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar test-suite.jar
+-----------------------------------------------------------------------------------------------------------
+10. Integration with Docker
+Java 11 runs efficiently in Docker with minimal configurations, allowing easy execution of UI tests in containerized environments.
+
+Example: Dockerfile for Running Tests
+
+dockerfile
+Copy code
+FROM openjdk:11
+COPY . /app
+WORKDIR /app
+CMD ["java", "-jar", "test-suite.jar"]
