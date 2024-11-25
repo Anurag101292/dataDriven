@@ -1,0 +1,156 @@
+1. How do you handle browser notifications or pop-ups in Playwright?
+Use the page.on('dialog') event to handle JavaScript alerts, confirms, and prompts:
+javascript
+Copy code
+page.on('dialog', async (dialog) => {
+    console.log(dialog.message());
+    await dialog.accept();
+});
+------------------------------------------------------------------------------------------
+2. How can you perform mouse hover actions in Playwright?
+Use the hover method:
+javascript
+Copy code
+await page.hover('#menu-item');
+------------------------------------------------------------------------------------------
+3. Explain the difference between page.close() and browser.close() in Playwright.
+page.close(): Closes a single tab/page.
+browser.close(): Closes the entire browser instance.
+------------------------------------------------------------------------------------------
+4. What is the equivalent of Fluent Waits in Playwright?
+Playwright has built-in auto-waiting for elements but also supports custom polling:
+javascript
+Copy code
+await page.waitForFunction(() => document.querySelector('#dynamic-element').textContent.includes('Loaded'), { timeout: 30000 });
+------------------------------------------------------------------------------------------------------------------------
+5. How do you switch between multiple tabs or windows in Playwright?
+Use browserContext.on('page') to track new pages and page.bringToFront() to switch:
+javascript
+Copy code
+const [newPage] = await Promise.all([
+    context.waitForEvent('page'),
+    page.click('a[target="_blank"]')
+]);
+
+await newPage.bringToFront();
+----------------------------------------------------------------------------------------------------------------------------
+6. How would you handle dynamically loaded elements in Playwright?
+Use the locator API and waitFor actions:
+javascript
+Copy code
+const element = page.locator('#dynamicElement');
+await element.waitFor({ state: 'visible' });
+----------------------------------------------------------------------------------------------------------------------------
+7. What is the Page Object Model (POM) in Playwright, and how is it used?
+POM organizes locators and actions for maintainability:
+javascript
+Copy code
+class LoginPage {
+    constructor(page) {
+        this.page = page;
+        this.usernameField = page.locator('#username');
+        this.passwordField = page.locator('#password');
+        this.loginButton = page.locator('#login');
+    }
+    async login(username, password) {
+        await this.usernameField.fill(username);
+        await this.passwordField.fill(password);
+        await this.loginButton.click();
+    }
+}
+module.exports = LoginPage;
+----------------------------------------------------------------------------------------------------------------------------
+8. How do you handle dropdowns in Playwright?
+Use the selectOption method:
+javascript
+Copy code
+await page.locator('#dropdown').selectOption({ label: 'Option 1' });
+----------------------------------------------------------------------------------------------------------------------------
+9. How would you handle file uploads in Playwright?
+Use the setInputFiles method:
+javascript
+Copy code
+await page.locator('input[type="file"]').setInputFiles('path/to/file.txt');
+----------------------------------------------------------------------------------------------------------------------------
+10. How do you handle CAPTCHA in Playwright?
+CAPTCHA handling options:
+Use mock data in testing environments.
+Integrate with third-party CAPTCHA-solving services like 2Captcha.
+11. How do you run Playwright tests in parallel?
+Use Playwright’s built-in parallel execution with workers in playwright.config.js:
+javascript
+Copy code
+module.exports = {
+    projects: [
+        { name: 'Chrome', use: { browserName: 'chromium' } },
+        { name: 'Firefox', use: { browserName: 'firefox' } },
+    ],
+    workers: 4 // Number of parallel workers
+};
+----------------------------------------------------------------------------------------------------------------------------
+12. How do you execute Playwright tests on cloud platforms like BrowserStack?
+Use BrowserStackLocal and set capabilities in the configuration:
+javascript
+Copy code
+const { chromium } = require('playwright');
+const browser = await chromium.connectOverCDP('wss://cdp.browserstack.com/playwright');
+----------------------------------------------------------------------------------------------------------------------------
+13. How do you capture screenshots in Playwright?
+Use the screenshot method:
+javascript
+Copy code
+await page.screenshot({ path: 'screenshot.png' });
+----------------------------------------------------------------------------------------------------------------------------
+14. What is the difference between locator.isVisible() and locator.isHidden()?
+isVisible(): Returns true if the element is visible in the DOM.
+isHidden(): Returns true if the element is hidden or does not exist.
+----------------------------------------------------------------------------------------------------------------------------
+15. How do you debug failed tests in Playwright?
+Use the following methods:
+Enable trace for tests in playwright.config.js:
+javascript
+Copy code
+module.exports = {
+    use: { trace: 'on' }
+};
+
+Use the --debug flag to run Playwright in debug mode.
+----------------------------------------------------------------------------------------------------------------------------
+16. How do you scroll to an element on a page in Playwright?
+Use locator.scrollIntoViewIfNeeded():
+javascript
+Copy code
+await page.locator('#footer').scrollIntoViewIfNeeded();
+----------------------------------------------------------------------------------------------------------------------------
+17. How do you validate all links on a webpage in Playwright?
+Fetch all a tags and validate their HTTP status codes:
+javascript
+Copy code
+const links = await page.locator('a').all();
+for (const link of links) {
+    const url = await link.getAttribute('href');
+    const response = await page.goto(url);
+    console.log(`${url}: ${response.status()}`);
+}
+----------------------------------------------------------------------------------------------------------------------------
+18. How do you verify the color of a button in Playwright?
+Use getComputedStyle:
+javascript
+Copy code
+const color = await page.locator('#button').evaluate((el) => getComputedStyle(el).backgroundColor);
+console.log(color);
+----------------------------------------------------------------------------------------------------------------------------
+19. How do you handle AJAX elements in Playwright?
+Use waitForResponse to wait for the AJAX response:
+javascript
+Copy code
+await page.waitForResponse((response) => response.url().includes('/ajax-endpoint') && response.status() === 200);
+----------------------------------------------------------------------------------------------------------------------------
+20. How do you integrate Playwright with CI/CD tools like Jenkins?
+Steps:
+Install dependencies on the CI server.
+Run Playwright tests using:
+bash
+Copy code
+npx playwright test
+Generate and archive Playwright test reports.
