@@ -1,0 +1,249 @@
+1. Lambda Expressions
+Lambda expressions simplify code by removing boilerplate syntax for implementing functional interfaces.
+
+Example: Using Lambda for WebDriverWait
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(d -> d.findElement(By.id("dynamicElement")));
+
+        element.click();
+        driver.quit();
+    }
+}
+2. Stream API
+The Stream API helps process collections and arrays efficiently.
+
+Example: Validate Multiple Elements
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+public class StreamExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<WebElement> elements = driver.findElements(By.tagName("a"));
+
+        // Print all visible links
+        elements.stream()
+                .filter(WebElement::isDisplayed)
+                .map(WebElement::getText)
+                .forEach(System.out::println);
+
+        driver.quit();
+    }
+}
+3. Optional
+Optional helps avoid NullPointerException by representing optional values.
+
+Example: Handle Element Presence
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Optional;
+
+public class OptionalExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        Optional<WebElement> optionalElement = Optional.ofNullable(driver.findElement(By.id("optionalElement")));
+
+        optionalElement.ifPresent(WebElement::click);
+        driver.quit();
+    }
+}
+4. Functional Interfaces
+Java 8 introduced functional interfaces like Consumer, Predicate, and Function that can simplify custom logic in UI tests.
+
+Example: Using Predicate for Conditional Clicks
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.function.Predicate;
+
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        WebElement element = driver.findElement(By.id("clickableElement"));
+        Predicate<WebElement> isClickable = e -> e.isDisplayed() && e.isEnabled();
+
+        if (isClickable.test(element)) {
+            element.click();
+        }
+
+        driver.quit();
+    }
+}
+5. Default and Static Methods in Interfaces
+Default and static methods in interfaces can be used to define reusable utility functions.
+
+Example: Custom Wait Utility
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public interface WaitUtility {
+    default WebElement waitForElement(WebDriver driver, By locator, int timeout) {
+        return new WebDriverWait(driver, timeout)
+                .until(d -> d.findElement(locator));
+    }
+}
+
+public class DefaultMethodExample implements WaitUtility {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        WaitUtility waitUtility = new DefaultMethodExample();
+        WebElement element = waitUtility.waitForElement(driver, By.id("dynamicElement"), 10);
+
+        element.click();
+        driver.quit();
+    }
+}
+6. Method References
+Method references simplify the invocation of methods.
+
+Example: Use Method Reference for Actions
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+public class MethodReferenceExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<WebElement> elements = driver.findElements(By.tagName("button"));
+
+        // Click all buttons using method reference
+        elements.stream()
+                .filter(WebElement::isDisplayed)
+                .forEach(WebElement::click);
+
+        driver.quit();
+    }
+}
+7. Date and Time API
+Java 8’s java.time package can manage timestamps and delays more effectively.
+
+Example: Record Execution Time
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+import java.time.Instant;
+
+public class DateTimeExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        Instant start = Instant.now();
+        driver.findElement(By.id("actionElement")).click();
+        Instant end = Instant.now();
+
+        System.out.println("Execution time: " + Duration.between(start, end).toMillis() + " ms");
+        driver.quit();
+    }
+}
+8. ForEach Loop
+Replace traditional loops with the forEach loop for processing collections.
+
+Example: Print All Links
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        links.forEach(link -> System.out.println(link.getText()));
+
+        driver.quit();
+    }
+}
+9. Collectors
+Use Collectors to gather results from Streams.
+
+Example: Collect Element Texts into a List
+
+java
+Copy code
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CollectorsExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+
+        List<String> linkTexts = driver.findElements(By.tagName("a")).stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+
+        System.out.println(linkTexts);
+        driver.quit();
+    }
+}
