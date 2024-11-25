@@ -1,0 +1,90 @@
+FRAMEWORK
+
+
+CLI--->DEVPORT
+   --->DATQUERY
+   ---->GRID
+   ----> EWS
+CONFIG---> FRAMEWORKCONfig
+FILEOPERATIONS--->FIleDirOperations--->readDir
+                                   --->readDir&CopyFiles
+                                   ---->DeleteDirFiles
+                                   ---->CreateNewDir
+                                   ----->readFileContents       package fs,csvparser
+Launchers---app-driver---setting chromeoptions,gridcapabilities
+         ---->launcher---closeApplications,LaunchApplication,withcookiews,withoutcookies
+
+PAGEMODELS--->base--->elementActions---->click()------------>mouseHover
+                                    ----->RightClick-------->dragAndDrop
+                                    ------>doubleclick------->clickUsingOffset
+                                    ------->clickWhenElementisVisible---->clickAtRelativeOffset
+                                    --------->clickAndHold------------>ExpandRootelement
+                                    --------->Release----------------->setViewPort
+                                    -------->ClearText---------------->setSize
+                                    -------->enterText---------------->actionbasedKeyPress
+                                    -------->sendKeysIntoTextBox------>KeyUp
+                                    -------->ActionBasedentertext------KeyDown
+                                    ------->actionbasedsendkeys-------->Higlight
+                                    ------->getAttribute--------------->selectAllandDelete
+                                    ------->getText
+                                    ------->getAllElementsText
+                                    ------->getTagName
+                                    ------->getClassName
+                                    ------->getId
+                                    ------->getCssvalue
+                                    ------->getElementLocation
+                                    ------->getElementDimension
+                                    ------->getFrameObject
+                                    ------->getColorCode
+                                    ------->KeyPress
+                                    ------->EnterText&KEYPRESS
+                                    ------->sendShortCutKey
+                                    ------->entertextForOption
+                  ---->ElementUtils----->checkwebElementisEnabled------->switchToDefaultFrame
+                                   ----->checkElementIsSelected--------->acceptlert
+                                   ------>checkElementIsDisplayed-------->getpageSource
+                                   ------>checkElementIsPresentBuXpath---->getImageCropValues
+                                   ------->ElementPresentStatus---------->getALlwindowLength
+                                   ------->checkAlertisPresent----------->getPageTitle
+                                   ------->checkElementIsenabled--------->getCurrentUrl
+                                   -------->checkElementISvisible-------->switchtoWindowByIndex
+                                   -------->executeJavascript----------->Opennewtab
+                                   ------->scrollIntoView---------------->setFrameobject
+                                   ------->getElementcoordinate-------->waitForelementtoappear
+                                   -------->waitforElementtodisappear---->waitforelelemtnttoenable
+                                   ------->getWebElementLength
+                                   ------->switchToframe
+                  ----->ElementLocate----->getWebElement
+                                     ------>getIdentifier
+                                     ------->locateElementbyXpath
+                                     ------->locateElementbyCSSVALUE
+                                     ------->locateElementbyId
+                                     ------->locateElementbyClassname
+                                     ------->locateElementbyName
+                                     ------->locateElementbyLinkText
+                                     ------->locateElementbyTagName
+                                     ------->locateElementbyDisplayText
+                                     ------->locateElementbyAttribute
+                  ----->shadowelement
+------BUTTONS
+------CHECKBOX
+-------DATEPICKER
+------>DIALOG
+------>DROPDOWN
+------>GRID-------getGridCellValue
+           -------GetColumnvalue
+           --------checkvalueInColumn
+------->Input
+------->Label
+------>List
+------>OUTPUT
+------->SPINNER
+------->SWITCH
+-------->TABLE
+-------->TAG
+------------------>UTILS----->Logger
+                        ----->MaskImage
+                        ----Screenshot
+                        ----Reporting
+
+ 
