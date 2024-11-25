@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    triggers {
+        // Schedule the pipeline to run at 1 PM (13:00) Monday to Friday
+        cron('0 13 * * 1-5') 
+    }
+
+    stages {
+        stage('Run Parallel Test Cases') {
+            parallel {
+                stage('Test Case 1') {
+                    steps {
+                        echo 'Running Test Case 1...'
+                        sh 'mvn test -Dtest=TestClass1#testMethod1'
+                    }
+                }
+                stage('Test Case 2') {
+                    steps {
+                        echo 'Running Test Case 2...'
+                        sh 'mvn test -Dtest=TestClass2#testMethod2'
+                    }
+                }
+                stage('Test Case 3') {
+                    steps {
+                        echo 'Running Test Case 3...'
+                        sh 'mvn test -Dtest=TestClass3#testMethod3'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                // Generate a consolidated test report (Example: using Surefire reports)
+                echo 'Generating report...'
+                sh 'mvn surefire-report:report-only'
+
+                // Send email with the report
+                emailext(
+                    to: 'recipient@example.com',
+                    subject: "Test Execution Report - ${currentBuild.fullDisplayName}",
+                    body: """<p>The test execution has completed. Please find the details below:</p>
+                             <p>Status: ${currentBuild.currentResult}</p>
+                             <p>Check the attached report for more details.</p>""",
+                    attachLog: true,
+                    attachmentsPattern: '**/target/site/surefire-report.html'
+                )
+            }
+        }
+    }
+}
