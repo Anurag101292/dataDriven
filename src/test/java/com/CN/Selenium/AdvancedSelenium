@@ -1,1 +1,188 @@
 
+Advanced Selenium Questions
+-------------------------------------------------------------------
+How do you handle browser notifications or pop-ups in Selenium?
+Handle browser notifications using the Alert interface for JavaScript alerts:
+java
+Copy code
+Alert alert = driver.switchTo().alert();
+alert.accept(); // Accept the alert
+alert.dismiss(); // Dismiss the alert
+---------------------------------------------------------------------
+For browser notifications, use browser options like ChromeOptions or FirefoxProfile.
+How can you perform mouse hover actions in Selenium?
+Use the Actions class to hover over an element:
+java
+Copy code
+Actions actions = new Actions(driver);
+WebElement element = driver.findElement(By.id("menu"));
+actions.moveToElement(element).perform();
+Explain the difference between driver.close() and driver.quit().
+driver.close(): Closes the current browser window.
+driver.quit(): Closes all browser windows and ends the WebDriver session.
+------------------------------------------------------------------------
+What are Fluent Waits, and how are they different from Explicit Waits?
+Fluent Wait:
+Allows polling at regular intervals and ignores exceptions.
+Example:
+java
+Copy code
+Wait<WebDriver> wait = new FluentWait<>(driver)
+    .withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofSeconds(5))
+    .ignoring(NoSuchElementException.class);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dynamicElement")));
+Explicit Wait:
+Waits for a specific condition to occur.
+Example:
+java
+Copy code
+WebDriverWait wait = new WebDriverWait(driver, 10);
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("element")));
+---------------------------------------------------------------------------------------------------------
+How do you switch between multiple tabs or windows in Selenium?
+Use driver.getWindowHandles() and driver.switchTo():
+java
+Copy code
+Set<String> handles = driver.getWindowHandles();
+for (String handle : handles) {
+    driver.switchTo().window(handle);
+}
+---------------------------------------------------------------------------------------------------------
+How would you handle a dynamically loaded webpage where elements take time to appear?
+Use Explicit Wait:
+java
+Copy code
+WebDriverWait wait = new WebDriverWait(driver, 15);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dynamicElement")));
+-----------------------------------------------------------------------------------------------------------
+What is Page Object Model (POM), and why is it used?
+POM:
+A design pattern to separate test logic and element locators.
+Improves code reusability and maintainability.
+Example:
+java
+Copy code
+public class LoginPage {
+    WebDriver driver;
+
+    By username = By.id("username");
+    By password = By.id("password");
+    By loginButton = By.id("login");
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void login(String user, String pass) {
+        driver.findElement(username).sendKeys(user);
+        driver.findElement(password).sendKeys(pass);
+        driver.findElement(loginButton).click();
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+How do you handle a dropdown menu in Selenium?
+Use the Select class:
+java
+Copy code
+Select dropdown = new Select(driver.findElement(By.id("dropdown")));
+dropdown.selectByVisibleText("Option 1");
+dropdown.selectByValue("value1");
+dropdown.selectByIndex(2);
+---------------------------------------------------------------------------------------------------------------------
+How would you handle file uploads in Selenium?
+Use sendKeys to directly upload a file:
+java
+Copy code
+WebElement uploadElement = driver.findElement(By.id("fileUpload"));
+uploadElement.sendKeys("C:\\path\\to\\file.txt");
+---------------------------------------------------------------------------------------
+How do you handle CAPTCHA in Selenium?
+Selenium cannot automate CAPTCHA directly.
+Workarounds:
+Use third-party CAPTCHA-solving services.
+Ask developers to provide test environments with static CAPTCHA codes.
+Bypass CAPTCHA for automation purposes.
+--------------------------------------------------------------------------------------------------
+Performance and Scalability
+How do you run Selenium tests in parallel?
+Use TestNG:
+xml
+Copy code
+<suite name="ParallelSuite" parallel="tests" thread-count="3">
+    <test name="Test1">
+        <classes>
+            <class name="TestClass1" />
+        </classes>
+    </test>
+</suite>
+-----------------------------------------------------------------------------------------------
+How do you execute Selenium tests on cloud platforms like Sauce Labs or BrowserStack?
+Use RemoteWebDriver and configure desired capabilities:
+java
+Copy code
+DesiredCapabilities caps = new DesiredCapabilities();
+caps.setCapability("browserName", "Chrome");
+caps.setCapability("browserVersion", "latest");
+WebDriver driver = new RemoteWebDriver(new URL("https://<user>:<key>@hub-cloud.browserstack.com/wd/hub"), caps);
+------------------------------------------------------------------------------------------------------
+Debugging and Error Handling
+How do you capture screenshots in Selenium?
+Use TakesScreenshot:
+java
+Copy code
+File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(srcFile, new File("screenshot.png"));
+--------------------------------------------------------------------------------------------------------
+What is the difference between NoSuchElementException and ElementNotVisibleException?
+NoSuchElementException: Thrown when an element cannot be found in the DOM.
+ElementNotVisibleException: Thrown when the element exists in the DOM but is not visible on the page.
+------------------------------------------------------------------------------------------------------
+How do you debug failed test cases in Selenium?
+Analyze logs and stack traces.
+Use breakpoints and debugging tools in IDE.
+Capture screenshots for verification at the point of failure.
+Framework-Specific
+---------------------------------------------------------------------------------------------------------
+How do you integrate Selenium with CI/CD tools like Jenkins?
+Steps:
+Configure the Jenkins job.
+Use a Maven project with a pom.xml.
+Add the following command in the Jenkins build step:
+bash
+Copy code
+mvn clean test
+Scenario-Based Questions
+----------------------------------------------------------------------------------------------------------------
+Write a script to validate all links on a webpage.
+java
+Copy code
+List<WebElement> links = driver.findElements(By.tagName("a"));
+for (WebElement link : links) {
+    String url = link.getAttribute("href");
+    if (url != null && !url.isEmpty()) {
+        System.out.println("Validating URL: " + url);
+        // Add HTTP status code validation logic here
+    }
+}
+--------------------------------------------------------------------------------------------------------
+How do you verify the color of a button?
+java
+Copy code
+WebElement button = driver.findElement(By.id("submit"));
+String color = button.getCssValue("background-color");
+System.out.println("Button color: " + color);
+--------------------------------------------------------------------------------------------------------
+How do you scroll to an element on the page?
+Use JavaScriptExecutor:
+java
+Copy code
+WebElement element = driver.findElement(By.id("footer"));
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+-----------------------------------------------------------------------------------------------------
+How do you handle AJAX elements in Selenium?
+Use WebDriverWait to wait for the element to appear or be clickable:
+java
+Copy code
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ajaxElement")));
