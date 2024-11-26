@@ -44,4 +44,11 @@ Explain the difference between merge and rebase.
 Answer:
 merge: Combines changes from one branch into another, preserving the history of both branches.
 rebase: Moves the base of a branch to another branch's tip, rewriting history for a linear commit history.
+-------------------------------------------------------------------------------------------------------------------
+What is the difference between git reset, git revert, and git checkout?
+Answer:
+git reset: Moves the branch pointer to a specific commit, altering the history.
+git revert: Creates a new commit that undoes a previous commit.
+git checkout: Switches branches or restores files to a previous state.
+
 
