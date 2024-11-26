@@ -28,6 +28,11 @@ git add /<folder_name>/ command.
  git rebase -i HEAD~{{N}}
  where {{N}} represents the number of commits needed to be squashed.
 
+What is the difference between git pull and git fetch?
+Answer:
+git pull: Fetches updates from a remote branch and merges them into the local branch.
+git fetch: Fetches updates from the remote branch but does not merge them. You need to merge manually if required.
+
  . Differentiate between git pull and git fetch.
  git pull                                                                       	git fetch
  This command pulls new changes from the
@@ -47,3 +52,17 @@ git add /<folder_name>/ command.
 git stash pop command throws away the specified stash (topmost stash by default) after applying it.
 git stash apply command leaves the stash in the stash list for future reuse.
  In case we wanted to remove it from the list, we can use the git stash drop command.
+
+
+What are the different states in Git?
+Answer:
+Git has three main states:
+Working Directory: Where files are modified.
+Staging Area: Where changes are added (git add) before committing.
+Repository: Where committed changes are stored permanently.
+
+
+How do you revert a commit that has already been pushed?
+Answer:
+Use git revert <commit_hash> to create a new commit that undoes the changes.
+If necessary, use git reset for local branches, but this is not recommended for shared branches.
