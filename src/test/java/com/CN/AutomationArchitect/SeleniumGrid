@@ -238,3 +238,111 @@ Step 2 − Now open the Node, where we have launched all the browser nodes. You 
 Step 1 − Upon completing the execution, we can analyze the result like any other execution. The result summary is printed in the console as shown in the following snapshot.
 Step 2 − Navigate to the 'Results of Running Suite' Tab and TestNG would display the result summary as shown below.
 Step 3 − Upon generating the HTML, we will be able to see the test results in HTML format.
+
+package utilities;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class SeleniumGridUtil {
+    private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+
+    // Method to initialize WebDriver for Selenium Grid
+    public static void setDriver(String browser) {
+        try {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+
+            // Set desired capabilities based on the browser
+            if (browser.equalsIgnoreCase("chrome")) {
+                capabilities.setBrowserName("chrome");
+            } else if (browser.equalsIgnoreCase("firefox")) {
+                capabilities.setBrowserName("firefox");
+            } else {
+                throw new IllegalArgumentException("Unsupported browser: " + browser);
+            }
+
+            // Replace with your Selenium Grid Hub URL
+            String gridURL = "http://localhost:4444/wd/hub";
+
+            // Create a new RemoteWebDriver instance
+            driverThreadLocal.set(new RemoteWebDriver(new URL(gridURL), capabilities));
+
+        } catch (MalformedURLException e) {
+            throw new RuntimeException("Invalid Grid URL", e);
+        }
+    }
+
+    // Get the WebDriver instance for the current thread
+    public static WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
+
+    // Quit the WebDriver instance
+    public static void quitDriver() {
+        if (driverThreadLocal.get() != null) {
+            driverThreadLocal.get().quit();
+            driverThreadLocal.remove();
+        }
+    }
+}
+
+
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import utilities.SeleniumGridUtil;
+
+public class ParallelTest {
+    private WebDriver driver;
+
+    @BeforeMethod
+    @Parameters("browser") // Parameter to specify the browser type
+    public void setUp(String browser) {
+        SeleniumGridUtil.setDriver(browser);
+        driver = SeleniumGridUtil.getDriver();
+    }
+
+    @Test
+    public void testGoogleSearch() {
+        driver.get("https://www.google.com");
+        driver.findElement(By.name("q")).sendKeys("Selenium Grid");
+        driver.findElement(By.name("q")).submit();
+        System.out.println("Title: " + driver.getTitle() + " | Thread: " + Thread.currentThread().getId());
+    }
+
+    @Test
+    public void testYahooSearch() {
+        driver.get("https://www.yahoo.com");
+        driver.findElement(By.name("p")).sendKeys("Selenium Grid");
+        driver.findElement(By.name("p")).submit();
+        System.out.println("Title: " + driver.getTitle() + " | Thread: " + Thread.currentThread().getId());
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        SeleniumGridUtil.quitDriver();
+    }
+}
+
+Key Features of This Setup
+Thread Safety:
+
+The ThreadLocal ensures each thread gets its own WebDriver instance, avoiding conflicts during parallel execution.
+Scalability:
+
+Easily scale the grid by adding more nodes to handle more test cases.
+Cross-Browser Testing:
+
+Supports multiple browsers (e.g., Chrome, Firefox). You can extend it to include others like Edge or Safari.
+Parallel Execution:
+
+Configured with TestNG to run up to 10 test cases in parallel on the grid.
