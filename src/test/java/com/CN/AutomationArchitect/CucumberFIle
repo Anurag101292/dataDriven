@@ -17,3 +17,184 @@ public class SampleTestRunner {
 29. How does the execution start in Cucumber?
 Cucumber execution will begin at the support level. In support,
  it will first load the env.rb file, then hooks.rb, and last start executing feature file scenario steps.
+
+
+Basic Questions
+What is BDD, and how is it different from TDD? Answer:
+BDD (Behavior-Driven Development) focuses on collaboration between developers, QA, and non-technical stakeholders to define
+ application behavior using simple, natural language (Gherkin).
+TDD (Test-Driven Development) focuses on writing test cases before writing the actual code. TDD uses unit tests, 
+while BDD emphasizes high-level behaviors and scenarios.
+------------------------------------------------------------------------
+What is Cucumber, and why is it used? Answer:
+Cucumber is a tool for implementing BDD. It allows writing human-readable scenarios (in Gherkin) and automates them using code.
+It bridges the communication gap between technical and non-technical stakeholders.
+--------------------------------------------------------------------------------
+
+What is a Gherkin file in Cucumber? Answer:
+Gherkin is a plain-text language used to define test scenarios in Cucumber.
+It follows a structure of Feature, Scenario, and steps such as Given, When, Then.
+Example:
+
+Feature: Login functionality
+  Scenario: Valid login
+    Given the user is on the login page
+    When the user enters valid credentials
+    Then the user should be redirected to the dashboard
+----------------------------------------------------------------------------------
+What is the role of Given, When, and Then in Gherkin syntax? Answer:
+Given: Defines the initial context or state (preconditions).
+When: Specifies the action performed by the user.
+Then: Describes the expected outcome or result.
+----------------------------------------------------------------------------------
+How do you run Cucumber tests in Java? Answer:
+Using a test runner class with the @CucumberOptions annotation:
+java
+Copy code
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "src/test/resources/features",
+                 glue = "stepDefinitions",
+                 plugin = {"pretty", "html:target/cucumber-report.html"})
+public class TestRunner {}
+Then execute the runner class using Maven, Gradle, or your IDE.
+----------------------------------------------------------------------------------
+Intermediate Questions
+
+What is the difference between Scenario and Scenario Outline? Answer:
+Scenario: Used for a single test case with fixed input and expected outcomes.
+Scenario Outline: Used for parameterized test cases, with examples provided in a table.
+Example:
+
+Scenario Outline: Login test
+  Given the user is on the login page
+  When the user enters "<username>" and "<password>"
+  Then the user should see "<message>"
+
+  Examples:
+    | username | password | message            |
+    | admin    | 1234     | Login successful   |
+    | user     | wrong    | Invalid credentials |
+--------------------------------------------------------------------------------
+
+How do you share state or data between step definitions? Answer:
+By using dependency injection frameworks like PicoContainer or Spring.
+For example, create a shared ScenarioContext object and inject it into step definitions.
+--------------------------------------------------------------------------------------------------
+What are hooks in Cucumber? Answer:
+Hooks are methods executed before or after each scenario or step. Commonly used hooks include:
+@Before: Runs before a scenario.
+@After: Runs after a scenario.
+Example:
+java
+
+@Before
+public void setup() {
+    System.out.println("Setting up the environment");
+}
+
+@After
+public void tearDown() {
+    System.out.println("Cleaning up after scenario");
+}
+----------------------------------------------------------------------------------------------------
+How can you handle data-driven testing in Cucumber? Answer:
+Use Scenario Outline and Examples for simple cases.
+Use external files like CSV, Excel, or JSON, and load data in the step definitions. For example:
+java
+Copy code
+@Given("user data from file")
+public void loadDataFromFile() {
+    // Load data from an external source
+}
+---------------------------------------------------------------------------------------------------
+What are Cucumber tags, and how are they used? Answer:
+Tags allow grouping scenarios for selective execution.
+Add tags above a scenario:
+gherkin
+@smoke
+Scenario: Login test
+  Given the user is on the login page
+  ...
+Run scenarios with specific tags using @CucumberOptions:
+java
+Copy code
+@CucumberOptions(tags = "@smoke")
+Advanced Questions
+How do you generate Cucumber reports? Answer:
+Use plugins like "pretty" and "html" in the @CucumberOptions annotation.
+java
+Copy code
+@CucumberOptions(
+    plugin = {"pretty", "html:target/cucumber-reports.html"}
+)
+Other formats include JSON and JUnit-compatible XML.
+--------------------------------------------------------------------------------
+
+What is the purpose of the glue option in @CucumberOptions? Answer:
+The glue option specifies the package(s) containing step definitions and hooks.
+
+--------------------------------------------------------------------------------
+
+What is the difference between @BeforeStep and @Before hooks? Answer:
+@Before: Executes before a scenario starts.
+@BeforeStep: Executes before every step in a scenario.
+--------------------------------------------------------------------------------
+
+How do you handle asynchronous testing in Cucumber? Answer:
+Use libraries like Selenium's WebDriverWait or custom polling mechanisms to ensure the application state is ready before proceeding.
+--------------------------------------------------------------------------------
+
+What is the purpose of the dryRun option in @CucumberOptions? Answer:
+dryRun = true: Checks if all feature file steps have corresponding step definitions without actually executing them.
+Example:
+java
+Copy code
+@CucumberOptions(dryRun = true)
+--------------------------------------------------------------------------------
+
+How do you integrate Cucumber with CI/CD pipelines? Answer:
+Add Cucumber tests to your build system (e.g., Maven or Gradle).
+Configure CI tools like Jenkins, GitHub Actions, or GitLab to run the tests automatically after each commit or PR.
+--------------------------------------------------------------------------------
+Scenario-Based Questions
+What would you do if a step definition is ambiguous? Answer:
+Update the step definition regex to make it more specific.
+Example:
+java
+@When("^the user logs in with valid credentials$")
+public void userLogsIn() { ... }
+--------------------------------------------------------------------------------
+
+How would you write reusable step definitions? Answer:
+Create generic step definitions with parameters and reuse them across multiple scenarios.
+Example:
+java
+
+@Given("^the user navigates to (.+)$")
+public void navigateToPage(String page) {
+    // Navigate to the given page
+}
+--------------------------------------------------------------------------------
+
+How would you handle failures in Cucumber tests? Answer:
+Use hooks like @After to capture screenshots or logs for debugging.
+Example:
+java
+Copy code
+@After
+public void captureScreenshot(Scenario scenario) {
+    if (scenario.isFailed()) {
+        // Code to capture screenshot
+    }
+}
+--------------------------------------------------------------------------------
+
+How do you implement parallel execution in Cucumber? Answer:
+Use libraries like Cucumber-JVM Parallel Plugin or frameworks like TestNG.
+Example configuration in Maven:
+xml
+Copy code
+<plugin>
+  <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+  ...
+</plugin>
