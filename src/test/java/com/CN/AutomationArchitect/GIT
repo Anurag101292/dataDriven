@@ -74,7 +74,7 @@ git stash apply command leaves the stash in the stash list for future reuse.
  In case we wanted to remove it from the list, we can use the git stash drop command.
 
 
-What are the different states in Git?
+--What are the different states in Git?
 Answer:
 Git has three main states:
 Working Directory: Where files are modified.
@@ -82,7 +82,19 @@ Staging Area: Where changes are added (git add) before committing.
 Repository: Where committed changes are stored permanently.
 
 
-How do you revert a commit that has already been pushed?
+--How do you revert a commit that has already been pushed?
 Answer:
 Use git revert <commit_hash> to create a new commit that undoes the changes.
 If necessary, use git reset for local branches, but this is not recommended for shared branches.
+
+
+--What would you do if you made a commit to the wrong branch?
+Answer:
+Switch to the correct branch:
+
+git checkout <correct_branch>
+Cherry-pick the commit:
+
+git cherry-pick <commit_hash>
+Remove it from the wrong branch using git reset or git revert.
+
