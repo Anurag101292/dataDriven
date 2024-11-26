@@ -10,9 +10,7 @@ Indexing	             Automatically creates a clustered index (in most databases
 Default Behavior	     Automatically enforces NOT NULL constraint.	                   Does not enforce NOT NULL
                                                                                       (unless explicitly defined).
 Combination of Columns	Can be a combination of columns (composite primary key).	     Can also be a combination of columns.
-
-
-
+----------------------------------------------------------------------------------------------------------------------
 Abstract class	Interface
 1) Abstract class can have abstract and non-abstract methods.	Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
 2) Abstract class doesn't support multiple inheritance.	        Interface supports multiple inheritance.
@@ -30,7 +28,7 @@ Abstract class	Interface
 8) A Java abstract class can have class members
  like private, protected, etc.                              	Members of a Java interface are public by default.
 
-
+-------------------------------------------------------------------------------------------------------------------
 Difference between Checked and Unchecked Exceptions
 1) Checked Exception
 The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked
@@ -40,6 +38,10 @@ exceptions. For example, IOException, SQLException, etc. Checked exceptions are 
 The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException,
  NullPointerException, ArrayIndexOutOfBoundsException, etc. Unchecked exceptions are not checked at compile-time,
  but they are checked at runtime.
----------------------------------
-
+-------------------------------------------------------------------------------------------------------------------
+Branching and Merging
+Explain the difference between merge and rebase.
+Answer:
+merge: Combines changes from one branch into another, preserving the history of both branches.
+rebase: Moves the base of a branch to another branch's tip, rewriting history for a linear commit history.
 
