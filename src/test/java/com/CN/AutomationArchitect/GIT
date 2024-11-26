@@ -26,18 +26,27 @@ git add /<folder_name>/ command.
 - How do you delete a branch in Git?
 Answer:
 Delete a local branch:
-bash
-Copy code
 git branch -d <branch_name>
 Delete a remote branch:
-bash
-Copy code
 git push origin --delete <branch_name>
+
+-How do you squash commits?
+Answer:
+Use interactive rebase:
+git rebase -i <base_commit>
+Mark the commits to squash as squash or s, then save and edit the commit message.
 
 -Squashing multiple commits to a single one overwrites the history which is why it is recommended to be
  done using full caution. This step can be done by running the command:
  git rebase -i HEAD~{{N}}
  where {{N}} represents the number of commits needed to be squashed.
+
+-What is the difference between git reset, git revert, and git checkout?
+Answer:
+git reset: Moves the branch pointer to a specific commit, altering the history.
+git revert: Creates a new commit that undoes a previous commit.
+git checkout: Switches branches or restores files to a previous state.
+
 
 What is the difference between git pull and git fetch?
 Answer:
