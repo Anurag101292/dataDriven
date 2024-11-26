@@ -40,3 +40,6 @@ exceptions. For example, IOException, SQLException, etc. Checked exceptions are 
 The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException,
  NullPointerException, ArrayIndexOutOfBoundsException, etc. Unchecked exceptions are not checked at compile-time,
  but they are checked at runtime.
+---------------------------------
+
+
