@@ -98,3 +98,10 @@ Cherry-pick the commit:
 git cherry-pick <commit_hash>
 Remove it from the wrong branch using git reset or git revert.
 
+
+--How would you recover a file deleted in Git?
+Answer:
+If the file was staged or committed:
+git checkout <commit_hash> -- <file_name>
+If it was not staged, check your system's trash or use version history tools.
+
