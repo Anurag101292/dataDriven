@@ -1,0 +1,12 @@
+DIFFERENCES
+Primary and unique key 
+Key Differences:
+Aspect	                           Primary Key	                                         Unique Key
+Purpose	Uniquely       identifies each row in a table.	     Ensures the values in a column (or combination of columns) are unique.
+Uniqueness	           Must have unique values.	                                       Must have unique values.
+NULL Values	           Not allowed (every row must have a value).	                     Allowed (can have one or more NULL values).
+Number per Table     	 Only one primary key is allowed per table.	                     Can have multiple unique keys in a table.
+Indexing	             Automatically creates a clustered index (in most databases).	   Automatically creates a non-clustered index.
+Default Behavior	     Automatically enforces NOT NULL constraint.	                   Does not enforce NOT NULL
+                                                                                      (unless explicitly defined).
+Combination of Columns	Can be a combination of columns (composite primary key).	     Can also be a combination of columns.
