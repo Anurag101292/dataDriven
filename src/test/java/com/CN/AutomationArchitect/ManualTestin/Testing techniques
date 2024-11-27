@@ -1,0 +1,97 @@
+1. Boundary Value Analysis (BVA)
+Definition:
+Boundary Value Analysis is a testing technique where test cases are designed based on boundary values of input domains. The focus is on values at the edges of equivalence partitions because defects are more likely to occur at boundaries.
+
+Key Concepts:
+
+Test the lower boundary, upper boundary, and just outside the boundary.
+Reduces the number of test cases while maintaining effective coverage.
+Example: Imagine a system accepts input values between 1 and 100.
+
+Valid Range: 1 to 100
+Boundary Values:
+Minimum value: 1
+Maximum value: 100
+Just outside boundaries: 0 and 101
+Test Cases:
+
+Test Input	Expected Result
+1	Accepted (valid input)
+100	Accepted (valid input)
+0	Rejected (invalid input)
+101	Rejected (invalid input)
+Benefits:
+
+Efficiently identifies boundary-related defects.
+Particularly useful for numeric or range-based input fields.
+--------------------------------------------------------------------------------------------------------
+2. Equivalence Partitioning (EP)
+Definition:
+Equivalence Partitioning is a testing technique that divides input data into groups (or partitions) that are 
+expected to exhibit similar behavior. Test cases are then designed to cover one value from each partition.
+
+Key Concepts:
+
+Partitions are created for valid and invalid inputs.
+Test one representative value from each partition.
+Example: For an age input field that accepts values between 18 and 60:
+
+Partitions:
+Valid partition: [18-60]
+Invalid partitions: [<18], [>60]
+Test Cases:
+
+Test Input	Partition	Expected Result
+25	Valid	Accepted (valid input)
+17	Invalid (<18)	Rejected (invalid input)
+65	Invalid (>60)	Rejected (invalid input)
+Benefits:
+
+Reduces the number of test cases by grouping similar inputs.
+Ensures test coverage for each partition.
+--------------------------------------------------------------------------------------------------------
+3. Error Guessing
+Definition:
+Error Guessing is an intuitive testing technique where test cases are derived based on the tester's experience, knowledge of the system, and understanding of common defects.
+
+Key Concepts:
+
+Relies on the tester’s ability to anticipate errors or edge cases.
+Focuses on areas where defects are likely to occur (e.g., input validations, boundary conditions, special characters).
+Example: For a username input field that accepts alphanumeric characters:
+
+Possible error-prone inputs:
+Empty input ("")
+Very long input ("aaaaaaaaaaaa...")
+Special characters ("@#$%^&")
+SQL injection ("'; DROP TABLE Users;")
+Test Cases:
+
+Test Input	Expected Result
+""	Rejected (empty input not allowed)
+"john_doe"	Accepted (valid input)
+"@#$%"	Rejected (invalid special chars)
+"'; DROP TABLE Users;"	Rejected (SQL injection prevention)
+Benefits:
+
+Identifies defects that structured techniques might miss.
+Especially useful for complex systems with numerous edge cases.
+Comparison of Techniques
+Technique	Purpose	When to Use
+Boundary Value Analysis	Focuses on testing boundaries of input domains.	For numeric or range-based inputs.
+Equivalence Partitioning	Reduces test cases by grouping similar inputs.	When inputs can be logically grouped into partitions.
+Error Guessing	Identifies defects through intuition.	When testing requires domain knowledge or creative thinking.
+Scenario Combining Techniques
+Suppose you are testing a form field for age input, which accepts values between 18 and 60.
+
+Boundary Value Analysis:
+
+Test inputs: 18, 60, 17, 61
+Equivalence Partitioning:
+
+Valid partition: [18-60] → Test: 30
+Invalid partition: [<18] → Test: 10
+Invalid partition: [>60] → Test: 70
+Error Guessing:
+
+Test unusual inputs: empty (""), negative values (-5), non-numeric inputs ("abc"), large numbers (999).
