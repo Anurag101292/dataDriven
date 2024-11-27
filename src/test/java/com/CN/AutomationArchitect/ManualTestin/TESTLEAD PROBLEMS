@@ -1,0 +1,174 @@
+Test Strategy and Planning
+-------------------------------------------------------------------------------------------------
+How do you design a comprehensive test plan for a complex application? What are the key components you include?
+
+Key Points to Include in Your Answer:
+
+Scope of testing.
+Test objectives and types (functional, regression, exploratory).
+
+Risk assessment and mitigation strategies.
+Test environment setup.
+Entry and exit criteria.
+Resource and timeline planning.
+
+------------------------------------------------------------------------------------------------
+How do you determine the priority and severity of bugs? Can you provide examples?
+
+Key Points:
+Priority: Business impact or urgency to fix.
+Severity: Technical impact or degree of functionality breakage.
+Example: A spelling mistake in a high-traffic payment page might be low severity but high priority.
+-------------------------------------------------------------------------------------------------
+How do you handle situations where requirements are unclear or incomplete?
+
+Key Points:
+Communicate with stakeholders for clarification.
+Use exploratory testing to uncover issues.
+Create assumptions and validate them with stakeholders.
+Document unclear requirements to ensure future clarity.
+-------------------------------------------------------------------------------------------------
+How do you ensure optimal test coverage in manual testing?
+
+Key Points:
+Create traceability matrices to map test cases to requirements.
+Perform boundary value analysis and equivalence partitioning.
+Incorporate exploratory and ad-hoc testing.
+Focus on high-risk areas first.
+Problem-Solving and Critical Thinking
+------------------------------------------------------------------------------------------------
+Describe a time when you found a critical bug just before release. How did you handle it?
+
+Key Points:
+Explain the scenario: criticality of the bug and timeline.
+Actions taken: Prioritization, root cause analysis, quick validation.
+Result: Collaboration with dev teams, re-testing, and meeting deadlines.
+------------------------------------------------------------------------------------------------
+What is the biggest challenge you’ve faced during cross-browser or cross-device testing, and how did you resolve it?
+
+Key Points:
+Example of rendering issues or functionality differences.
+Tools used for testing (e.g., BrowserStack, Sauce Labs).
+Strategies like prioritizing critical browsers/devices based on user analytics.
+--------------------------------------------------------------------------------------------------
+How do you handle dependencies between different test cases when executing a manual test suite?
+
+Key Points:
+Modularize test cases to reduce dependencies.
+Use data-driven approaches to ensure reusability.
+Execute dependent test cases first and verify results before proceeding.
+Leadership and Team Management
+--------------------------------------------------------------------------------------------------
+How do you mentor and manage a team of junior testers with varying skill levels?
+
+Key Points:
+Pair experienced testers with juniors for mentoring.
+Conduct regular training sessions on testing techniques and tools.
+Set clear expectations and provide constructive feedback.
+--------------------------------------------------------------------------------------------------
+How do you ensure your team stays motivated during tight deadlines?
+
+Key Points:
+Break tasks into smaller milestones.
+Recognize and reward team efforts.
+Offer support, clear communication, and proper workload distribution.
+---------------------------------------------------------------------------------------------------
+How do you handle conflicts between QA and development teams regarding defect resolution?
+
+Key Points:
+Focus on the data (logs, screenshots, steps to reproduce).
+Foster a collaborative culture.
+Involve product owners if necessary to decide defect prioritization.
+Testing in Agile/DevOps
+---------------------------------------------------------------------------------------------------
+How does your approach to manual testing change in an Agile environment?
+
+Key Points:
+Adapt testing to shorter sprints and incremental development.
+Collaborate with developers during story grooming.
+Perform continuous testing alongside automation.
+-------------------------------------------------------------------------------------------------
+What role does manual testing play in a DevOps pipeline?
+
+Key Points:
+Validate user stories and exploratory scenarios that automation might miss.
+Perform usability and UI testing.
+Conduct smoke and sanity checks before releases.
+Advanced Testing Techniques
+---------------------------------------------------------------------------------------------------
+What is exploratory testing, and how do you ensure it's effective?
+
+Key Points:
+Definition: Testing without predefined scripts, guided by intuition and experience.
+Techniques: Use heuristics like tour-based testing or error guessing.
+Documentation: Record steps and results for reproducibility.
+---------------------------------------------------------------------------------------------------
+How do you perform risk-based testing? Can you give an example?
+
+Key Points:
+Prioritize test cases based on the likelihood of failure and its impact.
+Example: Test core functionalities like payment processing more rigorously than low-usage features.
+---------------------------------------------------------------------------------------------------
+How do you handle non-functional testing manually (e.g., usability, performance, security)?
+
+Key Points:
+Usability: Validate user flows, layout consistency, and accessibility.
+Performance: Simulate load scenarios with tools like JMeter (partially automated, but setup is manual).
+Security: Validate inputs for common vulnerabilities (SQL injection, XSS) and ensure secure practices (HTTPS, secure storage).
+Tool Usage and Documentation
+---------------------------------------------------------------------------------------------------
+What tools do you use for bug tracking and test management?
+
+Key Points:
+Bug Tracking: Jira, Bugzilla, or Azure DevOps.
+Test Management: TestRail, Zephyr, or qTest.
+Focus on how these tools improve collaboration, traceability, and reporting.
+---------------------------------------------------------------------------------------------------
+How do you document test cases effectively?
+
+Key Points:
+Use a clear and concise structure: preconditions, steps, expected results.
+Include edge cases and alternate flows.
+Ensure test cases are reusable and modular.
+---------------------------------------------------------------------------------------------------
+How do you prepare test summary reports for stakeholders?
+
+Key Points:
+Include test coverage, defect trends, and high-risk areas.
+Use visual aids like charts or dashboards for clarity.
+Highlight actionable insights, such as blockers or performance risks.
+Complex Problem Scenarios
+---------------------------------------------------------------------------------------------------
+Describe a scenario where you had to test a system with incomplete or evolving requirements.
+
+Key Points:
+Approach: Collaborate with stakeholders for clarification and assumptions.
+Testing techniques: Exploratory and ad-hoc testing.
+Result: Ensured key flows were validated even with incomplete documentation.
+---------------------------------------------------------------------------------------------------
+How would you manage manual regression testing when the system grows complex?
+
+Key Points:
+Focus on high-priority and frequently used areas.
+Use traceability matrices to identify affected areas.
+Rotate regression responsibilities to reduce monotony and ensure fresh perspectives.
+Behavioral Questions
+---------------------------------------------------------------------------------------------------
+How do you ensure quality when working under tight deadlines?
+
+Key Points:
+Risk-based prioritization of test cases.
+Focus on critical paths and high-risk areas.
+Ensure open communication with stakeholders to manage expectations.
+---------------------------------------------------------------------------------------------------
+What do you do when the client reports a production bug that wasn’t caught in testing?
+
+Key Points:
+Analyze the root cause (test gap, environment issue).
+Add a test case to cover the missed scenario.
+Communicate transparently with the client and implement preventive measures.
+Tips for Answering as a Test Lead
+Highlight Leadership: Showcase how you mentor and manage teams, especially in challenging scenarios.
+Be Specific: Use real-world examples with measurable outcomes (e.g., reduced defect leakage by X%).
+Emphasize Collaboration: Stress how you work with cross-functional teams, including developers, product owners, and stakeholders.
+Showcase Advanced Techniques: Include strategies like risk-based testing, exploratory testing, and root cause analysis.
