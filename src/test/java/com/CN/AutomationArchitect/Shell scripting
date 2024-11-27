@@ -1,8 +1,18 @@
 Basic Shell Scripting Questions
-What is a shell script, and why is it useful?
+ps: Shows information about processes associated with the current terminal session.
+ps aux: Lists all processes on the system with detailed information.
+ps -ef: Displays all processes in a full-format listing.
+Key Fields in ps Output:
+PID: Process ID
+TTY: Terminal associated with the process
+TIME: CPU time the process has used
+CMD: The command that started the process
 
-Explain how shell scripts automate repetitive tasks, such as file operations, test execution, or log analysis.
-How do you declare and use variables in a shell script?
+Common Options:
+-a: Show all processes except session leaders.
+-u: Display processes of a specific user.
+-x: Include processes without a controlling terminal.
+-e: Display every process on the system.
 
 Example:
 bash
