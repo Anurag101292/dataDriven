@@ -2,15 +2,17 @@ What kinds of test automation strategies should we use in Agile?
 
 When we start to define our automation strategy, we need to know what kind of automation requirements do we have first
 . If your product is a word-press template, then you should focus UI and visual test automation more, if your product
- is a payment gateway, then it is more logical to do API test automation more. When we look at Agile Testing Quadrant
-  or Mike Cohn’s Test Automation Pyramid, we will see that the first level of test automation should be unit testing.
+ is a payment gateway, then it is more logical to do API test automation more. 
+When we look at Agile Testing Quadrant or Mike Cohn’s Test Automation Pyramid, we will see that the first level of 
+test automation should be unit testing.
    In this level, developers should write unit tests of their implementations. Also, they can adopt TDD (Test Driven
     Development) practice. It will help them to produce more defectless packages. Testers also help developers on unit
      tests such as reviewing their cases and providing some extra scenarios, etc. After this level, it is better to d
      o some API level test automation. These tests run much faster than UI tests but cover less business
      requirements.  Then, we can do UI level test automation. We can find several Unit, API, UI test automation
      frameworks both commercial and open-source such as Selenium Webdriver, Capybara, Protractor, Nightwathc.js,
-      RobotFramework, etc. If you are testing mobile apps, then you can go with Appium, XCUnit, and Espresso.
+      RobotFramework, etc. 
+If you are testing mobile apps, then you can go with Appium, XCUnit, and Espresso.
   HP UFT, MicroFocus Silk Test, Ranorex, Sahi Pro, TestComplete, Telerik Test Studio, etc. are some commercial        solutions. There are many tools available on the market and you can select the proper one for your needs.
   You can do POCs and select the most appropriate solution for your environment and requirements. Also, you
    can register some cloud-grid services to run your web and mobile tests on the cloud such as Testinium,
