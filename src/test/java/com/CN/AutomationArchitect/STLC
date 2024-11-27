@@ -1,0 +1,85 @@
+STLC Phases
+
+1.Requirement Analysis
+-----------------------
+Objective: Understand the requirements and identify testable aspects of the system.
+Activities:
+Analyze functional and non-functional requirements.
+Identify testing priorities (critical and high-risk areas).
+Interact with stakeholders to clarify doubts.
+Prepare a Requirements Traceability Matrix (RTM).
+Deliverables:
+Requirement document analysis.
+RTM (mapping requirements to test cases).
+-------------------------------------------------------------------------------------
+2.Test Planning
+---------------
+Objective: Define the scope, objectives, resources, and schedule for testing.
+Activities:
+Develop a Test Plan document.
+Determine the testing approach (manual, automation, or hybrid).
+Identify tools and resources required for testing.
+Estimate effort, timelines, and cost.
+Identify risks and define mitigation plans.
+Deliverables:
+Test Plan document.
+Risk assessment report.
+Resource allocation plan.
+--------------------------------------------------------------------------------------
+3.Test Case Design
+------------------
+Objective: Design and document test cases based on requirements.
+Activities:
+Create detailed test cases, including test steps, input data, and expected outcomes.
+Use techniques like Boundary Value Analysis (BVA), Equivalence Partitioning, and Decision Tables.
+Prepare test data for execution.
+Deliverables:
+Test cases.
+Test data.
+--------------------------------------------------------------------------------------
+4.Test Environment Setup
+------------------------
+Objective: Prepare the testing environment to execute test cases.
+Activities:
+Set up the hardware, software, and network configurations.
+Install required applications, databases, and tools.
+Configure test data and simulate test conditions.
+Verify the environment with a smoke test.
+Deliverables:
+Test environment setup.
+Smoke test report.
+---------------------------------------------------------------------------------------
+5.Test Execution
+----------------
+Objective: Execute the prepared test cases to validate the functionality.
+Activities:
+Execute test cases manually or using automation tools.
+Log test results (pass, fail, or blocked).
+Report bugs and defects using tools like Jira, Bugzilla, etc.
+Retest fixed defects and perform regression testing.
+Deliverables:
+Test execution results.
+Defect reports.
+---------------------------------------------------------------------------------------
+6.Test Closure
+--------------
+Objective: Finalize the testing process and ensure all objectives are met.
+Activities:
+Evaluate test completion criteria (coverage, defect count, quality metrics).
+Create a Test Summary Report.
+Archive test artifacts for future reference.
+Conduct a retrospective to analyze lessons learned.
+Deliverables:
+Test Summary Report.
+Retrospective report.
+STLC in Agile
+In Agile, STLC phases are more iterative and flexible:
+
+Testing starts early, often alongside development.
+Test planning and execution are done in each sprint.
+Continuous feedback loops and collaboration with developers are emphasized.
+Key Benefits of STLC
+Ensures a structured approach to testing.
+Enhances test coverage and defect detection.
+Reduces testing time and cost through early defect detection.
+Improves product quality and stakeholder satisfaction.
