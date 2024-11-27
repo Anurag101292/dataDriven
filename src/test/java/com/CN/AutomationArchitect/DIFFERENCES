@@ -58,5 +58,18 @@ git checkout: Switches branches or restores files to a previous state.
  3.Web service supports only HTTP protocol whereas API supports HTTP/HTTPS protocol.
  4.Web service supports XML while API supports XML and JSON.
  5.All Web services are APIs but all APIs are not web services.
+----------------------------------------------------------------------------------------------------------
+Difference between Assert and Verify in selenium
+ In the case of assertions, if the assert condition is not met, test case execution will be aborted.
+  The remaining tests are skipped, and the test case is marked as failed.
+  These assertions are used as checkpoints for testing or validating business-critical transactions.
+ In case of verify, tests will continue to run until the last test is executed even if assert conditions are not met.
+  Verify or Soft Asserts will report the errors at the end of the test. Simply put, tests will not be aborted if any
+   condition is not met. Testers need to invoke the assertAll() method to view the results.
+ Both Hard and Soft Assertions are very important for designing and running Selenium webdriver tests.
+ They are instrumental in verifying application behavior at critical stages. By using assertions, testing teams can
+ determine if an application is working as it is expected to. They can also save teams the trouble of running tests
+ that don’t need to be run if a condition is not met.
+
 
 
