@@ -138,7 +138,8 @@ TEST PLANNING ?
     Whether it is a call to a database or web service, the software needs to communicate effectively and
      retrieve the right information to function as expected.
 
- Remember that since integration tests involve interaction with external services, they will run slower than unit tests. They also require a preproduction environment in which to run.
+ Remember that since integration tests involve interaction with external services, they will run slower than unit tests. 
+ They also require a preproduction environment in which to run.
 
  Level 3 – End-to-End Tests
  At the top of the pyramid are the end-to-end tests. These ensure that the entire application is functioning as
