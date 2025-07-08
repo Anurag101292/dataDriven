@@ -1,0 +1,24 @@
+public class SlidingWindow {
+
+    public static void main(String[] args) {
+        int[] a= new int[]{1, 3, 2, 5, 7, 2, 6, 4};
+        int maxSum= sum(a,3);
+        System.out.println(maxSum);
+    }
+
+    public static int sum(int[] arr, int k){
+        int n = arr.length;
+        int maxSum=0;
+        int sum =0;
+        for(int i=0; i<=k-1; i++){
+            sum += arr[i];
+        }
+        maxSum=sum;
+        for(int i=k ; i<n-1 ; i++){
+            sum =sum - arr[i-k] + arr[i];
+            maxSum =Math.max(maxSum,sum);
+        }
+
+        return maxSum;
+    }
+}
