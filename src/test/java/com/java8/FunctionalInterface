@@ -1,1 +1,36 @@
 
+Functional Interface
+
+@FunctionalInterface
+interface TestAssertion {
+    boolean check(TestCase t);
+}
+
+class TestCase {
+    String name;
+    boolean passed;
+
+    public TestCase(String name, boolean passed) {
+        this.name = name;
+        this.passed = passed;
+    }
+
+    public boolean isPassed() {
+        return passed;
+    }
+}
+
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        TestAssertion isPassed = TestCase::isPassed;
+
+        TestCase test = new TestCase("LoginTest", true);
+        if (isPassed.check(test)) {
+            System.out.println(test.name + " passed.");
+        } else {
+            System.out.println(test.name + " failed.");
+        }
+    }
+}
+
+
