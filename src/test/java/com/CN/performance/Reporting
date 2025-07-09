@@ -1,0 +1,9 @@
+✅ 15. What’s the difference between Summary Report, Aggregate Report, and View Results Tree?
+Answer:
+
+Listener	Use Case
+Summary Report	Simple stats: min, max, avg, error %, throughput
+Aggregate Report	More detailed summary + standard deviation
+View Results Tree	Debugging: shows request/response body
+
+🧪 Use View Results Tree only during test design (slows down execution).
