@@ -16,3 +16,19 @@ public void perform(TestInput input) {
         System.out.println("Adding to cart: " + a.itemId() + " x" + a.quantity());
     }
 }
+-------------------------------------------------------------------------------------------
+sealed interface RetryCondition permits TimeoutError, AuthError, NetworkError {}
+
+record TimeoutError(int waitSeconds) implements RetryCondition {}
+record AuthError(String reason) implements RetryCondition {}
+record NetworkError(String host) implements RetryCondition {}
+
+public void retryIfNeeded(RetryCondition err) {
+    if (err instanceof TimeoutError t) {
+        System.out.println("Waiting for " + t.waitSeconds() + "s then retrying...");
+    } else if (err instanceof AuthError a) {
+        System.out.println("Authentication failed: " + a.reason());
+    } else if (err instanceof NetworkError n) {
+        System.out.println("Network issue at: " + n.host());
+    }
+}
