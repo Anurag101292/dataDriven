@@ -1,23 +1,21 @@
 TELL ME ABOUT YOURSELF?
-Currently I am working as a senior sdet in JPmorgan chase in investment banking Line of business 
-my team manages product named as transact which provide solutions for Cross Browser exposure and payments through 
-FX hedging settlement and related regulatory control checks.
+Sure. I have around 10 years of experience in QA and test automation. 
+Currently, I’m working as a Senior SDET at... JPMorgan Chase." (pause)
 
-Currently I am working in TOTAL SYSTEM SERVICE this the part of Global Payments corporation ,
+"I’m part of the investment banking tech team, working on a platform that handles cross-border payments, FX hedging, 
+and regulatory controls. My role involves building robust UI and API automation frameworks, ensuring early and reliable quality checks."
 
-i have around 6.5years of experience in IT which is  in QA and testing  majorly.
+"Earlier, I worked with other product-based companies where I led automation initiatives for backend systems, 
+including supply chain processes."
 
-Before this I had worked in Healthkart this is product based organisation which provide
-food suppliments to their customers , may be you have not heard about healthkart but you must heard about muscleblaze
-so there i worked in backend team involved majorly helped their to validate the  automatedmsupply chain managemant of company
+"Technically, I’ve worked across a mix of UI and backend automation tools — 
+including Selenium, Playwright, Rest Assured, and Postman. I also have hands-on experience with Jenkins, Git, Maven, 
+Docker, AWS, and monitoring tools like Splunk and Dynatrace."
 
- For the technology side
-  I have used selenium with java for UI automation ,
- and in backend api testing  I have used Rest assured with java and postman and wrt to other activities like devops
- I am also having some exposure in Jenkins for build and deployment activities and maven ,
- github repositories and git command, docker for monitoring tool I have used SPLUNK AND DYNATRACE
- other then that we are using JIRA ,Confluence for project management.
- along with that i have a exposure to setup infrastructure end to end either test case on staging environment.
+"Recently, we’ve started using GitHub Copilot to enhance code quality, and I’ve begun exploring machine learning as a 
+personal interest. I enjoy collaborating with dev and product teams and continuously improving test strategy and automation coverage.
+
+------------------------------------------------------------------------------------------------------------
 
 Our Selenium tests were taking too long to execute and were failing intermittently due to dynamic waits and browser driver 
 dependencies. With Playwright, we achieved a 30–50% speed improvement, better stability in headless runs, and cleaner,
@@ -45,6 +43,7 @@ video recording).
 
 CI/CD friendly architecture:
 Lightweight, no need for standalone Grid setup like Selenium Grid; perfect for containerized and scalable automation.
+------------------------------------------------------------------------------------------------------------------------------
 
  Why you want change ?
  * you outgrew your role and you were underutilised,
