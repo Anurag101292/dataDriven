@@ -23,6 +23,29 @@ Our Selenium tests were taking too long to execute and were failing intermittent
 dependencies. With Playwright, we achieved a 30–50% speed improvement, better stability in headless runs, and cleaner,
 more maintainable code.”
 
+🔍 Supporting Reasons:
+Here are supporting reasons you can back this up with:
+Auto-waiting and stability:
+Playwright automatically waits for elements to be visible, clickable, or stable, 
+unlike Selenium where manual waits often introduce flakiness.
+
+Multi-browser & device support out-of-the-box:
+Playwright supports Chromium, Firefox, and WebKit, including mobile emulation and headless modes—without needing 3rd party drivers
+like GeckoDriver or ChromeDriver.
+
+Parallel testing & faster execution:
+Playwright’s test runner enables parallel execution with test isolation at the browser context level—leading to faster CI pipelines.
+
+Native support for modern web features:
+It handles shadow DOM, iframes, file uploads, intercepting network requests/responses, and tracing/debugging more smoothly than Selenium.
+
+Better developer ergonomics:
+Modern TypeScript/JavaScript-based syntax with excellent documentation and built-in debugging tools (like traceViewer, screenshots, 
+video recording).
+
+CI/CD friendly architecture:
+Lightweight, no need for standalone Grid setup like Selenium Grid; perfect for containerized and scalable automation.
+
  Why you want change ?
  * you outgrew your role and you were underutilised,
 
