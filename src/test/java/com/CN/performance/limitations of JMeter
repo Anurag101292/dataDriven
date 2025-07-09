@@ -1,0 +1,77 @@
+limitations of JMeter
+
+1. High Resource Consumption in GUI Mode
+Issue: GUI mode is heavy on memory and CPU, especially for large test plans or 1000+ users.
+Impact: Tests may freeze or crash mid-execution.
+Workaround: Run tests in non-GUI mode (jmeter -n) or use JMeter distributed testing.
+
+2. Limited Browser Behavior Simulation
+Issue: JMeter is not a browser — it cannot handle JavaScript, dynamic DOM rendering, or SPAs (Single Page Applications).
+Impact: Cannot measure front-end performance or load time accurately.
+Workaround: Combine JMeter (for backend/API load) with tools like Selenium or Lighthouse for UI profiling.
+
+3. Correlation is Manual and Error-Prone
+Issue: Extracting dynamic session tokens (e.g., CSRF, auth tokens) via Regex/JSON Extractors is fragile.
+Impact: Test breaks easily when response structure changes.
+Workaround: Use BlazeMeter's Script Recorder, Post-Processors, or shift to Gatling/k6 for more readable scripting.
+
+4. Poor Reporting Out of the Box
+Issue: Default reports (Summary, Aggregate, View Results) are minimal.
+Impact: Not suitable for stakeholders or trend analysis.
+Workaround: Use Allure, Grafana + InfluxDB, or BlazeMeter reporting.
+
+5. Distributed Testing Complexity
+Issue: Setting up distributed mode (master-slave) is painful:
+Requires firewall opening
+Needs same JMeter/Java versions
+Synchronization issues
+Impact: Difficult to scale horizontally in cloud environments.
+
+Workaround: Use Taurus, BlazeMeter, or run via Docker-based JMeter grid.
+
+6. Poor IDE and Debug Support
+Issue: No real IDE-like experience; debugging is clunky.
+Impact: Takes more time to fix broken assertions, extractors, or variable issues.
+Workaround: Use View Results Tree, enable debug sampler, or migrate to code-based tools like Gatling (Scala) or k6 (JS).
+
+7. Parameterization Lacks Built-In Validations
+Issue: CSV DataSet fails silently if the file is missing or malformed.
+Impact: No test data → blank POSTs → misleading success results.
+Workaround: Manually validate file with scripting logic or pre-checks.
+
+8. Version Compatibility & Plugin Hell
+Issue: Many plugins are community-maintained, may break after version upgrades.
+Impact: Projects become unmaintainable with plugin dependency conflicts.
+Workaround: Stick to official plugins or use JMeter Plugin Manager cautiously.
+
+9. No Native JavaScript Support
+Issue: Cannot run JavaScript inside the response.
+Impact: Can't test JS-heavy UIs or extract tokens computed on client-side.
+Workaround: Combine with Playwright/Selenium or move to k6 (JavaScript-based).
+
+10. Steep Learning Curve for Maintainable Scripts
+Issue: Complex logic (loops, conditions, custom extractors) becomes unreadable in XML .jmx format.
+Impact: Hard to onboard new team members or scale QA automation.
+Workaround: Use JMeter DSL in Java, Taurus (YAML), or migrate to code-based tools.
+
+11. Thread-Based Architecture Limits Scaling
+Issue: Each thread = real OS thread → JVM memory spike.
+Impact: Not scalable beyond a few thousand users on one machine.
+Workaround: Use JMeter in cloud/distributed mode, or switch to event-driven tools like Gatling or Locust.
+
+12. Limited CI/CD Integration (Native)
+Issue: Needs scripting effort to plug into Jenkins, GitLab, etc.
+Impact: Cannot shift-left easily.
+Workaround: Use Taurus, or run JMeter tests as part of Maven/Gradle pipeline with plugins like:
+
+
+mvn jmeter:jmeter -Djmeter.test=loginTest.jmx
+🧠 Bonus: From QA Lead/VP POV
+Maintaining large JMX test plans is fragile
+
+Difficult to modularize
+
+Not easy to version control (XML noise)
+
+Lacks developer-friendliness (vs. Gatling or k6)
+
