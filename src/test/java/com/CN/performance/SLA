@@ -1,0 +1,15 @@
+✅ What is an SLA?
+An SLA is a formal agreement between a service provider and a client/stakeholder that defines the expected performance standards, including:
+
+Metric	Example
+✅ Availability	99.9% uptime per month
+⏱ Response Time	API response ≤ 2 seconds
+📦 Throughput	1000 requests/second
+📊 Error Rate	Less than 0.1% failed requests
+
+🧪 In QA/Performance Testing:
+SLAs are used to set measurable goals for testing:
+
+Pass criteria: 95% of users should get a response in under 2 seconds
+
+Fail criteria: If 90th percentile > 5s, raise a defect
