@@ -1,0 +1,94 @@
+Add → Config Element → CSV Data Set Config
+Filename: loginData.csv
+Variable names: username,password
+Use in request:
+
+{
+  "username": "${username}",
+  "password": "${password}"
+}
+
+import org.apache.jmeter.config.CSVDataSet;
+import org.apache.jmeter.config.Arguments;
+import org.apache.jmeter.control.LoopController;
+import org.apache.jmeter.engine.StandardJMeterEngine;
+import org.apache.jmeter.protocol.http.control.HeaderManager;
+import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
+import org.apache.jmeter.threads.ThreadGroup;
+import org.apache.jmeter.testelement.TestPlan;
+import org.apache.jmeter.util.JMeterUtils;
+import org.apache.jmeter.save.SaveService;
+import org.apache.jorphan.collections.HashTree;
+
+import java.io.FileOutputStream;
+
+public class JMeterCSVParameterization {
+
+    public static void main(String[] args) throws Exception {
+        String jmeterHome = "/path/to/apache-jmeter-5.6.2"; // Replace with your JMeter path
+
+        // Initialize JMeter properties
+        JMeterUtils.setJMeterHome(jmeterHome);
+        JMeterUtils.loadJMeterProperties(jmeterHome + "/bin/jmeter.properties");
+        JMeterUtils.initLocale();
+
+        StandardJMeterEngine jmeter = new StandardJMeterEngine();
+
+        // 1. CSV Data Set Config
+        CSVDataSet csvDataSet = new CSVDataSet();
+        csvDataSet.setProperty("filename", "loginData.csv");
+        csvDataSet.setProperty("variableNames", "username,password");
+        csvDataSet.setProperty("delimiter", ",");
+        csvDataSet.setProperty("recycle", "true");
+        csvDataSet.setProperty("stopThread", "false");
+        csvDataSet.setProperty("ignoreFirstLine", "true");
+
+        // 2. HTTP Sampler - POST login request
+        HTTPSamplerProxy loginSampler = new HTTPSamplerProxy();
+        loginSampler.setDomain("example.com"); // replace with your domain
+        loginSampler.setPort(443);
+        loginSampler.setProtocol("https");
+        loginSampler.setPath("/api/login");
+        loginSampler.setMethod("POST");
+        loginSampler.setName("Login POST");
+
+        loginSampler.setPostBodyRaw(true);
+        loginSampler.addNonEncodedArgument("", 
+            "{\"username\":\"${username}\",\"password\":\"${password}\"}", "");
+
+        // 3. Header Manager
+        HeaderManager headerManager = new HeaderManager();
+        headerManager.add("Content-Type", "application/json");
+
+        // 4. Loop Controller
+        LoopController loopController = new LoopController();
+        loopController.setLoops(1);
+        loopController.initialize();
+
+        // 5. Thread Group
+        ThreadGroup threadGroup = new ThreadGroup();
+        threadGroup.setName("CSV Thread Group");
+        threadGroup.setNumThreads(2); // Run 2 users for demo
+        threadGroup.setRampUp(1);
+        threadGroup.setSamplerController(loopController);
+
+        // 6. Test Plan
+        TestPlan testPlan = new TestPlan("CSV Login Test Plan");
+        testPlan.setUserDefinedVariables(new Arguments());
+
+        // 7. Build Test Plan Tree
+        HashTree testPlanTree = new HashTree();
+        HashTree threadGroupTree = testPlanTree.add(testPlan).add(threadGroup);
+
+        // Add CSV + Sampler + Header
+        threadGroupTree.add(csvDataSet);
+        threadGroupTree.add(loginSampler).add(headerManager);
+
+        // 8. Save to JMX (optional)
+        SaveService.saveTree(testPlanTree, new FileOutputStream("csv-login.jmx"));
+
+        // 9. Run
+        jmeter.configure(testPlanTree);
+        jmeter.run();
+    }
+}
