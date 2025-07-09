@@ -7,3 +7,11 @@ Aggregate Report	More detailed summary + standard deviation
 View Results Tree	Debugging: shows request/response body
 
 🧪 Use View Results Tree only during test design (slows down execution).
+
+
+✅ 19. How do you analyze JTL (JMeter Test Log) output logs?
+Answer:
+JTL files are .csv or .xml logs of test runs. You can:
+Import into JMeter → View Results → Reports
+Open with Excel → Filter by elapsed, success, responseCode
+Visualize using Grafana + InfluxDB or JMeter Dashboard
