@@ -47,6 +47,7 @@ Think time simulates the real delay between actions of a user (e.g., reading a p
 
 Example in JMeter:
 Add → Think Time Timer → 3000ms (3 seconds)
+Use inside Thread Group → Add → Timer → Constant Timer (3000 ms)
 ✅ 7. What is ramp-up period in performance testing?
 Answer:
 Ramp-up is the time taken to gradually add users during a test. This avoids sudden spikes and simulates real traffic growth.
