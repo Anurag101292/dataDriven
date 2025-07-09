@@ -1,0 +1,16 @@
+
+public sealed interface Environment permits SIT, UAT, PROD {}
+
+final class SIT implements Environment {}
+final class UAT implements Environment {}
+final class PROD implements Environment {}
+
+public class EnvSelector {
+    public static String getBaseUrl(Environment env) {
+        return switch (env) {
+            case SIT e -> "https://sit.qa.com";
+            case UAT e -> "https://uat.qa.com";
+            case PROD e -> "https://prod.qa.com";
+        };
+    }
+}
