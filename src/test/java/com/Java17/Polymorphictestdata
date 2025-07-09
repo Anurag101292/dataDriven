@@ -1,0 +1,18 @@
+4. Polymorphic Test Data Models (e.g., Data-Driven Tests)
+Say your test data includes different input types — Credentials, SearchQuery, CartAction.
+
+sealed interface TestInput permits Credentials, SearchQuery, CartAction {}
+
+record Credentials(String user, String pass) implements TestInput {}
+record SearchQuery(String keyword) implements TestInput {}
+record CartAction(String itemId, int quantity) implements TestInput {}
+
+public void perform(TestInput input) {
+    if (input instanceof Credentials c) {
+        System.out.println("Logging in as: " + c.user());
+    } else if (input instanceof SearchQuery s) {
+        System.out.println("Searching for: " + s.keyword());
+    } else if (input instanceof CartAction a) {
+        System.out.println("Adding to cart: " + a.itemId() + " x" + a.quantity());
+    }
+}
