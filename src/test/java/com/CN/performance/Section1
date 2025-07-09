@@ -1,0 +1,73 @@
+✅ 1. What is performance testing and why is it important?
+Answer:
+Performance testing is a type of non-functional testing used to determine how a system behaves under expected and peak load conditions.
+ It checks the responsiveness, stability, scalability, and speed of the application.
+
+🔍 Example: You test how your banking application behaves when 10,000 users log in simultaneously during salary day.
+
+✅ 2. How does performance testing differ from functional testing?
+Answer:
+
+Functional Testing checks what the system does (correctness of features).
+
+Performance Testing checks how fast and how well the system performs under various loads.
+
+💡 In QA automation: Functional test passes when login works; performance test checks if login completes in 
+under 2 seconds for 1000 concurrent users.
+
+✅ 3. What are the different types of performance testing?
+Answer:
+Load Testing – checks system under expected user load.
+Stress Testing – checks system under extreme load until it breaks.
+Spike Testing – sudden large increase/decrease in load.
+Endurance (Soak) Testing – long-duration load test.
+Scalability Testing – test how well system scales.
+Volume Testing – large data (e.g., big DB records) test.
+
+✅ Use Case: Simulating 50,000 users uploading documents or running 24-hour tests to catch memory leaks.
+
+✅ 4. What is baseline testing?
+Answer:
+Baseline testing captures the system's performance under normal load before any optimization. 
+It becomes the reference point for future tests.
+
+📈 Example: If API latency is 1.2 seconds today, this is your baseline. After optimization, you compare against it.
+
+✅ 5. What is the difference between throughput and latency?
+Answer:
+Throughput: Number of requests served per unit of time (e.g., 200 requests/sec).
+Latency: Time taken to serve a request (e.g., 500 ms per API call).
+🎯 Throughput = system capacity
+🕒 Latency = individual request time
+
+✅ 6. What is think time and why is it important?
+Answer:
+Think time simulates the real delay between actions of a user (e.g., reading a page before clicking next).
+ Ignoring it makes the test unrealistically aggressive.
+
+Example in JMeter:
+Add → Think Time Timer → 3000ms (3 seconds)
+✅ 7. What is ramp-up period in performance testing?
+Answer:
+Ramp-up is the time taken to gradually add users during a test. This avoids sudden spikes and simulates real traffic growth.
+
+🧪 Example: Ramp-up 100 users over 10 minutes = 10 users per minute.
+
+✅ 8. What is the difference between concurrent users and simultaneous users?
+Answer:
+Concurrent Users: All users who are active (may not hit the server at the same time).
+Simultaneous Users: All users who hit the server at the exact same time.
+Concurrent = Logged-in and browsing
+Simultaneous = Click "Submit" at the same second
+
+✅ 9. What is response time vs. turnaround time?
+Answer:
+Response Time: Time from request to first byte received.
+Turnaround Time: Total time from request initiation to completion (includes client-side processing).
+🔍 Example: API call responds in 2s (response), but UI renders in 5s (turnaround).
+
+✅ 10. What metrics do you typically monitor during performance testing?
+Answer:
+Response Time   Throughput     Error Rate             CPU/Memory Usage
+Disk I/O        Thread Count   GC Time (JVM apps)     Network Bandwidth
+Tools like JMeter + Grafana + InfluxDB help visualize this live.
