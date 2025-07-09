@@ -1,1 +1,43 @@
 
+ANONYMOUS CLASS
+
+ Old way – using Anonymous Class (Pre-Java 8)
+
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+WebElement element = wait.until(new ExpectedCondition<WebElement>() {
+    public WebElement apply(WebDriver d) {
+        return d.findElement(By.id("submitBtn"));
+    }
+});
+Java 8 Lambda Version (Cleaner & Better)
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+      WebElement element = wait.until(d ->d.findElement(By.id("submitBtn")));
+Uses a lambda for the same logic.
+No need to explicitly define the apply() method.
+Compact, readable, and more expressive.
+—---------------------------------------------------------------------
+Scenario: Filtering failed test responses using REST Assured & Java 8
+Suppose you’ve received a list of ApiTestResult objects (each having test name, status, and response time). You want to filter only the failed tests.
+Old Way – Using Anonymous Class
+List<ApiTestResult> failedTests = allResults.stream()
+    .filter(new Predicate<ApiTestResult>() {
+        @Override
+        public boolean test(ApiTestResult result) {
+            return result.getStatus().equals("FAIL");}}).collect(Collectors.toList());
+
+
+Modern Way – Using Lambda Expression (Java 8+)
+
+List<ApiTestResult> failedTests = allResults.stream()
+    .filter(result -> result.getStatus().equals("FAIL"))
+    .collect(Collectors.toList());
+
+—---------------------------------------------------------------------
+BiFunction or BinaryOperator use in QA
+ Used to compare actual vs expected:
+BiFunction<String, String, Boolean> compare =(expected, actual) -> expected.equals(actual);
+
+
+
+
+
