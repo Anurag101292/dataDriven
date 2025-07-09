@@ -1,0 +1,100 @@
+✅ Answer with Java Code:
+To handle dynamic values like auth_token, you can use a JSON Extractor in JMeter.
+
+Sends a POST login request
+Extracts the auth_token from JSON response
+Uses that token in the next API request
+
+import org.apache.jmeter.config.Arguments;
+import org.apache.jmeter.control.LoopController;
+import org.apache.jmeter.engine.StandardJMeterEngine;
+import org.apache.jmeter.extractor.json.jsonpath.JSONPostProcessor;
+import org.apache.jmeter.protocol.http.control.HeaderManager;
+import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
+import org.apache.jmeter.threads.ThreadGroup;
+import org.apache.jmeter.testelement.TestPlan;
+import org.apache.jmeter.save.SaveService;
+import org.apache.jmeter.util.JMeterUtils;
+import org.apache.jorphan.collections.HashTree;
+
+import java.io.FileOutputStream;
+
+public class JMeterTokenCorrelation {
+
+    public static void main(String[] args) throws Exception {
+
+        String jmeterHome = "/path/to/apache-jmeter-5.6.2"; // Adjust this
+        JMeterUtils.setJMeterHome(jmeterHome);
+        JMeterUtils.loadJMeterProperties(jmeterHome + "/bin/jmeter.properties");
+        JMeterUtils.initLocale();
+
+        StandardJMeterEngine jmeter = new StandardJMeterEngine();
+
+        // 1. HTTP Login Sampler
+        HTTPSamplerProxy loginSampler = new HTTPSamplerProxy();
+        loginSampler.setDomain("your-api-server.com");
+        loginSampler.setPort(443);
+        loginSampler.setProtocol("https");
+        loginSampler.setPath("/api/login");
+        loginSampler.setMethod("POST");
+        loginSampler.addNonEncodedArgument("", "{\"username\":\"anurag\",\"password\":\"123456\"}", "");
+        loginSampler.setPostBodyRaw(true);
+        loginSampler.setName("Login Request");
+
+        // 2. JSON Extractor to get auth_token from response
+        JSONPostProcessor extractor = new JSONPostProcessor();
+        extractor.setName("Extract Token");
+        extractor.setJsonPathExpressions("$.auth_token");
+        extractor.setMatchNumbers("1");
+        extractor.setRefNames("token");
+
+        // 3. Authenticated request using extracted token
+        HTTPSamplerProxy profileRequest = new HTTPSamplerProxy();
+        profileRequest.setName("Get Profile");
+        profileRequest.setDomain("your-api-server.com");
+        profileRequest.setPort(443);
+        profileRequest.setProtocol("https");
+        profileRequest.setPath("/api/profile");
+        profileRequest.setMethod("GET");
+
+        // Use token in header
+        HeaderManager headers = new HeaderManager();
+        headers.add("Authorization", "Bearer ${token}");
+        headers.setName("Header Manager");
+        headers.setProperty(HeaderManager.TEST_CLASS, HeaderManager.class.getName());
+        headers.setProperty(HeaderManager.GUI_CLASS, "HeaderPanel");
+
+        // Setup Thread Group and Test Plan
+        LoopController loopController = new LoopController();
+        loopController.setLoops(1);
+        loopController.addTestElement(loginSampler);
+        loopController.initialize();
+
+        ThreadGroup threadGroup = new ThreadGroup();
+        threadGroup.setName("Token Test Group");
+        threadGroup.setNumThreads(1);
+        threadGroup.setRampUp(1);
+        threadGroup.setSamplerController(loopController);
+
+        TestPlan testPlan = new TestPlan("Token Correlation Plan");
+
+        // Build test plan tree
+        HashTree testPlanTree = new HashTree();
+        HashTree threadGroupTree = testPlanTree.add(testPlan).add(threadGroup);
+
+        // Add login request and extractor
+        HashTree loginTree = threadGroupTree.add(loginSampler);
+        loginTree.add(extractor);
+
+        // Add authenticated request + header
+        HashTree profileTree = threadGroupTree.add(profileRequest);
+        profileTree.add(headers);
+
+        // Save to .jmx (optional)
+        SaveService.saveTree(testPlanTree, new FileOutputStream("token-correlation.jmx"));
+
+        // Run the test
+        jmeter.configure(testPlanTree);
+        jmeter.run();
+    }
+}
