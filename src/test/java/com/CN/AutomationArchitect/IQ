@@ -19,6 +19,10 @@ so there i worked in backend team involved majorly helped their to validate the 
  other then that we are using JIRA ,Confluence for project management.
  along with that i have a exposure to setup infrastructure end to end either test case on staging environment.
 
+Our Selenium tests were taking too long to execute and were failing intermittently due to dynamic waits and browser driver 
+dependencies. With Playwright, we achieved a 30–50% speed improvement, better stability in headless runs, and cleaner,
+more maintainable code.”
+
  Why you want change ?
  * you outgrew your role and you were underutilised,
 
