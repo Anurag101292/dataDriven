@@ -1,0 +1,142 @@
+✅ Section 3: Advanced Real-World Performance Testing – with Answers & Examples
+21. What is a bottleneck and how do you identify it?
+Answer:
+A bottleneck is a component of the system (CPU, memory, DB, network, etc.) that limits overall performance.
+
+How to identify:
+High response time but low throughput = backend issue
+CPU > 90% usage = CPU bottleneck
+Slow DB queries = indexing or join bottleneck
+GC pauses = memory management issue
+Tools: JMeter + server metrics (top, Grafana, APM tools like New Relic, Dynatrace)
+
+✅ Real Example:
+Login API takes 6 sec under load. APM shows 80% time is in DB query — bottleneck is SQL.
+22. How do you determine performance benchmark or SLA?
+Answer:
+Benchmarks are usually based on:
+Production baselines (monitor real-time usage)
+business SLAs (e.g., response time < 2s for 95% users)
+
+Competitive analysis
+
+Define SLA:
+Login: 1s for 95% users
+Search: ≤3s under 1000 concurrent users
+99th percentile response < 5s
+
+🎯 Align with Product, Ops & Devs before testing.
+
+23. Describe a time you found a performance issue in production and how you handled it.
+Answer:
+
+👨‍💻 Real Scenario:
+In Transact (JPMC), we noticed transaction listing API was timing out for 3% of UAT users. Using JMeter + Splunk + APM, we found:
+
+Issue in pagination query (nested sub-select)
+Fixed with optimized SQL and better DB indexing
+Introduced DB connection pool monitoring + caching layer
+Impact: Reduced latency from 7s → 1.2s for 500 concurrent users.
+
+24. What tools do you use for server-side performance monitoring?
+Answer:
+
+Metric	Tools
+CPU/Memory	top, htop, vmstat, ps
+JVM Heap	VisualVM, JConsole, Prometheus
+DB	pg_stat_statements, MySQL slow query log
+End-to-End	AppDynamics, Dynatrace, New Relic
+Logs	Splunk, ELK, Loki
+
+25. How do you plan a performance test for a newly released feature?
+Answer:
+Steps:
+
+Understand the feature workflow (e.g., File upload)
+Identify critical endpoints (e.g., /api/upload, /status)
+Estimate expected load (1000 users/hour)
+Create test plan in JMeter/Gatling
+Setup test data, config, and CI triggers
+Run baseline → load → spike → soak
+
+✅ Example: For "Generate Report" feature, simulate 500 parallel downloads with unique filters.
+
+26. What is your approach for API performance testing?
+Answer:
+Use JMeter or Postman + Newman
+Test each API in isolation first
+
+Validate:
+Response time
+Payload size
+Status codes
+DB hits (backend trace)
+Parameterize inputs from CSV
+Run under various loads (10, 100, 1000 threads)
+Add think time + pacing
+
+✅ Example: /api/orders?limit=100 for 500 concurrent users with varying IDs from CSV.
+
+27. How do you measure database performance during load tests?
+Answer:
+Enable query profiling
+Monitor:
+Query execution time
+Query count per API
+Slow queries
+
+Use:
+pg_stat_activity (Postgres)
+Query Analyzer (MySQL)
+APM traces
+
+🔍 Scenario: Found 80% response time spent on unindexed join in user_orders.
+
+28. How do you test caching mechanisms (e.g., Redis, CDN) using JMeter?
+Answer:
+Run first-time request → record response time (cache miss)
+Repeat same request → measure improvement (cache hit)
+Clear cache & repeat to verify
+
+✅ Use Cache-Control headers or Redis TTL inspection
+
+Headers to validate:
+
+X-Cache: HIT/MISS
+
+Cache-Control: max-age
+
+29. How do you validate load balancer behavior under high load?
+Answer:
+
+Use JMeter with IP spoofing (if possible)
+
+Check:
+Sessions are routed correctly
+Sticky sessions maintained (if enabled)
+Balanced load across servers
+
+Monitor:
+Nginx/HAProxy logs
+Backend CPU/memory per instance
+
+✅ In AWS ELB: Used CloudWatch to track 5xx spikes under 1000 TPS.
+30. What are key things to validate in a CI/CD pipeline when adding performance tests?
+Answer:
+
+Ensure:
+Tests run on realistic environments
+Baseline comparisons are versioned
+Fail build if SLA breached
+Output reports (HTML, Allure, JUnit XML)
+
+Best Practices:
+
+Run short load tests on feature branch
+
+Full-scale tests on nightly/weekly builds
+
+Archive results for trend analysis
+
+✅ Trigger jmeter-maven-plugin in Jenkins with -l results.jtl
+
