@@ -1,0 +1,19 @@
+21. What is a bottleneck and how do you identify it?
+Answer:
+A bottleneck is a component of the system (CPU, memory, DB, network, etc.) that limits overall performance.
+
+How to identify:
+
+High response time but low throughput = backend issue
+
+CPU > 90% usage = CPU bottleneck
+
+Slow DB queries = indexing or join bottleneck
+
+GC pauses = memory management issue
+
+Tools: JMeter + server metrics (top, Grafana, APM tools like New Relic, Dynatrace)
+
+✅ Real Example:
+Login API takes 6 sec under load. APM shows 80% time is in DB query — bottleneck is SQL.
+
