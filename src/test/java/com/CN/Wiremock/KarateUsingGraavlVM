@@ -1,0 +1,112 @@
+  UI -------------------+
+   |                    |
+   |                    v
+   |              Karate Mock Server
+   |                (WireMocking)
+   |                    |
+   |        +-----------+-----------+
+   |        |                       |
+   v        v                       v
+GET /api/user/123      POST /api/user (with JSON)
+   |                                 |
+Mocked Response             Mocked Response
+-----------------------------------------------------------------------------------------------
+mock-karate/                                                             
+├── src/
+│   └── test/
+│       └── java/
+│           └── mock/
+│               ├── mock.feature
+│               ├── users-get.feature
+│               └── users-post.feature
+├── karate-config.js
+└── pom.xml
+------------------------------------------------------------------------------------------------
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>com.intuit.karate</groupId>
+      <artifactId>karate-core</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.intuit.karate</groupId>
+      <artifactId>karate-netty</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+  </dependencies>
+</project>
+-------------------------------------------------------------------------------------------------
+Karate-config.js
+function fn() {
+  return {
+    mockBaseUrl: 'http://localhost:8080'
+  };
+}
+---------------------------------------------------------------------------------------------------
+🔧 Tools & Stack
+Karate: for test orchestration and mocking
+WireMock: simulated inside Karate using karate-netty
+GraalVM: runs Java + JS; used to run Karate if compiling native binaries or running JS-based mocks
+--------------------------------------------------------------------------------------------------
+Feature: Wiremock using Karate    #mock.feature
+
+Background:
+  * def usersGet = call read('users-get.feature')
+  * def usersPost = call read('users-post.feature')
+
+Scenario: Mock routes
+  * configure responseHeaders = { 'Content-Type': 'application/json' }
+
+  # GET request mock
+  * def getUser = function(req) { return usersGet }
+
+  # POST request mock
+  * def postUser = function(req) { return usersPost }
+
+  * def config = { 
+      "mocks": [
+        { path: '/api/user/123', method: 'GET', response: getUser },
+        { path: '/api/user', method: 'POST', response: postUser }
+      ]
+    }
+
+  * karate.set('mockServerConfig', config)
+-------------------------------------------------------------------------------------------------------
+user-get.feature
+Feature: GET user mock
+
+Scenario: Return mocked user
+  * def user = { id: 123, name: 'Anurag', role: 'QA Engineer' }
+  * def response = user
+-------------------------------------------------------------------------------------------------------
+user-post.feature
+Feature: POST user mock
+Scenario: Handle user creation
+  * def body = request
+  * def response = { message: 'User created successfully', received: body }
+-------------------------------------------------------------------------------------------------------
+package mock;    #Mock-runnerfile
+import com.intuit.karate.http.MockServer;
+public class MockServerRunner {
+    public static void main(String[] args) {
+        MockServer server = MockServer.start(8080, "classpath:mock/mock.feature");
+        System.out.println(">> Karate Mock Server Started on " + server.getPort());
+    }
+}
+-------------------------------------------------------------------------------------------------------
+GraalVm command
+JAVA_HOME=/path/to/graalvm mvn clean test-compile exec:java \
+  -Dexec.mainClass=mock.MockServerRunner
+------------------------------------------------------------------------------------------
+curl http://localhost:8080/api/user/123    test get 
+------------------------------------------------------------------------------------------
+curl -X POST http://localhost:8080/api/user -H "Content-Type: application/json" \
+-d '{"id": 789, "name": "Test User"}'       test post 
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
