@@ -1,1 +1,15 @@
 
+| Feature              | **Array**                                  | **ArrayList**                                  |
+| -------------------- | ------------------------------------------ | ---------------------------------------------- |
+| 📦 Package           | `java` (built-in)                          | `java.util.ArrayList`                          |
+| 🧱 Size              | **Fixed** size (defined at creation)       | **Dynamic** size (can grow/shrink)             |
+| 💬 Syntax            | `int[] arr = new int[5];`                  | `ArrayList<Integer> list = new ArrayList<>();` |
+| 🧩 Data Types        | Supports **primitive & objects**           | Supports **only objects**                      |
+| 📌 Index Access      | `arr[0]`                                   | `list.get(0)`                                  |
+| ➕ Add Element        | Not possible after creation (fixed length) | `list.add(value)`                              |
+| ➖ Remove Element     | Not possible directly                      | `list.remove(index)`                           |
+| 🔁 Looping           | For-loop, enhanced for-loop                | For-loop, enhanced for-loop, Stream API        |
+| 🧠 Type Safety       | Type-safe if declared with primitives      | Type-safe using generics (e.g., `<String>`)    |
+| 🛠 Performance       | Slightly faster (less overhead)            | Slightly slower (dynamic resizing)             |
+| 🧹 Memory Efficiency | More efficient when size is known          | Slightly more memory (due to resizing)         |
+| 🎯 Use Case          | When size is fixed and known in advance    | When size varies or needs to grow/shrink       |
