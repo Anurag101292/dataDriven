@@ -104,7 +104,11 @@ curl http://localhost:8080/api/user/123    test get
 curl -X POST http://localhost:8080/api/user -H "Content-Type: application/json" \
 -d '{"id": 789, "name": "Test User"}'       test post 
 -------------------------------------------------------------------------------------------
-
+🔮 Future Enhancements
+Dynamically generate mock data using Faker.
+Integrate with your actual UI tests (e.g., Playwright or Selenium).
+Use environment flags to switch between mock vs. real backend.
+Add assertions inside the mock to simulate error scenarios (404, 500, etc.).
 
 
 
