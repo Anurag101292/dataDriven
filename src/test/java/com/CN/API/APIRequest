@@ -1,1 +1,16 @@
 
+Status Code	Description
+500 Internal Server Error	The server encountered an unexpected condition that prevented it from fulfilling the request.
+501 Not Implemented	The HTTP method is not supported by the server and cannot be handled.
+502 Bad Gateway	The server got an invalid response while working as a gateway to get the response needed to handle the request.
+503 Service Unavailable	The server is not ready to handle the request.
+504 Gateway Timeout	The server is acting as a gateway and cannot get a response in time for a request.
+505 HTTP Version Not Supported (Experimental)	The HTTP version used in the request is not supported by the server.
+506 Variant Also Negotiates (Experimental)	Indicates that the server has an internal configuration error: the chosen variant 
+    resource is configured to engage in transparent content negotiation itself, and is therefore not a proper endpoint in the 
+    negotiation process.
+507 Insufficient Storage (WebDAV)	The method could not be performed on the resource because the server is unable to store 
+    the representation needed to complete the request successfully.
+508 Loop Detected (WebDAV)	The server detected an infinite loop while processing the request.
+510 Not Extended	Further extensions to the request are required for the server to fulfill it.
+511 Network Authentication Required	Indicates that the client needs to authenticate to gain network access.
