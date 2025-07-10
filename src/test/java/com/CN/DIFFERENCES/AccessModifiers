@@ -1,0 +1,6 @@
+| Modifier  | Same Class | Accessible Within Same Package | Accessible in Subclass (Different Package) | Accessible from Anywhere |
+|-----------|------------|--------------------------------|------------------------------------------|------------------------|
+| `private` | ✅ Yes      | ❌ No                          | ❌ No                                     | ❌ No                    |
+| (default)*| ✅ Yes      | ✅ Yes                         | ❌ No                                     | ❌ No                    |
+|  protected| ✅ Yes      | ✅ Yes                         | ✅ Yes                                    | ❌ No                    |
+| `public`  | ✅ Yes      | ✅ Yes                         | ✅ Yes                                    | ✅ Yes                   |
