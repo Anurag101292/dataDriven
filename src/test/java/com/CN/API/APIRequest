@@ -14,3 +14,29 @@ Status Code	Description
 508 Loop Detected (WebDAV)	The server detected an infinite loop while processing the request.
 510 Not Extended	Further extensions to the request are required for the server to fulfill it.
 511 Network Authentication Required	Indicates that the client needs to authenticate to gain network access.
+
+Status Code	Description
+400 Bad Request	The server could not understand the request due to incorrect syntax. The client should NOT repeat the request without 
+    modifications.
+401 Unauthorized	Indicates that the request requires user authentication information. The client MAY repeat the request with a 
+    suitable Authorization header field
+402 Payment Required (Experimental)	Reserved for future use. It is aimed for use in the digital payment systems.
+403 Forbidden	Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known 
+    to the server.
+404 Not Found	The server can not find the requested resource.
+405 Method Not Allowed	The server knows the request HTTP method, but it has been disabled and cannot be used for that resource.
+406 Not Acceptable	The server doesn’t find any content that conforms to the criteria given by the user agent in the Accept header 
+    sent in the request.
+407 Proxy Authentication Required	Indicates that the client must first authenticate itself with the proxy.
+
+Status Code	Description
+200 OK	Indicates that the request has succeeded.
+201 Created	Indicates that the request has succeeded and a new resource has been created as a result.
+202 Accepted	Indicates that the request has been received but not completed yet. It is typically used in log running requests 
+    and batch processing.
+203 Non-Authoritative Information	Indicates that the returned metainformation in the entity header is not the definitive set as 
+    available from the origin server but is gathered from a local or third-party copy. The set presented MAY be a subset or superset 
+    of the original version.
+204 No Content	The server has fulfilled the request but does not need to return a response body. The server may return the updated 
+    meta information.
+205 Reset Content	Indicates the client to reset the document that sent this request.
