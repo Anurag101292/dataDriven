@@ -1,0 +1,50 @@
+✅ 1. Mouse Hover
+Use page.hover(selector) to simulate hovering the mouse over an element.
+
+await page.goto('https://example.com');
+
+await page.hover('#menu-item'); // triggers hover menu
+await expect(page.locator('#dropdown')).toBeVisible(); // dropdown should appear
+✅ 2. Mouse Click (Manual with coordinates)
+You can use the mouse object for advanced clicks by coordinates.
+
+await page.mouse.move(100, 200); // move to (x=100, y=200)
+await page.mouse.click(100, 200); // click at those coordinates
+🔍 Useful for canvas-based elements or if selector is not available.
+
+✅ 3. Right Click (Context Menu)
+
+await page.click('#file-icon', { button: 'right' }); // right-click
+await expect(page.locator('#context-menu')).toBeVisible();
+✅ 4. Double Click
+
+await page.dblclick('#editable-cell'); // double-click to enable editing
+✅ 5. Drag and Drop
+Playwright 1.18+ supports drag and drop natively with dragTo():
+
+const source = page.locator('#drag-source');
+const target = page.locator('#drop-target');
+
+await source.dragTo(target);
+await expect(page.locator('#drop-target .dropped')).toBeVisible();
+✅ 6. Mouse Scroll (via JS evaluation)
+Scroll using mouse.wheel() or JS:
+
+// Simulate scroll down
+await page.mouse.wheel(0, 300);
+
+// Or scroll specific element
+await page.evaluate(() => {
+  document.querySelector('#scrollable-div').scrollBy(0, 500);
+});
+✅ 7. Slider Drag (Custom Mouse Movement)
+
+const slider = await page.locator('#range-slider');
+const box = await slider.boundingBox();
+
+if (box) {
+  await page.mouse.move(box.x + 5, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(box.x + 100, box.y + box.height / 2);
+  await page.mouse.up();
+}
