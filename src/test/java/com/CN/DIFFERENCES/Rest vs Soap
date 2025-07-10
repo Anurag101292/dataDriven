@@ -1,0 +1,16 @@
+| Feature                      | REST (Representational State Transfer)     | SOAP (Simple Object Access Protocol)            |
+|------------------------------|---------------------------------------------|-------------------------------------------------|
+| Protocol                     | Works over HTTP (also supports HTTPS)       | Works over multiple protocols: HTTP, SMTP, TCP  |
+| Message Format               | Typically JSON (also XML)                   | Only XML                                        |
+| Interface Style              | Resource-based (URL endpoints)              | Operation-based (RPC-style)                     |
+| Transport Layer              | Uses simple HTTP methods (GET, POST, etc.)  | Uses strict XML envelopes and headers           |
+| Flexibility                  | ✅ High — lightweight and adaptable          | ❌ Low — rigid and verbose                       |
+| Bandwidth Usage              | ✅ Low — smaller payloads (JSON)             | ❌ High — verbose XML                           |
+| Performance                 | ✅ Faster — less overhead                    | ❌ Slower due to XML parsing and WS protocols    |
+| Standards                    | No strict standards (relies on conventions) | Strict WSDL, XSD, WS-Security, WS-Addressing    |
+| Security                     | Basic Auth, OAuth, HTTPS                    | Built-in WS-Security (XML Encryption, SAML)     |
+| Error Handling               | HTTP status codes (e.g., 404, 500)          | `<fault>` XML element                           |
+| Caching Support              | ✅ Yes (via HTTP headers)                   | ❌ No                                            |
+| Tooling/Support              | Widely supported across all platforms       | Mostly Java, .NET (SOAP clients needed)         |
+| Learning Curve               | Easier, more intuitive                      | Steeper — requires knowledge of WSDL, XSD       |
+| Use Case                     | Modern web/mobile apps, public APIs         | Enterprise systems, legacy systems, bank APIs   |
