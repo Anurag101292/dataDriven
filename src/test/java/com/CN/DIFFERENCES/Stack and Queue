@@ -1,1 +1,11 @@
+| Feature                | **Stack**                             | **Queue**                                                            |
+| ---------------------- | ------------------------------------- | -------------------------------------------------------------------- |
+| 💡 Data Structure Type | **LIFO** — Last In, First Out         | **FIFO** — First In, First Out                                       |
+| 🧱 Core Operations     | `push()`, `pop()`, `peek()`           | `offer()`, `poll()`, `peek()`                                        |
+| 🔚 Insertion Happens   | At the **top**                        | At the **rear**                                                      |
+| 🗑 Removal Happens     | From the **top**                      | From the **front**                                                   |
+| 📦 Java Class          | `java.util.Stack` or `Deque`          | `java.util.Queue` or `Deque`                                         |
+| 🧠 Thread-safe?        | `Stack` is synchronized (thread-safe) | `Queue` depends on implementation (e.g., `LinkedList`, `ArrayDeque`) |
+| 📊 Performance         | Slower (legacy, synchronized)         | Faster with `ArrayDeque` or `LinkedList`                             |
+| 🎯 Use Case            | Undo/Redo, Call Stack, Backtracking   | Print Queue, Task Scheduling, BFS                                    |
 
