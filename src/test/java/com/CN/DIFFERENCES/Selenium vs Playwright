@@ -1,0 +1,19 @@
+| Feature                     | Selenium                                       | Playwright                                      |
+|-----------------------------|------------------------------------------------|-------------------------------------------------|
+| Language Support            | Java, C#, Python, JavaScript, Ruby, Kotlin     | JavaScript/TypeScript, Python, Java, .NET       |
+| Browser Support             | Chrome, Firefox, Safari, Edge, IE              | Chromium, Firefox, WebKit                       |
+| Mobile Testing              | ✅ With Appium                                  | ❌ No (Only mobile emulation via WebKit/Chromium)|
+| Headless Mode               | ✅ Supported                                   | ✅ Fully supported by default                    |
+| Auto-Wait Mechanism         | ❌ Manual waits (`WebDriverWait`, etc.)        | ✅ Built-in auto-wait for elements/actions       |
+| Execution Speed             | ⏳ Slower due to WebDriver protocol            | ⚡ Faster with direct browser control (CDP)      |
+| Architecture                | WebDriver-based (uses W3C/WebDriver API)      | CDP & native bindings – no WebDriver             |
+| Parallel Execution          | ✅ Selenium Grid/TestNG                        | ✅ Built-in parallel test execution              |
+| Built-in Test Runner        | ❌ No (needs JUnit/TestNG/Cucumber)            | ✅ Yes (`npx playwright test`)                   |
+| Handling IFrames            | ❌ Manual switching required                   | ✅ Easier with built-in context handling         |
+| UI Recorders                | ✅ Selenium IDE                                | ✅ Playwright Codegen (more stable)              |
+| Cross-browser Testing       | ✅ Yes                                          | ✅ Yes (incl. WebKit - Safari equivalent)        |
+| CI/CD Integration           | ✅ Widely supported                            | ✅ Supported                                     |
+| Shadow DOM Support          | ❌ Limited                                     | ✅ Native support                                |
+| Network Interception        | 🔶 Complex / via browser DevTools              | ✅ Easy (`page.route()`)                         |
+| Community & Ecosystem       | ✅ Mature, massive community                   | 🌱 Growing rapidly, active dev from Microsoft    |
+| Test Isolation              | ❌ Requires manual setup (session cleanup)     | ✅ Auto-context per test (isolated sessions)     |
