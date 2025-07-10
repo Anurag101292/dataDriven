@@ -1,0 +1,41 @@
+✅ 1. Capture Full Page Screenshot
+
+await page.goto('https://example.com');
+
+await page.screenshot({ path: 'screenshots/fullpage.png', fullPage: true });
+📸 Captures the entire scrollable page, not just the visible viewport.
+
+✅ 2. Capture Visible Viewport Only (Default)
+
+await page.screenshot({ path: 'screenshots/viewport.png' });
+🔍 Useful if you only care about what's currently visible.
+
+✅ 3. Capture Screenshot of a Specific Element
+
+const logo = page.locator('#logo');
+await logo.screenshot({ path: 'screenshots/logo.png' });
+🎯 Use when you only want to snapshot a button, form, or chart.
+
+✅ 4. Take Screenshot on Assertion Failure (Debug)
+
+try {
+  await expect(page.locator('h1')).toHaveText('Dashboard');
+} catch (error) {
+  await page.screenshot({ path: 'screenshots/error.png', fullPage: true });
+  throw error;
+}
+✅ 5. Automatically Capture Screenshots on Test Failure (Playwright Test Runner)
+In playwright.config.js:
+use: {
+  screenshot: 'only-on-failure', // or 'on', 'off'
+}
+📂 Screenshots will be saved automatically in the test output directory.
+
+✅ 6. Timestamped or Dynamic Filenames
+
+const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+await page.screenshot({ path: `screenshots/home-${timestamp}.png`, fullPage: true });
+✅ 7. Compare Screenshots (Visual Testing)
+Use Playwright’s toMatchSnapshot() for visual diffing:
+
+await expect(page).toHaveScreenshot(); // Compares with baseline
