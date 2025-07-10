@@ -1,31 +1,6 @@
 ✅ Section 3: Advanced Real-World Performance Testing – with Answers & Examples
-21. What is a bottleneck and how do you identify it?
-Answer:
-A bottleneck is a component of the system (CPU, memory, DB, network, etc.) that limits overall performance.
 
-How to identify:
-High response time but low throughput = backend issue
-CPU > 90% usage = CPU bottleneck
-Slow DB queries = indexing or join bottleneck
-GC pauses = memory management issue
-Tools: JMeter + server metrics (top, Grafana, APM tools like New Relic, Dynatrace)
 
-✅ Real Example:
-Login API takes 6 sec under load. APM shows 80% time is in DB query — bottleneck is SQL.
-22. How do you determine performance benchmark or SLA?
-Answer:
-Benchmarks are usually based on:
-Production baselines (monitor real-time usage)
-business SLAs (e.g., response time < 2s for 95% users)
-
-Competitive analysis
-
-Define SLA:
-Login: 1s for 95% users
-Search: ≤3s under 1000 concurrent users
-99th percentile response < 5s
-
-🎯 Align with Product, Ops & Devs before testing.
 
 23. Describe a time you found a performance issue in production and how you handled it.
 Answer:
