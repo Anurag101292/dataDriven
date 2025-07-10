@@ -1,0 +1,11 @@
+| Feature                         | **HashMap**                            | **LinkedHashMap**                                |
+| ------------------------------- | -------------------------------------- | ------------------------------------------------ |
+| 📦 Package                      | `java.util.HashMap`                    | `java.util.LinkedHashMap`                        |
+| 🔗 Underlying Data Structure    | **Hash table**                         | **Hash table + Doubly Linked List**              |
+| 🧱 Maintains Insertion Order?   | ❌ No                                   | ✅ Yes — maintains **insertion order**            |
+| 🧠 Access Order (Optional)?     | ❌ No                                   | ✅ Optional **access-order** mode (LRU-like)      |
+| 🔄 Iteration Order              | Unpredictable                          | Predictable (same order as inserted)             |
+| 🚀 Performance (get/put/remove) | O(1) average-case                      | O(1) average-case                                |
+| 🧠 Memory Usage                 | Less (only key-value mapping)          | More (adds pointers for ordering)                |
+| 🧪 Use Case                     | Best for non-ordered key/value storage | Best when order matters (e.g., cache, LRU, etc.) |
+| 🎯 Implements                   | `Map`, `Cloneable`, `Serializable`     | All of HashMap + maintains internal order        |
