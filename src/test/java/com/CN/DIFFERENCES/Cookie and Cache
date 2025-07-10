@@ -1,1 +1,12 @@
-
+| Feature             | Cookie                                                  | Cache                                                     |
+|---------------------|---------------------------------------------------------|------------------------------------------------------------|
+| Purpose             | Stores small user data like login sessions, preferences | Stores static assets like images, JS, CSS, and API responses |
+| Stored Data         | Session ID, auth tokens, user preferences               | HTML pages, CSS, JS files, fonts, images                   |
+| Storage Location    | Browser (per domain) and sent to server                 | Browser (locally only, not sent to server)                |
+| Sent to Server      | ✅ Yes – sent on every request to the domain            | ❌ No – stays in browser only                             |
+| Size Limit          | ~4 KB per cookie                                        | Depends on browser (MBs)                                  |
+| Expiration          | Manually set using expiry or Max-Age                    | Set via HTTP headers like `Cache-Control`, `Expires`      |
+| Created By          | Server via `Set-Cookie` or JavaScript                   | Server via headers or Service Workers                     |
+| JavaScript Access   | Yes (unless `HttpOnly` flag is used)                   | No direct access via JS                                   |
+| Security            | Can be a security risk if not secured (e.g., session hijacking) | Low risk – contains non-sensitive static content         |
+| Use Case            | Authentication, user tracking, maintaining sessions     | Faster page load, reduce network calls                    |
