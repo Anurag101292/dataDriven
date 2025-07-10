@@ -1,0 +1,64 @@
+✅ Approach 1: Using Thread Class
+java
+Copy
+Edit
+public class ThreadExample1 {
+    public static void main(String[] args) {
+        // Thread 1
+        Thread thread1 = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread 1 - Count: " + i);
+                try { Thread.sleep(500); } catch (InterruptedException e) {}
+            }
+        });
+
+        // Thread 2
+        Thread thread2 = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread 2 - Count: " + i);
+                try { Thread.sleep(500); } catch (InterruptedException e) {}
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+    }
+}
+✅ Approach 2: Implementing Runnable Interface
+java
+Copy
+Edit
+class MyTask implements Runnable {
+    private final String threadName;
+
+    public MyTask(String name) {
+        this.threadName = name;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(threadName + " - Count: " + i);
+            try { Thread.sleep(500); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class ThreadExample2 {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyTask("Worker-1"));
+        Thread t2 = new Thread(new MyTask("Worker-2"));
+
+        t1.start();
+        t2.start();
+    }
+}
+🧠 Output (Sample, interleaved):
+mathematica
+Copy
+Edit
+Thread 1 - Count: 1
+Thread 2 - Count: 1
+Thread 1 - Count: 2
+Thread 2 - Count: 2
+...
