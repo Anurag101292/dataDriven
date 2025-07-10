@@ -1,5 +1,5 @@
   UI -------------------+
-   |                    |
+   |                    |         
    |                    v
    |              Karate Mock Server
    |                (WireMocking)
@@ -9,7 +9,19 @@
    v        v                       v
 GET /api/user/123      POST /api/user (with JSON)
    |                                 |
-Mocked Response             Mocked Response
+Mocked Response             Mocked Response 
+------------------------------------------------------------------------------------------
+curl --> http://localhost:8080/api/user/123
+            |
+            |-> Karate MockServer
+                    |
+                    |-> mock.feature: finds GET /api/user/123
+                            |
+                            |-> calls users-get.feature
+                                   |
+                                   |-> builds JSON response
+                                        |
+                                    <- Response sent to curl
 -----------------------------------------------------------------------------------------------
 mock-karate/                                                             
 ├── src/
