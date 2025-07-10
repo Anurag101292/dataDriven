@@ -55,3 +55,82 @@ for (let i = 0; i < rowCount; i++) {
     break;
   }
 }
+
+🎯 1. Wait for Table Load (Explicit Wait)
+Ensure the table is fully rendered before accessing it.
+
+await page.waitForSelector('#userTable tbody tr'); // Wait for at least one row
+🧪 2. Get Row Count Dynamically
+
+const rowCount = await page.locator('#userTable tbody tr').count();
+console.log(`Total rows: ${rowCount}`);
+🔍 3. Loop Through Dynamic Rows and Read Cell Values
+
+const rows = page.locator('#userTable tbody tr');
+
+for (let i = 0; i < await rows.count(); i++) {
+  const row = rows.nth(i);
+  const name = await row.locator('td').nth(0).textContent();
+  const role = await row.locator('td').nth(1).textContent();
+  const status = await row.locator('td').nth(2).textContent();
+
+  console.log(`Row ${i + 1}: ${name} | ${role} | ${status}`);
+}
+🔎 4. Click a Button in a Row Based on Cell Text
+
+const rows = page.locator('#userTable tbody tr');
+
+for (let i = 0; i < await rows.count(); i++) {
+  const row = rows.nth(i);
+  const name = await row.locator('td').nth(0).textContent();
+
+  if (name.trim() === 'Anurag') {
+    await row.locator('button:has-text("Edit")').click();
+    break;
+  }
+}
+🧠 5. Handle Changing Column Orders Dynamically
+When column headers may change (e.g., “Name” is in different column index):
+// Get header cells
+const headers = page.locator('#userTable thead tr th');
+const columnCount = await headers.count();
+let nameIndex = -1;
+
+for (let i = 0; i < columnCount; i++) {
+  const text = await headers.nth(i).textContent();
+  if (text.trim() === 'Name') {
+    nameIndex = i;
+    break;
+  }
+}
+
+// Now use dynamic index to get "Name" cell in rows
+if (nameIndex !== -1) {
+  const rows = page.locator('#userTable tbody tr');
+  for (let i = 0; i < await rows.count(); i++) {
+    const row = rows.nth(i);
+    const name = await row.locator('td').nth(nameIndex).textContent();
+    console.log(`Found name: ${name}`);
+  }
+}
+🔁 6. Handle Dynamic Pagination or Lazy Loading
+
+while (true) {
+  const rows = await page.locator('#userTable tbody tr');
+  const rowCount = await rows.count();
+
+  for (let i = 0; i < rowCount; i++) {
+    const row = rows.nth(i);
+    const status = await row.locator('td').nth(2).textContent();
+    console.log(`Row ${i}: Status - ${status}`);
+  }
+
+  const nextButton = page.locator('button:has-text("Next")');
+  if (await nextButton.isVisible()) {
+    await nextButton.click();
+    await page.waitForTimeout(1000); // Wait for new rows to load
+  } else {
+    break;
+  }
+}
+
