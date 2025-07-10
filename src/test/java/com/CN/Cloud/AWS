@@ -43,15 +43,4 @@ incoming web traffic to your application. When an instance is added, it needs to
 traffic is routed to it.
 When an instance is removed, it must deregister from the load balancer or traffic continues to be routed to it.
 -----------------------------------------------------------------------------------------------------------------
-Amazon OpenSearch Service - 
--------------------------
-Amazon OpenSearch Service makes it easy for you to perform interactive log analytics, 
-real-time application monitoring, website search, and more. OpenSearch is an open source, 
-distributed search and analytics suite derived from Elasticsearch.
------------------------------------------------------------------------------------------------------------------
-AWS Elastic Beanstalk
-----------------------
-AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and 
-services developed in a variety of programming languages. You can simply upload your code and Elastic Beanstalk automatically
-handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. 
-You cannot use Beanstalk to distribute incoming traffic across multiple targets.
+
