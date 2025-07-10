@@ -121,6 +121,10 @@ Dynamically generate mock data using Faker.
 Integrate with your actual UI tests (e.g., Playwright or Selenium).
 Use environment flags to switch between mock vs. real backend.
 Add assertions inside the mock to simulate error scenarios (404, 500, etc.).
+--------------------------------------------------------------------------------------------
+Imagine you're mocking an API that needs to boot up instantly as part of your test suite or frontend build:
+With regular Java → 1–3 seconds startup time
+With GraalVM native image → <100 ms
 
 
 
