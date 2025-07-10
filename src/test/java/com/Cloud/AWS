@@ -1,0 +1,57 @@
+Benefits of cloud
+-----------------
+-->Go global in minutes and deploy applications in multiple regions around the world with just a few clicks
+-->Trade capital expense for variable expense
+-->Benefit from massive economies of scale
+-->stop guessing capcity
+-->Increase speed and agility
+--------------------------------------------------------------------------------------------------------------
+EBS volume can be attached to a single instance in the same Availability Zone (AZ) 
+whereas EFS file system can be mounted on instances across multiple Availability Zones (AZ)
+--------------------------------------------------------------------------------------------------------------
+AWS Pricing Calculator
+----------------------
+AWS Pricing Calculator lets you explore AWS services and create an estimate for the cost of your use cases on AWS.
+You can model your solutions before building them, explore the price points and calculations behind your estimate, 
+and find the available instance types and contract terms that meet your needs. 
+This enables you to make informed decisions about using AWS. You can plan your AWS costs and usage or price out setting up a new set
+of instances and services.
+AWS Pricing Calculator can provide the estimate of the AWS service usage based on the list of AWS services.
+AWS Cost Explorer -
+-----------------
+AWS Cost Explorer has an easy-to-use interface that lets you visualize, understand, and manage your
+AWS costs and usage over time. AWS Cost Explorer includes a default report that helps you visualize the costs and usage 
+associated with your top five cost-accruing AWS services, and gives you a detailed breakdown of all services in the table view.
+The reports let you adjust the time range to view historical data going back up to twelve months to gain an understanding of your
+cost trends. 
+AWS Cost Explorer cannot provide the estimate of the monthly AWS bill based on the list of AWS services.
+AWS Budgets - 
+------------
+AWS Budgets gives the ability to set custom budgets that alert you when your costs or usage exceed 
+(or are forecasted to exceed) your budgeted amount. You can also use AWS Budgets to set reservation utilization or coverage 
+targets and receive alerts when your utilization drops below the threshold you define. Budgets can be created at the monthly,
+quarterly, or yearly level, and you can customize the start and end dates. You can further refine your budget to track costs
+associated with multiple dimensions, such as AWS service, linked account, tag, and others. 
+AWS Budgets cannot provide the estimate of the monthly AWS bill based on the list of AWS services.
+--------------------------------------------------------------------------------------------------------------
+AWS Elastic Load Balancing (ELB)
+--------------------------------
+Elastic Load Balancing (ELB) is used to automatically distribute your incoming application traffic across all 
+the EC2 instances that you are running. You can use Elastic Load Balancing to manage incoming requests by optimally 
+routing traffic so that no one instance is overwhelmed. Your load balancer acts as a single point of contact for all 
+incoming web traffic to your application. When an instance is added, it needs to register with the load balancer or no 
+traffic is routed to it.
+When an instance is removed, it must deregister from the load balancer or traffic continues to be routed to it.
+-----------------------------------------------------------------------------------------------------------------
+Amazon OpenSearch Service - 
+-------------------------
+Amazon OpenSearch Service makes it easy for you to perform interactive log analytics, 
+real-time application monitoring, website search, and more. OpenSearch is an open source, 
+distributed search and analytics suite derived from Elasticsearch.
+-----------------------------------------------------------------------------------------------------------------
+AWS Elastic Beanstalk
+----------------------
+AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and 
+services developed in a variety of programming languages. You can simply upload your code and Elastic Beanstalk automatically
+handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. 
+You cannot use Beanstalk to distribute incoming traffic across multiple targets.
