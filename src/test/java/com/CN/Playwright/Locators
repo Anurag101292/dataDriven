@@ -1,0 +1,63 @@
+✅ 1. CSS Selector (Default & Fast)
+
+await page.click('button#submit');       // by ID
+await page.click('input[name="email"]'); // by attribute
+await page.click('.btn.primary');        // by class
+✅ Great for speed and simplicity
+❗️ Fragile if DOM structure changes
+
+✅ 2. Text Locator
+
+await page.click('text=Login');
+await page.click('button:has-text("Submit")');
+✅ Best for human-readable text
+🌐 Locale-sensitive, case-sensitive (unless regex)
+
+✅ 3. Role-Based Locator (ARIA roles)
+
+await page.getByRole('button', { name: 'Login' });
+await page.getByRole('textbox', { name: 'Email Address' });
+✅ Best for accessible apps, screen readers, WCAG-compliant UIs
+🔍 Clean and semantic
+
+✅ 4. Placeholder Text
+
+await page.getByPlaceholder('Enter your email');
+🧠 Useful for login/signup forms
+✅ Works even if name or id is missing
+
+✅ 5. Label Text (form inputs)
+
+await page.getByLabel('Email');   // <label>Email</label> + <input>
+✅ Useful for forms, radio buttons, checkboxes
+
+✅ 6. Alt Text (Images)
+
+await page.getByAltText('Company Logo');
+📸 For images with meaningful alt attributes
+
+✅ 7. Title Attribute
+
+await page.getByTitle('Download now');
+🧭 For icons, tooltips, or links with title attribute
+
+✅ 8. Test ID (data-testid / custom attributes)
+
+await page.getByTestId('submit-button'); // data-testid="submit-button"
+🛡️ Most robust locator — won't break with UI/DOM changes
+✅ Preferred for QA-friendly apps
+
+✅ 9. XPath (Use with Caution)
+
+await page.locator('//button[text()="Submit"]');
+await page.locator('//div[@class="price"]/span');
+⚠️ Slower and brittle
+✅ Sometimes required for complex structures (e.g., SVGs)
+
+✅ 10. Locator Combinations (Advanced)
+
+await page.locator('div.card >> text=Buy Now');
+await page.locator('section:has(h2:has-text("Pricing")) >> button');
+✅ Chain selectors to get precise elements
+✅ Supports :has(), :nth(), >>, :not() etc.
+
