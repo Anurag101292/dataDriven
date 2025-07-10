@@ -1,0 +1,110 @@
+FX Trade and differences 
+| Trade Type   | Full Form               | Settlement                          | Use Case                                     | Example                              |
+| ------------ | ----------------------- | ----------------------------------- | -------------------------------------------- | ------------------------------------ |
+| **SPOT**     | Spot Trade              | T+2                                 | Immediate currency exchange                  | USD/INR at 83.00 settles in 2 days   |
+| **FWD**      | Forward Trade           | >T+2                                | Lock exchange rate for future                | Agree USD/INR @ 84.50 for 1-month    |
+| **NDF**      | Non-Deliverable Forward | Cash-settled                        | Hedging when physical currency isn't allowed | USD/INR NDF in India                 |
+| **NDF Swap** | NDF Swap                | Cash-settled                        | Roll or offset existing NDF                  | Combine a sell NDF with a buy NDF    |
+| **WINFWD**   | Window Forward          | Flexible forward with a time window | Allows settlement any day in window          | Hedge using forward between 1–10 Aug |
+
+
+💱 1. SPOT Trade
+✅ What is it?
+A SPOT trade is the most basic type of FX transaction — where two parties agree to exchange
+ one currency for another at the current market rate, known as the spot rate.
+📅 Settlement:
+T+2: Trade settles two business days after the trade date (T).
+Example: Trade on 10 July → settles on 12 July.
+📌 Real-World Example:
+You buy USD 1 million vs INR at 83.00
+On 12 July, you deliver INR 8.3 crore and receive USD 1 million
+🎯 Use Case:
+Quick FX payments (e.g., for invoices, corporate treasury)
+
+
+🔁 2. Forward (FWD) Trade
+✅ What is it?
+A Forward FX trade is a contract where two parties agree to buy/sell currencies at a specified rate but f
+or a future date beyond T+2.
+📅 Settlement:
+Any date after T+2 (e.g., 1 week, 3 months, 1 year)
+⚙️ How it works:
+Forward Rate = Spot Rate + Forward Points (based on interest rate differentials)
+You’re locking in future exchange rate today
+
+📌 Real-World Example:
+On 10 July, you agree to buy USD 1M vs INR at 84.50 for delivery on 10 October
+🎯 Use Case:
+Corporates hedge future payable/receivable FX risk
+Investment banks offer forwards to clients
+
+🧪 QA Testing Focus:
+Forward points application
+Broken date handling (non-standard dates)
+Pricing feed and date adjustment logic
+Calendar-aware settlement logic (e.g., holidays)
+
+❌ 3. Non-Deliverable Forward (NDF)
+✅ What is it?
+An NDF is a forward contract for currencies that are not freely convertible (like INR, KRW, CNY). 
+Instead of exchanging currencies, cash difference is paid in a convertible currency (usually USD).
+⚙️ Key Difference:
+Cash-settled — no delivery of local currency
+Based on the difference between the contract rate and the fixing rate
+🧮 Settlement Formula:
+Settlement = (Fixing Rate - Agreed Rate) × Notional
+If positive, you gain; if negative, you pay.
+
+📌 Real-World Example:
+Book NDF: Sell USD/INR @ 84.00 for 15 Aug
+Fixing Rate on 15 Aug: 85.20 → you receive profit in USD
+🎯 Use Case:
+Hedge currency exposure in restricted markets (India, China)
+Offshore investors use it widely (e.g., in Singapore, London)
+🧪 QA Testing Focus:
+Fetch and apply correct fixing rate
+Validate cash settlement amount calculation
+Trade lifecycle: Open → Fixing → Settled
+MTM (Mark-to-Market) pricing
+
+🔄 4. NDF Swap
+✅ What is it?
+An NDF Swap is a combination of two NDFs:
+One trade to close an existing NDF
+Second trade to roll it over to a new maturity date
+⚙️ Similar to:
+Rollover in forwards (to extend the position)
+Can also be used to shift exposure across tenors
+
+📌 Real-World Example:
+Existing NDF: Sell USD/INR @ 84.50 for 15 July
+
+NDF Swap: Buy back the 15 July position and sell a new NDF for 15 Aug @ 85.10
+
+🎯 Use Case:
+Roll forward exposure
+Adjust maturity profile
+🧪 QA Testing Focus:
+Pairing of old & new NDF trades
+Net settlement validation
+Breakage logic (e.g., cancelling old trade)
+Valuation adjustments during rollover
+
+📆 5. WINFWD (Window Forward)
+✅ What is it?
+A Window Forward is a flexible forward contract where the buyer/seller can choose a settlement 
+date within a defined window (range of dates).
+⚙️ Example:
+Book a forward for delivery any day between 1 Aug – 10 Aug
+📌 Real-World Example:
+You agree to sell USD 1M vs INR at 84.75
+You can choose to settle on any day between 1–10 Aug
+🎯 Use Case:
+Used when exact cash flow date is uncertain
+Corporates prefer flexibility for receivables/payables
+
+🧪 QA Testing Focus:
+Window start and end date validation
+Settlement logic for chosen date
+Margining based on window duration
+Reporting of unsettled vs exercised trades
