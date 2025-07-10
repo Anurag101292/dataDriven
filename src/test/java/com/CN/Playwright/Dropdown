@@ -1,0 +1,58 @@
+📘 Playwright Code
+
+await page.goto('https://example.com');
+await page.selectOption('#city', 'mumbai'); // by value
+
+// OR select by label
+await page.selectOption('#city', { label: 'Chennai' });
+
+// Validate selected option
+const selected = await page.$eval('#city', el => el.value);
+console.log('Selected city:', selected);
+✅ 2. Handle Custom (Non-Native) Dropdown
+For React/Angular-style dropdowns using div/ul/li:
+
+html
+Copy
+Edit
+<div class="dropdown">
+  <button id="dropdownMenu">Select</button>
+  <ul class="options">
+    <li role="option">Option 1</li>
+    <li role="option">Option 2</li>
+    <li role="option">Option 3</li>
+  </ul>
+</div>
+📘 Playwright Code
+
+await page.goto('https://example.com');
+
+// Click to open dropdown
+await page.click('#dropdownMenu');
+
+// Wait and click desired option
+await page.click('li:has-text("Option 2")');
+✅ 3. Select Based on Visible Text Dynamically
+
+const options = await page.locator('.dropdown ul li');
+const count = await options.count();
+
+for (let i = 0; i < count; i++) {
+  const text = await options.nth(i).textContent();
+  if (text.trim() === 'Option 3') {
+    await options.nth(i).click();
+    break;
+  }
+}
+✅ 4. Handle Searchable Dropdown (Type + Select)
+For dropdowns that allow typing to search:
+
+
+// Click dropdown input box
+await page.click('#searchable-dropdown');
+
+// Type to search
+await page.fill('#searchable-dropdown input', 'Anurag');
+
+// Wait for option and select
+await page.click('li:has-text("Anurag Upadhyay")');
