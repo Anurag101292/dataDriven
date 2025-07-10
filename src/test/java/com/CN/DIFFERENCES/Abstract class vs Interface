@@ -1,0 +1,15 @@
+| Feature                            | Abstract Class                              | Interface                                      |
+|-----------------------------|----------------------------------------------|------------------------------------------------|
+| Keyword                     | `abstract class`                             | `interface`                                    |
+| Methods                     | Can have abstract and concrete methods       | Only abstract methods (Java 7), default/static |
+                                                                               methods allowed (Java 8+)                      |
+| Variables                   | Can have instance variables (with state)     | Only constants (`public static final`)         |
+| Constructors                | Can have constructors                        | ❌ Cannot have constructors                    |
+| Multiple Inheritance        | ❌ Not supported (can extend only one class)  | ✅ Supported (can implement multiple interfaces)|
+| Access Modifiers            | Can use any modifier (`public`, `protected`) | All methods are implicitly `public abstract`   |
+                                                                               (unless `static` or `default`)                 |
+| Use Case                    | When classes share **common base behavior**   | When classes share **common capabilities**     |
+| Default Methods (Java 8+)   | ✅ Not needed — concrete methods already exist| ✅ Yes, `default` and `static` methods allowed |
+| Functional Interface (Java 8| ❌ No                                         | ✅ Yes — `@FunctionalInterface` supported      |
+| Abstract Keyword Required?  | Yes, must use `abstract` keyword              | No, `interface` is itself abstract             |
+| Example Syntax              | `abstract class Animal { void eat(){} }`      | `interface Flyable { void fly(); }`            |
