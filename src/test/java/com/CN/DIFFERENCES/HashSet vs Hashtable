@@ -1,0 +1,13 @@
+| Feature                    | HashSet                                     | Hashtable                                      |
+|----------------------------|---------------------------------------------|------------------------------------------------|
+| Belongs to Package         | `java.util`                                 | `java.util`                                    |
+| Underlying Structure       | Backed by a `HashMap`                       | Internal structure of hash buckets             |
+| Stores                    | **Unique values only** (no duplicates)       | **Key-value pairs** (like a Map)               |
+| Allows Duplicate Values?   | ❌ No                                        | ✅ Yes (as values; keys must be unique)         |
+| Key-Value Structure        | ❌ No — only stores elements                 | ✅ Yes — stores keys and values                 |
+| Allows Null                | ✅ Yes — one `null` element allowed          | ❌ No — neither `null` key nor value allowed    |
+| Thread-safe                | ❌ No — not synchronized                     | ✅ Yes — synchronized (legacy thread-safe map)  |
+| Performance                | Faster (no synchronization overhead)        | Slower due to synchronization                  |
+| Iterator Type              | Fail-fast                                   | Fail-safe in some implementations              |
+| Introduced In              | Java 1.2                                    | Java 1.0                                       |
+| Preferred Alternative      | Use `ConcurrentHashMap` or `HashMap`        | Prefer `ConcurrentHashMap` (instead of `Hashtable`) |
