@@ -1,0 +1,43 @@
+| Type                  | Method                                      | Use Case                                                          |
+| --------------------- | ------------------------------------------- | ----------------------------------------------------------------- |
+| **Auto Waits**        | Built-in                                    | Playwright auto-waits for actions (click, fill, etc.) to be ready |
+| **Explicit Waits**    | `waitForSelector`, `waitForLoadState`, etc. | Wait for specific condition                                       |
+| **Timeout-based**     | `waitForTimeout(ms)`                        | Forcefully wait (not recommended for regular use)                 |
+| **Wait for Function** | `waitForFunction`                           | Wait for a JS expression to become true                           |
+
+🔷 1. Auto Waits (Built-In)
+Playwright auto-waits before performing actions
+await page.click('text=Login'); // Waits for the element to be attached & visible
+await page.fill('#username', 'admin'); // Waits for input to be visible
+
+2. Explicit Wait: waitForSelector()
+Waits for an element to appear in the DOM.
+await page.waitForSelector('#welcome-msg', { state: 'visible', timeout: 5000 });
+await expect(page.locator('#welcome-msg')).toHaveText('Welcome Anurag');
+state	Meaning
+| `state`      | Meaning            |
+| ------------ | ------------------ |
+| `'attached'` | Exists in DOM      |
+| `'visible'`  | Exists and visible |
+| `'hidden'`   | Present but hidden |
+| `'detached'` | Removed from DOM   |
+
+4. waitForTimeout(ms)
+Fixed delay — should be avoided unless absolutely needed.
+await page.waitForTimeout(2000); // waits for 2 seconds
+
+3. waitForLoadState()
+Waits for the page or navigation to finish loading.
+await page.goto('https://example.com');
+await page.waitForLoadState('networkidle'); // Wait until no network activity
+
+🔷 5. waitForFunction(fn)
+Waits for a JS function to return true.
+await page.waitForFunction(() => document.title.includes('Dashboard'));
+✅ Good for waiting on computed values or app state.
+
+🔷 6. Locator-based waits with assertions
+Using Playwright test assertions, you get implicit waits:
+await expect(page.locator('#status')).toHaveText('Completed', { timeout: 3000 });
+await expect(page.locator('#spinner')).toBeHidden();
+
