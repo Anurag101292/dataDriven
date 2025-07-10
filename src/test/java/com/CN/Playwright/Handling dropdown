@@ -1,0 +1,57 @@
+✅ 1. Read All Rows & Columns
+
+const rows = await page.$$('#userTable tbody tr');
+
+for (const row of rows) {
+  const name = await row.$eval('td:nth-child(1)', el => el.textContent.trim());
+  const role = await row.$eval('td:nth-child(2)', el => el.textContent.trim());
+  const status = await row.$eval('td:nth-child(3)', el => el.textContent.trim());
+
+  console.log(`Name: ${name}, Role: ${role}, Status: ${status}`);
+}
+✅ 2. Find a Row Based on Cell Text (e.g., User = "Jane Smith")
+
+const rows = await page.$$('#userTable tbody tr');
+
+for (const row of rows) {
+  const name = await row.$eval('td:nth-child(1)', el => el.textContent.trim());
+
+  if (name === 'Jane Smith') {
+    const role = await row.$eval('td:nth-child(2)', el => el.textContent.trim());
+    const status = await row.$eval('td:nth-child(3)', el => el.textContent.trim());
+    console.log(`Found Jane: Role=${role}, Status=${status}`);
+    break;
+  }
+}
+✅ 3. Click Button in the Row for a Specific User
+
+for (const row of await page.$$('#userTable tbody tr')) {
+  const name = await row.$eval('td:nth-child(1)', el => el.textContent.trim());
+
+  if (name === 'John Doe') {
+    await row.click('button.edit-btn');
+    console.log(`Clicked edit for ${name}`);
+    break;
+  }
+}
+✅ 4. Dynamic Table Handling with Locator API (Modern Approach)
+Using Playwright's locator() API:
+
+
+const table = page.locator('#userTable');
+const rows = table.locator('tbody tr');
+
+const rowCount = await rows.count();
+
+for (let i = 0; i < rowCount; i++) {
+  const row = rows.nth(i);
+  const name = await row.locator('td').nth(0).textContent();
+
+  if (name.trim() === 'Jane Smith') {
+    const status = await row.locator('td').nth(2).textContent();
+    console.log(`Jane's Status: ${status.trim()}`);
+
+    await row.locator('button.edit-btn').click();
+    break;
+  }
+}
