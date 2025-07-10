@@ -13,3 +13,18 @@ SLAs are used to set measurable goals for testing:
 Pass criteria: 95% of users should get a response in under 2 seconds
 
 Fail criteria: If 90th percentile > 5s, raise a defect
+
+22. How do you determine performance benchmark or SLA?
+Answer:
+Benchmarks are usually based on:
+Production baselines (monitor real-time usage)
+business SLAs (e.g., response time < 2s for 95% users)
+
+Competitive analysis
+
+Define SLA:
+Login: 1s for 95% users
+Search: ≤3s under 1000 concurrent users
+99th percentile response < 5s
+
+🎯 Align with Product, Ops & Devs before testing.
