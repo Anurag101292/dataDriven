@@ -1,1 +1,46 @@
 
+const { test, expect } = require('@playwright/test');
+
+test('Switch between multiple tabs using tab index', async ({ browser }) => {
+  const context = await browser.newContext();
+  const page1 = await context.newPage();
+
+  // Open initial tab
+  await page1.goto('https://example.com');
+
+  // Simulate opening 2 more tabs (e.g., user clicks links)
+  const page2 = await context.newPage();
+  await page2.goto('https://playwright.dev');
+
+  const page3 = await context.newPage();
+  await page3.goto('https://github.com');
+
+  // 🧠 Tab index-based switch logic
+  const switchToTab = async (tabNumber) => {
+    const allPages = context.pages();
+    const totalTabs = allPages.length;
+
+    if (tabNumber < 1 || tabNumber > totalTabs) {
+      console.error(`Invalid tab number: ${tabNumber}. Only ${totalTabs} tab(s) open.`);
+      return;
+    }
+
+    const targetPage = allPages[tabNumber - 1]; // Index is 0-based
+    await targetPage.bringToFront();
+    console.log(`Switched to Tab #${tabNumber} → ${await targetPage.title()}`);
+  };
+
+  // ✅ Switch to tab 2 (playwright.dev)
+  await switchToTab(2);
+
+  // ✅ Perform action in that tab
+  const activeTab = context.pages()[1];
+  await expect(activeTab).toHaveTitle(/Playwright/);
+
+  // ✅ Switch to tab 3 (github)
+  await switchToTab(3);
+  await expect(context.pages()[2].url()).toContain('github');
+
+  // ✅ Switch back to tab 1
+  await switchToTab(1);
+});
