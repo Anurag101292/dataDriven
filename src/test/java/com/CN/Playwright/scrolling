@@ -1,0 +1,34 @@
+const { test, expect } = require('@playwright/test');
+
+test('Dynamic infinite scroll demo', async ({ page }) => {
+  await page.goto('https://example-infinite-scroll-site.com');
+
+  let previousHeight;
+  let scrollAttempts = 0;
+  const maxScrolls = 10; // Limit to avoid infinite loop
+
+  while (scrollAttempts < maxScrolls) {
+    scrollAttempts++;
+    // Scroll to bottom
+    previousHeight = await page.evaluate(() => {
+      window.scrollBy(0, window.innerHeight);
+      return document.body.scrollHeight;
+    });
+
+    // Wait for new content to load
+    await page.waitForTimeout(2000);
+
+    const newHeight = await page.evaluate(() => document.body.scrollHeight);
+
+    // If no more content, break the loop
+    if (newHeight === previousHeight) {
+      console.log(`No more content to load. Scrolled ${scrollAttempts} times.`);
+      break;
+    }
+  }
+
+  // Example validation
+  const items = await page.$$('[data-testid="content-item"]');
+  console.log(`Total items loaded: ${items.length}`);
+  expect(items.length).toBeGreaterThan(0);
+});
