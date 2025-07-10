@@ -1,0 +1,9 @@
+
+👨‍💻 Real Scenario:
+In Transact (JPMC), we noticed transaction listing API was timing out for 3% of UAT users.
+ Using JMeter + Splunk + APM, we found:
+
+Issue in pagination query (nested sub-select)
+Fixed with optimized SQL and better DB indexing
+Introduced DB connection pool monitoring + caching layer
+Impact: Reduced latency from 7s → 1.2s for 500 concurrent users.
