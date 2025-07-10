@@ -1,0 +1,49 @@
+🧪 JavaScript Examples
+🔹 1. Handle alert()
+
+const { test, expect } = require('@playwright/test');
+
+test('Handle alert popup', async ({ page }) => {
+  // Listen for the alert dialog
+  page.on('dialog', async dialog => {
+    console.log('Alert message:', dialog.message());
+    await dialog.accept(); // Clicks OK
+  });
+
+  await page.goto('https://demoqa.com/alerts');
+  await page.click('#alertButton'); // Triggers alert()
+});
+🔹 2. Handle confirm()
+
+test('Handle confirm popup', async ({ page }) => {
+  page.on('dialog', async dialog => {
+    console.log('Confirm message:', dialog.message());
+    await dialog.dismiss(); // or dialog.accept()
+  });
+
+  await page.goto('https://demoqa.com/alerts');
+  await page.click('#confirmButton'); // Triggers confirm()
+});
+🔹 3. Handle prompt()
+
+test('Handle prompt popup', async ({ page }) => {
+  page.on('dialog', async dialog => {
+    console.log('Prompt message:', dialog.message());
+    await dialog.accept('Playwright Rocks!'); // Enter value and OK
+  });
+
+  await page.goto('https://demoqa.com/alerts');
+  await page.click('#promtButton'); // Triggers prompt()
+});
+🔹 4. Assertion After Dialog
+
+test('Validate confirm result', async ({ page }) => {
+  page.on('dialog', dialog => dialog.accept());
+
+  await page.goto('https://demoqa.com/alerts');
+  await page.click('#confirmButton');
+
+  // Result text after dialog is handled
+  const result = await page.locator('#confirmResult').textContent();
+  expect(result).toContain('Ok');
+});
