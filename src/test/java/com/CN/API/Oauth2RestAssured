@@ -1,0 +1,60 @@
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.*;
+
+public class OAuth2Example {
+
+    public static void main(String[] args) {
+
+        // Step 1: Generate Access Token
+        Response tokenResponse = given()
+            .auth().preemptive().basic("my-client-id", "my-client-secret")
+            .contentType("application/x-www-form-urlencoded")
+            .formParam("grant_type", "client_credentials")
+            .post("https://auth.server.com/oauth/token");
+
+        String token = tokenResponse.jsonPath().getString("access_token");
+
+        // Step 2: Use Access Token in Request
+        given()
+            .auth().oauth2(token)
+            .get("https://api.server.com/data")
+            .then()
+            .statusCode(200);
+    }
+}
+------------------------------------------------------------------------------------
+🧱 Key Concepts
+Term	Meaning
+Client	The app trying to access resources (e.g., Postman, your API test)
+Resource Owner	The user (who owns the data)
+Authorization Server	Issues access tokens (e.g., Auth0, Okta, Keycloak)
+Resource Server	Hosts protected APIs/data (e.g., your backend app)
+Access Token	A short-lived token used to access protected resources
+
+🔁 How OAuth2 Works (Typical Flow)
+💼 Example: Client Credentials Flow (used in backend, test automation)
+Client → Auth Server
+Sends request with:
+
+client_id
+
+client_secret
+
+grant_type=client_credentials
+
+Auth Server → Client
+Returns:
+
+access_token
+
+expires_in, token_type
+
+Client → API (Resource Server)
+Sends request with:
+
+Authorization: Bearer <access_token>
+
+API → Response
+Returns the protected data if token is valid.
+
