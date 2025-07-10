@@ -1,0 +1,15 @@
+Arraylist and linkedlist
+
+| Feature                      | **ArrayList**                      | **LinkedList**                           |
+| ---------------------------- | ---------------------------------- | ---------------------------------------- |
+| 📦 Package                   | `java.util.ArrayList`              | `java.util.LinkedList`                   |
+| 🧱 Underlying Data Structure | **Resizable array**                | **Doubly linked list**                   |
+| ⚡ Access Time (get/set)      | **O(1)** – Direct access via index | **O(n)** – Must traverse from head/tail  |
+| ➕ Insert at End              | **O(1)** (amortized)               | **O(1)**                                 |
+| ➕ Insert at Middle/Start     | **O(n)** – Needs shifting elements | **O(1)** (if node reference is known)    |
+| ➖ Remove from Middle/Start   | **O(n)** – Needs shifting elements | **O(1)** (if node reference is known)    |
+| 🔄 Iteration                 | Faster (cache-friendly)            | Slower due to pointer chasing            |
+| 💾 Memory Usage              | Less (stores just data)            | More (stores data + 2 pointers per node) |
+| ❌ Random Access              | Supports `get(index)` directly     | Slower `get(index)` – no direct access   |
+| 📚 Implements                | `List`, `RandomAccess`             | `List`, `Deque`, `Queue`                 |
+| 🧠 Thread-safe?              | ❌ Not thread-safe                  | ❌ Not thread-safe                        |
