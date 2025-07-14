@@ -1,0 +1,50 @@
+record Person(String name, int age) {}
+
+static void printPerson(Object obj) {
+    if (obj instanceof Person(String name, int age)) {
+        System.out.println(name + " is " + age + " years old.");
+    }
+}
+-----------------------------------------------------------------------------------------------------
+✅ Use Case: Backend Automation Testing (API Validation)
+🎯 Scenario:
+You're validating a JSON response from an API that returns user data. You deserialize the response into a Java record,
+ and use record patterns to extract and assert values directly.
+
+🧪 API Response
+
+{
+  "name": "Anurag",
+  "age": 32,
+  "email": "anurag@example.com"
+}
+
+
+🧱 Record Declaration (Java 21)
+public record User(String name, int age, String email) {}
+
+✅ Test Case Using Record Pattern Matching
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
+public class UserApiTest {
+
+    @Test
+    void shouldValidateUserDetailsUsingRecordPattern() {
+        User user = given()
+                        .baseUri("https://api.test.com")
+                   .when()
+                        .get("/user/123")
+                   .then()
+                        .statusCode(200)
+                        .extract().as(User.class);
+
+        if (user instanceof User(String name, int age, String email)) {
+            assertThat(name, equalTo("Anurag"));
+            assertThat(age, greaterThan(18));
+            assertThat(email, containsString("@example.com"));
+        }
+    }
+}
