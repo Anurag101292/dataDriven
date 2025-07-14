@@ -1,0 +1,52 @@
+4. 🌳 Sequenced Collections (New API)
+Adds SequencedCollection, SequencedSet, and SequencedMap interfaces to provide consistent order operations (first(), last(), etc.).
+
+SequencedSet<String> set = new LinkedHashSet<>();
+set.add("A");
+set.add("B");
+System.out.println(set.getFirst()); // A
+System.out.println(set.getLast());  // B
+-----------------------------------------------------------------------------------------------------------------------
+✅ 2. UI Automation (Playwright + Java)
+🧪 Use Case: Validate breadcrumb or menu item order
+Example: A breadcrumb UI displays:
+
+Home > Products > Electronics > Laptops
+You want to verify first and last breadcrumb items.
+
+🧱 Test Using SequencedCollection
+
+import com.microsoft.playwright.*;
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.SequencedSet;
+
+public class BreadcrumbTest {
+
+    public static void main(String[] args) {
+        try (Playwright playwright = Playwright.create()) {
+            Browser browser = playwright.chromium().launch();
+            Page page = browser.newPage();
+            page.navigate("https://example.com/products/electronics/laptops");
+
+            // Assume breadcrumb items are <span class="breadcrumb-item">
+            Locator items = page.locator(".breadcrumb-item");
+
+            // Capture all breadcrumb texts preserving order
+            SequencedSet<String> breadcrumbItems = new LinkedHashSet<>();
+            int count = items.count();
+            for (int i = 0; i < count; i++) {
+                breadcrumbItems.add(items.nth(i).textContent());
+            }
+
+            System.out.println("First breadcrumb: " + breadcrumbItems.getFirst()); // Home
+            System.out.println("Last breadcrumb: " + breadcrumbItems.getLast());   // Laptops
+
+            assert "Home".equals(breadcrumbItems.getFirst());
+            assert "Laptops".equals(breadcrumbItems.getLast());
+
+            browser.close();
+        }
+    }
+}
