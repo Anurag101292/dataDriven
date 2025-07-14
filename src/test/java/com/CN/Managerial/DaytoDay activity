@@ -1,0 +1,39 @@
+Since I collaborate with teams across UK and US time zones, my workday starts at 12 PM IST, 
+aligning with their core hours for better productivity and communication.
+
+1. Start of the Day
+I begin by checking critical emails and calendar invites. My priority is to review:
+Production and UAT health checks to detect any early warnings
+Critical incidents reported on our production support Slack/Teams channel
+Upcoming meetings or action items requiring my input
+
+2. Morning Stand-up (QA Focus)
+We have a daily QA stand-up where we review the Jira board for our sprint. I work with my team to:
+Track test progress and blockers
+Align on ongoing automation tasks
+Redistribute tasks if someone needs support
+
+3. Jira Sprint Tasks and Testing
+Post stand-up, I pick up stories from the sprint board for:
+Functional, regression, or integration testing
+API testing using RestAssured
+Enhancing or debugging Playwright automation scripts
+Validating data and backend workflows
+
+4. Collaboration with London Team (2:30 PM IST)
+In our London stand-up, we review progress on shared Jira stories, dependency updates, and release blockers.
+I also assist the team with any technical discussions or clarifications.
+
+5. Backlog Grooming / Demos (Ad-hoc)
+During the day, I participate in backlog refinement, product demos, and sprint planning, ensuring QA 
+inputs are included early—this supports our shift-left testing approach.
+
+6. Jersey Team Sync (8:00 PM IST)
+We wrap up with our New Jersey team, where we:
+
+Discuss stories in progress
+Share QA feedback on deployed features
+Align on next-day priorities and production validations
+
+Throughout the day, I monitor test results from our CI pipelines, analyze failed builds, and raise defects or clarifications proactively.
+
