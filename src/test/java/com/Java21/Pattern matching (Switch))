@@ -1,0 +1,58 @@
+2. 🔄 Pattern Matching for switch (Finalized in JDK 21)
+Allows using patterns in switch expressions and enhances type safety.
+
+
+static String format(Object obj) {
+    return switch (obj) {
+        case String s -> "It's a string: " + s;
+        case Integer i -> "It's an int: " + i;
+        case null -> "It's null!";
+        default -> "Unknown type";
+    };
+}
+-----------------------------------------------------------------------------------------------------------------------
+✅ Scenario 1: Backend Automation (API Response Validation)
+Tool: RestAssured + JUnit
+Feature Used: Pattern Matching for switch to validate dynamic response types (e.g., a field that might be String, Integer, or null)
+
+🔧 Example – API returns dynamic status type
+
+{
+  "userId": 123,
+  "status": "active"
+}
+Or sometimes:
+
+
+{
+  "userId": 123,
+  "status": 1
+}
+🧱 Step 1: Create a POJO with Object field
+
+public class UserStatus {
+    public int userId;
+    public Object status; // can be String, Integer, or null
+}
+🧪 Step 2: Use Pattern Matching in Test
+
+@Test
+void validateStatusUsingPatternSwitch() {
+    UserStatus response = given()
+                              .baseUri("https://api.test.com")
+                         .when()
+                              .get("/user/status/123")
+                         .then()
+                              .statusCode(200)
+                              .extract().as(UserStatus.class);
+
+    String message = switch (response.status) {
+        case String s -> "Status is string: " + s;
+        case Integer i -> "Status is int code: " + i;
+        case null -> "Status is missing";
+        default -> "Unknown type of status";
+    };
+
+    System.out.println(message);
+    // You can add assertions based on the message or individual types
+}
