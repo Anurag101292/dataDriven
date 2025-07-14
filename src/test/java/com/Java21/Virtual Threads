@@ -1,0 +1,56 @@
+3. 🌐 Virtual Threads (Finalized – Project Loom)
+Massively reduces the cost of creating threads. Helps in building scalable, concurrent applications.
+
+Runnable task = () -> System.out.println("Running in: " + Thread.currentThread());
+Thread.startVirtualThread(task);
+------------------------------------------------------------------------------------------------------------------------------
+✅ Scenario: Running Multiple UI Tests Concurrently with Virtual Threads
+Imagine you want to run the same UI scenario across multiple users or roles in parallel — but efficiently, without heavy thread management.
+
+🚀 Why Use Virtual Threads in UI Automation?
+Reduces memory and thread overhead (ideal for large-scale parallel test execution).
+Makes concurrent testing (like login flows or load simulation) lightweight.
+Great for test runners, custom parallel execution, or internal framework development.
+
+🧱 Example: Run Login Flow in Parallel for Multiple Users
+
+import com.microsoft.playwright.*;
+import java.util.List;
+
+public class PlaywrightVirtualThreadExample {
+
+    static void runLoginFlow(String username) {
+        try (Playwright playwright = Playwright.create()) {
+            Browser browser = playwright.chromium().launch();
+            Page page = browser.newPage();
+            page.navigate("https://example.com/login");
+            page.fill("#username", username);
+            page.fill("#password", "secretPassword");
+            page.click("#login");
+
+            System.out.println("[" + Thread.currentThread() + "] Login check for: " + username);
+            // Validate some post-login element
+            boolean success = page.isVisible("#dashboard");
+            System.out.println("[" + username + "] Login successful? " + success);
+
+            browser.close();
+        }
+    }
+
+    public static void main(String[] args) {
+        List<String> users = List.of("user1", "user2", "user3", "admin");
+
+        // Run login tests in parallel using Virtual Threads
+        users.forEach(user -> Thread.startVirtualThread(() -> runLoginFlow(user)));
+    }
+}
+✅ What’s Happening Here:
+We're simulating concurrent logins using virtual threads.
+Each login runs in its own lightweight virtual thread — no thread pool required.
+Clean resource management using try-with-resources for Playwright instances.
+
+🧠 When to Use This
+Load testing lite (across users, roles, tenants)
+Concurrent UI testing across data sets
+Parallel smoke tests in custom runners (not using JUnit/TestNG)
+
