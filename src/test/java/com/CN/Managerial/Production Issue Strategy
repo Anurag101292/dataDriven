@@ -1,0 +1,35 @@
+Production Issue Strategy 
+
+In one of our recent releases for the Transact platform at JPMorgan Chase, a production issue was reported within hours of deployment. 
+The issue was related to the fund transfer functionality, which is a critical module in our retail banking operations. 
+Certain user transactions were failing silently, and users did not receive confirmations or error messages.
+
+✅ Task
+As the Senior QA Engineer leading automation and shift-left efforts, my responsibility was to investigate the root cause, 
+coordinate with developers to identify the fix, and most importantly, ensure such scenarios are covered in future test strategies and pipelines.
+
+✅ Action
+I followed a structured approach:
+Issue Triage and RCA:
+  Analyzed logs and payloads — discovered that special characters like <, &, and > in input fields were causing backend validation failures.
+  These edge cases were not covered in our test data or automation scenarios.
+
+Immediate Fix (with Dev Team):
+   Deployed a hotfix where the backend added proper validation and frontend implemented character encoding.
+   Communicated workaround to the support team for affected users.
+
+Test Coverage Enhancement:
+   Added negative test cases and edge case payloads into our RestAssured API automation suite using a data-driven approach with dynamic test data generation (Faker library).
+   Implemented JSON schema validation in the CI pipeline to ensure API contracts are enforced for both request and response.
+
+Process Improvement:
+   Added a “real-world data test” checklist for every release.
+   Integrated automation execution in nightly regression suites and added a PR-gate quality check with high-priority test cases.
+   Initiated a shift-left QA review process where testers now review developer unit test cases and test data during story grooming.
+
+✅ Result
+We mitigated the issue within 4 hours of it being reported.
+   Expanded our test coverage by 30%, especially for boundary and negative scenarios.
+   Prevented similar issues in subsequent releases — no such production defects reported in the next 3 release cycles.
+   Improved team collaboration across QA, Dev, and BA, and gained stakeholder trust by proactively addressing gaps.
+
