@@ -1,0 +1,16 @@
+Agile processes emphasize speed and efficacy. The testing pyramid offers by streamlining the testing process.
+ With a clear progression and logic introduced to the testing pipeline, work gets done faster.
+  Since the pyramid is built to run the easiest tests at the beginning, testers manage time better,
+   get better results and essentially make life easier for everyone involved.
+The pyramid provides testers with the right priorities. If test scripts are written with a greater focus on the
+ UI, then chances are that core business logic and back-end functionality is not sufficiently verified.
+ This affects product quality and leads to more work for the team. Also, since TAT (turn around time) of UI
+ tests is high, it leads to lower test coverage overall. By implementing the pyramid, such situations are
+  completely avoided.
+In automated testing, tools and frameworks like Selenium execute scripted tests on a software application or
+component to ensure it is working as expected. Its entire objective is to reduce human effort and oversight.
+ But for a machine to yield the right results, it must be given the right direction.
+
+The test automation pyramid strives to do this by organizing and structuring the test cycle.
+ This streamlines the entire processes, brings efficient time management into the picture and gives testers a
+  time-tested blueprint to shape their projects.
