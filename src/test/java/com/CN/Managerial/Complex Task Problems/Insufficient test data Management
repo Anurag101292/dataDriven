@@ -1,1 +1,28 @@
 
+5. Project Architecture Problem: Inefficient Test Data Management
+Problem: Your automation framework is struggling due to a lack of consistent and reusable test data. 
+Test scripts frequently fail because of missing or corrupt data in the staging environment, delaying releases.
+
+Challenges:
+
+Testers spend significant time preparing test data manually.
+Scripts are not resilient to changes in the database or APIs.
+Reusing test data causes false negatives in test results.
+Solution:
+
+Centralized Test Data Management:
+Create a test data management system using tools like Mockaroo or Faker to generate synthetic test data.
+Maintain a version-controlled repository for test data files in formats like JSON or YAML.
+Use Test Data Factories:
+Build utilities within your framework to dynamically generate test data for different scenarios.
+Isolate Tests:
+Ensure test scripts clean up the data they create (e.g., delete users or records after the test).
+Leverage mock services like WireMock or Mockito to reduce dependency on live data.
+Environment Reset Mechanisms:
+Automate database resets and seed data scripts as part of the CI/CD pipeline.
+Summary:
+These examples demonstrate your ability to handle technical and interpersonal challenges. When presenting these scenarios in an interview:
+
+Use the STAR framework (Situation, Task, Action, Result) to structure your answers.
+Highlight both leadership skills (delegation, collaboration) and technical expertise (tools, strategies).
+Emphasize measurable outcomes, such as reduced downtime, increased test coverage, or improved team morale.
