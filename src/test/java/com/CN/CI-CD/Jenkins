@@ -1,0 +1,140 @@
+👷 Name: Jenkins
+🏢 Job Title: Automation Engineer / DevOps Butler
+🧑‍💻 Role Summary:
+Jenkins is that reliable, never-sleeping team member who listens carefully to instructions (pipelines),
+ and automatically performs tasks exactly when and how you tell him — whether it’s building code, running tests, deploying to servers, or generating reports.
+
+🛠️ Daily Responsibilities:
+Time	Task
+🕐 2:00 AM	Start build, run tests while the rest of the team sleeps.
+📦 Any push	Detects new code, builds it, and runs regression tests.
+🧪 On demand	Executes your choice of tests (PR, regression,healthchecks).
+📧 Post-run	Sends reports and emails to the whole team.
+📂 Cleanup	Deletes old builds to save space.
+
+💼 Skillset:
+CI/CD Master: Continuously integrates and delivers code without complaining.
+Multitasker: Can run multiple jobs in parallel.
+Punctual: Follows strict schedules (cron jobs).
+Communicator: Emails results, updates dashboards, and archives reports.
+Security Aware: Handles credentials securely via secret bindings.
+
+👨‍👩‍👧‍👦 Team Personality:
+Works closely with Developers, Testers, and DevOps engineers.
+Acts as a bridge between code commits and deployment.
+
+🧠 Catchphrase:
+“Tell me what to do, and I’ll get it done—reliably, repeatedly, and without missing a beat.”
+
+🔁 If Jenkins Had Emotions:
+Happy: When builds are green and reports are clean.
+Sad: When a pipeline fails or a script throws an exception.
+Stressed: When overloaded with too many parallel builds without enough agents.
+Loyal: Always there, whether at 2 PM or 2 AM.
+
+-------------------------------------------------------------------------------------------------------------------
+#!groovy
+
+pipeline {
+    agent any
+
+    triggers {
+        // Runs on weekdays at 1 AM for main
+        cron("0 1 * * 1-5")
+    }
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+        disableConcurrentBuilds()
+        timeout(time: 60, unit: 'MINUTES')
+    }
+
+    parameters {
+        choice(name: 'testType', choices: ['UNIT', 'INTEGRATION', 'ALL'], description: 'Choose test type')
+    }
+
+    environment {
+        DEPLOY_SERVER = "your-server-ip-or-hostname"
+        DEPLOY_USER = "your-user"
+        BRANCH = "${env.BRANCH_NAME}"
+    }
+
+    stages {
+
+        stage('Check Branch and Cron') {
+            when {
+                anyOf {
+                    branch 'main'
+                    expression { return env.BRANCH_NAME?.startsWith("feature/") }
+                }
+            }
+            steps {
+                script {
+                    echo "Triggered by cron or feature branch: ${env.BRANCH_NAME}"
+                }
+            }
+        }
+
+        stage('Checkout Code') {
+            steps {
+                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/your-org/your-repo.git'
+            }
+        }
+
+        stage('Build Code') {
+            steps {
+                sh './mvnw clean compile'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    if (params.testType == 'UNIT') {
+                        sh './mvnw test -Dgroups=unit'
+                    } else if (params.testType == 'INTEGRATION') {
+                        sh './mvnw verify -Dgroups=integration'
+                    } else {
+                        sh './mvnw verify'
+                    }
+                }
+            }
+        }
+
+        stage('Generate Report') {
+            steps {
+                sh './mvnw surefire-report:report'
+                archiveArtifacts artifacts: '**/target/site/**', allowEmptyArchive: true
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
+
+        stage('Deploy to Server') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh """
+                    echo "Deploying to production server..."
+                    ssh ${DEPLOY_USER}@${DEPLOY_SERVER} 'bash -s' < deploy.sh
+                """
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning up workspace"
+            cleanWs()
+        }
+        success {
+            echo "Build and deployment completed successfully!"
+        }
+        failure {
+            echo "Build or deployment failed."
+        }
+    }
+}
+
+
+
