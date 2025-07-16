@@ -1,0 +1,23 @@
+2. Team Bonding Problem: Resolving Conflicts in a Diverse Team
+Problem: You are leading a team of QA engineers spread across different geographies. Cultural differences, 
+time zone mismatches, and varying levels of technical expertise are causing conflicts and reducing productivity.
+
+Challenges:
+
+Junior team members feel unheard, while senior members dominate discussions.
+Team members in different time zones feel excluded from key decisions.
+Collaboration and knowledge-sharing are minimal.
+
+Solution:
+
+Encourage Inclusive Communication:
+Implement a "round-table" rule during meetings where every team member gets a chance to speak.
+Use async communication tools like Confluence or Slack to allow team members to contribute outside real-time discussions.
+Bridge the Skill Gap:
+Pair junior testers with experienced members for mentoring.
+Organize technical workshops to upskill the team, focusing on automation, API testing, or performance testing.
+Celebrate Diversity:
+Host virtual events where team members can share cultural traditions or personal interests to build rapport.
+Adapt Workflow for Time Zones:
+Use tools like Jira or ClickUp to track tasks, ensuring visibility of everyone's progress.
+Create overlapping working hours for critical discussions but allow flexibility otherwise.
