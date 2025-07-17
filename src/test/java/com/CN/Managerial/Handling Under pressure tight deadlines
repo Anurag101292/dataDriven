@@ -2,22 +2,26 @@ Situation:
 In a Forex trading platform modernization project at [Your Company Name], 
 I was part of a cross-functional team tasked with integrating
  a real-time currency rate aggregation engine with enhanced latency performance. 
-This project had high visibility from leadership due to upcoming regulatory compliance changes and competitive product launches from rival platforms.
+This project had high visibility from leadership due to upcoming regulatory compliance changes and
+ competitive product launches from rival platforms.
 
 Challenge:
 Just two weeks before the go-live date, we were notified of a mandatory update from one of our key 
 rate providers (a third-party API) that significantly changed their response structure. 
 This affected downstream parsing logic, risk engine calculations, and UI display of real-time currency pairs. 
-The team was already working at capacity, and any delay could result in missing our go-live, impacting SLAs and trader confidence.
+The team was already working at capacity, and any delay could result in missing our go-live, impacting SLAs and 
+trader confidence.
 
 Actions Taken:
-Immediate Assessment & Prioritization: I quickly performed an impact analysis and broke down the changes into three categories 
+Immediate Assessment & Prioritization: I quickly performed an impact analysis and broke down the changes 
+into three categories 
 — core engine parsing updates, regression automation changes, and UI recalibration. 
 I prioritized critical-path tasks (parser and rate accuracy validation) for immediate action.
 
 Parallel Workstream Creation: I created mini-sprints within the tight 2-week window. 
 Backend parsing logic was handled by 2 developers,
- while I personally took up writing validation automation using Java + RestAssured to ensure rate consistency across providers.
+ while I personally took up writing validation automation using Java + RestAssured to ensure rate consistency 
+across providers.
 
 Cross-Team Coordination: I initiated daily syncs between devs, QA, and product to address 
 blockers faster and coordinated with the third-party provider for clarifications.
