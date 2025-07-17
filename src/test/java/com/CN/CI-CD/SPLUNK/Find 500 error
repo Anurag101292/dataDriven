@@ -1,0 +1,19 @@
+Splunk Query to get 500 error
+
+✅ Splunk Query to Find All 500 Status Errors in the Last 24 Hours
+
+index=<your_index_name> sourcetype=<your_sourcetype>
+status=500
+| stats count by host, source, uri_path, _time
+
+
+🔍 Explanation:
+index=<your_index_name>: Specify the index where your logs are stored (e.g., index=prod_logs).
+
+sourcetype=<your_sourcetype>: Filter the data source type (e.g., access_combined or json_logs).
+
+status=500: Filter for only HTTP 500 errors.
+
+| stats count by host, source, uri_path, _time: Aggregate and group the 500 errors by host, source file, endpoint path, 
+and time for better debugging.
+
