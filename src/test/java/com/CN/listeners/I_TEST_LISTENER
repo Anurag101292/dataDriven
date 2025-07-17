@@ -7,115 +7,132 @@ onTestFailedButWithinSuccessPercentage(): invoked whenever a method fails but wi
 onFinish(): invoked after all tests of a class are executedThe above-mentioned methods use the parameters ITestContext and ITestResult. The ITestContext is a class that contains information about the test run. The ITestResult is an interface that defines the result of the test.
 Now, let’s look at an example showcasing the use of this listener.
 
-Below is a listener class that implements ITestListener:
+✅ 1. Project Structure
 
+src/
+└── test/
+    ├── base/
+    │   └── BaseTest.java
+    ├── listeners/
+    │   └── MyTestListener.java
+    └── tests/
+        └── LoginTest.java
+✅ 2. Dependencies (Maven – pom.xml)
+Make sure you have these in your pom.xml:
+
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.20.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.10.1</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+✅ 3. Base Class – BaseTest.java
+package base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+
+public class BaseTest {
+    public static WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+}
+✅ 4. Listener Class – MyTestListener.java
+package listeners;
+
+import base.BaseTest;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class MyListener implements ITestListener {
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-@Override
-public void onFinish(ITestContext contextFinish) {
-System.out.println("onFinish method finished");
+public class MyTestListener implements ITestListener {
 
+    @Override
+    public void onTestFailure(ITestResult result) {
+        System.out.println("❌ TEST FAILED: " + result.getName());
+
+        // Take screenshot
+        TakesScreenshot ts = (TakesScreenshot) BaseTest.getDriver();
+        File src = ts.getScreenshotAs(OutputType.FILE);
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String dest = "screenshots/" + result.getName() + "_" + timestamp + ".png";
+
+        try {
+            FileHandler.copy(src, new File(dest));
+            System.out.println("📷 Screenshot saved to: " + dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override public void onTestSuccess(ITestResult result) {
+        System.out.println("✅ TEST PASSED: " + result.getName());
+    }
+
+    @Override public void onTestStart(ITestResult result) {}
+    @Override public void onTestSkipped(ITestResult result) {}
+    @Override public void onStart(ITestContext context) {}
+    @Override public void onFinish(ITestContext context) {}
 }
+✅ 5. Test Class – LoginTest.java
+package tests;
 
-@Override
-public void onStart(ITestContext contextStart) {
-System.out.println("onStart method started");
-}
-
-@Override
-public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-System.out.println("Method failed with certain success percentage"+ result.getName());
-
-}
-
-@Override
-public void onTestFailure(ITestResult result) {
-System.out.println("Method failed"+ result.getName());
-
-}
-
-@Override
-public void onTestSkipped(ITestResult result) {
-System.out.println("Method skipped"+ result.getName());
-
-}
-
-@Override
-public void onTestStart(ITestResult result) {
-System.out.println("Method started"+ result.getName());
-
-}
-
-@Override
-public void onTestSuccess(ITestResult result) {
-System.out.println("Method passed"+ result.getName());
-
-}
-
-}
-The class below contains four methods, showcasing one method being passed, one method being failed, one method being skipped and one method being passed with a defined success percentage:
-
+import base.BaseTest;
+import listeners.MyTestListener;
+import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.SkipException;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-public class ItestListenerWithExample {
+@Listeners(MyTestListener.class)
+public class LoginTest extends BaseTest {
 
-int i=0;
+    @Test
+    public void loginValidUser() {
+        driver.get("https://example.com/login");
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.id("loginBtn")).click();
 
-@Test
-public void testMethod1()
-{
-System.out.println("This method will pass and will invoke the onTestSuccess method of ITestlistener");
-int i=10;
-Assert.assertEquals(i, 10);
+        // Intentional failure for demo
+        Assert.assertTrue(driver.getTitle().contains("DashboardXYZ"));
+    }
 }
-
-@Test
-public void testMethod2()
-{
-System.out.println("This method will fail and will invoke the onTestFailure method of ITestlistener");
-int i=10;
-Assert.assertEquals(i, 11);
-}
-
-@Test
-public void testMethod3()
-{
-System.out.println("This method will skip and will invoke the onTestSkipped method of ITestlistener");
-throw new SkipException("Skipping this test case.");
-
-}
-
-@Test(successPercentage=50, invocationCount=5)
-public void testMethod4()
-{
-i++;
-System.out.println("Test Failed But Within Success Percentage Test Method, invocation count: " + i);
-if (i == 1 || i == 2) {
-System.out.println("this will be Failed");
-Assert.assertEquals(i, 100);
-}
-}
-}
-Below is the testNG xml file:
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-<listeners>
-<listener class-name="MyListener"/>
-</listeners>
-<test name="Listeners_program">
-<classes>
-<class name="ItestListenerWithExample"></class>
-</classes>
-</test>
-</suite>
-<!-- Suite -->
-Console output:
+✅ 6. Output When Test Fails
+When the test fails, console output will show:
+❌ TEST FAILED: loginValidUser
+📷 Screenshot saved to: screenshots/loginValidUser_20250717_153244.png
