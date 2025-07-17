@@ -1,0 +1,178 @@
+
+A FIX Protocol message represents a sequence of fields whose values are associated with numeric keys (tags).
+ Each message field (tag and value pair) has its unique meaning.
+
+A common way of presenting a FIX message is called the “tag=value” FIX message format. In this format, 
+each message is a sequence of <tag>=<value> fields delimited by the non-printable ASCII <SOH> character (its numeric value is 0x01). All tags (numeric keys) and most field values are printable ASCII strings.
+
+For example:
+
+FIX Message
+In the picture above, <SOH> is used to represent the field delimiter (the non-printing ASCII “SOH” character,
+ hex code is 0x01).
+
+The complete sample FIX message (can be downloaded here):
+
+8=FIX.4.29=11835=D49=ONIXS56=CME34=252=20240528-09:20:52.11111=983532-321=138=10055=NVDA40=
+154=160=20240528-09:20:52.00410=017
+The same sample message, but the ^ character is used instead of the “SOH” field delimiter to improve the readability:
+
+8=FIX.4.2^9=118^35=D^49=ONIXS^56=CME^34=2^52=20240528-09:20:52.111^11=983532-3^21=1^38=100^55=NVDA^40=
+1^54=1^60=20240528-09:20:52.004^10=017^
+A human-friendly representation:
+
+Tag	Name	          Value	                 Description
+8	                 BeginString	           FIX.4.2	
+9	                 BodyLength	             118	
+35	               MsgType	               D	Order Single
+49	               SenderCompID	           ONIXS	
+56	               TargetCompID	           CME	
+34	MsgSeqNum	2	
+52	SendingTime	20240528-09:20:52.111	
+11	ClOrdID	983532-3	
+21	HandlInst	1	Automated execution order, private, no Broker intervention
+38	OrderQty	100	
+55	Symbol	NVDA	
+40	OrdType	1	Market
+54	Side	1	Buy
+60	TransactTime	20240528-09:20:52.004	
+10	CheckSum	017	
+Message types
+The FIX Protocol Specifications describe types of FIX messages. The message type is encoded as the value of t
+he MsgType field; the corresponding tag (key) is 35. For example, 35=D identifies the New Order-Single message.
+ Each message type has a unique field structure.
+
+A detailed description of message types can be found at https://www.onixs.biz/fix-dictionary/latest/messages.html.
+
+Message types can be divided between session-level and application-level messages. The session level concerns data delivery, 
+while the application level defines business-related data content.
+
+Session-level messages
+Session-level messages are used to establish and maintain the connection (session) between counterparties and include the 
+following messages:
+
+MsgType	Name
+0	Heartbeat
+1	Test Request
+2	Resend Request
+3	Reject
+4	Sequence Reset
+5	Logout
+A	Logon
+Application-level messages
+Application-level messages carry business-related data. For example:
+
+New Order-Single (MsgType=D)
+Order Cancel Request (MsgType=F)
+Execution Report (MsgType=8)
+Security Definition Request (MsgType=c)
+Trade Capture Report Request (MsgType=AD)
+Trade Capture Report (MsgType=AE)
+Field tags
+A field tag (key) is a positive integer number represented as a printable ASCII string (digits only, no leading zeros). The FIX Protocol Specifications define the tag value and field name correspondence.
+
+Frequently used tags are:
+
+8 is the tag of the BeginString field that identifies the beginning of a new message and protocol version. For example: 8=FIX.4.2. 
+     Always the first field.
+9 is the tag of the BodyLength field that identifies the message length in bytes. For example, 9=118. It's always the second field.
+35 is the tag of the MsgType field that identifies the message type. For example, 35=D means “New Order–Single”, and 35=8 means “Execution Report”. It's always the third field.
+49 is the tag of the SenderCompID field that identifies the firm sending the message. For example, 49=YOUR_COMPANY.
+56 is the tag of the TargetCompID field that identifies the receiving firm. For instance, 56=CME or 56=ICE.
+34 is the tag of the MsgSeqNum field that contains the message sequence number. For example, 34=1.
+52 is the SendingTime field tag containing the time of the message transmission. For example, 52=20240528-09:20:52.111.
+55 is the tag of the Symbol field that contains the ticker symbol, a “human understood” representation of the security.
+    For example, 55=NVDA.
+54 is the tag of the Side field that identifies the order side. For instance, 54=1 means “Buy”, and 54=2 means “Sell”.
+40 is the tag of the OrdType field that defines the order type. For example, 40=1 means “Market”, and 40=2 means “Limit”.
+11 is the tag of the ClOrdID field that uniquely identifies the order (assigned by the buy side) — for example, 11=983532-3.
+39 is the OrdStatus field tag that identifies the order's status. For example, 39=0 means “New”, 39=1 means “Partially filled”, and 39=2 means “Filled”.
+150 is the tag of the ExecType field that describes the specific Execution Report. For example, 150=0 means “New”, 150=3 means “Done for day”, and 150=4 means “Cancelled”.
+60 is the tag of the TransactTime field that contains the time of the order creation or execution. For example, 60=20240528-09:20:52.004.
+10 is the tag of the CheckSum field that contains the message checksum. For instance, 10=059. It's always the last field.
+The mapping between the integer tag value and field name can be found at https://www.onixs.biz/fix-dictionary/latest/fields.html.
+
+Field values
+Most field values are a sequence of printable ASCII characters.
+
+All field tags must have a value specified. A session-level Reject message is the appropriate response to a tag with no value (e.g., 583=).
+
+Field data types
+The FIX Protocol Specifications define the following field data types mapping to ASCII strings:
+
+String values are represented as a sequence of ASCII characters. For example, 49=BuySide represents the “BuySide” value of the SenderCompID field.
+Character values are represented as an ASCII character. For example, 4=B represents the “Buy” value of the AdvSide field.
+Integer values are represented as a sequence of digits without commas or decimals and an optional sign character. For example: 581=3 represents the “House Trader” value of the AccountType field.
+Float values are represented as a sequence of digits with an optional decimal point and a sign character. All float fields must accommodate up to fifteen significant digits. The number of decimal places used should be a factor of business/market needs and mutual agreement between counterparties. For example, 159=6847.00 represents the 6847.00 value of the Amount of Accrued Interest.
+The meaning of the FIX field value is field-specific. In other words, value 1 of the Side field has a different business meaning (“Buy”) than value 1 of the OrdStatus field (“Partially filled”).
+
+The field-specific values can be found at https://www.onixs.biz/fix-dictionary/latest/fields.html.
+
+A detailed description of FIX Field Data Types can be found at https://www.onixs.biz/fix-dictionary/latest/index.html.
+
+Repeating fields
+The field can appear more than once in the message only if it belongs to the repeating field group.
+
+Field order
+All messages begin with the field (e.g., 8=FIX.4.2) and terminate with the CheckSum field (e.g., 10=218).
+
+The general format of a FIX message is a standard header followed by the message body fields, which are terminated with a standard trailer. So, all header fields from the message header should precede message body fields, and all message body fields should precede standard trailer fields.
+
+Standard message header and trailer fields are shared between all messages. Body fields are message-type specific.
+
+The second message header field is always the BodyLength field (e.g., 9=117).
+
+The third message header field is always the MsgType field (e.g., 35=D).
+
+Fields within repeating field groups must be specified in the order that the fields are defined in the message definition within the FIX Specification document. The NoXXX field, where XXX is the field being counted, specifies the number of repeating group instances that must immediately precede the repeating group contents.
+
+All other fields within a message can be defined in any sequence.
+
+Required, optional and conditionally required fields
+The FIX Protocol Specifications define required, optional and conditionally required fields for each message type.
+
+Conditional fields are required or not required based on the presence or value of other fields.
+
+Message checksum
+The CheckSum field (tag 10) contains the simple checksum of the message fields. This field is always the last message field.
+
+The checksum of a FIX message is calculated by summing up every byte of the message but not including the checksum field itself. This checksum is then transformed into a modulo 256 number for transmission and comparison. The checksum is calculated after all encryption is completed, i.e., the message transmitted between parties is processed.
+
+The checksum must be sent as printable characters for transmission, so the checksum is transformed into three ASCII digits.
+
+For example, if the checksum has been calculated to be 274, then the modulo 256 value is 18 (256 + 18 = 274). This value would be transmitted as 10=018 where 10 is the tag for the CheckSum field.
+
+A sample C++ code fragment to generate the checksum field:
+
+static std::string calculateCheckSum(const char* message, unsigned long messageLengthWithoutCheckSumField)
+{
+    unsigned int checkSum = 0;
+
+    // Sum up every byte of the message but not including the checksum field itself.
+    for (unsigned long i = 0; i < messageLengthWithoutCheckSumField; checkSum += message[i++]);
+
+    // Calculate modulo 256
+    const int modValue = checkSum % 256;
+
+    // Create a stringstream to format the result
+    std::stringstream ss;
+
+    // Set the width to 3 and fill with '0' if necessary
+    ss << std::setw(3) << std::setfill('0') << modValue;
+
+    return ss.str();
+}
+Human-friendly representation
+Tools like FIX Parser and FIX Analyzer provide a human-friendly view of FIX messages.
+
+See also
+FIX Protocol Dictionary
+FIX Repeating Group
+C++ FIX Message Parser
+Java FIX Message Parser
+.NET FIX Message Parser
+Technical Support: support@onixs.biz
+Sales Support: sales@onixs.biz
+UK: +44 20 7117 0111
+US: +1 312 999 6040
+Copyright © 2025 OnixS. All Rights Reserved.
