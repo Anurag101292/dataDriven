@@ -1,0 +1,9 @@
+Splunk is a data analytics and log management platform used to collect, index, monitor, and analyze machine-generated data 
+from various sources such as servers, applications, databases, and network devices.
+It works in three major steps:
+
+Ingest: Splunk collects data from different sources using forwarders, APIs, or file monitoring.
+
+Index: The raw data is parsed and indexed for faster search and retrieval.
+
+Search & Visualize: Users can query the data using SPL (Search Processing Language) to generate reports, dashboards, and alerts.
