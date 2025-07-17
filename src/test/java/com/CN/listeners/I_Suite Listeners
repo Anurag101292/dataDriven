@@ -1,0 +1,27 @@
+✅ 2. ISuiteListener
+📌 Use when: You want to do something once before the test suite starts or after it ends.
+
+🎯 Example Use Case:
+Create test execution report directory before suite starts.
+Close DB connections or quit resources after suite.
+
+@Override
+public void onStart(ISuite suite) {
+    createReportDirectory();
+}
+
+
+--------------------------------------------------------------
+package listeners;
+
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
+
+public class MySuiteListener implements ISuiteListener {
+    public void onStart(ISuite suite) {
+        System.out.println("🚀 Suite Started: " + suite.getName());
+    }
+    public void onFinish(ISuite suite) {
+        System.out.println("🏁 Suite Finished: " + suite.getName());
+    }
+}
