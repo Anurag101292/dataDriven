@@ -1,0 +1,10 @@
+Playwright Listener
+
+🔸 5. Playwright Listeners
+Playwright supports event-based listeners for browser/page events (in JS, Python, Java, etc.)
+
+Event	Use Case
+page.on("console")	Capture console logs
+page.on("request")	Log all network requests
+page.on("response")	Log API responses
+page.on("dialog")	Handle alerts/popups
