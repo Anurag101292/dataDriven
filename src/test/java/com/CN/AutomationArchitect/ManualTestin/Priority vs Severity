@@ -1,0 +1,48 @@
+✅ Definition: Priority vs Severity
+Attribute	Severity	Priority
+🎯 Focus	Impact on the functionality of the system	Urgency to fix the issue
+👤 Set By	Usually by the tester or QA	Usually by the developer or manager
+📍 Perspective	Technical: how badly the system is broken	Business: how fast it needs to be fixed
+
+🔍 Severity – "How Bad is the Bug?"
+Refers to how much the defect affects the application's functionality.
+
+Based on technical impact — how many features/users are affected.
+
+🔸 Severity Levels:
+Level	Example
+Critical	App crashes or major data loss (e.g., login not working)
+High	Major feature broken, no workaround (e.g., payment fails)
+Medium	Function misbehaves, but has a workaround
+Low	Minor UI bug, typo, or alignment issue
+
+🔧 Priority – "How Soon Should It Be Fixed?"
+Refers to the order in which defects should be resolved.
+
+Based on business urgency and delivery timeline.
+
+🔸 Priority Levels:
+Level	Example
+High	Bug needs to be fixed immediately (e.g., blocking release)
+Medium	Fix in the next sprint or release
+Low	Fix can wait or be planned later
+
+📊 Combined Example Table:
+Bug Description	Severity	Priority	Why?
+Login button crashes app	Critical	High	Blocks all users, urgent fix required
+Spelling mistake on About page	Low	Low	Minor impact, not urgent
+Incorrect total shown in invoice calculation	High	High	Affects business logic and billing
+Help link broken	Low	Medium	Doesn’t break functionality but looks bad
+Payment success screen shows 404	High	High	Critical flow affected, needs fast fix
+Button misaligned on Safari browser	Low	Medium	UI bug, but affects customer experience
+
+🧠 Simple Analogy
+Severity = How serious is the wound?
+
+Priority = How quickly do we need to treat it?
+
+✅ In Agile Teams
+Severity is generally logged by QA/testers in bug reports.
+
+Priority is set or adjusted by product owners/managers/dev leads, often after a triage discussion.
+
