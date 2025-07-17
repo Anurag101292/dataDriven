@@ -1,0 +1,9 @@
+| Scenario                               | Recommended Listener Type                        |
+| -------------------------------------- | ------------------------------------------------ |
+| Logging test start, pass/fail          | `ITestListener`, `TestWatcher`                   |
+| Screenshot on failure                  | `ITestListener.onTestFailure()` or `TestWatcher` |
+| Suite-level setup/teardown logging     | `ISuiteListener`                                 |
+| Retry failed test                      | `ITestAnnotationTransformer`                     |
+| Browser event monitoring               | `WebDriverEventListener` (Selenium)              |
+| Capturing browser alerts in Playwright | `page.on("dialog")`                              |
+| Custom reporting                       | `IReporter` or Allure integration                |
