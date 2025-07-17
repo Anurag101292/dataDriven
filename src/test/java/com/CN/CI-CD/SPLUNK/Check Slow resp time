@@ -1,0 +1,55 @@
+Imagine your app is showing slow response times but tests are passing. How would you use Splunk to investigate?
+
+✅ Answer: Step-by-Step Investigation Using Splunk
+“If my tests are passing but users are reporting slow response times, that indicates a performance degradation that’s not being captured by functional assertions. Here’s how I’d approach the investigation using Splunk:”
+
+🔹 1. Identify Affected Endpoints
+
+index=app_logs sourcetype=access_logs
+| stats avg(response_time) by uri_path
+| sort - avg(response_time)
+This helps me pinpoint which API or endpoint has increased latency.
+
+I compare current response times to historical baselines (last 1 hour vs. last 7 days).
+
+🔹 2. Filter by Time Range
+
+earliest=-1h latest=now
+Narrow down logs to when the slowness was reported.
+
+Helps correlate with deploys, spikes, or DB slowdowns.
+
+🔹 3. Correlate with Error Logs
+
+index=app_logs (status>=400 OR error OR exception)
+Even if tests are passing, slow third-party calls, retries, or DB timeouts could be causing issues.
+
+Check for timeouts, retries, or circuit breaker logs.
+
+🔹 4. Check Backend Latency or Downstream Services
+
+index=app_logs uri_path="/api/*"
+| stats avg(response_time), max(response_time), count by uri_path, backend_service
+This helps me isolate if a particular downstream service or DB is the bottleneck.
+
+🔹 5. Use transaction to Check End-to-End Response Time
+
+index=app_logs
+| transaction request_id startswith="Incoming request" endswith="Response sent"
+| table request_id, duration, uri_path, status
+Measures the total time taken from request start to response.
+
+Useful when you have distributed services but use a correlation ID (like request_id).
+
+🔹 6. Compare with Past Trends
+
+... | timechart avg(response_time) span=5m
+Use timechart to visualize response time spikes and check if it correlates with traffic spikes or deployments.
+
+🔹 7. Create a Dashboard Widget or Alert
+Once the cause is known, I may:
+
+Add a new performance threshold alert (e.g., if avg > 1.5 sec)
+
+Build a QA dashboard showing real-time response times per endpoint
+
