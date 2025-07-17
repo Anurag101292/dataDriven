@@ -5,3 +5,19 @@ Difference Between stats, eventstats, and streamstats
 | `stats`       | Aggregates events and returns summary results (like SQL `GROUP BY`)            | ❌ No original events remain     | Count total errors per service                             |
 | `eventstats`  | Aggregates data like `stats`, but **adds results back to each matching event** | ✅ Original events remain        | Add total count to each event for context                  |
 | `streamstats` | Performs **running or cumulative statistics** on each event as it arrives      | ✅ Original events remain        | Cumulative count, running average, first/last values, etc. |
+
+✅ 1. stats – Summary only (like SQL GROUP BY)
+
+index=web_logs status=500
+| stats count by uri_path
+
+
+✅ 2. eventstats – Adds stats to each event (without removing them)
+
+index=web_logs status=500
+| eventstats count as total_500s
+
+✅ 3. streamstats – Row-wise stats (running calculations)
+
+index=web_logs status=500
+| streamstats count as running_500s
