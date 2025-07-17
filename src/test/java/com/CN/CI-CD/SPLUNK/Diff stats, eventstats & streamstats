@@ -1,0 +1,7 @@
+Difference Between stats, eventstats, and streamstats
+
+| Command       | What it does                                                                   | Output affects original events? | Use Case Example                                           |
+| ------------- | ------------------------------------------------------------------------------ | ------------------------------- | ---------------------------------------------------------- |
+| `stats`       | Aggregates events and returns summary results (like SQL `GROUP BY`)            | ❌ No original events remain     | Count total errors per service                             |
+| `eventstats`  | Aggregates data like `stats`, but **adds results back to each matching event** | ✅ Original events remain        | Add total count to each event for context                  |
+| `streamstats` | Performs **running or cumulative statistics** on each event as it arrives      | ✅ Original events remain        | Cumulative count, running average, first/last values, etc. |
