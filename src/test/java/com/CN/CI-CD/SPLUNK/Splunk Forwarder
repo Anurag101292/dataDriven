@@ -1,0 +1,18 @@
+✅ 5. What is a Splunk forwarder? How is it different from an indexer?
+Answer:
+
+A Splunk forwarder is an agent installed on source machines (like app servers or test servers) to collect and send data to Splunk.
+
+There are two types:
+
+Universal Forwarder (UF) – lightweight, used for log forwarding
+
+Heavy Forwarder (HF) – can parse/filter data before sending (rare in QA use)
+
+An indexer is a Splunk component that receives data from forwarders, parses it, and stores it in searchable indexes.
+
+| Role      | Splunk Forwarder        | Splunk Indexer                      |
+| --------- | ----------------------- | ----------------------------------- |
+| Purpose   | Collect & forward data  | Parse, index & store data           |
+| Location  | Source machine (QA box) | Central Splunk server or cloud      |
+| CPU Usage | Very low                | Higher (handles storage & querying) |
