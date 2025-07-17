@@ -1,0 +1,9 @@
+What are the main components of Splunk architecture?
+
+| Component               | Purpose                                                                  |
+| ----------------------- | ------------------------------------------------------------------------ |
+| **Universal Forwarder** | Lightweight agent that collects and forwards logs to indexers.           |
+| **Indexer**             | Parses and stores the data into indexes; responsible for fast searching. |
+| **Search Head**         | Provides a UI for users to search, create dashboards, alerts, etc.       |
+| **Deployment Server**   | Manages configurations for multiple forwarders (mostly in large setups). |
+| **Cluster Master**      | Coordinates indexing and search operations in clustered environments.    |
