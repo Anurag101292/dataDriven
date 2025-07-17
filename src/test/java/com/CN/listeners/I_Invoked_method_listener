@@ -1,0 +1,38 @@
+✅ 3. IInvokedMethodListener
+📌 Use when: You want to perform actions before and after every method, including @BeforeMethod and @AfterMethod.
+
+🎯 Example Use Case:
+
+Log the name of each test and config method as they run.
+
+Inject common headers/cookies before each test method execution.
+
+java
+Copy
+Edit
+@Override
+public void beforeInvocation(IInvokedMethod method, ITestResult result) {
+    if (method.isTestMethod()) {
+        logStart(method.getTestMethod().getMethodName());
+    }
+}
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+package listeners;
+
+import org.testng.IInvokedMethod;
+import org.testng.IInvokedMethodListener;
+import org.testng.ITestResult;
+
+public class MyInvokedMethodListener implements IInvokedMethodListener {
+    public void beforeInvocation(IInvokedMethod method, ITestResult result) {
+        System.out.println("➡️ Before: " + method.getTestMethod().getMethodName());
+    }
+    public void afterInvocation(IInvokedMethod method, ITestResult result) {
+        System.out.println("⬅️ After: " + method.getTestMethod().getMethodName());
+    }
+}
