@@ -1,0 +1,33 @@
+✅ 4. IAnnotationTransformer – Modify Test Annotations Dynamically
+Useful for retry logic or changing test priority.
+
+package listeners;
+
+import org.testng.IAnnotationTransformer;
+import org.testng.annotations.ITestAnnotation;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+public class MyAnnotationTransformer implements IAnnotationTransformer {
+    public void transform(ITestAnnotation annotation, Class testClass,
+                          Constructor testConstructor, Method testMethod) {
+        annotation.setRetryAnalyzer(listeners.MyRetryAnalyzer.class);
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+Retry Analyzer Class:
+
+
+package listeners;
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+
+public class MyRetryAnalyzer implements IRetryAnalyzer {
+    private int retryCount = 0;
+    private static final int maxRetry = 2;
+
+    public boolean retry(ITestResult result) {
+        return retryCount++ < maxRetry;
+    }
+}
