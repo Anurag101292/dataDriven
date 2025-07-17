@@ -1,0 +1,15 @@
+
+3. What types of data can Splunk ingest?
+Log files (from apps, servers, databases)
+
+Syslog (network devices, firewalls)
+
+JSON, XML, CSV files
+
+API responses
+
+Event logs (Windows, Linux)
+
+Metrics (CPU, memory, latency)
+
+Audit trails and clickstreams
