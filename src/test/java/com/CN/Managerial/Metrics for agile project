@@ -1,0 +1,7 @@
+What metrics do you use to track quality in Agile projects?
+Expected Answer:
+Test coverage: Percentage of code covered by tests.
+Defect density: Number of defects per module or feature.
+Escaped defects: Defects found in production.
+Test execution rate: Number of tests run within a sprint.
+Cycle time: Time taken from development to deployment.
