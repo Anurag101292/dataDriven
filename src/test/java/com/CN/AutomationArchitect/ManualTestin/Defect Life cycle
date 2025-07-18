@@ -1,0 +1,17 @@
+New ➝ Open ➝ Assigned ➝ In Progress ➝ Fixed ➝ Retest ➝ Closed
+                     ↘                     ↘
+                     Rejected           Reopened
+
+
+| Stage            | Jira Status (Customizable)        |
+| ---------------- | --------------------------------- |
+| New              | To Do / New                       |
+| Open             | Open                              |
+| Assigned         | Assigned                          |
+| In Progress      | In Progress                       |
+| Fixed            | Resolved / Fixed                  |
+| Ready for Retest | Ready for QA                      |
+| Closed           | Done / Closed                     |
+| Reopened         | Reopened                          |
+| Rejected         | Won’t Fix / Duplicate / Not a Bug |
+
