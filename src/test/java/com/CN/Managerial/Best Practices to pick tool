@@ -1,0 +1,7 @@
+| Factor                        | Considerations                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Open-source vs Commercial** | Tools like Playwright, REST Assured, and Karate are open-source. Tools like **Tricentis           |
+                                  Tosca**, **UFT**, **ReadyAPI (SoapUI Pro)** require paid licenses.                                |
+| **Hidden Costs**              | Even open-source tools may require investment in custom framework development,                    |               
+                                  training, infrastructure.                                                                         |
+| **Budget Approval**           | Will business approve the cost for licenses, cloud executions, dashboards, or managed support?    |
