@@ -1,0 +1,87 @@
+In our project, our test strategy is Agile-focused. We start with story grooming to understand requirements and identify test scenarios early. 
+We follow shift-left testing, covering API and UI layers. Smoke and regression are automated using Playwright and RestAssured, integrated into Jenkins. 
+Test data is handled via mocks and seeded scripts, and environments are synced with dev. 
+We track defects in JIRA, prioritize based on severity, and conduct RCA for production bugs. Our strategy ensures fast feedback, high coverage, and quality at speed.
+
+✅ First: What is a Test Strategy?
+A Test Strategy is a high-level document or approach that outlines how testing will be carried out across the project or organization.
+
+It answers:
+
+What to test?
+
+How to test?
+
+Who will test?
+
+When will testing be done?
+
+Where will it be executed?
+
+Why we are testing in that way?
+
+✅ Structure Your Answer Like This:
+🧩 1. Objective & Scope
+"The goal of the test strategy is to ensure the application meets business and technical requirements with high quality."
+Define what's in scope and out of scope for testing (UI, API, DB, performance, etc.)
+Example: Functional, Non-functional, Regression, Smoke, Sanity, UAT
+
+🧪 2. Types of Testing Covered
+“We use a mix of manual and automation testing depending on the scenario.”
+Unit Testing – done by Dev
+API Testing – automated using RestAssured/Postman
+UI Testing – using Selenium/Playwright
+Regression Testing
+Smoke/Sanity Testing
+Performance Testing – JMeter/Gatling
+Security Testing – optional based on domain
+
+🔁 3. Test Levels
+“We follow a layered approach starting from Unit to UAT.”
+
+Level	Owner	Tools Used
+Unit	Dev	JUnit, TestNG
+API / Service	QA	RestAssured, Postman
+UI	QA	Playwright, Selenium
+Integration	QA/Dev	WireMock, Karate
+UAT	Business	Manual Validation
+
+🤖 4. Automation Strategy
+“We automate smoke and regression suites to speed up testing in CI/CD.”
+Frameworks: Playwright, RestAssured, TestNG, Allure
+Automation scope: High-priority and stable test cases
+CI integration: Jenkins, GitHub Actions
+Reporting: Allure / Extent / HTML reports
+
+📊 5. Test Planning & Estimation
+“We estimate effort based on story points, risk, and complexity.”
+Use t-shirt sizing or hour-based estimation
+Involve QA in grooming sessions
+Define test deliverables: test cases, data, execution plan, reports
+
+💾 6. Test Data & Environment
+“We manage data via test databases, mocks, and seeded scripts.”
+Tools: WireMock, DB scripts
+Environments: DEV, SIT, UAT, PROD
+Ensure sync between test and dev environments
+
+🧩 7. Defect Management
+“We use JIRA to log, track, and close defects. Prioritize by severity and impact.”
+Triaging with Dev/Product
+Linking defects to user stories/test cases
+
+⚠️ 8. Risk Management
+“We identify risks early — e.g., unstable features, late code merges, lack of test data.”
+Risk-based testing
+Smoke testing after every build
+
+📈 9. Metrics & Reporting
+“We share daily status, blockers, test execution reports, and defect summary.”
+Test case pass/fail rate
+Defect leakage
+Automation coverage
+Sprint test summary
+
+💬 10. Collaboration
+“We work closely with Dev, BA, and Product in an Agile model — daily standups, reviews, retros.”
+
