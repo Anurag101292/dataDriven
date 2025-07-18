@@ -5,3 +5,49 @@
 | **Hidden Costs**              | Even open-source tools may require investment in custom framework development,                    |               
                                   training, infrastructure.                                                                         |
 | **Budget Approval**           | Will business approve the cost for licenses, cloud executions, dashboards, or managed support?    |
+
+TEAM SIZE AND SKILL SET 
+| Factor                    | Considerations                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Current Team Skills**   | If your team knows Java, REST Assured or Playwright (Java) is a natural fit.                           |
+                              If they're strong in JavaScript, Cypress or Playwright (JS) works better.                              |
+| **Learning Curve**        | DSL-based tools (Karate, Cypress) are easier to ramp up. REST Assured or                               |
+                              Selenium may require more programming background.                                                      |
+| **Support/Training Cost** | Will you need to train team members? Is documentation and community support strong enough?             |
+| **Bandwidth**             | Can your existing team maintain and scale the framework or do you need more hires?                     |
+
+Scalability & Maintainance Overhead
+| Factor                   | Considerations                                                     |
+| ------------------------ | ------------------------------------------------------------------ |
+| **Framework Complexity** | A tool may be powerful but too complex for your current team size. |
+| **Maintenance Overhead** | Will the framework need frequent updates? Are test failures flaky? |
+| **Onboarding Time**      | How quickly can a new QA join and contribute?                      |
+
+StakeHolder & Ecosystem fit 
+| Factor                            | Considerations                                                                      |
+| --------------------------------- | ----------------------------------------------------------------------------------- |
+| **Dev/DevOps Buy-in**             | Will developers support adding mocks, test data, and testability hooks in the code? |
+| **Tool Popularity in Org**        | Is the tool already in use across teams? Is there a center of excellence (CoE)?     |
+| **Dev Environment Compatibility** | Does it work well with your current tech stack (Java Spring Boot, React, etc.)?     |
+
+Time to Market 
+
+| Factor                     | Considerations                                                                        
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| **PoC Setup Time**         | How long will it take to get a working proof of concept (PoC)?                        |
+| **Framework Setup Time**   | REST Assured or Selenium may need framework setup from scratch; Karate and            |
+                               Playwright CLI are quicker to start.                                                  |
+| **Test Development Speed** | DSL-based tools like Karate or Cypress can accelerate writing tests.                  |
+
+| Criteria                 | Backend (REST Assured, Karate, Postman CLI)  | UI (Playwright, Selenium, Cypress)              | Comments                                       |
+| ------------------------ | -------------------------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| **Tool Cost**            | Free (REST Assured, Karate), Paid (ReadyAPI) | Free (Playwright, Cypress), Paid (TestComplete) | Consider licensing and hidden maintenance cost |
+| **Team Skills**          | Java/DSL                                     | JavaScript/Java/DSL                             | Pick what matches your team strength           |
+| **Ease of Use**          | Karate > REST Assured                        | Cypress > Playwright > Selenium                 | DSL tools are easier for beginners             |
+| **Training Required**    | Low (Karate), Medium (REST Assured)          | Medium (Playwright), Low (Cypress)              | Affects onboarding and productivity            |
+| **Setup Time**           | Karate = Low, REST Assured = Medium          | Cypress = Low, Selenium = High                  | Impacts PoC and production readiness           |
+| **Maintenance Overhead** | REST Assured = Medium                        | Selenium = High, Playwright = Low               | Impacts test flakiness and resource planning   |
+
+
+
+
