@@ -1,0 +1,31 @@
+Let's say I am testing in the biweekly sprint, and on the last day of the sprint,
+ I got 4 blocker issue ,when I raise these issue to dev lead he told that to resolve this issue 
+it will take 3 business day , also why didn't you raise this issue in beginning , 
+How I can takle this question in an interview
+
+"In one of the sprints, on the last day during regression testing, I found 4 blocker issues that were critical to business functionality."
+
+Task:
+"My responsibility was to raise them immediately and ensure stakeholders were aware, but the dev lead was frustrated, asking why these weren’t found earlier."
+
+Action:
+"I first clarified the context:
+I had already followed our normal QA process (story testing, sanity checks earlier in sprint).
+These blockers only surfaced during end-to-end regression, where multiple integrated modules were tested together.
+I explained this calmly to the dev lead, acknowledging the concern and showing test evidence.
+
+Next, instead of debating, I focused on solutions:
+I flagged the issues in Jira as Blockers, notified the Scrum Master and Product Owner.
+I proposed options: either extend the sprint by a few days to fix blockers or move them 
+to the next sprint with proper prioritization.
+
+Meanwhile, I suggested a temporary workaround to unblock UAT testing."
+
+Result:
+"This showed that I take responsibility while staying solution-oriented. The team agreed to fix the most 
+critical 2 blockers immediately and planned the other 2 for the next sprint.
+Afterwards, I took an action item:
+
+I added an earlier mid-sprint regression cycle to minimize such late surprises.
+
+Also included shift-left checks (API automation + mocking) to detect defects before full integration."
