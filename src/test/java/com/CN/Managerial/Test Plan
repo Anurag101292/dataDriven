@@ -86,7 +86,13 @@ Defect list with severity and priority
 Final test sign-off email
 
 🧠 Sample Answer in an Interview:
-“Whenever we begin testing a new feature, we prepare a test plan that outlines the objective, scope, and test types. For example, when we delivered the new forex dashboard, I led the test planning. We included functional, regression, and API-level validation. Entry was set once code was deployed to SIT, and we exited after full regression passed and critical defects were closed. Risks like data unavailability were mitigated by mocking APIs. We tracked everything in JIRA and delivered a test report with sign-off to stakeholders.”
+“Whenever we begin testing a new feature, 
+we prepare a test plan that outlines the objective, scope, and test types. 
+For example, when we delivered the new forex dashboard, I led the test planning. 
+We included functional, regression, and API-level validation. Entry was set once code was deployed to SIT,
+ and we exited after full regression passed and critical defects were closed. Risks like data unavailability 
+were mitigated by mocking APIs. We tracked everything in JIRA and delivered a test report with sign-off to 
+stakeholders.”
 
 🔧 Tools You Can Mention:
 JIRA (for test cases/defects)
