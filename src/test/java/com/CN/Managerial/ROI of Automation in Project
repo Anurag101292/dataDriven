@@ -38,4 +38,16 @@ Bug Detection Cost Saving
 
 ROI (%) = [(Net Benefit - Investment Cost) / Investment Cost] * 100
 
+Suppose:
+500 regression test cases
+Manual execution per cycle = 5 mins/test → ~42 hours
+Automation execution per cycle = 2 hours total
+Regression cycles = 10 per release
+Cost of automation effort = 300 hours (initial) + 20 hours per release maintenance
+Savings per release = (42 hrs × 10) – (2 hrs × 10) = 420 – 20 = 400 hours saved
+Cost of automation = 300 + 20 = 320 hours
+
+𝑅𝑂𝐼=((400−320)/320)×100=25%
+
+
 
