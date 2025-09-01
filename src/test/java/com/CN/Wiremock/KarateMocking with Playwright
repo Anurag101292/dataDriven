@@ -1,1 +1,169 @@
+Run Karate mock server (port 8080)
+
+bash
+mvn clean test-compile exec:java \
+  -Dexec.mainClass="com.intuit.karate.netty.Main" \
+  -Dkarate.options=classpath:karate-mock.feature \
+  -Dmock.port=8080
+----------------------------------------------------------
+playwright.config.ts
+
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  use: {
+    baseURL: 'https://sit.makemytrip.com',  // always point to SIT UI
+    headless: true,
+  },
+});
+------------------------------------------------------------------
+karate-mock.feature
+
+Feature: Mock Multiple GDS APIs
+
+Background:
+  * def tomorrow = java.time.LocalDate.now().plusDays(1).toString()
+
+Scenario: GDS1 response
+  Given path '/api/flights/gds1'
+  And param from = 'BLR'
+  And param to = 'LKO'
+  And param date = tomorrow
+  When method get
+  Then status 200
+  And def response =
+  """
+  {
+    "flights": [
+      { "airline": "IndiGo", "from": "BLR", "to": "LKO", "time": "07:30", "price": 4500 },
+      { "airline": "Air India", "from": "BLR", "to": "LKO", "time": "09:15", "price": 5200 }
+    ]
+  }
+  """
+
+Scenario: GDS2 response
+  Given path '/api/flights/gds2'
+  And param from = 'BLR'
+  And param to = 'LKO'
+  And param date = tomorrow
+  When method get
+  Then status 200
+  And def response =
+  """
+  {
+    "flights": [
+      { "airline": "Vistara", "from": "BLR", "to": "LKO", "time": "13:00", "price": 5600 },
+      { "airline": "SpiceJet", "from": "BLR", "to": "LKO", "time": "18:45", "price": 4800 }
+    ]
+  }
+  """
+
+Scenario: GDS3 response (no flights)
+  Given path '/api/flights/gds3'
+  And param from = 'BLR'
+  And param to = 'LKO'
+  And param date = tomorrow
+  When method get
+  Then status 200
+  And def response =
+  """
+  {
+    "flights": []
+  }
+  """
+------------------------------------------------------------------------------------
+playwright test
+
+import { test, expect } from '@playwright/test';
+
+// tests/flight-search-gds.spec.ts
+import { test, expect } from '@playwright/test';
+
+test('BLR → LKO: intercept aggregator and serve merged parallel GDS mocks', async ({ page }) => {
+  // 1) Register route BEFORE triggering the search (important!)
+  await page.route('**/api/aggregator/search**', async (route) => {
+    const req = route.request();
+    const url = new URL(req.url());              // browser request URL (SIT aggregator)
+    const from = url.searchParams.get('from');
+    const to = url.searchParams.get('to');
+
+    // only reroute specific scenario; let others go to real backend
+    if (!(from === 'BLR' && to === 'LKO')) {
+      return route.continue();
+    }
+
+    // 2) Build GDS mock URLs (Karate must be running at localhost:8080)
+    const params = url.search; // '?from=BLR&to=LKO&date=...'
+    const gdsEndpoints = [
+      `http://localhost:8080/gds1/search${params}`,
+      `http://localhost:8080/gds2/search${params}`,
+      `http://localhost:8080/gds3/search${params}`,
+    ];
+
+    // 3) Fetch all GDS mocks in parallel (Node-side) and merge results
+    const safeFetch = async (u: string) => {
+      try {
+        const r = await fetch(u);     // node-fetch / global fetch
+        return await r.json();
+      } catch (err) {
+        console.error('GDS fetch failed', u, err);
+        return { flights: [] };      // degrade gracefully
+      }
+    };
+
+    const results = await Promise.all(gdsEndpoints.map(safeFetch));
+    const mergedFlights = results.flatMap(r => r.flights || []);
+
+    // 4) Fulfill the browser request with the merged payload
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ flights: mergedFlights }),
+    });
+  });
+
+  // 5) Now navigate and trigger the search
+  await page.goto(process.env.UI_BASE_URL || 'https://sit.makemytrip.com');
+
+  await page.fill('#fromCity', 'BLR');
+  await page.fill('#toCity', 'LKO');
+  await page.fill('#date', '2025-09-02');
+  await page.click('#searchFlights');
+
+  // 6) Optional: validate progressive rendering (if GDS have different delays)
+  // Wait for at least 1 flight (fast GDS)
+  await expect(page.locator('.flight-card')).toHaveCount(1, { timeout: 2000 });
+  // Wait for full merge (all flights)
+  await expect(page.locator('.flight-card')).toHaveCount(3, { timeout: 7000 });
+});
+
+
+------------------------------------------------------------------------------
+
+1.......Multiple Mock Scenarios
+
+Success case (4 flights).
+Empty flights (0 results).
+Downstream 500 error (error banner on UI).
+Delayed response (simulate slow API).
+
+2.......Dynamic Mocking per Test
+Instead of one karate-mock.feature, maintain multiple mock feature files or parameterize responses.
+Playwright can inject a header/query param like X-MOCK=empty → Karate chooses the right mock.
+
+3.......Switching Strategies
+Env-based (USE_MOCK=true → all flights API calls rerouted).
+Scenario-based (only specific Playwright tests reroute).
+
+4..........CI/CD Integration
+Spin up Karate mock server as part of Jenkins pipeline.
+Run Playwright suite against SIT with selective routing.
+Tear down after.
+
+5............Contract Testing
+Add Karate tests against real downstream SIT API → ensures mock JSON contract stays aligned with real API.
+
+6............Observability
+Log which tests used mock vs real.
+Capture mock responses in Playwright report.
 
