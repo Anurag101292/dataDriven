@@ -1,0 +1,39 @@
+| **Field**                  | **Description / Example**                                                                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Test Case ID**           | TC-LOGIN-001                                                                                                                                       |
+| **Requirement/User Story** | US-123 – As a user, I should be able to login with valid credentials.                                                                              |
+| **Test Case Title**        | Verify successful login with valid credentials                                                                                                     |
+| **Pre-Conditions**         | - User is registered in the system<br>- Application is accessible<br>- Correct test data available                                                 |
+| **Test Data**              | Username = `test.user@example.com`<br>Password = `ValidPass123`                                                                                    |
+| **Test Steps**             | 1. Launch the application URL<br>2. Enter username in the “Email” field<br>3. Enter password in the “Password” field<br>4. Click on “Login” button |
+| **Expected Result**        | - User is redirected to dashboard page<br>- Welcome message is displayed with username<br>- Session cookie is created successfully                 |
+| **Post-Conditions**        | User is logged into the application                                                                                                                |
+| **Priority**               | High                                                                                                                                               |
+| **Type**                   | Functional – Positive                                                                                                                              |
+| **Automation Feasibility** | Yes (Playwright/Selenium)                                                                                                                          |
+| **Execution Status**       | Pass / Fail (to be updated during execution)                                                                                                       |
+| **Comments/Notes**         | Can be reused as precondition for regression cases involving “logged-in user” scenarios                                                            |
+
+Negative test case 
+
+| **Field**                  | **Description / Example**                                                                                                            |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Test Case ID**           | TC-LOGIN-002                                                                                                                         |
+| **Requirement/User Story** | US-123 – As a user, I should not be allowed to login with invalid credentials.                                                       |
+| **Test Case Title**        | Verify login fails with incorrect password                                                                                           |
+| **Pre-Conditions**         | User is registered in the system                                                                                                     |
+| **Test Data**              | Username = `test.user@example.com`<br>Password = `WrongPass!`                                                                        |
+| **Test Steps**             | 1. Launch the application URL<br>2. Enter username in the “Email” field<br>3. Enter incorrect password<br>4. Click on “Login” button |
+| **Expected Result**        | - Login attempt is rejected<br>- Error message displayed: *“Invalid username or password”*<br>- User is not redirected to dashboard  |
+| **Priority**               | High                                                                                                                                 |
+| **Type**                   | Functional – Negative                                                                                                                |
+| **Automation Feasibility** | Yes                                                                                                                                  |
+| **Execution Status**       | To be updated  |
+
+
+Clarity (steps written clearly)
+Traceability (linked to requirement ID)
+Positive & Negative coverage
+Reusability (common login steps as preconditions)
+Repeatability (defined test data)
+Maintainability (separate test data section for updates)
