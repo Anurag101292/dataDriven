@@ -1,11 +1,7 @@
 Great! If the interviewer asks about a "Test Plan", here’s what they’re looking for:
-
 How you approach a specific feature or release
-
 How you organize your testing tasks
-
 What your timeline, scope, and ownership look like
-
 How you ensure risk coverage, traceability, and execution visibility
 
 ✅ Difference Between Test Plan vs Test Strategy:
@@ -18,73 +14,91 @@ Static/Dynamic	Usually static	Can be updated dynamically per sprint
 ✅ What to Cover When Asked About a Test Plan
 You can structure your answer using these 8 key components:
 
-1. 🎯 Objective
-“The goal is to validate that the feature meets business and technical requirements.”
+1. Test Plan Identifier
+Document ID: TP-PROJ-2025-001
+Version: 1.0
 
-What is being tested?
+2. Introduction
+Brief overview of the project/product being tested.
+Example: “This test plan covers the QA strategy for the Flight Booking module of MakeMyTrip application, ensuring functional correctness, performance, and usability.”
 
-Why is this test plan being created?
+3. Objectives & Scope
+In Scope:
+Functional testing of Flight Search & Booking
+UI validations (Playwright)
+API validations (RestAssured)
+Regression suite execution
+Mocking downstream services using Karate
 
-2. 🧩 Scope
-“We’re covering both positive and negative flows for the new payment module.”
+Out of Scope:
+Performance testing of downstream services
+Third-party payment gateway validations (handled by vendor)
 
-In-Scope: What features, modules, integrations
+4. Test Strategy / Approach
 
-Out-of-Scope: What will not be tested (e.g., legacy modules)
+Levels of Testing:
+Unit Testing (by Dev team)
+Integration Testing (mock downstream via Karate)
+System Testing (end-to-end with real SIT environment)
+Regression Testing (bi-weekly)
+Types of Testing:
+Functional (positive & negative)
+UI automation with Playwright
+API automation with RestAssured
+Compatibility testing across Chrome, Edge, Firefox
+Smoke Testing before every release
+Test Data Management:
+Mock data for airline search scenarios
+Masked production data for regression
 
-3. 🧪 Test Types & Approach
-“We’re using manual testing for exploratory and automation for regression.”
+5. Test Environment
+SIT, UAT, PROD (read-only validation)
+Tools: Playwright, Karate, Jenkins, WireMock
+Browsers: Chrome (latest), Edge (latest), Firefox
 
-Functional Testing (UI, API)
+6. Test Deliverables
+Test Plan document
+Test Cases (manual & automated)
+Test Execution Report
+Defect Report (Jira)
+Final Test Summary Report
 
-Regression
+7. Entry & Exit Criteria
+Entry Criteria
+Code is deployed in SIT/UAT
+Mock services are configured
+Test data prepared
+Exit Criteria
+95% test cases executed
+No P1/P2 defects open
+All critical business workflows validated
 
-Smoke/Sanity
+8. Roles & Responsibilities
+QA Manager → Test Planning, Reporting
+QA Lead → Assign tasks, Review cases
+QA Engineers → Write & execute test cases, automation scripts
+Dev Lead → Support defect triage
+Release Manager → Approvals for deployment
 
-Non-functional (if applicable: performance, security)
+9. Schedule / Milestones
+Activity	Start Date	End Date	Owner
+Test Plan Preparation	01-Sep-25	03-Sep-25	QA Lead
+Test Case Design	04-Sep-25	10-Sep-25	QA Team
+Test Environment Setup	08-Sep-25	09-Sep-25	DevOps
+Test Execution (Sprint 1)	11-Sep-25	24-Sep-25	QA Team
+Defect Fix & Retest	12-Sep-25	25-Sep-25	Dev + QA
+Test Closure & Sign-off	26-Sep-25	27-Sep-25	QA Lead
 
-4. 🗓️ Test Schedule & Timeline
-“We align testing with sprint goals; test planning starts after story grooming.”
+10. Risks & Mitigation
+Risk: Downstream services unstable in SIT → Mitigation: Use Karate mocks.
+Risk: Lack of test data → Mitigation: Data seeding scripts.
+Risk: Tight sprint timelines → Mitigation: Prioritize smoke & high-priority cases.
 
-Include start date, end date
+11. Tools & Automation Scope
+Automation Framework: Hybrid (Playwright + Karate + RestAssured)
+CI/CD: Jenkins pipeline with USE_MOCK=true/false switch
 
-Mention test case writing, test execution, defect validation
-
-5. 👥 Roles & Responsibilities
-“I’m leading the test plan, assigning test cases to the team, and reviewing execution.”
-
-Role	Responsibility
-QA Lead	Plan, coordinate, report
-QA Engineer	Write/execute test cases
-Dev	Fix defects, support testing
-BA/PO	Clarify requirements, accept UAT
-
-6. 🔁 Entry & Exit Criteria
-“We enter testing once stories are dev complete and unit tested.”
-
-Entry Criteria: Code is deployed, environments are ready, data available
-
-Exit Criteria: All critical test cases passed, defects resolved/closed
-
-7. ⚠️ Risk & Mitigation
-“Test data unavailability or environment instability may cause delays.”
-
-Risk	Mitigation
-Environment down	Use backup/mocked services
-Delayed development	Parallel test planning/automation
-Unclear requirements	Continuous sync with BAs
-
-8. 📊 Deliverables
-“We’ll deliver test cases, test execution report, defect summary, and RCA.”
-
-Test case documents (manual + automated)
-
-Execution report (with pass/fail count)
-
-Defect list with severity and priority
-
-Final test sign-off email
-
+Coverage Goal: 70% regression automation
 🧠 Sample Answer in an Interview:
 “Whenever we begin testing a new feature, 
 we prepare a test plan that outlines the objective, scope, and test types. 
@@ -96,10 +110,7 @@ stakeholders.”
 
 🔧 Tools You Can Mention:
 JIRA (for test cases/defects)
-
 TestRail / XRay (for test planning)
-
 Confluence (to store test plan doc)
-
 Jenkins/GitHub Actions (CI integration)
 
