@@ -71,3 +71,97 @@ Test Plan has the primary goal of how to test, when to test and who will verify 
 Test Plan can be changed whereas Test Strategy can’t change.
 Test Plan is carried out by the test manager whereas the   Test Strategy is carried out by the project manager.
 
+
+
+📌 What is a Test Strategy?
+A Test Strategy is a high-level organizational approach to testing.
+It is long-term, static, and usually defined once for the entire product/project.
+It describes what kind of testing will be done, how testing will be approached, and the standards/processes to be 
+followed across all test activities.
+
+👉 Think of it as the blueprint for testing.
+Test Plan = project-specific (dynamic, changes per release/sprint)
+Test Strategy = organization/product-level (static, stable, foundation)
+
+📌 Key Components of a Test Strategy
+Scope and Objectives
+What is to be tested and what is not.
+
+Testing Approach
+Types of testing: Functional, Non-functional (Performance, Security), Automation, Mocking.
+
+Test Levels
+Unit, Integration, System, UAT, Regression.
+
+Test Environment Strategy
+SIT, UAT, PROD-mirroring, Mock services.
+
+Test Data Strategy
+Data creation, masking, reusability.
+
+Defect Management
+How defects are logged, tracked, prioritized.
+
+Tools and Automation Strategy
+Frameworks, CI/CD integration, reporting.
+
+Risk Management
+Known risks and mitigation approaches.
+
+📌 Example: Test Strategy for Airline Booking System
+1. Scope & Objectives
+
+Validate flight search, booking, cancellation, and payment workflows.
+Please ensure the system works across all browsers and devices.
+Validate performance under peak load.
+
+2. Testing Approach
+Functional Testing: Positive & negative scenarios for flight search & booking.
+Integration Testing: Mock downstream GDS services using Karate.
+System Testing: End-to-end scenarios in SIT with real services.
+Regression Testing: Automated suite using Playwright + RestAssured.
+Non-Functional: Performance testing with JMeter, Security with OWASP ZAP.
+
+3. Test Levels
+Unit → by developers.
+Integration → using Karate mocks.
+System & Regression → QA team.
+UAT → Business users.
+
+4. Test Environment Strategy
+SIT → For integration & regression with mocks.
+UAT → For business sign-off.
+
+Production-like staging environment for performance/security.
+5. Test Data Strategy
+Mock data for predictable results in SIT.
+Anonymized production data for UAT.
+Data reset scripts for repeatability.
+
+6. Defect Management
+Defects logged in Jira.
+Prioritization: P1 (blocker), P2 (high), P3 (medium), P4 (low).
+Defect triage every alternate day.
+
+7. Automation & Tools
+Playwright → UI automation.
+Karate → Mock + API testing.
+RestAssured → API regression.
+Jenkins → CI/CD pipelines.
+Allure/Extent → Reporting.
+
+8. Risks & Mitigation
+Risk: Downstream GDS unstable.
+Mitigation: Mock responses for SIT.
+Risk: Frequent UI changes break automation.
+Mitigation: Use Page Object Model in Playwright.
+Risk: Limited test data.
+Mitigation: Automated data generation.
+
+✅ So in interviews, you can answer like this:
+
+“A Test Strategy is a high-level document that defines how testing will be carried out across the project.
+ For example, in my airline booking project, our strategy was to use mocks (Karate) for integration testing 
+to reduce dependency on unstable GDS systems, run Playwright automation for UI regression, and ensure performance 
+testing with JMeter in a production-like environment.”
+
