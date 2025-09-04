@@ -1,0 +1,147 @@
+Architecture
+
+[AI Agent (Claude/ChatGPT)]
+          |
+     (MCP Client)
+          |
+     -------------------
+     | MCP Server      |  
+     |  Tools:         |
+     |  - run_test     |  → Runs Selenium/Playwright test
+     |  - get_logs     |  → Returns execution logs
+     |  - screenshot   |  → Captures screenshot on failure
+     |  - trigger_ci   |  → Triggers Jenkins/GitHub pipeline
+     -------------------
+          |
+   -----------------------
+   | Selenium / Playwright |
+   | RestAssured / API     |
+   -----------------------
+--------------------------------------------------------------------------------
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.net.httpserver.HttpServer;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.*;
+import java.net.InetSocketAddress;
+import java.nio.file.*;
+import java.util.*;
+
+public class MultiToolMCPServer {
+
+    private static ObjectMapper mapper = new ObjectMapper();
+    private static WebDriver driver;
+    private static List<String> logs = new ArrayList<>();
+
+    public static void main(String[] args) throws Exception {
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+
+        server.createContext("/mcp", exchange -> {
+            if ("POST".equals(exchange.getRequestMethod())) {
+                InputStream body = exchange.getRequestBody();
+                Map<String, Object> req = mapper.readValue(body, Map.class);
+
+                String tool = (String) req.get("tool");
+                Map<String, Object> params = (Map<String, Object>) req.get("params");
+
+                Map<String, Object> resp = new HashMap<>();
+
+                switch (tool) {
+                    case "run_test":
+                        resp = runTest(params);
+                        break;
+                    case "get_logs":
+                        resp.put("logs", logs);
+                        break;
+                    case "screenshot":
+                        resp = takeScreenshot();
+                        break;
+                    case "trigger_ci":
+                        resp.put("status", "CI Pipeline Triggered");
+                        break;
+                    default:
+                        resp.put("error", "Unknown tool: " + tool);
+                }
+
+                byte[] json = mapper.writeValueAsBytes(resp);
+                exchange.sendResponseHeaders(200, json.length);
+                OutputStream os = exchange.getResponseBody();
+                os.write(json);
+                os.close();
+            }
+        });
+
+        System.out.println("✅ Multi-Tool MCP Server running at http://localhost:8080/mcp");
+        server.start();
+    }
+
+    // Tool 1: Run a Selenium login test
+    private static Map<String, Object> runTest(Map<String, Object> params) {
+        Map<String, Object> result = new HashMap<>();
+        logs.clear();
+
+        try {
+            String url = (String) params.get("url");
+            String user = (String) params.get("username");
+            String pass = (String) params.get("password");
+
+            driver = new ChromeDriver();
+            driver.get(url);
+            logs.add("Opened URL: " + url);
+
+            driver.findElement(By.id("username")).sendKeys(user);
+            driver.findElement(By.id("password")).sendKeys(pass);
+            driver.findElement(By.id("loginBtn")).click();
+
+            logs.add("Entered credentials and clicked login");
+
+            boolean isPass = driver.getPageSource().contains("Welcome");
+            result.put("status", isPass ? "PASS" : "FAIL");
+        } catch (Exception e) {
+            logs.add("ERROR: " + e.getMessage());
+            result.put("status", "ERROR");
+            result.put("message", e.getMessage());
+        }
+
+        return result;
+    }
+
+    // Tool 2: Capture screenshot
+    private static Map<String, Object> takeScreenshot() {
+        Map<String, Object> resp = new HashMap<>();
+        try {
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            Path dest = Paths.get("screenshot.png");
+            Files.copy(screenshot.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
+
+            resp.put("status", "Screenshot captured");
+            resp.put("file", dest.toAbsolutePath().toString());
+            logs.add("Screenshot saved: " + dest.toAbsolutePath());
+        } catch (Exception e) {
+            resp.put("status", "ERROR");
+            resp.put("message", e.getMessage());
+        }
+        return resp;
+    }
+}
+-----------------------------------------------------------------------------
+TO RUN TEST 
+{
+  "tool": "run_test",
+  "params": {
+    "url": "https://example.com/login",
+    "username": "qaUser",
+    "password": "qaPass"
+  }
+}
+----------------------------------------------------------------------
+Response -->Pass
+------------------------------------------------------------------
+Future Enhancements
+
+Add Playwright adapter instead of Selenium.
+Expose run_api_test → connect to RestAssured.
+Store results in Elasticsearch + Kibana dashboard.
+Add parallel execution for faster regression.
+Secure MCP with JWT authentication.
