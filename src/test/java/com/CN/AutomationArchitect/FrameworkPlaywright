@@ -1,0 +1,142 @@
+playwright-automation-framework/
+│── pom.xml                         # Maven build file
+│── Dockerfile                      # Docker container definition
+│── Jenkinsfile                     # Jenkins pipeline config
+│── README.md                       # Project documentation
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.framework
+│   │   │       ├── base
+│   │   │       │   ├── TestBase.java            # Test initialization
+│   │   │       │   ├── DriverManager.java       # Singleton + ThreadLocal
+│   │   │       │   ├── BrowserFactory.java      # Abstract Factory
+│   │   │       │   └── ConfigManager.java       # Reads env configs
+│   │   │       │
+│   │   │       ├── pages                       # Page Object Model
+│   │   │       │   ├── SearchPage.java
+│   │   │       │   ├── FlightResultsPage.java
+│   │   │       │   ├── HotelResultsPage.java
+│   │   │       │   ├── PassengerDetailsPage.java
+│   │   │       │   └── PaymentPage.java
+│   │   │       │
+│   │   │       ├── utils                       # Utilities (Decorator, helpers)
+│   │   │       │   ├── LoggerDecorator.java     # Decorator for logging
+│   │   │       │   ├── RetryHandler.java        # Retry mechanism
+│   │   │       │   ├── ScreenshotUtil.java
+│   │   │       │   ├── ExcelUtil.java
+│   │   │       │   ├── JsonUtil.java
+│   │   │       │   ├── MailUtil.java
+│   │   │       │   ├── PropertyUtil.java
+│   │   │       │   └── S3Uploader.java          # Upload reports to S3
+│   │   │       │
+│   │   │       ├── mocks
+│   │   │       │   ├── MockServer.java          # Playwright route() setup
+│   │   │       │   └── FlightMockData.json      # Mocked flight data
+│   │   │       │
+│   │   │       └── reporting
+│   │   │           ├── AllureManager.java
+│   │   │           └── LogManager.java
+│   │   │
+│   │   └── resources
+│   │       ├── config
+│   │       │   ├── config-SIT.properties
+│   │       │   ├── config-UAT.properties
+│   │       │   ├── config-PROD.properties
+│   │       │   └── log4j2.xml
+│   │       │
+│   │       ├── locators
+│   │       │   ├── searchPage.json
+│   │       │   ├── flightResultsPage.json
+│   │       │   ├── hotelResultsPage.json
+│   │       │   ├── passengerPage.json
+│   │       │   └── paymentPage.json
+│   │       │
+│   │       └── testdata
+│   │           ├── passengers.xlsx
+│   │           └── payments.xlsx
+│   │
+│   └── test
+│       └── java
+│           └── com.tests
+│               ├── SearchTests.java
+│               ├── FlightBookingTests.java
+│               ├── HotelBookingTests.java
+│               ├── PassengerDetailsTests.java
+│               └── PaymentTests.java
+│
+└── target/                           # Build outputs (Allure reports, logs, screenshots)
+
+
+----------------------------------------------------------------------------------------------------------
+Jenkins File 
+pipeline {
+    agent any
+
+    parameters {
+        choice(name: 'ENV', choices: ['SIT', 'UAT', 'PROD'], description: 'Select environment')
+        booleanParam(name: 'ENABLE_MOCKS', defaultValue: true, description: 'Enable Mocking?')
+    }
+
+    environment {
+        AWS_DEFAULT_REGION = 'ap-south-1'
+        S3_BUCKET = 'playwright-test-reports'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/your-repo/playwright-booking-automation.git'
+            }
+        }
+
+        stage('Build & Install') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+        }
+
+        stage('Run Tests in Parallel') {
+            steps {
+                script {
+                    // Pass Jenkins params to Maven
+                    sh """
+                        mvn clean test \
+                        -P ${params.ENV} \
+                        -DenableMocks=${params.ENABLE_MOCKS} \
+                        -Dthreads=10
+                    """
+                }
+            }
+        }
+
+        stage('Allure Report Generation') {
+            steps {
+                sh 'mvn allure:report'
+            }
+        }
+
+        stage('Publish Allure Report') {
+            steps {
+                allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+            }
+        }
+
+        stage('Upload to S3') {
+            steps {
+                withAWS(credentials: 'aws-jenkins-creds', region: "${AWS_DEFAULT_REGION}") {
+                    s3Upload(file: 'target/allure-report', bucket: "${S3_BUCKET}", path: "reports/${params.ENV}/")
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: 'target/allure-report/**', fingerprint: true
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
