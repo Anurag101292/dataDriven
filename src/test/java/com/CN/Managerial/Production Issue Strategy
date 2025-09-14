@@ -1,3 +1,23 @@
+🔹 Step-by-Step Triage Flow
+Acknowledge incident → Create Jira/ServiceNow ticket.
+Assign Severity & Priority → S1P1 if production crash.
+Spin up Incident Bridge → Slack/Zoom with Dev, QA, Ops, Product.
+Mitigation first → Rollback, disable feature flag, apply workaround.
+Root cause analysis → Logs, error monitoring, infra checks.
+Hotfix deployment → QA validates fix in staging → deploy to PROD.
+Verification → Smoke + regression tests + monitoring.
+Post-mortem (PIR) → Identify gaps, update automation, improve alerts.
+
+📝 Example Interview Soundbite
+
+"In case of a production crash, I immediately classify it as Severity 1 / Priority 1 and initiate an incident 
+bridge involving Dev, QA, Ops, and Product teams. While Devs analyze logs and potential rollback, QA validates 
+the issue in a lower environment and prepares smoke tests for the fix. Once the hotfix is deployed, 
+I verify critical flows and monitor production stability. Finally, we conduct a post-mortem to identify gaps
+ in automation, monitoring, or release process to prevent recurrence."
+
+
+
 Production Issue Strategy 
 
 In one of our recent releases for the Transact platform at JPMorgan Chase, a production issue was reported within hours of deployment. 
