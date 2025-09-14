@@ -1,7 +1,7 @@
 | Feature       | `POST`                       | `PUT`                             | `PATCH`                             |
 | ------------- | ---------------------------- | --------------------------------- | ----------------------------------- |
 | Action        | **Create**                   | **Create or Replace Entirely**    | **Update Partially**                |
-| Idempotent    | ❌ No                         | ✅ Yes                             | ✅ Yes (usually)                     |
+| Idempotent    | ❌ No                        | ✅ Yes                             | ✅ Yes (usually)                     |
 | Use Case      | Create a new resource        | Full update or create at given ID | Partial update of existing resource |
 | URI Ownership | Server assigns URI           | Client defines URI                | Client defines URI                  |
 | Payload       | Partial or full object (new) | Full object (overwrite)           | Partial fields (only changed data)  |
