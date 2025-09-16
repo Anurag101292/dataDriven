@@ -1,0 +1,13 @@
+Test context Setup  to call all other utils and classes
+
+Map<String,String> headers;
+Response resp;
+Automationsetup objAutomationsetup;
+AutomationCommonUtils objAutomationCommonUtils;
+GrapQlCommonUtils objGrapQlCommonUtils;
+Properties prop;
+String accesstoken;
+JsonObject json;
+DbUtils objDbUtils;
+Object requestPayload;
+String jsonFile;
