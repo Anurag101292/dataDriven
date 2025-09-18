@@ -1,0 +1,72 @@
+The Builder design pattern is a creational pattern that provides a step-by-step approach for 
+constructing complex objects, separating the construction process from the object's representation. 
+This allows the same construction process to create different representations or variations of an object. 
+It is especially useful when object creation involves multiple optional parameters or steps, 
+and when using large constructors would become unwieldy and error-prone.
+Definition
+Builder pattern encapsulates the construction logic in a separate Builder class.
+The client uses this Builder to incrementally build the desired object by configuring various parts or 
+properties.
+The final object is assembled and returned through a build() method.
+This pattern improves code readability, maintainability, and flexibility.
+
+Use Cases
+When an object has many optional or configurable parameters.
+When object creation involves multiple steps.
+To avoid constructors with large numbers of parameters.
+When you want to have different representations of an object using the same building process.
+Common in UI component creation, test data generation, API request building, and configuration objects.
+
+Benefits
+Clear separation between construction and representation.
+Improved control over the construction process.
+Ability to change the internal representation without affecting the client.
+Avoids inconsistent object states during construction.
+Fluent and readable object creation with method chaining.
+In summary, the Builder pattern is useful to create complex objects in a flexible and controlled way, 
+enhancing code clarity and reducing errors in object construction.
+--------------------------------------------------------------------------------------------------------
+
+public class LoginPage {
+    private String username;
+    private String password;
+    private boolean rememberMe;
+
+    private LoginPage(LoginPageBuilder builder) {
+        this.username = builder.username;
+        this.password = builder.password;
+        this.rememberMe = builder.rememberMe;
+    }
+
+    public static class LoginPageBuilder {
+        private String username;
+        private String password;
+        private boolean rememberMe = false;
+
+        public LoginPageBuilder withUsername(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public LoginPageBuilder withPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public LoginPageBuilder withRememberMeChecked() {
+            this.rememberMe = true;
+            return this;
+        }
+
+        public LoginPage build() {
+            return new LoginPage(this);
+        }
+    }
+}
+
+// Usage
+LoginPage loginPage = new LoginPage.LoginPageBuilder()
+      .withUsername("testuser")
+      .withPassword("pass")
+      .withRememberMeChecked()
+      .build();
