@@ -51,3 +51,36 @@ public class ConfigManager {
         return configProperties.getProperty(key);
     }
 }
+-------------------------------------------------------------------------------------
+
+API Client singleton
+--------------------
+public class ApiClient {
+    private static ApiClient instance;
+    private HttpClient httpClient;
+
+    // Private constructor prevents instantiation from outside
+    private ApiClient() {
+        // Initialize HttpClient, set timeouts, interceptors, etc.
+        httpClient = HttpClient.newBuilder()
+                              .version(HttpClient.Version.HTTP_2)
+                              .build();
+    }
+
+    // Static method for global access point
+    public static ApiClient getInstance() {
+        if (instance == null) {
+            instance = new ApiClient();
+        }
+        return instance;
+    }
+
+    // Example method for making GET request
+    public HttpResponse<String> get(String url) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                                        .uri(URI.create(url))
+                                        .GET()
+                                        .build();
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+}
