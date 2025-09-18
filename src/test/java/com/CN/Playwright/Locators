@@ -1,3 +1,12 @@
+Role locators (e.g. getByRole('button', { name: 'Submit' }))
+Text locators (e.g. getByText('Login'))
+Label locators (e.g. getByLabel('Username'))
+Placeholder locators (e.g. getByPlaceholder('Search…'))
+AltText locators (e.g. getByAltText('Company Logo'))
+Title locators (e.g. getByTitle('Close'))
+Test ID locators (e.g. getByTestId('login-button'))
+CSS / XPath (traditional locators, e.g. page.locator('div > span'))
+
 ✅ 1. CSS Selector (Default & Fast)
 
 await page.click('button#submit');       // by ID
