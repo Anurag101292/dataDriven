@@ -29,3 +29,25 @@ public class SingletonDesignPattern {
     }
 
 }
+----------------------------------------------------------------------------------------
+public class ConfigManager {
+    private static ConfigManager instance;
+    private Properties configProperties;
+    
+    private ConfigManager() {
+        // Load configuration only once
+        configProperties = new Properties();
+        // Load file logic here...
+    }
+    
+    public static ConfigManager getInstance() {
+        if (instance == null) {
+            instance = new ConfigManager();
+        }
+        return instance;
+    }
+    
+    public String getProperty(String key) {
+        return configProperties.getProperty(key);
+    }
+}
