@@ -1,0 +1,49 @@
+✅ What to Keep in Mind Before Validating API Requests
+When testing APIs, you should think from functional, non-functional, and security perspectives.
+🔹 1. Functional Validation (Basic Checks)
+HTTP Status Codes → Correct code for request (200 OK, 201 Created, 400 Bad Request, 401 Unauthorized,
+                    404 Not Found, 500 Server Error).
+Response Body → Validate schema, fields, data types, mandatory fields.
+Response Headers → Content-Type, caching headers, security headers (X-Frame-Options, CORS).
+Request Payload → Validate correct format (JSON/XML), required fields, boundary values.
+Idempotency → Same request should give consistent results (e.g., PUT vs POST).
+Error Handling → Proper error messages with error codes.
+
+🔹 2. Integration Validation
+Contract Testing → Request/response follows agreed schema between services.
+Database State → DB changes are correct after API call.
+Upstream/Downstream Dependencies → API should handle dependent service failures gracefully 
+(timeouts, retries, fallbacks).
+
+Workflow Scenarios → For example, Expedia booking API should ensure that payment triggers booking confirmation.
+🔹 3. Non-Functional Validation
+Performance → Response time under SLA (e.g., <200ms for search API).
+Load & Scalability → API can handle concurrent requests.
+Rate Limiting / Throttling → API should gracefully reject when limit exceeded.
+Caching → Responses cached where applicable to reduce load.
+
+🔹 4. Security Validation
+Authentication/Authorization → OAuth2, JWT, API keys validated properly.
+Input Validation → Prevent SQL Injection, XSS, malicious payloads.
+Sensitive Data → PII, credit card details must be masked or encrypted.
+HTTPS Enforcement → No plain HTTP allowed.
+Role-Based Access Control (RBAC) → Only authorized roles can access specific endpoints.
+
+🔹 5. Usability & Maintainability Checks
+Versioning → API should handle backward compatibility (/v1/, /v2/).
+Documentation → Swagger/OpenAPI spec should match implementation.
+Consistency → Naming conventions, pagination, sorting must be uniform.
+
+🚀 Quick Checklist (for interview pitch)
+👉 When validating API requests, I check:
+Status codes & response schema (Functional).
+Headers, payloads, error handling (Functional).
+Integration correctness & DB impact (Integration).
+Performance, load, scalability (Non-functional).
+Security: auth, encryption, input validation (Critical).
+Versioning & documentation consistency (Maintainability).
+
+⚡ Interview Tip: End with →
+“I always start with functional correctness, then validate integration flows, and finally cover
+ non-functional aspects like performance and security. That ensures APIs are reliable, secure, and 
+production-ready.”
