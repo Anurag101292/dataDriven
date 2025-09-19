@@ -1,3 +1,30 @@
+                 ▲
+                 |    UI / End-to-End Tests (~10%)
+                 |    - Functional UI Tests
+                 |    - Cross-browser Tests
+                 |    - Accessibility Testing
+                 |    - User Journey / Workflow Tests
+                 |    - Visual Regression
+     ------------------------------
+                 |    API / Integration Tests (~20%)
+                 |    - Contract Testing
+                 |    - Component/Service Testing
+                 |    - Database Integration Tests
+                 |    - Performance (at service level)
+                 |    - Security API Tests (Auth, OAuth2)
+     ------------------------------------------
+                 |    Unit Tests (~70%)
+                 |    - Function/Class Tests
+                 |    - Boundary Value Tests
+                 |    - Data Validation
+                 |    - Error Handling
+                 |    - Static Analysis / Linters
+     ------------------------------------------
+                 |    Base / Foundation
+                 |    - CI/CD Checks
+                 |    - Code Quality (Sonar, PMD)
+                 |    - Build Verification
+                 ▼
 
 
 Is your testing team (or an individual tester) spending far too much time waiting for their test suites
