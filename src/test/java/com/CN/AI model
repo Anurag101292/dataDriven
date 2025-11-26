@@ -1,0 +1,111 @@
+# RAG Testcase Generator — Architecture Diagram
+
+Below is a clear architecture diagram (Mermaid) and short explanations. Open and scroll to see the diagram, component notes, and 1-line Hinglish definitions.
+
+```mermaid
+flowchart TD
+  subgraph Sources
+    A[Jira MCP] -->|stories & AC| Fetch[Jira Connector]
+    B[Bitbucket MCP] -->|code diffs| Fetch
+    C[Confluence MCP] -->|docs & specs| Fetch
+  end
+
+  Fetch --> Preprocess[Preprocessing \n(clean, normalize, chunking, metadata)]
+
+  Preprocess --> Tokenize[Tokenizer \n(token counting & encoding)]
+  Tokenize --> Chunker[Chunking \n(size & overlap rules)]
+
+  Chunker --> EmbeddingModel[Embedding Model \n(OpenAI text-embedding-3-large)]
+  EmbeddingModel --> VectorDB[Vector Database \n(Pinecone / Qdrant / Chroma / Weaviate)]
+
+  VectorDB --> Retriever[Retriever \n(similarity search)]
+  Retriever --> LangChain[LangChain Orchestration \n(prompt templates, memory, chains)]
+
+  LangChain --> LLM[LLM for generation \n(GPT-4/5 or custom)]
+  LLM --> Output[Test Case Generator \n(Test cases, AC, Scripts, Impact report)]
+
+  Output --> Monitoring[Evaluation & Feedback \n(quality metrics, human review)]
+  Monitoring --> VectorDB[Update embeddings & metadata]
+
+  style Sources fill:#f9f,stroke:#333,stroke-width:1px
+  style Fetch fill:#ffd,stroke:#333
+  style Preprocess fill:#eef,stroke:#333
+  style EmbeddingModel fill:#cfc,stroke:#333
+  style VectorDB fill:#cfe,stroke:#333
+  style LangChain fill:#fdd,stroke:#333
+  style LLM fill:#fcc,stroke:#333
+  style Output fill:#efe,stroke:#333
+  style Monitoring fill:#eee,stroke:#333
+```
+
+---
+
+## Component Notes (short)
+
+* **Sources (Jira / Bitbucket / Confluence via MCP):** Connectors fetch stories, code diffs, and documentation with metadata (IDs, timestamps).
+* **Preprocessing:** Clean text, remove noise, normalize formats (markdown/HTML/code), extract important fields (title, AC, steps).
+* **Tokenizer:** Uses `tiktoken` or HF tokenizers to count tokens and ensure chunks respect model limits.
+* **Chunking:** Split documents into chunks using rules (size + overlap). Different rules per document type (Jira vs code vs docs).
+* **Embedding Model:** Convert chunks into semantic vectors (e.g., `text-embedding-3-large`).
+* **Vector DB:** Store embeddings + metadata, enable fast similarity search.
+* **Retriever:** Given new story's embedding, find most relevant chunks.
+* **LangChain Orchestration:** Manage prompt templates, memory (conversation or state), chains, and caching of retrievals.
+* **LLM Generation:** Use retrieved context to generate test cases, acceptance criteria, scripts, and impact analysis.
+* **Monitoring & Feedback:** Evaluate generated outputs (human review, precision/recall, automated heuristics) and update embeddings or prompts as needed.
+
+---
+
+## Practical Chunking Recommendations (starter)
+
+* **Jira stories:** chunk_size = 300–500 tokens, overlap = 50 tokens
+* **Confluence docs:** chunk_size = 500–800 tokens, overlap = 100 tokens
+* **Bitbucket code:** chunk_size = 150–300 tokens, overlap = 20 tokens
+* **Embedding batch:** batch requests to embedding API to control cost & throughput
+
+---
+
+## 1-line Hinglish Definitions (as requested)
+
+* **Processing:** "Data ko saaf karna, important fields nikalna, aur uniformly format karna."
+* **Tokenization:** "Text ko chhote token units me todna (aur token count nikalna) — tokenizer ka kaam."
+* **Chunking:** "Lambe text ko chhote pieces (chunks) me todna jisme thoda overlap hota hai taaki context na katke."
+
+---
+If you want, I can now:
+
+* Export this diagram as a PNG/PDF,
+* Provide the exact LangChain + Python code for each block, or
+* Convert the diagram into a slide-ready PNG.
+
+⭐ 1) Processing — ye kiska kaam hai?
+
+👉 Ye aapke custom code + LangChain ka kaam hai.
+Tools used:
+Python custom scripts
+LangChain Document Loaders
+LangChain Text Cleaning utilities
+HTML/Markdown parsers (if needed)
+
+Simple line:
+Processing = Aapka code + LangChain.
+⭐ 2) Tokenization — ye kiska kaam hai?
+👉 Ye tokenizer library ka kaam hota hai.
+
+Tools used:
+tiktoken (OpenAI tokenizer)
+HuggingFace tokenizers (BERT/GPT tokenizers)
+
+Simple line:
+Tokenization = Tokenizer library ka kaam.
+
+⭐ 3) Chunking — ye kiska kaam hai?
+👉 Ye LangChain ya LlamaIndex ka kaam hota hai.
+
+Tools used:
+RecursiveCharacterTextSplitter (LangChain)
+SemanticChunker (LlamaIndex)
+
+Or your own Python logic
+
+Simple line:
+Chunking = LangChain / LlamaIndex ka kaam.
