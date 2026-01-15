@@ -38,4 +38,29 @@ jobs:
         id: suite
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            HOUR=$(dat
+            HOUR=$(date -u +"%H")
+            MIN=$(date -u +"%M")
+
+            if [ "$HOUR" = "09" ] && [ "$MIN" = "30" ]; then
+              echo "SUITE=prod" >> $GITHUB_ENV
+            elif [ "$HOUR" = "10" ] && [ "$MIN" = "30" ]; then
+              echo "SUITE=regression" >> $GITHUB_ENV
+            elif [ "$HOUR" = "16" ] && [ "$MIN" = "30" ]; then
+              echo "SUITE=smoke" >> $GITHUB_ENV
+            else
+              echo "SUITE=smoke" >> $GITHUB_ENV
+            fi
+          else
+            echo "SUITE=${{ github.event.inputs.suite }}" >> $GITHUB_ENV
+          fi
+
+      - name: Run tests
+        run: |
+          echo "Running suite: $SUITE"
+          if [ "$SUITE" = "smoke" ]; then
+            npx playwright test --grep @smoke
+          elif [ "$SUITE" = "regression" ]; then
+            npx playwright test --grep @regression
+          elif [ "$SUITE" = "prod" ]; then
+            npx playwright test --grep @prod
+          fi
