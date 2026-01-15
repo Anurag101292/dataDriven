@@ -17,3 +17,7 @@
 | Network Interception        | 🔶 Complex / via browser DevTools              | ✅ Easy (`page.route()`)                         |
 | Community & Ecosystem       | ✅ Mature, massive community                   | 🌱 Growing rapidly, active dev from Microsoft    |
 | Test Isolation              | ❌ Requires manual setup (session cleanup)     | ✅ Auto-context per test (isolated sessions)     |
+
+
+
+Selenium is a browser automation library; Playwright is a full-stack testing framework designed for reliability, speed, and scale.
