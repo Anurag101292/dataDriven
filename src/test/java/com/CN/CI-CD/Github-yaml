@@ -1,0 +1,72 @@
+# Name of the workflow shown in the GitHub Actions UI
+name: CI Pipeline
+
+# Defines when this workflow should run
+on:
+  # Run on push events
+  push:
+    # Only trigger when pushing to these branches
+    branches:
+      - main
+      - develop
+
+  # Run on pull request events
+  pull_request:
+    # Only for PRs targeting these branches
+    branches:
+      - main
+      - develop
+
+# A workflow can have one or more jobs
+jobs:
+  # Job ID (used internally by GitHub)
+  build-and-test:
+    # Human-readable job name
+    name: Build and Test
+
+    # Type of machine to run the job on
+    runs-on: ubuntu-latest
+
+    # Strategy allows running the same job multiple times
+    # with different configurations
+    strategy:
+      matrix:
+        # Node.js versions to test against
+        node-version: [18.x, 20.x]
+
+    # Steps are executed in order
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout repository
+        # Official GitHub action to fetch the code
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Node.js environment
+      - name: Setup Node.js
+        # Official action to install Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Use Node.js version from the matrix
+          node-version: ${{ matrix.node-version }}
+          # Enable npm dependency caching to speed up builds
+          cache: 'npm'
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        # npm ci is recommended for CI environments
+        run: npm ci
+
+      # Step 4: Run code linting
+      - name: Run lint
+        # Fails the build if lint errors are found
+        run: npm run lint
+
+      # Step 5: Run tests
+      - name: Run tests
+        # Executes unit/integration tests
+        run: npm test
+
+      # Step 6: Build the project
+      - name: Build project
+        # Ensures the application can be built successfully
+        run: npm run build
