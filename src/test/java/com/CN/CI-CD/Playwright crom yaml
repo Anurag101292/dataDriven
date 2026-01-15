@@ -1,0 +1,41 @@
+name: Scheduled Test Runs
+
+on:
+  schedule:
+    # 3:00 PM IST = 09:30 UTC → Prod validation
+    - cron: "30 9 * * *"
+
+    # 4:00 PM IST = 10:30 UTC → Regression
+    - cron: "30 10 * * *"
+
+    # 10:00 PM IST = 16:30 UTC → Smoke
+    - cron: "30 16 * * *"
+
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: "Which test suite to run?"
+        required: true
+        default: "smoke"
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Decide suite
+        id: suite
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            HOUR=$(dat
