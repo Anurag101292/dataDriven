@@ -1,0 +1,102 @@
+📘 Java Streams – Practical Notes (Copy Version)
+1️⃣ What is Stream?
+Stream is a modern way to process Collections (List, Set, etc.) in Java using a pipeline like:
+filter → map → sort → collect
+
+✅ Stream way
+List<Integer> even = numbers.stream()
+        .filter(n -> n % 2 == 0)
+        .toList();
+
+✅ Filter (condition)
+List<Integer> nums = List.of(1,2,3,4,5,6,7,8,9);
+List<Integer> greaterThan5 = nums.stream().filter(n -> n > 5).toList();
+
+✅ Map (transform)
+List<String> names = List.of("anurag", "amit", "rahul");
+List<String> upper = names.stream().map(String::toUpperCase).toList();
+
+✅ Distinct
+List<Integer> nums = List.of(1,2,2,3,3,4,5);
+List<Integer> unique = nums.stream().distinct().toList();
+
+✅ Sorted
+List<Integer> nums = List.of(5,1,3,2,4);
+List<Integer> sorted = nums.stream().sorted().toList();
+
+4️⃣ Reduce / Sum
+✅ Sum
+List<Integer> nums = List.of(1,2,3,4,5);
+int sum = nums.stream().mapToInt(i -> i).sum();
+
+✅ Reduce
+int sum = nums.stream().reduce(0, Integer::sum);
+
+5️⃣ Object Example (Very Important)
+POJO
+class User {
+    public int id;
+    public String name;
+    public int age;
+}
+Sample List
+List<User> users = List.of(
+    new User(1, "Anurag", 35),
+    new User(2, "Amit", 28),
+    new User(3, "Rahul", 40)
+);
+
+✅ Get users whose age > 30
+List<User> seniors = users.stream().filter(u -> u.age > 30).toList();
+
+✅ Get only names
+List<String> names = users.stream().map(u -> u.name).toList();
+
+✅ Find user with id = 2
+User user = users.stream().filter(u -> u.id == 2).findFirst().orElseThrow();
+
+✅ Check if any user age > 60
+boolean anySenior = users.stream().anyMatch(u -> u.age > 60);
+
+✅ Average age
+double avgAge = users.stream().mapToInt(u -> u.age).average().orElse(0);
+
+6️⃣ API Automation Real Example
+JSON Response
+[
+  { "id": 1, "name": "Anurag", "age": 35 },
+  { "id": 2, "name": "Amit", "age": 28 },
+  { "id": 3, "name": "Rahul", "age": 40 }
+]
+POJO
+class User {
+    public int id;
+    public String name;
+    public int age;
+}
+Convert JSON → List<User> (Jackson)
+ObjectMapper mapper = new ObjectMapper();
+List<User> users = mapper.readValue(response,new TypeReference<List<User>>() {});
+
+Use Stream on API response
+✅ Get names of users age > 30
+List<String> seniorNames = users.stream().filter(u -> u.age > 30).map(u -> u.name).toList();
+
+✅ Find user with id = 2
+User user = users.stream().filter(u -> u.id == 2).findFirst().orElseThrow();
+
+7️⃣ Important Rules
+❌ Stream is not reusable
+Stream<Integer> s = nums.stream();
+s.forEach(System.out::println);
+s.forEach(System.out::println); // ❌ ERROR
+
+✅ Stream is lazy
+nums.stream().filter(n -> n > 5); // Nothing happens until terminal operation
+
+8️⃣ Parallel Stream
+nums.parallelStream().forEach(System.out::println);
+
+9️⃣ Interview One-Liner
+Java Streams provide a functional, declarative way to process collections using filter, map, and reduce operations.
+
