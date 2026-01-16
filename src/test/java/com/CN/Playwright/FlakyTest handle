@@ -1,0 +1,104 @@
+
+🏆 One-Line Power Answer
+
+We don’t fix flakiness with retries; we fix it with proper waiting, isolation, stable locators, and Playwright’s
+built-in observability.
+🎯 Perfect Interview Answer (2-minute version)
+
+In Playwright, we primarily focus on preventing flakiness using auto-waiting, stable locators, proper assertions,
+and strict test isolation. We avoid hard waits and rely on Playwright’s built-in waiting mechanisms. We run each test 
+in a fresh browser context to avoid shared state issues.
+
+For detection and debugging, we use Playwright’s trace viewer, screenshots, and video recordings to analyze flaky 
+failures. We also control network dependencies by mocking unstable services or waiting for specific API responses.
+
+Retries are used only as a safety net in CI, not as a solution, and any test that requires retries is investigated 
+and fixed. For chronic flaky tests, we quarantine them temporarily until the root cause is resolved.
+
+
+✅ 1. Prevent flakiness by design (Most important)
+🔹 Use Playwright’s auto-waiting (DON’T write manual waits)
+❌ Bad:
+await page.waitForTimeout(5000);
+✅ Good:
+await page.click("#submit");
+await expect(page.locator("#success")).toBeVisible();
+Playwright automatically waits for:
+element to be visible
+enabled
+stable
+attached to DOM
+
+🔹 Use stable locators
+
+❌ Bad:
+page.locator("//div[3]/button[2]")
+✅ Good:
+page.getByTestId("submit-button")
+page.getByRole("button", { name: "Submit" })
+
+We enforce data-testid in dev code.
+✅ 2. Test Isolation (Very important)
+Every test runs in a new browser context.
+test.use({ storageState: "auth.json" });
+
+
+No shared state
+No test dependency
+No order dependency
+
+✅ 3. Proper assertions instead of sleeps
+
+❌ Bad:
+await page.waitForTimeout(3000);
+✅ Good:
+await expect(page.locator(".loader")).toBeHidden();
+✅ 4. Smart retries (as a safety net, not a solution)
+
+In playwright.config.ts:
+retries: process.env.CI ? 2 : 0
+
+
+But we also track retried tests and fix root cause.
+✅ 5. Use Trace, Video, Screenshot for debugging
+use: {
+  trace: "on-first-retry",
+  screenshot: "only-on-failure",
+  video: "retain-on-failure"
+}
+When test flakes:
+We open Trace Viewer
+
+See:
+DOM state
+network
+actions timeline
+screenshots per step
+This is a huge Playwright advantage over Selenium.
+
+✅ 6. Network & API stability control
+We:
+Mock unstable APIs:
+await page.route("**/pricing", route =>
+  route.fulfill({ json: mockResponse })
+);
+Or wait for API:
+await page.waitForResponse("**/login");
+
+✅ 7. Quarantine strategy (Lead-level process)
+If a test is flaky:
+Tag it: @flaky
+Remove from blocking pipeline
+Fix root cause
+
+Re-enable
+✅ 8. Parallel execution issues handling
+Avoid:
+shared users
+shared data
+shared environment state
+
+Use:
+unique test data per test
+worker isolation
+
