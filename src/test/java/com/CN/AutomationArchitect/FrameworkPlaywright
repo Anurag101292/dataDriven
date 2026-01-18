@@ -69,6 +69,17 @@ playwright-automation-framework/
 └── target/                           # Build outputs (Allure reports, logs, screenshots)
 
 
+
+core architecture way 
+src/
+ ├── tests/
+ ├── flows/          (business workflows)
+ ├── pages/          (POM)
+ ├── services/       (API or backend calls)
+ ├── fixtures/
+ ├── utils/
+ ├── core/
+ └── config/
 ----------------------------------------------------------------------------------------------------------
 Jenkins File 
 pipeline {
