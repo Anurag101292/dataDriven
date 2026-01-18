@@ -1,0 +1,166 @@
+"I have used all OOPS concepts extensively in my framework. Encapsulation in Page Objects and service layers, 
+Abstraction using BasePage and BaseTest, Inheritance to reuse setup and common behavior, Polymorphism for browser, 
+reporter and environment strategies, and Interfaces to enforce contracts between service layers. 
+This makes the framework modular, scalable, and easy to maintain."
+
+🏗️ Real Framework Mapping (VERY IMP)
+OOPS Concept	Where in Framework
+Encapsulation	Page Objects, Services, Utils
+Abstraction	BasePage, BaseTest, Interfaces
+Inheritance	BasePage → Pages, BaseTest → Tests
+Polymorphism	Browser, Reporter, Env, Auth
+Interface	API layers, Drivers, Strategy
+🏆 Perfect Interview Answer (You Can Say This)
+
+
+
+✅ 1. Encapsulation – Hiding implementation details
+📌 Where used:
+Page Objects
+API Client classes
+Service classes
+Core utilities (DriverManager, ConfigManager)
+
+🎯 Why:
+
+Test should not know HOW things are done, only WHAT is done.
+
+🔹 Example (Playwright Page Object)
+class LoginPage {
+  private page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
+
+  async login(username: string, password: string) {
+    await this.page.fill("#username", username);
+    await this.page.fill("#password", password);
+    await this.page.click("#loginBtn");
+  }
+}
+
+✅ Test uses:
+await loginPage.login("admin", "1234");
+
+
+Test does not care about locators or steps → Encapsulation achieved
+
+✅ 2. Abstraction – Exposing only what is needed
+📌 Where used:
+
+🔹 Example: BasePage
+abstract class BasePage {
+  protected page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
+
+  async click(selector: string) {
+    await this.page.click(selector);
+  }
+
+  async type(selector: string, text: string) {
+    await this.page.fill(selector, text);
+  }
+}
+
+🔹 LoginPage extends it:
+class LoginPage extends BasePage {
+  async login(user: string, pass: string) {
+    await this.type("#username", user);
+    await this.type("#password", pass);
+    await this.click("#login");
+  }
+}
+
+
+Tests never see Playwright directly → Abstraction
+
+✅ 3. Inheritance – Reusing common behavior
+📌 Where used:
+
+BaseTest → All tests extend it
+
+BasePage → All pages extend it
+
+BaseAPI → All services extend it
+
+🔹 Example:
+class BaseTest {
+  protected page: Page;
+
+  async setup() {
+    this.page = await browser.newPage();
+  }
+}
+
+🔹 Test class:
+class LoginTest extends BaseTest {
+  async testLogin() {
+    const loginPage = new LoginPage(this.page);
+    await loginPage.login("admin", "1234");
+  }
+}
+
+
+Browser setup reused → Inheritance
+
+✅ 4. Polymorphism – Same method, different behavior
+📌 Where used:
+
+
+🔹 Example: Reporter Interface
+interface Reporter {
+  log(result: string): void;
+}
+
+🔹 Implementations:
+class AllureReporter implements Reporter {
+  log(result: string) { console.log("Allure: " + result); }
+}
+
+class ExtentReporter implements Reporter {
+  log(result: string) { console.log("Extent: " + result); }
+}
+
+🔹 Framework uses:
+function getReporter(): Reporter {
+  return new AllureReporter(); // or ExtentReporter
+}
+
+
+Same interface, different behavior → Polymorphism
+
+✅ 5. Interface – Contract enforcement
+📌 Where used:
+
+API Clients
+
+Service layers
+
+Drivers
+
+Reporters
+
+Environment handlers
+
+🔹 Example:
+interface PaymentService {
+  createPayment(amount: number): Promise<Response>;
+}
+
+class StripePayment implements PaymentService {
+  async createPayment(amount: number) { ... }
+}
+
+class PaypalPayment implements PaymentService {
+  async createPayment(amount: number) { ... }
+}
+
+
+Test does not care which payment system → Loose coupling
+
+
+
