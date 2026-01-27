@@ -1,23 +1,21 @@
-In our project, our test strategy is Agile-focused. We start with story grooming to understand requirements and identify test scenarios early. 
-We follow shift-left testing, covering API and UI layers. Smoke and regression are automated using Playwright and RestAssured, integrated into Jenkins. 
+In our project, our test strategy is Agile-focused. We start with story grooming to understand requirements and identify test 
+scenarios early. 
+We follow shift-left testing, covering API and UI layers. Smoke and regression are automated using Playwright and RestAssured, 
+integrated into Jenkins. 
 Test data is handled via mocks and seeded scripts, and environments are synced with dev. 
-We track defects in JIRA, prioritize based on severity, and conduct RCA for production bugs. Our strategy ensures fast feedback, high coverage, and quality at speed.
+We track defects in JIRA, prioritize based on severity, and conduct RCA for production bugs. Our strategy ensures fast feedback,
+high coverage, and quality at speed.
 
 ✅ First: What is a Test Strategy?
-A Test Strategy is a high-level document or approach that outlines how testing will be carried out across the project or organization.
+A Test Strategy is a high-level document or approach that outlines how testing will be carried out across the project 
+or organization.
 
 It answers:
-
 What to test?
-
 How to test?
-
 Who will test?
-
 When will testing be done?
-
 Where will it be executed?
-
 Why we are testing in that way?
 
 ✅ Structure Your Answer Like This:
