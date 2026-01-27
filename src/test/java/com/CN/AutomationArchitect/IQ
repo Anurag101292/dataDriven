@@ -1,5 +1,24 @@
 TELL ME ABOUT YOURSELF?
-Sure. I have around 10 years of experience in QA and test automation. 
+
+I have around 10 years of experience in QA and test automation, mostly in product-based and banking platforms, 
+and in recent years my role has evolved more into driving automation strategy and enablement rather than just building tests.
+
+Currently, I work at JPMorgan Chase in the investment banking technology space, in a platform that handles FX trading, 
+cross-border payments, and regulatory workflows. My responsibility is not only to build UI and API automation, but also to 
+define automation standards, drive shift-left testing, and make automation part of the delivery pipeline.
+
+I led the migration from Selenium to Playwright at team level, which significantly improved stability and execution time, 
+and I focus a lot on making automation reliable, CI-friendly, and easy for teams to adopt. I also work closely with developers 
+to integrate automation into PR pipelines and release decisioning.
+
+Before this, in fintech and other product companies, I’ve set up and scaled automation for backend-heavy systems,
+event-driven systems, and microservices platforms, and I’ve mentored multiple QA engineers and teams in building
+sustainable automation.
+
+From a skills perspective, I’ve worked across UI, API, and integration automation using Playwright, Selenium,
+Rest Assured, Java, and JavaScript, and I’m very comfortable with CI/CD using Jenkins, Git, Docker, and cloud environments.
+------------------------------------------------ ------------------------------------------------------------------------
+I have around 10 years of experience in QA and test automation. 
 Currently, I’m working as a Senior SDET at... JPMorgan Chase." (pause)
 
 "I’m part of the investment banking tech team, working on a platform that handles cross-border payments, FX hedging, 
