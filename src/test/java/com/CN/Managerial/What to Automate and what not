@@ -1,0 +1,41 @@
+✅ What I Automate
+1️⃣ Business-Critical Flows
+Login, payments, order creation, trade flow, reports, etc.
+Because:
+High business impact     Used by many users      Must never break
+
+2️⃣ High Regression Areas
+Features touched in every release
+Because:
+Manual regression is expensive
+High chance of defects
+
+3️⃣ API & Integration Tests (Maximum ROI)
+Service-to-service flows
+Contract validation
+Because:
+Fast   Stable    Give maximum coverage
+
+4️⃣ Data-Driven & Repetitive Tests
+Same flow with 100 datasets  Because:
+Machines are perfect for repetition
+
+5️⃣ Happy Paths & Key Negative Paths
+Not every edge case in UI Only:
+Core flows      High-risk validations
+
+❌ What I Do NOT Automate
+1️⃣ Frequently Changing UI Because:
+Maintenance cost > value
+2️⃣ One-Time Test Cases
+Data migration
+One-time release validations
+3️⃣ Highly Visual / UX / Subjective Checks
+Font alignment
+Color, look & feel
+Better done manually or with visual tools
+4️⃣ Very Complex Scenarios with Low Business Value
+Huge setup      Rarely executed          Low ROI
+🎯 Decision Formula (Very Strong Line)
+
+If maintenance cost is higher than execution value, I don’t automate it.
