@@ -1,0 +1,120 @@
+﻿While I cannot directly generate and send a PDF file, you can easily create one from the content provided below. To do this, simply copy the text into a document editor (like Microsoft Word or Google Docs) and select "Save as PDF" or "Export to PDF." Alternatively, you can use your browser's "Print" function (Ctrl + P or Cmd + P) on this page and choose "Save as PDF" as the destination.
+Below is the complete list of 50 questions and answers for a Senior SDET role.
+________________
+Part 1: Docker Fundamentals & Architecture
+1. Image vs. Container: Explain the technical difference.
+An Image is a read-only template composed of stacked layers (Union File System) that contains the application and its dependencies. A Container is a running instance of an image with a thin, writable "container layer" on top.
+2. How do you reduce a Docker image size?
+Use multi-stage builds to separate the build environment from the production runtime, use lightweight base images like Alpine, minimize the number of RUN commands to reduce layers, and use a .dockerignore file.
+3. What is the difference between COPY and ADD?
+COPY is for basic local file copying. ADD has extra features like extracting local tar files and downloading files from remote URLs. COPY is generally preferred for transparency.
+4. Explain CMD vs. ENTRYPOINT.
+ENTRYPOINT defines the executable to run when the container starts. CMD provides default arguments to that executable. If both are present, CMD arguments are appended to the ENTRYPOINT.
+5. How does Docker achieve isolation?
+It uses Linux Kernel features: Namespaces (to isolate resources like process IDs and networks) and Control Groups (cgroups) (to limit and monitor resource usage like CPU and Memory).
+6. What are the common Docker Networking modes?
+* Bridge (Default): Private network within the host.
+* Host: Shares the host’s network stack directly.
+* None: No networking for the container.
+* Overlay: Enables communication between containers on different hosts (used in Swarm/K8s).
+7. Compare Docker Volumes vs. Bind Mounts.
+Volumes are managed by Docker and stored in a part of the host filesystem (/var/lib/docker/volumes/). Bind mounts link a container directory to a specific path anywhere on the host. Volumes are preferred for persistence and performance.
+8. What is a "Dangling Image"?
+A dangling image is an unused image that has no relationship to any tagged images. These consume disk space and can be cleaned up using docker image prune.
+9. How do you run a container as a non-root user?
+Specify a non-root user in the Dockerfile using the USER instruction or pass a UID/GID via the --user flag at runtime to improve security.
+10. How do you optimize the Docker build cache?
+Order instructions from "least likely to change" to "most likely to change." For example, copy package.json and run install before copying the entire source code.
+11. How does Docker Compose handle service discovery?
+It creates a default network for the project where each container can reach others using their service names as hostnames.
+12. How do you debug a container with exit code 137?
+Exit code 137 usually means the container was killed by the OS because it ran out of memory (OOMKilled). Check resource limits and application memory leaks.
+13. How do you pass secrets without baking them into an image?
+Use environment variables via -e or --env-file, or use Docker/Kubernetes Secrets which mount sensitive data as files or variables at runtime.
+14. What is a multi-stage build?
+It allows you to use one large image for building/compiling code and then copy only the resulting binary into a much smaller final image, keeping the production image lean and secure.
+15. Difference between docker stop and docker kill?
+stop sends a SIGTERM signal (allowing graceful shutdown), whereas kill sends a SIGKILL signal (terminating the process immediately).
+16. How can two containers share a volume?
+By mounting the same named volume into both containers using the -v or --mount flag.
+17. What is the Sidecar Pattern?
+Running a helper container alongside the main application container to perform tasks like logging, monitoring, or proxying without modifying the app code.
+18. What is Docker BuildKit?
+BuildKit is a next-generation build engine for Docker that provides faster, concurrent builds, better caching, and secrets handling.
+19. How do you move an image between registries?
+Pull the image, use docker tag to rename it for the new registry, and then use docker push.
+20. How do you set resource limits?
+Use flags like --memory="512m" and --cpus="1.5" to prevent a container from consuming all host resources.
+________________
+Part 2: Kubernetes Architecture & Core Objects
+21. Describe the Control Plane components.
+* API Server: The gateway for all commands.
+* etcd: Key-value store for cluster state.
+* Scheduler: Decides which node a Pod should run on.
+* Controller Manager: Maintains the desired state (e.g., node, replica, and endpoint controllers).
+22. Why is a Pod the smallest unit?
+Containers within a Pod share the same network (IP/Port space) and storage (Volumes). They are always co-scheduled and run on the same node.
+23. Compare Deployment vs. StatefulSet.
+Deployments are for stateless apps where pods are interchangeable. StatefulSets are for stateful apps (like databases) that require stable network identities and persistent storage.
+24. How does Service Discovery work in K8s?
+K8s uses CoreDNS. When a Service is created, it gets a DNS entry (e.g., my-service.my-namespace.svc.cluster.local) that Pods can use to communicate.
+25. Explain Service types: ClusterIP, NodePort, LoadBalancer.
+* ClusterIP: Internal access only (default).
+* NodePort: Exposes service on a static port on each Node’s IP.
+* LoadBalancer: Provisions an external cloud load balancer.
+26. Ingress vs. Service.
+A Service works at Layer 4 (TCP/UDP). An Ingress is an API object that manages external access to services, typically via HTTP/HTTPS (Layer 7), providing features like SSL termination and path-based routing.
+27. What happens if a Node fails?
+The Controller Manager detects the loss of heartbeats, and the Scheduler redistributes the Pods that were on the failed node to other healthy nodes.
+28. Compare Liveness vs. Readiness Probes.
+* Liveness: Restarts the container if it fails (checks if the app is crashed).
+* Readiness: Stops sending traffic to the Pod if it fails (checks if the app is busy or initializing).
+29. ConfigMaps vs. Secrets.
+ConfigMaps store non-sensitive configuration data in plain text. Secrets store sensitive data (passwords, tokens) and are base64-encoded.
+30. Explain PV and PVC.
+A Persistent Volume (PV) is a piece of storage in the cluster. A Persistent Volume Claim (PVC) is a request for storage by a user. PVCs bind to PVs.
+31. How does Horizontal Pod Autoscaler (HPA) work?
+It automatically scales the number of Pods in a deployment based on observed CPU utilization or custom metrics.
+32. What are Taints and Tolerations?
+Taints are applied to Nodes to repel certain Pods. Tolerations are applied to Pods to allow them to stay on tainted Nodes.
+33. What are Namespaces used for?
+To provide a scope for names and logically divide cluster resources between multiple users, teams, or environments (e.g., dev, staging, prod).
+34. What is a Headless Service?
+A Service with clusterIP: None. It doesn't provide a single IP; instead, it returns the direct IPs of the associated Pods via DNS, often used for stateful clusters like Kafka.
+35. How do you perform a rolling update?
+K8s gradually replaces old Pods with new ones. If a failure occurs, you can use kubectl rollout undo to revert to the previous version.
+36. Roles of Kubelet and Kube-proxy.
+* Kubelet: Agent running on each node to ensure containers are running in Pods.
+* Kube-proxy: Maintains network rules on nodes to allow communication to Pods.
+37. Use case for Init Containers.
+Running setup scripts, such as waiting for a database to be ready or downloading configuration files before the main application starts.
+38. What are Network Policies?
+They act as a firewall for Pods, controlling which Pods can communicate with each other based on labels and namespaces.
+39. What is Helm?
+A package manager for Kubernetes that uses "Charts" (templates) to manage complex application deployments with variables.
+40. OOMKilled vs. CPU Throttling.
+OOMKilled happens when a container exceeds its memory limit (hard limit). CPU Throttling happens when a container tries to use more CPU than its "request," but it isn't killed; it just slows down.
+________________
+Part 3: Senior SDET Scenarios & CI/CD
+41. How would you scale a Selenium Grid on K8s?
+Use a Deployment for the Hub and another for the Nodes. Use KEDA (Kubernetes Event-Driven Autoscaling) to scale the number of browser nodes based on the number of tests waiting in the queue.
+42. Troubleshooting CrashLoopBackOff.
+1. Check logs: kubectl logs <pod-name>.
+2. Describe pod: kubectl describe pod <pod-name> (check events).
+3. Check environment variables, secrets, and liveness probes.
+43. Integrating K8s with CI/CD.
+Use tools like Jenkins or GitLab runners. The pipeline should build the Docker image, push it to a registry, and then run kubectl apply or helm upgrade to deploy to the cluster.
+44. What is Chaos Engineering for SDETs?
+Using tools like LitmusChaos to intentionally inject failures (like killing a random pod or adding network latency) to test the resilience and self-healing of the application.
+45. How do you mock dependencies in K8s?
+Deploy a mock server (like WireMock or a custom Python API) as a separate Service within the same namespace so the app can communicate with it instead of the real external dependency.
+46. Observability tools for testing.
+Use Prometheus/Grafana for metrics (CPU/Memory usage during tests) and ELK (Elasticsearch, Logstash, Kibana) for centralized logging to debug failures.
+47. Load testing in K8s.
+Use distributed testing tools like Locust or JMeter where a master pod coordinates multiple worker pods to generate high traffic from within the cluster.
+48. Managing Ephemeral Environments.
+Create a unique Namespace for every Pull Request (PR) to run integration tests. Use an automated script or a CI job to delete the entire namespace once the PR is closed to save costs.
+49. What is GitOps (ArgoCD/Flux)?
+A practice where the cluster state is defined in a Git repository. ArgoCD monitors Git and automatically synchronizes the cluster to match the manifest files, making deployments more reliable.
+50. What are Kubernetes Operators?
+An Operator is a method of packaging, deploying, and managing a Kubernetes application. For SDETs, an Operator could automate complex test data setups or manage specialized test environments.
