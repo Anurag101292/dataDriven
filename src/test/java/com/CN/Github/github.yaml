@@ -1,0 +1,17 @@
+GitHub Actions / Jenkins
+        |
+        |--- splits tests into 200 shards
+        |
+        |--- creates 200 Kubernetes Jobs
+        |
+        |--- each Job:
+        |       - starts container
+        |       - runs 5 tests
+        |       - uploads allure-results to storage
+        |
+        |--- after all finish:
+                - download all allure-results
+                - merge
+                - generate report
+                - publish
+                - email link
