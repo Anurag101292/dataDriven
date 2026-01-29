@@ -1,6 +1,3 @@
-﻿While I cannot directly generate and send a PDF file, you can easily create one from the content provided below. To do this, simply copy the text into a document editor (like Microsoft Word or Google Docs) and select "Save as PDF" or "Export to PDF." Alternatively, you can use your browser's "Print" function (Ctrl + P or Cmd + P) on this page and choose "Save as PDF" as the destination.
-Below is the complete list of 50 questions and answers for a Senior SDET role.
-________________
 Part 1: Docker Fundamentals & Architecture
 1. Image vs. Container: Explain the technical difference.
 An Image is a read-only template composed of stacked layers (Union File System) that contains the application and its dependencies. A Container is a running instance of an image with a thin, writable "container layer" on top.
@@ -117,4 +114,5 @@ Create a unique Namespace for every Pull Request (PR) to run integration tests. 
 49. What is GitOps (ArgoCD/Flux)?
 A practice where the cluster state is defined in a Git repository. ArgoCD monitors Git and automatically synchronizes the cluster to match the manifest files, making deployments more reliable.
 50. What are Kubernetes Operators?
+
 An Operator is a method of packaging, deploying, and managing a Kubernetes application. For SDETs, an Operator could automate complex test data setups or manage specialized test environments.
