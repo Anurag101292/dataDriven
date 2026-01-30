@@ -1,13 +1,22 @@
 One of the biggest challenges I faced was during the migration of our automation framework from Selenium to Playwright.
 
-The main challenge wasn’t just tool migration — it was redesigning the entire automation architecture to make it faster, maintainable, and CI/CD friendly. Selenium tests were slow and flaky, and we had multiple duplicated utilities for API calls and data handling.
+The main challenge wasn’t just tool migration — it was redesigning the entire automation architecture to make it faster,
+maintainable, and CI/CD friendly. Selenium tests were slow and flaky, and we had multiple duplicated utilities for API calls
+and data handling.
 
-So I first analyzed the test pyramid and realized many UI tests could be shifted to API or integration level. I created a wrapper layer in Playwright for common actions like login, navigation, and reusable API utilities. This helped us reduce 30–40% redundancy.
+So I first analyzed the test pyramid and realized many UI tests could be shifted to API or integration level.
+I created a wrapper layer in Playwright for common actions like login, navigation, and reusable API utilities.
+This helped us reduce 30–40% redundancy.
 
-Another major challenge was with parallel execution and environment data collisions — because multiple test runs were hitting the same API endpoints or DB records. I solved this by using dynamic test data generation and introducing an environment tagging system so each test run was isolated.
+Another major challenge was with parallel execution and environment data collisions — because multiple test runs were hitting
+the same API endpoints or DB records. I solved this by using dynamic test data generation and introducing an environment 
+tagging system so each test run was isolated.
 
-Finally, I integrated it with Jenkins + Slack + Jira using webhooks (and later n8n) so test reports and failures were automatically shared.
+Finally, I integrated it with Jenkins + Slack + Jira using webhooks (and later n8n) so test reports and failures were 
+automatically shared.
 
-The impact was huge — execution time reduced from ~2 hours to ~25 minutes, flakiness went down, and the team gained confidence to run the suite before every merge.
+The impact was huge — execution time reduced from ~2 hours to ~25 minutes, flakiness went down, and the team gained confidence 
+to run the suite before every merge.
 
-This experience taught me that challenges aren’t just technical — they’re about creating sustainable processes and frameworks that the whole team can rely on.”
+This experience taught me that challenges aren’t just technical — they’re about creating sustainable processes and frameworks 
+that the whole team can rely on.”
