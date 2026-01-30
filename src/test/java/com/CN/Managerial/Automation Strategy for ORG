@@ -43,7 +43,11 @@ Code reviews  Training sessions   Best practice sharing
 🎯 Closing Line
 So my strategy is to build a scalable automation ecosystem, not just a test suite.
 --------------------------------------------------------------------------------
-I define automation strategy at three levels: Business, Technology, and Execution.
+
+           One common framework or platform used by all teams
+
+I also define:
+ Coding standards  Folder structure  Review process  CI/CD integration approachI define automation strategy at three levels: Business, Technology, and Execution.
 1️⃣ Business Layer (WHY)
 First, I understand:
 Business critical flows   Releasefrequency  Riskareas  Manualtesting cost  Currentpainpoints(slow regression, flaky tests, environment issues)
@@ -60,10 +64,6 @@ Test Pyramid strategy
            One UI tool
            One API tool
            One reporting system
-           One common framework or platform used by all teams
-
-I also define:
- Coding standards  Folder structure  Review process  CI/CD integration approach
 3️⃣ Execution Layer (HOW)
 Then I implement:
     Automation in CI/CD:
