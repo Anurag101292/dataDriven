@@ -1,0 +1,7 @@
+Component,   Responsibility
+Model,       Reasoning and generation.
+Prompt,      Formatting the request.
+Retrieval,   Finding the right data.
+Chain,       Connecting the steps.
+Memory,      Keeping the conversation history.
+Agent,       Making decisions and using tools.
