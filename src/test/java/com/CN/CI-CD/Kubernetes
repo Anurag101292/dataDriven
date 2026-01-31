@@ -1,0 +1,58 @@
+🧾 Kubernetes Common Commands (≤20 words each)
+1️⃣ kubectl get pods                            Lists all pods with their current status in the namespace.
+2️⃣ kubectl get pod cfx-ui                      Shows the current state of the specific pod cfx-ui.
+3️⃣ kubectl describe pod cfx-ui                 Displays detailed pod configuration, events, restarts, and failure reasons.
+4️⃣ kubectl logs cfx-ui                         Fetches application logs from the running container inside cfx-ui.
+5️⃣ kubectl logs -f cfx-ui                      Streams live logs from the pod in real time.
+6️⃣ kubectl logs cfx-ui --previous              Shows logs from the previous crashed container instance.
+7️⃣ kubectl exec -it cfx-ui -- /bin/sh          Executes shell inside the container for debugging and health checks.
+8️⃣ kubectl get deploy                          Lists all deployments and their replica status.
+9️⃣ kubectl get deploy cfx-ui                   Shows desired, updated, and available replicas for deployment cfx-ui.
+🔟 kubectl describe deploy cfx-ui              Displays deployment strategy, pod template, rollout status, and events.
+1️⃣1️⃣ kubectl get svc                           Lists all services exposing applications inside the cluster.
+1️⃣2️⃣ kubectl get svc cfx-ui                    Shows service type, ports, and cluster IP for cfx-ui.
+1️⃣3️⃣ kubectl get endpoints cfx-ui              Shows which pod IPs are receiving traffic for the service.
+1️⃣4️⃣ kubectl rollout status deploy/cfx-ui      Checks whether the deployment rollout completed successfully.
+1️⃣5️⃣ kubectl rollout undo deploy/cfx-ui        Rolls back deployment to the previous stable version.
+1️⃣6️⃣ kubectl scale deploy cfx-ui --replicas=3  Manually scales the application to three running pods.
+1️⃣7️⃣ kubectl get events                        Displays recent cluster events useful for debugging failures.
+1️⃣8️⃣ kubectl get nodes                         Lists cluster nodes and their readiness status.
+1️⃣9️⃣ kubectl top pod cfx-ui                    Shows CPU and memory usage of the pod (metrics server required).
+2️⃣0️⃣ kubectl delete pod cfx-ui                 Deletes the pod; Kubernetes recreates it automatically if managed by a deployment.
+2️⃣1️⃣ kubectl apply -f cfx-ui.yaml              Creates or updates Kubernetes resources defined in the YAML file.
+2️⃣2️⃣ kubectl config current-context            Shows which Kubernetes cluster/context is currently active.
+2️⃣3️⃣ kubectl get pods -o wide                  Lists pods with additional details like node name and IP.
+
+🎯 Interview-Ready Closing Line
+These commands cover observation, debugging, rollout control, scaling, and recovery for Kubernetes applications in production.
+
+Think of this as “what I type during a prod incident”.
+
+🚨 Production Incident Command Flow (Kubernetes)
+🟢 Step 1: Check if Pod Is Running                   kubectl get pods | grep cfx-ui
+👉 Confirms pod state: Running, CrashLoopBackOff, Pending.
+🟢 Step 2: Check Deployment Health                   kubectl get deploy cfx-ui
+👉 Checks desired vs available replicas.
+🟢 Step 3: Describe the Pod (MOST IMPORTANT)         kubectl describe pod cfx-ui
+👉 Looks for:
+Restart reason-->Probe failures-->Image pull errors-->OOMKilled
+🟢 Step 4: Check Current Logs                        kubectl logs cfx-ui
+👉 Finds runtime errors, exceptions, startup failures.
+🟢 Step 5: Check Previous Logs (If Restarting)       kubectl logs cfx-ui --previous
+👉 Critical for CrashLoopBackOff analysis.
+🟢 Step 6: Verify Service Exists                     kubectl get svc cfx-ui
+👉 Ensures traffic exposure is configured.
+🟢 Step 7: Check Endpoints (TRAFFIC DEBUG)           kubectl get endpoints cfx-ui
+👉 <none> means service not routing to pods.
+🟢 Step 8: Check Recent Cluster Events               kubectl get events --sort-by=.metadata.creationTimestamp
+👉 Detects scheduling, probe, or node failures.
+🟢 Step 9: Exec Into Pod (If Needed)                 kubectl exec -it cfx-ui -- /bin/sh
+Inside pod:
+env      curl localhost:8080/health
+👉 Confirms app health internally.
+🟢 Step 10: Check Resource Usage                     kubectl top pod cfx-ui
+👉 Identifies CPU or memory pressure.
+🟢 Step 11: Temporary Recovery Action                kubectl delete pod cfx-ui
+👉 Forces clean restart (self-healing validation).
+🟢 Step 12: If Deployment Is Broken – Rollback       kubectl rollout undo deploy/cfx-ui
+👉 Restores last stable release.
