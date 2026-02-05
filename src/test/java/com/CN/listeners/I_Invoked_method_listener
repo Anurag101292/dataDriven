@@ -7,9 +7,6 @@ Log the name of each test and config method as they run.
 
 Inject common headers/cookies before each test method execution.
 
-java
-Copy
-Edit
 @Override
 public void beforeInvocation(IInvokedMethod method, ITestResult result) {
     if (method.isTestMethod()) {
