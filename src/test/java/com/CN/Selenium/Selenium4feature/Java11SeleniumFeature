@@ -26,8 +26,6 @@ isBlank
 Checks if a string is empty or contains only whitespace.
 Example: Validate Text Fields
 
-java
-Copy code
 var input = "   ";
 if (input.isBlank()) {
     System.out.println("Input field is blank");
@@ -36,16 +34,12 @@ lines
 Splits a string into lines.
 Example: Process Multi-Line Text
 
-java
-Copy code
 var pageText = "Line 1\nLine 2\nLine 3";
 pageText.lines().forEach(System.out::println);
 repeat
 Repeats a string multiple times.
 Example: Mocking Test Data
 
-java
-Copy code
 var mockData = "A".repeat(5);
 System.out.println("Mock Data: " + mockData); // Output: AAAAA
 -------------------------------------------------------------------------------------
@@ -56,8 +50,6 @@ readString and writeString
 Simplifies reading and writing text files.
 Example: Save Test Results
 
-java
-Copy code
 import java.nio.file.Files;
 import java.nio.file.Path;
 
