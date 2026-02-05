@@ -3,8 +3,6 @@ Java 11 allows you to use var for local variables, reducing boilerplate code.
 
 Example: Simplified WebDriver Initialization
 
-java
-Copy code
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
